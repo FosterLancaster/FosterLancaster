@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Event snippet for Lancast Page view conversion page -->
+<!-- Google tag (gtag.js) --> 
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-841279565"></script> 
+<script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-841279565'); </script>
+<!----Send Off---->
+<title></title>
+<link rel="shortcut icon" href="images/FLFavicon.ico" type="image/x-icon"/>
+<!----Fan Password Secret---->
+<meta name="robots" content="noindex, nofollow">
+<!-------->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+<meta name="author" content="" />
+<meta name="description" content="" />
+
+<link rel="stylesheet" href="FosterLancaster.css">
+<style>
+body {
+  font-family: 'Futura';
+  }
+.Password {
+  pointer-events: none;
+  animation: none;
+  height: 40px; /* 🔑 this centers the text */
+  padding: 0 10px;
+  box-sizing: border-box;
+  margin: 0px;
+  font-size: 18px;
+  font-family: 'futura';
+  text-indent: 5px;
+  width: calc(100% - 20px);
+  max-width: 100%; /* prevent overflow */
+  -webkit-appearance: none;
+  color: #ffffff;
+  appearance: none;
+  flex-grow: 1; /* if in a flex container */
+  min-width: 0; /* prevent overflow in flex */
+  overflow: hidden;
+  background-image: url('fmp3simages/PWLOCK.png');
+  background-position: left center;
+  background-size: auto 40px;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  animation: clickhere 2s linear infinite;
+}
+.PasswordSubmit {
+  font-size: 19px;
+  font-family: 'futura';
+  height: 40px;
+  margin: 0px;
+  width: auto;
+  padding: 0px 4vw 0px 4vw;
+  color: #ffff00;
+  text-align: center;
+  cursor: pointer;
+  user-select: none; /* prevent highlighting text */
+  pointer-events: auto;
+  background-color: transparent;
+  border-left: solid .5px rgb(255, 255, 255, .7);
+}
+.PasswordSubmit:hover {
+  color: rgb(0, 0, 0, .7);
+  background-color: rgb(255, 255, 255, .7);
+}
+/*----Bars----*/
+.PasswordBar {
+  max-height: 40px;
+  line-height: 40px;
+  height: 40px;
+  transition-duration: .2s;
+  width: auto;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 30px);
+  overflow: hidden;
+  background-color: rgb(255, 255, 0, .2);
+  border-radius: 90px;
+  border: solid 5px #000000;
+  background-image: url('fmp3simages/FostMp3sLogoImprint.png');
+  background-position: center center;
+  background-size: 200px auto;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+}
+a {
+  color: #939393;
+  text-decoration: none;
+}
+a:hover {
+  color: #de85ff;
+}
+  .PW {
+    height: auto;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: #ffffff;
+    font-size: 20px;
+    position: absolute;
+    text-align: center;
+    width: 80%; 
+    overflow: scroll;
+    max-height: 100%;
+  }
+  .PWText {
+    font-size: .8em;
+  }
+  .Return {
+  width: auto;
+  height: auto;
+  color: #ffffff;
+  background-color: transparent;
+  border: solid 1px #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 248px;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 20px;
+  transition-duration: .5s;
+  }
+  .Return:hover {
+    background-color: #000000;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="PW" align="center">
+
+<blockquote class="PWText">
+Thank you for your purchase! The Password is:<br>
+</blockquote>
+
+  <div align="center">
+      <div class="PasswordUnlockBar">
+        <div id="passwordUnlock" class="PasswordBar">
+          <input id="passwordInput" class="Password" value="SingToMe"/>
+          <div class="PasswordSubmit" id="passwordSubmit" onclick="submitPassword()">Enter</div>
+        </div>
+        </div>
+                <audio class="audio-player" id="audio" preload="auto">
+                  <source src="" type="audio/mp3">
+                  Your browser does not support the audio element.
+                </audio>  
+                   
+
+<blockquote class="PWText">
+<a href="mailto:fosterlancast@gmail.com" target="_blank">
+customer support</a>
+</blockquote>
+
+<a href="https://fosterlancaster.com" target="_self">
+<div class="Return">Back To Site</div>
+</a>
+
+</div>
+</div>
+
+</body>
+</html>

@@ -84,6 +84,7 @@ line-height: auto;
 }
 section {
   height: auto;
+  min-height: 100%;
   width: 68vw; 
   max-width: 68vw;
   position: relative;
@@ -320,7 +321,7 @@ button {
   overflow: hidden;
 }
 
-@media (orientation: portrait) {
+@media screen and (orientation: portrait) {
 .namesayer {
   font-size: 7.5vw;
   height: auto;
@@ -360,7 +361,7 @@ button {
 }
 }
 
-@media (orientation: landscape) {
+@media screen and (orientation: landscape) {
   header {
     justify-content: right;
   }

@@ -164,13 +164,13 @@ footer {
 }
 /*----NameLetter Styling----*/
 .Page {
-  height: calc(90dvh / 6);
+  height: calc(90vh / 6);
   font-family: 'FL';
   font-size: 3.2em;
   line-height: 3.2em;
   background-color: #381e00;
   background-image: url('images/FosterLancasterLogoOverlay.png');
-  background-size: auto calc(90dvh / 6);
+  background-size: auto calc(90vh / 6);
   background-position: center left;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -327,18 +327,20 @@ button {
   height: auto;
   }
   .Page {
-    width: 100vw;
-    opacity: .9;
+  height: calc(90dvh / 6);
+  background-size: auto calc(90vh / 6);
+  width: 100vw;
+  opacity: .9;
   }
   .Page:hover {
     opacity: 1;
   }
-.SocIcon {
+  .SocIcon {
     width: 4vw;   /* made larger so the image is actually visible */
     height: 4vw;
     padding: 2vw;
     margin: 1vw;
-}
+  }
   section {
     width: 100%;
     max-width: 100%;

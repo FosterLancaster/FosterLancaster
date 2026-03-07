@@ -207,7 +207,7 @@ footer {
   z-index: 3;
 }
 #Navigation {
-  height: 90dvh;
+  height: 90vh;
   width: 0px;
   right: 0px;
   display: flex;

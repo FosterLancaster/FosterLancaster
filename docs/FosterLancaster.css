@@ -143,8 +143,8 @@ footer {
   height: auto;
   width: auto;
   opacity: .9;
-  color: #ffffff;
   filter: drop-shadow(0 0 5px #000000);
+  animation: DontSay2 6s linear infinite;
 }
 .namesay {
   opacity: 0;
@@ -155,8 +155,7 @@ footer {
   transform: translate(-50%, -50%);
   width: 10vh;
   height: 10vh;
-  transition-duration: .2s;
-  animation: DontSay 2s linear infinite;
+  animation: DontSay1 6s linear infinite;
 }
 .namesayer:hover .namesay {
   width: 9vh;
@@ -491,7 +490,7 @@ button {
   }
 }
 
-@keyframes DontSay {
+@keyframes DontSay1 {
   0% { opacity: 0; }
   10% {opacity: .35; }
   20% {opacity: 1; }
@@ -499,4 +498,12 @@ button {
   40% { opacity: .35; }
   50% { opacity: 0; }
   100% { opacity: 0; }
+}
+@keyframes DontSay2 {
+  0% {color: #ffffff; filter: blur(0px);}
+  10% {color: #ff0000; filter: blur(5px);}
+  20% {color: #ff0000; filter: blur(5px);}
+  30% {color: #ff0000; filter: blur(5px);}
+  40% {color: #ffffff; filter: blur(0px);}
+  100% {color: #ffffff; filter: blur(0px);}
 }

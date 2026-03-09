@@ -502,9 +502,9 @@ button {
   100% { opacity: 0; }
 }
 @keyframes DontSay2 {
-  0% {color: #ffffff; filter: blur(0px); font-size: 5vh;}
-  40% {color: #ffffff; filter: blur(0px); font-size: 5vh;}
-  50% {color: #ff0000; filter: blur(5px); font-size: 8vh;}
-  90% {color: #ff0000; filter: blur(5px); font-size: 8vh;}
-  100% {color: #ffffff; filter: blur(0px); font-size: 5vh;}
+  0% {color: #ffffff; filter: blur(0px); font-size: .7em;}
+  40% {color: #ffffff; filter: blur(0px); font-size: .7em;}
+  50% {color: #ff0000; filter: blur(5px); font-size: 1em;}
+  90% {color: #ff0000; filter: blur(5px); font-size: 1em;}
+  100% {color: #ffffff; filter: blur(0px); font-size: .7em;}
 }

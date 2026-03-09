@@ -127,7 +127,7 @@ footer {
 .namesayer {
   height: auto;
   width: auto;  
-  padding: 0vh;            /* lock the alignment height */
+  padding-right: 1vw;            /* lock the alignment height */
   display: flex;
   align-items: center;          /* vertical center */              /* space between text and image */
   cursor: pointer;
@@ -146,7 +146,6 @@ footer {
   color: #ffffff;
   opacity: .9;
   filter: drop-shadow(0 0 5px #000000);
-  transform: scale(.8);
   animation: DontSay2 4s linear infinite;
 }
 .namesay {
@@ -503,9 +502,9 @@ button {
   100% { opacity: 0; }
 }
 @keyframes DontSay2 {
-  0% {color: #ffffff; filter: blur(0px); transform: scale(.8);}
-  40% {color: #ffffff; filter: blur(0px); transform: scale(.8);}
-  50% {color: #ff0000; filter: blur(5px); transform: scale(1);}
-  90% {color: #ff0000; filter: blur(5px); transform: scale(1);}
-  100% {color: #ffffff; filter: blur(0px); transform: scale(.8);}
+  0% {color: #ffffff; filter: blur(0px); font-size: 5vh;}
+  40% {color: #ffffff; filter: blur(0px); font-size: 5vh;}
+  50% {color: #ff0000; filter: blur(5px); font-size: 8vh;}
+  90% {color: #ff0000; filter: blur(5px); font-size: 8vh;}
+  100% {color: #ffffff; filter: blur(0px); font-size: 5vh;}
 }

@@ -1,9 +1,9 @@
 /*---- Interactive Menu ----*/
 .LancasterMenu {
   width: 10vw;
-  max-width: calc(10vh - 10px);
+  max-width: calc(8vh - 10px);
   height: 10vw;
-  max-height: calc(10vh - 10px);
+  max-height: calc(8vh - 10px);
   position: fixed;
   top: 0px;
   right: 0px;
@@ -18,12 +18,12 @@
   border-radius: 50%;
   background-color: transparent;
   transition-duration: .5s;
-  animation: Steer 4s ease infinite;
+  transform: rotate(0deg);
 }
 .LancasterMenu.active {
   opacity: .5;
   animation: none;
-  transform: rotate(0deg);
+  transform: rotate(360deg);
 }
 .carousel-container {
   position: relative;
@@ -74,29 +74,4 @@
 }
 .next-btn:hover {
   opacity: .8;
-}
-
-@keyframes Steer {
-
-  0% { transform: rotate(0deg); }
-
-  9.09% { transform: rotate(20deg); }
-  18.18% { transform: rotate(0deg); }
-  27.27% { transform: rotate(-20deg); }
-  36.36% { transform: rotate(0deg); }
-
-  /* 90° fast turn (half timing span) */
-  40.90% { transform: rotate(90deg); }
-  45.45% { transform: rotate(0deg); }
-
-  54.54% { transform: rotate(-20deg); }
-  63.63% { transform: rotate(0deg); }
-  72.72% { transform: rotate(20deg); }
-  81.81% { transform: rotate(0deg); }
-
-  /* -90° fast turn (half timing span) */
-  86.36% { transform: rotate(-90deg); }
-  90.90% { transform: rotate(0deg); }
-
-  100% { transform: rotate(0deg); }
 }

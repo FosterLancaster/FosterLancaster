@@ -51,6 +51,7 @@ a:hover {
 header {
   height: 10vh;
   line-height: 10vh;
+  overflow: hidden;
   opacity: 1;
   background-color: #381e00;
   border-bottom: solid .5px #ffffff80;
@@ -137,6 +138,7 @@ footer {
 }
 /* TOP HALF — WHITE */
 .namewritten {
+  font-size: 8vh;
   line-height: 10vh;
   position: relative;
   z-index: 0;
@@ -324,9 +326,6 @@ button {
 }
 
 @media screen and (orientation: portrait) {
-.namesayer {
-  height: auto;
-  }
   .Page {
   height: calc(90dvh / 6);
   background-size: auto calc(90vh / 6);
@@ -367,9 +366,6 @@ button {
 @media screen and (orientation: landscape) {
   header {
     justify-content: right;
-  }
-  .namesayer {
-  height: auto;
   }
   .LancasterMenu {
     display: none;
@@ -481,9 +477,9 @@ button {
   100% { opacity: 0; }
 }
 @keyframes DontSay2 {
-  0% {color: #ffffff; filter: blur(0px); font-size: 1em;}
-  40% {color: #ffffff; filter: blur(0px); font-size: 1em;}
-  50% {color: #ff0000; filter: blur(5px); font-size: 1.2em;}
-  90% {color: #ff0000; filter: blur(5px); font-size: 1.2em;}
-  100% {color: #ffffff; filter: blur(0px); font-size: 1em;}
+  0% {color: #ffffff; filter: blur(0px); font-size: 5vh;}
+  40% {color: #ffffff; filter: blur(0px); font-size: 5vh;}
+  50% {color: #ff0000; filter: blur(5px); font-size: 10vh;}
+  90% {color: #ff0000; filter: blur(5px); font-size: 10vh;}
+  100% {color: #ffffff; filter: blur(0px); font-size: 5vh;}
 }

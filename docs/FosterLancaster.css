@@ -139,7 +139,7 @@ footer {
 }
 /* TOP HALF — WHITE */
 .namewritten {
-  font-size: 1.3em;
+  font-size: 5vh;
   padding: 0px .2em 0px .2em;
   line-height: 10vh;
   position: relative;

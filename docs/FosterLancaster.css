@@ -326,7 +326,6 @@ button {
 
 @media screen and (orientation: portrait) {
 .namesayer {
-  font-size: 7.5vw;
   height: auto;
   }
   .Page {
@@ -372,7 +371,6 @@ button {
   }
   .namesayer {
   height: auto;
-  font-size: 7.5vh;
   }
   .LancasterMenu {
     display: none;
@@ -502,9 +500,9 @@ button {
   100% { opacity: 0; }
 }
 @keyframes DontSay2 {
-  0% {color: #ffffff; filter: blur(0px); font-size: .7em;}
-  40% {color: #ffffff; filter: blur(0px); font-size: .7em;}
+  0% {color: #ffffff; filter: blur(0px); font-size: .8em;}
+  40% {color: #ffffff; filter: blur(0px); font-size: .8em;}
   50% {color: #ff0000; filter: blur(5px); font-size: 1em;}
   90% {color: #ff0000; filter: blur(5px); font-size: 1em;}
-  100% {color: #ffffff; filter: blur(0px); font-size: .7em;}
+  100% {color: #ffffff; filter: blur(0px); font-size: .8em;}
 }

@@ -140,7 +140,6 @@ footer {
   line-height: 10vh;
   position: relative;
   z-index: 0;
-  padding: 0px 10px 0px 10px;
   height: auto;
   width: auto;
   color: #ffffff;
@@ -415,9 +414,6 @@ button {
 /* ----Responsive Layout---- */
 @media screen and (max-height: 600px) {
     /* ----Middle---- */
-  header {
-    font-size: 1.2em;
-  }
   .Page {
     font-size: 1.6em;
   }
@@ -431,9 +427,6 @@ button {
 
 @media screen and (max-height: 400px) {
     /* ----Small---- */
-  header {
-    font-size: .525em;
-  }
   .Page {
     font-size: .7em;
   }
@@ -447,9 +440,6 @@ button {
 
 @media screen and (max-height: 200px) {
    /* ----Smallest---- */
-  header {
-    font-size: .340em;
-  }
   .Page {
     font-size: .45em;
   }
@@ -462,9 +452,6 @@ button {
 }
 
 @media screen and (max-width: 500px) and (orientation: portrait) {
-  header {
-    font-size: 6vw;
-  }
   article {
     top: 14vw;
   }
@@ -485,12 +472,6 @@ button {
   }
 }
 
-/*----Ipad----*/
-@media screen and (max-width: 600px) and (orientation: portrait) {
-  header {
-    font-size: 6vw;
-  }
-}
 
 @keyframes DontSay1 {
   0% { opacity: 0; }
@@ -500,9 +481,9 @@ button {
   100% { opacity: 0; }
 }
 @keyframes DontSay2 {
-  0% {color: #ffffff; filter: blur(0px); font-size: .8em;}
-  40% {color: #ffffff; filter: blur(0px); font-size: .8em;}
-  50% {color: #ff0000; filter: blur(5px); font-size: 1em;}
-  90% {color: #ff0000; filter: blur(5px); font-size: 1em;}
-  100% {color: #ffffff; filter: blur(0px); font-size: .8em;}
+  0% {color: #ffffff; filter: blur(0px); font-size: 1em;}
+  40% {color: #ffffff; filter: blur(0px); font-size: 1em;}
+  50% {color: #ff0000; filter: blur(5px); font-size: 1.2em;}
+  90% {color: #ff0000; filter: blur(5px); font-size: 1.2em;}
+  100% {color: #ffffff; filter: blur(0px); font-size: 1em;}
 }

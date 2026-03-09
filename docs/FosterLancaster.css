@@ -133,6 +133,7 @@ footer {
   cursor: pointer;
   font-family: 'FL';
   position: absolute;
+  z-index: 2;
 }
 /* TOP HALF — WHITE */
 .namewritten {
@@ -145,6 +146,7 @@ footer {
   color: #ffffff;
   opacity: .9;
   filter: drop-shadow(0 0 5px #000000);
+  transform: scale(.8);
   animation: DontSay2 4s linear infinite;
 }
 .namesay {
@@ -262,6 +264,7 @@ button {
   border-radius: 10px;
   background-color: #381e00;
   border: solid 1px #ffffff;
+  margin: 10px 0px 10px 0px;
 }
 .MusicVideoContainer:hover {
   filter: brightness(1.5);
@@ -500,9 +503,9 @@ button {
   100% { opacity: 0; }
 }
 @keyframes DontSay2 {
-  0% {color: #ffffff; filter: blur(0px); transform: scale(1);}
-  40% {color: #ffffff; filter: blur(0px); transform: scale(1);}
-  50% {color: #ff0000; filter: blur(5px); transform: scale(.7);}
-  90% {color: #ff0000; filter: blur(5px); transform: scale(.7);}
-  100% {color: #ffffff; filter: blur(0px); transform: scale(1);}
+  0% {color: #ffffff; filter: blur(0px); transform: scale(.8);}
+  40% {color: #ffffff; filter: blur(0px); transform: scale(.8);}
+  50% {color: #ff0000; filter: blur(5px); transform: scale(1);}
+  90% {color: #ff0000; filter: blur(5px); transform: scale(1);}
+  100% {color: #ffffff; filter: blur(0px); transform: scale(.8);}
 }

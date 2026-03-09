@@ -39,7 +39,9 @@
   transition: transform 0.2s ease;
 }
 .carousel-slide {
+  max-height: 100vh;
   min-width: 100%;
+  overflow: hidden;
   box-sizing: border-box;
 }
 .carousel-btn {

@@ -157,14 +157,14 @@ footer {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 10vh;
-  height: 10vh;
-  transition-duration: .5s;
+  width: 7vh;
+  height: 7vh;
+  transition-duration: .2s;
   animation: DontSay1 4s linear infinite;
 }
 .namesayer:hover .namesay {
-  width: 12vh;
-  height: 12vh;
+  width: 5vh;
+  height: 5vh;
 }
 /*----NameLetter Styling----*/
 .Page {

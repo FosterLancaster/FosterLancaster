@@ -493,7 +493,7 @@ button {
 @keyframes DontSay2 {
   0% {color: #ffffff; filter: blur(0px);}
   40% {color: #ffffff; filter: blur(0px);}
-  50% {color: #7c7c7c; filter: blur(5px);}
-  90% {color: #7c7c7c; filter: blur(5px);}
+  50% {color: #ffff00; filter: blur(7px);}
+  90% {color: #ffff00; filter: blur(7px);}
   100% {color: #ffffff; filter: blur(0px);}
 }

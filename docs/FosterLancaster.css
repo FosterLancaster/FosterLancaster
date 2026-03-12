@@ -125,19 +125,20 @@ footer {
   align-items: center;         /* vertical centering */
   justify-content: center;     /* horizontal centering */
 }
-.namesayer {
+/*-------------------FLName---------------------*/
+.FLName {
   height: auto;
   width: auto;  
-  padding-right: 1vw;            /* lock the alignment height */
+  padding-right: 1vw;           
   display: flex;
-  align-items: center;          /* vertical center */              /* space between text and image */
+  align-items: center;          
   cursor: pointer;
   font-family: 'FL';
   position: absolute;
   z-index: 2;
 }
 /* TOP HALF — WHITE */
-.namewritten {
+.FLNameText {
   padding: 0px .2em 0px .2em;
   line-height: 10vh;
   position: relative;
@@ -149,24 +150,24 @@ footer {
   filter: drop-shadow(0 0 5px #000000);
   animation: DontSay2 4s linear infinite;
 }
-.namesay {
+.FLNameSayButton {
   opacity: 0;
   position: absolute;
   z-index: 2;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 5vh;
-  height: 5vh;
+  width: 8vh;
+  height: 8vh;
   transition-duration: .2s;
   border-radius: 50%;
-  border: double 3px #ffffff;
   animation: DontSay1 4s linear infinite;
 }
-.namesayer:hover .namesay {
-  width: 4vh;
-  height: 4vh;
+.FLName:hover .FLNameSayButton {
+  width: 6vh;
+  height: 6vh;
 }
+/*-------------------FLName---------------------*/
 /*----NameLetter Styling----*/
 .Page {
   height: calc(90vh / 6);
@@ -328,10 +329,10 @@ button {
 }
 
 @media screen and (orientation: portrait) {
-.namesayer {
+.FLName {
   transform-origin: center;
 }
-.namewritten {
+.FLNameText {
   font-size: 8vw;
 }
   .Page {
@@ -372,10 +373,10 @@ button {
 }
 
 @media screen and (orientation: landscape) {
-.namesayer {
+.FLName {
   transform-origin: right;
 }
-.namewritten {
+.FLNameText {
   font-size: 8vh;
 }
   header {

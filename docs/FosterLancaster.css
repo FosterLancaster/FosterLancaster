@@ -145,9 +145,9 @@ footer {
   z-index: 0;
   height: auto;
   width: auto;
-  color: #ffffff;
+  color: #ffffff; 
+  filter: blur(0px);
   opacity: .9;
-  filter: drop-shadow(0 0 5px #000000);
   animation: DontSay2 4s linear infinite;
 }
 .FLNameSayButton {
@@ -157,16 +157,16 @@ footer {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 8vh;
-  height: 8vh;
+  width: 6vh;
+  height: 6vh;
   transition-duration: .2s;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, .3);
+  padding: 0px;
   animation: DontSay1 4s linear infinite;
 }
 .FLName:hover .FLNameSayButton {
-  width: 6vh;
-  height: 6vh;
+  padding: 1vh;
 }
 /*-------------------FLName---------------------*/
 /*----NameLetter Styling----*/

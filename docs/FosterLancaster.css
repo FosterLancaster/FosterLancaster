@@ -265,10 +265,8 @@ button {
   opacity: .25;
 }
 .MusicVideoContainer {
-  border-radius: 10px;
   background-color: #381e00;
   border: solid 1px #ffffff;
-  margin: 10px 0px 10px 0px;
 }
 .MusicVideoContainer:hover {
   filter: brightness(1.5);

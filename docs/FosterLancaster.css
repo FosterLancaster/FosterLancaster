@@ -146,7 +146,7 @@ footer {
   height: auto;
   width: auto;
   color: #ffffff; 
-  filter: blur(0px);
+  text-decoration: none;
   opacity: .9;
   animation: DontSay2 4s linear infinite;
 }
@@ -482,7 +482,6 @@ button {
   }
 }
 
-
 @keyframes DontSay1 {
   0% { opacity: 0; }
   40% { opacity: 0; }
@@ -491,9 +490,9 @@ button {
   100% { opacity: 0; }
 }
 @keyframes DontSay2 {
-  0% {color: #ffffff; filter: blur(0px);}
-  40% {color: #ffffff; filter: blur(0px);}
-  50% {color: #ffff00; filter: blur(7px);}
-  90% {color: #ffff00; filter: blur(7px);}
-  100% {color: #ffffff; filter: blur(0px);}
+  0% { color: #ffffff; filter: blur(0); }
+  40% { color: #ffffff; filter: blur(0); }
+  50% { color: #000000; filter: blur(4px); }
+  90% { color: #000000; filter: blur(4px); }
+  100% { color: #ffffff; filter: blur(0); }
 }

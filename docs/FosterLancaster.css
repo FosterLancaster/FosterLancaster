@@ -163,7 +163,7 @@ footer {
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.6);
   padding: 0px;
-  animation: DontSayButton 4s linear infinite;
+  animation: DontSayButton 2s linear infinite;
 }
 .FLName:hover .FLNameSayButton {
   opacity: 1;

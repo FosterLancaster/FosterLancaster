@@ -104,7 +104,7 @@ footer {
   font-size: 15px;
   line-height: 25px;
   border-top: solid .5px #ffffff;
-  text-align: left;
+  text-align: center;
 }
 .Title {
   /* ----- American Flag Writing -----*/
@@ -161,11 +161,14 @@ footer {
   height: 6vh;
   transition-duration: .2s;
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, .3);
+  background-color: rgba(0, 0, 0, .5);
   padding: 0px;
+  animation: DontSayButton 2s linear infinite;
 }
 .FLName:hover .FLNameSayButton {
+  animation: none;
   opacity: 1;
+  padding: 1vh;
 }
 /*-------------------FLName---------------------*/
 /*----NameLetter Styling----*/
@@ -487,4 +490,11 @@ button {
   50% { color: #d4a770; }
   90% { color: #d4a770; }
   100% { color: #ffffff; }
+}
+@keyframes DontSayButton {
+  0% { opacity: 0; }
+  40% { opacity: 0; }
+  50% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
 }

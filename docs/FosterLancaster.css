@@ -161,9 +161,9 @@ footer {
   height: 6vh;
   transition-duration: .2s;
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 0px;
-  animation: DontSayButton 1.5s linear infinite;
+  animation: DontSayButton 4s linear infinite;
 }
 .FLName:hover .FLNameSayButton {
   opacity: 1;
@@ -492,8 +492,7 @@ button {
 }
 @keyframes DontSayButton {
   0% { opacity: 0; }
-  40% { opacity: 0; }
-  50% { opacity: 1; }
-  90% { opacity: 1; }
+  45% {opacity: 1; }
+  55% {opacity: 1; }
   100% { opacity: 0; }
 }

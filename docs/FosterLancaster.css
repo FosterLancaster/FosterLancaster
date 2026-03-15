@@ -148,7 +148,7 @@ footer {
   color: #ffffff; 
   text-decoration: none;
   opacity: .9;
-  animation: DontSay2 4s linear infinite;
+  animation: DontSay 4s linear infinite;
 }
 .FLNameSayButton {
   opacity: 0;
@@ -161,12 +161,11 @@ footer {
   height: 6vh;
   transition-duration: .2s;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, .3);
+  background-color: rgba(0, 0, 0, .3);
   padding: 0px;
-  animation: DontSay1 4s linear infinite;
 }
 .FLName:hover .FLNameSayButton {
-  padding: 1vh;
+  opacity: 1;
 }
 /*-------------------FLName---------------------*/
 /*----NameLetter Styling----*/
@@ -249,7 +248,7 @@ button {
   position: relative;
   display: inline-block;
   transition-duration: .1s;
-  padding: 0px .6em 0px .6em;
+  padding: .6em;
   margin-bottom: -4px;
 }
 .SocialMedia:hover {
@@ -346,7 +345,7 @@ button {
   .SocIcon {
     width: 4vw;   /* made larger so the image is actually visible */
     height: 4vw;
-    padding: 2vw;
+    padding: 4vw;
     margin: 1vw;
   }
   section {
@@ -482,17 +481,10 @@ button {
   }
 }
 
-@keyframes DontSay1 {
-  0% { opacity: 0; }
-  40% { opacity: 0; }
-  50% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { opacity: 0; }
-}
-@keyframes DontSay2 {
-  0% { color: #ffffff; filter: blur(0); }
-  40% { color: #ffffff; filter: blur(0); }
-  50% { color: #000000; filter: blur(4px); }
-  90% { color: #000000; filter: blur(4px); }
-  100% { color: #ffffff; filter: blur(0); }
+@keyframes DontSay {
+  0% { color: #ffffff; }
+  40% { color: #ffffff; }
+  50% { color: #d4a770; }
+  90% { color: #d4a770; }
+  100% { color: #ffffff; }
 }

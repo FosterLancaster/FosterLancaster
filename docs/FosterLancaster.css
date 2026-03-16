@@ -272,7 +272,7 @@ button {
   overflow: hidden;
 }
 .MusicVideoContainer:hover {
-  filter: brightness(1.5);
+  filter: brightness(1.2);
 }
 .FLmediaicon {
   height: 18px;

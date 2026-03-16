@@ -263,11 +263,13 @@ button {
   transition-duration: .5s;
   display: block;
   pointer-events: none;
-  opacity: .25;
 }
 .MusicVideoContainer {
-  background-color: #381e00;
+  background-color: #000000;
   border: solid 1px #ffffff;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
 }
 .MusicVideoContainer:hover {
   filter: brightness(1.5);

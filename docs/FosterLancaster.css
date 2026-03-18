@@ -151,7 +151,7 @@ footer {
   opacity: .9;
   background-clip: text;
   background-size: 100% 100px;
-  animation: rise 1s linear infinite;
+  animation: rise 2s linear infinite;
   background-image: linear-gradient(to top, #ffffff, transparent, #ffffff);
 }
 .FLNameSayButton {
@@ -166,7 +166,7 @@ footer {
   transition-duration: .2s;
   border-radius: 50%;
   padding: 0px;
-  animation: DontSayButton 2s linear infinite;
+  animation: DontSayButton 4s linear infinite;
 }
 .FLName:hover .FLNameSayButton {
   opacity: 1;

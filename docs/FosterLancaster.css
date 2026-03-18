@@ -152,7 +152,7 @@ footer {
   background-clip: text;
   background-size: 100% 100px;
   animation: rise 1s linear infinite;
-  background-image: linear-gradient(to top, rgb(255, 255, 255, .2), transparent, rgb(255, 255, 255, .2));
+  background-image: linear-gradient(to top, #ffffff, transparent, #ffffff);
 }
 .FLNameSayButton {
   opacity: 0;

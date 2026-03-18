@@ -145,10 +145,14 @@ footer {
   z-index: 0;
   height: auto;
   width: auto;
-  color: #ffffff; 
+  color: transparent; 
+  background-color: transparent;
   text-decoration: none;
   opacity: .9;
-  animation: DontSay 4s linear infinite;
+  background-clip: text;
+  background-size: 100% 100px;
+  animation: rise 1s linear infinite;
+  background-image: linear-gradient(to top, rgb(255, 255, 255, .2), transparent, rgb(255, 255, 255, .2));
 }
 .FLNameSayButton {
   opacity: 0;
@@ -161,7 +165,6 @@ footer {
   height: 6vh;
   transition-duration: .2s;
   border-radius: 50%;
-  background-color: rgba(255, 63, 130, 0.8);
   padding: 0px;
   animation: DontSayButton 2s linear infinite;
 }
@@ -500,7 +503,11 @@ button {
 }
 @keyframes DontSayButton {
   0% { opacity: 0; }
-  45% {opacity: 1; }
-  55% {opacity: 1; }
+  60% { opacity: 0; }
+  80% { opacity: 1; }
   100% { opacity: 0; }
+}
+@keyframes rise {
+  0% { background-position: center 0px; }
+  100% { background-position: center -100px; }
 }

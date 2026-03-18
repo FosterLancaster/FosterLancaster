@@ -161,7 +161,7 @@ footer {
   height: 6vh;
   transition-duration: .2s;
   border-radius: 50%;
-  background-color: rgba(255, 255, 0, 0.8);
+  background-color: rgba(255, 63, 130, 0.8);
   padding: 0px;
   animation: DontSayButton 2s linear infinite;
 }
@@ -494,8 +494,8 @@ button {
 @keyframes DontSay {
   0% { color: #ffffff; }
   40% { color: #ffffff; }
-  50% { color: #d4a770; }
-  90% { color: #d4a770; }
+  50% { color: #ffff00; }
+  90% { color: #ffff00; }
   100% { color: #ffffff; }
 }
 @keyframes DontSayButton {

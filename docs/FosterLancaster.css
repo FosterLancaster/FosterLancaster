@@ -272,9 +272,10 @@ button {
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
   overflow: hidden;
+  filter: drop-shadow(0px 0px 10px #ffffff);
 }
 .MusicVideoContainer:hover {
-  filter: brightness(1.2);
+  opacity: .5;
 }
 .FLmediaicon {
   height: 18px;

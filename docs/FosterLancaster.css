@@ -128,30 +128,26 @@ footer {
 /*-------------------FLName---------------------*/
 .FLName {
   height: auto;
-  width: auto;  
-  padding-right: 1vw;           
+  width: auto;            
   display: flex;
   align-items: center;          
   cursor: pointer;
   font-family: 'FL';
-  position: absolute;
   z-index: 2;
+  padding: 0px 10px 0px 10px;
+  position: absolute;
 }
 /* TOP HALF — WHITE */
 .FLNameText {
-  padding: 0px .2em 0px .2em;
   line-height: 10vh;
   position: relative;
-  z-index: 0;
-  height: auto;
-  width: auto;
-  color: transparent; 
+  z-index: 1;
   color: #ffffff;
-  text-decoration: none;
   animation: DontSay 4s linear infinite;
+  filter: blur(0);
 }
 .FLNameSayButton {
-  opacity: 0;
+  opacity: .5;
   position: absolute;
   z-index: 2;
   left: 50%;
@@ -162,7 +158,6 @@ footer {
   transition-duration: .2s;
   border-radius: 50%;
   background-color: transparent;
-  animation: DontSayButton 2s linear infinite;
 }
 .FLName:hover .FLNameSayButton {
   opacity: 1;
@@ -494,17 +489,11 @@ button {
 @keyframes DontSay {
   0% { color: #ffffff; transform: scale(1); }
   23% { color: #ffffff; transform: scale(1);  }
-  33% { color: #000000; transform: scale(.8);  }
-  56% { color: #000000; transform: scale(.8);  }
-  66% { color: #ff6000; transform: scale(.6);  }
-  89% { color: #ff6000; transform: scale(.6);  }
-  100% { color: #ffffff; transform: scale(1);  }
-}
-@keyframes DontSayButton {
-  0% { opacity: 0; }
-  20% { opacity: 0; }
-  60% { opacity: 1; }
-  100% { opacity: 0; }
+  33% { color: #000000; transform: scale(1);  }
+  56% { color: #000000; transform: scale(1); }
+  66% { color: #ff6000; transform: scale(.6); }
+  89% { color: #ff6000; transform: scale(.6); }
+  100% { color: #ffffff; transform: scale(1); }
 }
 @keyframes rise {
   0% { background-position: center 0px; }

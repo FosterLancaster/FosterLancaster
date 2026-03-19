@@ -148,7 +148,7 @@ footer {
   color: transparent; 
   color: #ffffff;
   text-decoration: none;
-  opacity: .9;
+  animation: DontSay 4s linear infinite;
 }
 .FLNameSayButton {
   opacity: 0;
@@ -157,18 +157,17 @@ footer {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 5vh;
-  height: 5vh;
-  padding: 1vh;
+  width: 6vh;
+  height: 6vh;
   transition-duration: .2s;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, .7);
+  background-color: transparent;
   animation: DontSayButton 2s linear infinite;
 }
 .FLName:hover .FLNameSayButton {
   opacity: 1;
-  width: 6vh;
-  height: 6vh;
+  width: 8vh;
+  height: 8vh;
 }
 /*-------------------FLName---------------------*/
 /*----NameLetter Styling----*/
@@ -493,11 +492,13 @@ button {
 }
 
 @keyframes DontSay {
-  0% { color: #ffffff; }
-  40% { color: #ffffff; }
-  50% { color: #ffff00; }
-  90% { color: #ffff00; }
-  100% { color: #ffffff; }
+  0% { color: #ffffff; transform: scale(1); }
+  23% { color: #ffffff; transform: scale(1);  }
+  33% { color: #000000; transform: scale(.8);  }
+  56% { color: #000000; transform: scale(.8);  }
+  66% { color: #ff6000; transform: scale(.6);  }
+  89% { color: #ff6000; transform: scale(.6);  }
+  100% { color: #ffffff; transform: scale(1);  }
 }
 @keyframes DontSayButton {
   0% { opacity: 0; }

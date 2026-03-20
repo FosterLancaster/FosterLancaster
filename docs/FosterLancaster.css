@@ -180,7 +180,7 @@ footer {
   display: block;
 }
 .NavigationFrame {
-  top: 10vh;
+  top: 0vh;
   right: 0px;
   position: relative;
   z-index: 3;
@@ -332,6 +332,7 @@ button {
     max-width: 100%;
   }
   .NavigationFrame {
+    top: 10vh;
     position: fixed;
     z-index: 3;
   }

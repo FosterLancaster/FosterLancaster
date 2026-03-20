@@ -9,12 +9,43 @@
 <meta name="author" content="" />
 <meta name="description" content="" />
 </head>
+<style>
+  .mask {
+  width: 200px;
+  height: 200px;
 
+  /* Mask shape */
+  -webkit-mask-image: url(mask.png);
+  -webkit-mask-size: cover;
+  mask-image: url(mask.png);
+  mask-size: cover;
+
+  animation: rotate 5s linear infinite;
+}
+
+.inner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  animation: counterRotate 5s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes counterRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+</style>
 <body>
-  <script>
-    window.onload = function() {
-    window.location.href = "https://fosterl.com/store";
-    };
-  </script>
+
+<div class="mask">
+  <img src="your-image.jpg" class="inner">
+</div>
+
 </body>
 </html>

@@ -974,12 +974,6 @@ const audioPreload = {};
     // Update if Haven't Updated
     if (!decrementListenCount()) return;
 
-    // Stop intro audio if it was playing (since we’re starting a real song)
-    if (introAudio) {
-      try { introAudio.pause(); } catch {}
-      try { introAudio.currentTime = 0; } catch {}
-    }
-
     // Organize Song Order
     const btn = songButtons[index];
     if (!btn) return;
@@ -987,8 +981,7 @@ const audioPreload = {};
     const songPath = btn.dataset.song;
     if (!songPath) return;
 
-audio.src = songPath;
-
+    audio.src = songPath;
     audio.load();
     audio.currentTime = 0;
 

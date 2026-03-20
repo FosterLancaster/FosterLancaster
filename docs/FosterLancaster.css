@@ -57,8 +57,9 @@ header {
   outline: none;
   position: fixed;
   top: 0;
-  z-index: 4;
-  width: 100vw;
+  z-index: 6;
+  width: auto;
+  display: inline;
   -webkit-tap-highlight-color: transparent;
   display: flex;  /* vertical centering */
   text-indent: 2px;
@@ -122,19 +123,17 @@ footer {
   cursor: pointer;
   font-family: 'FL';
   z-index: 2;
-  padding: 0px 10px 0px 10px;
   position: relative;
 }
 /* TOP HALF — WHITE */
 .FLNameSayButton {
   width: 35px;
-  max-width: 10vh;
+  max-width: calc(10vh - 10px);
   height: 35px;
-  max-height: 10vh;
+  max-height: calc(10vh - 10px);
   margin: 5px;
   opacity: 1;
   position: relative;
-  z-index: 5;
   transition-duration: .2s;
   background-color: transparent;
 }
@@ -144,7 +143,7 @@ footer {
 /*-------------------FLName---------------------*/
 /*----NameLetter Styling----*/
 .Page {
-  height: calc(90vh / 6);
+  height: calc((90vh / 6) - 1px);
   font-family: 'FL';
   font-size: 3.2em;
   line-height: 3.2em;
@@ -309,9 +308,6 @@ button {
 }
 
 @media screen and (orientation: portrait) {
-.FLNameText {
-  font-size: 8vw;
-}
   .Page {
   height: calc(90dvh / 6);
   background-size: auto calc(90vh / 6);
@@ -350,9 +346,6 @@ button {
 header {
     justify-content: left;
   }
-.FLNameText {
-  font-size: 8vh;
-}
   .LancasterMenu {
     display: none;
   }

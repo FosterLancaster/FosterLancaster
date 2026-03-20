@@ -1,13 +1,11 @@
 /*---- Interactive Menu ----*/
 .LancasterMenu {
   width: 35px;
-  max-width: 10vh;
+  max-width: calc(10vh - 10px);
   height: 35px;
-  max-height: 10vh;
-  position: relative;
-  top: 0px;
-  right: 0px;
+  max-height: calc(10vh - 10px);
   margin: 5px;
+  position: relative;
   z-index: 5;
   cursor: pointer;
   background-image: url(images/Menu.png);

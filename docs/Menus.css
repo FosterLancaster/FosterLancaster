@@ -1,10 +1,12 @@
 /*---- Interactive Menu ----*/
 .LancasterMenu {
   width: 35px;
-  max-width: calc(10vh - 10px);
   height: 35px;
-  max-height: calc(10vh - 10px);
-  margin: 5px;
+  max-width: calc(10vh - 20px);
+  max-height: calc(10vh - 20px);
+  min-width: 35px;
+  min-height: 35px;
+  margin: 10px;
   position: relative;
   z-index: 5;
   cursor: pointer;

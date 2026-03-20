@@ -49,8 +49,10 @@ a:hover {
   color: #ffff00;
 }
 header {
+  display: flex;
   height: 10vh;
   line-height: 10vh;
+  min-height: 55px;
   overflow: hidden;
   opacity: 1;
   background-color: transparent;
@@ -59,9 +61,7 @@ header {
   top: 0;
   z-index: 6;
   width: auto;
-  display: inline;
   -webkit-tap-highlight-color: transparent;
-  display: flex;  /* vertical centering */
   text-indent: 2px;
 }
 hr {
@@ -127,10 +127,12 @@ footer {
 /* TOP HALF — WHITE */
 .FLNameSayButton {
   width: 35px;
-  max-width: calc(10vh - 10px);
   height: 35px;
-  max-height: calc(10vh - 10px);
-  margin: 5px;
+  max-width: calc(10vh - 20px);
+  max-height: calc(10vh - 20px);
+  min-width: 35px;
+  min-height: 35px;
+  margin: 10px;
   opacity: 1;
   position: relative;
   transition-duration: .2s;
@@ -298,7 +300,7 @@ button {
   top: 50%;
   left: 50%;
   width: 100vw;
-  height: calc(100vh + 10px);
+  height: calc(100dvh + 10px);
   object-fit: cover;
   object-position: center 0px; /* moves crop focus lower */
   transform: translate(-50%, -50%);

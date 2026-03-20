@@ -56,9 +56,8 @@ table {
   border-bottom-right-radius: 20px;
   background-color: transparent;
   background-position: center center;
-  background-size: 100% 300px;
-  animation: rise 2s linear infinite;
-  background-image: linear-gradient(to top, rgb(255, 255, 255, .2), transparent, rgb(255, 255, 255, .2));
+  background-size: cover;
+  background-image: linear-gradient(to left, rgb(0, 0, 0, .5), transparent, rgb(0, 0, 0, .5));
 }
 .LancasterFrame:hover {
   opacity: 1;
@@ -166,7 +165,7 @@ table {
   background-size: 200px auto;
   background-attachment: scroll;
   background-repeat: no-repeat;
-  border: solid 5px #ffffff;
+  border: solid 5px #000000;
   background-color: rgb(255, 255, 0, .2);
   background-image: url('fmp3simages/FostMp3sLogoImprint.png');
 }
@@ -243,7 +242,7 @@ table {
   overflow-y: scroll;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  opacity: .1;
+  opacity: .2;
   transition-duration: .2s;
   pointer-events: none;
   display: block;
@@ -425,7 +424,7 @@ table {
   align-items: center;
   justify-content: center;
   pointer-events: none;        /* clicks pass through */
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(255, 255, 255, .3);
   transition-duration: .8s;
   overflow: hidden;
 }
@@ -541,8 +540,8 @@ input[type="range"]::-webkit-slider-thumb {
 /*------100vh Controls Sum Portrait = (228px - 212 (added 10px for mobile))-------*/
 @media screen and (max-width: 500px) {
 .LancasterFrame {
-  max-width: 100%;
-  width: 100%;
+  max-width: calc(100% - 2px);
+  width: calc(100% - 2px);
   }  
 .Password {
   line-height: 50px;
@@ -653,10 +652,6 @@ input[type="range"]::-webkit-slider-thumb {
   0% { transform: scale(1); }
   50% { transform: scale(.8); }
   100% { transform: scale(1);}
-}
-@keyframes rise {
-  0% { background-position: center 0px; }
-  100% { background-position: center -600px; }
 }
 </style>
 </head>
@@ -795,7 +790,7 @@ input[type="range"]::-webkit-slider-thumb {
   </div>
 </td>
 <td>
-<a href="mailto:fostmp3s@gmail.com" target="_blank">
+<a href="mailto:fosterlancast@gmail.com" target="_blank">
 <img src="fmp3simages/Email.png" class="messageBtn">
 </a>
 </td>

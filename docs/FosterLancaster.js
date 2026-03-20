@@ -33,19 +33,19 @@ gtag('config', 'G-3FVY8XXHWS'); */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  const FLNameAudio  = document.getElementById("FLNameAudio");
-  const FLName = document.getElementById("FLName");
+  const nameaudio  = document.getElementById("nameaudio");
+  const namesayer = document.getElementById("namesayer");
 
 let flickerTimeout = null;
 
-FLName.addEventListener("click", () => {
+namesayer.addEventListener("click", () => {
 
   // --- Audio restart (mobile-safe) ---
-  try { FLNameAudio.pause(); } catch {}
-  try { FLNameAudio.currentTime = 0; } catch {}
-  try { FLNameAudio.load(); } catch {}
+  try { nameaudio.pause(); } catch {}
+  try { nameaudio.currentTime = 0; } catch {}
+  try { nameaudio.load(); } catch {}
 
-  const p = FLNameAudio.play();
+  const p = nameaudio.play();
   if (p && typeof p.catch === "function") p.catch(() => {});
 });
 

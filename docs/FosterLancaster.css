@@ -51,18 +51,28 @@ a:hover {
 header {
   height: 10vh;
   line-height: 10vh;
-  min-height: 45px;
-  width: auto;
   overflow: hidden;
   opacity: 1;
-  background-color: transparent;
+  background-color: #381e00;
+  border-bottom: solid .5px #ffffff80;
   outline: none;
   position: fixed;
   top: 0;
-  z-index: 6;
+  z-index: 5;
+  width: 100vw;
   -webkit-tap-highlight-color: transparent;
   display: flex;  /* vertical centering */
+  background-image: url('images/FosterLancasterLogoOverlay.png');
+  background-size: auto 100%;
+  background-position: center left;
+  background-repeat: no-repeat;
+  justify-content: center;
   text-indent: 2px;
+}
+.headerspace {
+  position: relative;
+  height: 10vh;
+  display: block;
 }
 hr {
   border: solid .5px #ffffff80;
@@ -70,7 +80,7 @@ hr {
   margin: 0px;
 }
 h1 {
-font-size: 25px;
+font-size: 30px;
 line-height: auto;
 }
 section {
@@ -115,36 +125,51 @@ footer {
   align-items: center;         /* vertical centering */
   justify-content: center;     /* horizontal centering */
 }
-/*-------------------FLName---------------------*/
-.FLName {
+.namesayer {
   height: auto;
-  width: auto;              
+  width: auto;  
+  padding-right: 1vw;            /* lock the alignment height */
+  display: flex;
+  align-items: center;          /* vertical center */              /* space between text and image */
   cursor: pointer;
   font-family: 'FL';
+  position: absolute;
   z-index: 2;
-  position: relative;
 }
 /* TOP HALF — WHITE */
-.FLNameSayButton {
-  width: 35px;
-  height: 35px;
-  max-width: calc(10vh - 20px);
-  max-height: calc(10vh - 20px);
-  min-width: 25px;
-  min-height: 25px;
-  margin: 10px;
-  opacity: 1;
-  transition-duration: .2s;
-  background-color: transparent;
+.namewritten {
+  padding: 0px .2em 0px .2em;
+  line-height: 10vh;
   position: relative;
+  z-index: 0;
+  height: auto;
+  width: auto;
+  color: #ffffff;
+  opacity: .9;
+  filter: drop-shadow(0 0 5px #000000);
+  animation: DontSay2 4s linear infinite;
 }
-.FLName:hover .FLNameSayButton {
-  transform: scale(1.2);
+.namesay {
+  opacity: 0;
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 5vh;
+  height: 5vh;
+  transition-duration: .2s;
+  border-radius: 50%;
+  border: double 3px #ffffff;
+  animation: DontSay1 4s linear infinite;
 }
-/*-------------------FLName---------------------*/
+.namesayer:hover .namesay {
+  width: 4vh;
+  height: 4vh;
+}
 /*----NameLetter Styling----*/
 .Page {
-  height: calc((90vh / 6) - 1px);
+  height: calc(90vh / 6);
   font-family: 'FL';
   font-size: 3.2em;
   line-height: 3.2em;
@@ -180,10 +205,10 @@ footer {
   display: block;
 }
 .NavigationFrame {
-  top: 0vh;
+  top: 0dvh;
   right: 0px;
   position: relative;
-  z-index: 5;
+  z-index: 3;
 }
 #Navigation {
   height: 90vh;
@@ -222,35 +247,29 @@ button {
   position: relative;
   display: inline-block;
   transition-duration: .1s;
-  padding: .6em;
+  padding: 0px .6em 0px .6em;
   margin-bottom: -4px;
 }
 .SocialMedia:hover {
   transform: scale(1.2);
 }
 .MusicVideo {
-  width: 100%;
-  height: 100%;
+  width: calc(100% - 2px);
+  height: 50vh;
+  max-height: 50vw;
   transition-duration: .5s;
   display: block;
   pointer-events: none;
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  opacity: .25;
 }
 .MusicVideoContainer {
-  margin: 0px 10px 40px 10px;
-  width: calc(100% - 30px);
-  height: 50vh;
-  max-height: 50vw;
-  background-color: transparent;
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  overflow: hidden;
-  padding: 5px;
-  background-image: linear-gradient(to top, rgb(255, 255, 255, .3), transparent, rgb(255, 255, 255, .3));
+  border-radius: 10px;
+  background-color: #381e00;
+  border: solid 1px #ffffff;
+  margin: 10px 0px 10px 0px;
 }
 .MusicVideoContainer:hover {
-  opacity: .5;
+  filter: brightness(1.5);
 }
 .FLmediaicon {
   height: 18px;
@@ -277,11 +296,11 @@ button {
 }
 .FirstVideoScreen {
   position: absolute;
-  top: 0;          /* keep your spacing */
+  top: 10vh;          /* keep your spacing */
   left: 0;
   width: 100vw;
   max-width: 100vw;
-  height: 100vh;
+  height: 90vh;
   background-color: transparent;
   display: flex;
   justify-content: center;
@@ -300,7 +319,7 @@ button {
   top: 50%;
   left: 50%;
   width: 100vw;
-  height: calc(100vh + 10px);
+  height: calc(90dvh + 10px);
   object-fit: cover;
   object-position: center 0px; /* moves crop focus lower */
   transform: translate(-50%, -50%);
@@ -309,9 +328,12 @@ button {
 }
 
 @media screen and (orientation: portrait) {
-header {
-    right: 0px;
-  }
+.namesayer {
+  transform-origin: center;
+}
+.namewritten {
+  font-size: 8vw;
+}
   .Page {
   height: calc(90dvh / 6);
   background-size: auto calc(90vh / 6);
@@ -324,7 +346,7 @@ header {
   .SocIcon {
     width: 4vw;   /* made larger so the image is actually visible */
     height: 4vw;
-    padding: 4vw;
+    padding: 2vw;
     margin: 1vw;
   }
   section {
@@ -332,7 +354,7 @@ header {
     max-width: 100%;
   }
   .NavigationFrame {
-    top: 10vh;
+    top: 10dvh;
     position: fixed;
     z-index: 3;
   }
@@ -340,11 +362,24 @@ header {
     width: 200vh;
     height: 200vw;
   }
+  .Intro { 
+  height: 40vh; 
+  top: calc(50% - 20vh);
+}
+.PageIndex {
+  width: 32vw;
+}
 }
 
 @media screen and (orientation: landscape) {
-header {
-    left: 0px;
+.namesayer {
+  transform-origin: right;
+}
+.namewritten {
+  font-size: 8vh;
+}
+  header {
+    justify-content: right;
   }
   .LancasterMenu {
     display: none;
@@ -377,6 +412,13 @@ header {
     min-width: 200vh;
     min-height: 200vw;
   }
+  .Intro { 
+    height: 80vh; 
+    top: calc(50% - 40vh);
+  }
+  .PageIndex {
+    width: 16vw;
+  }
 }
 
 /* ----Responsive Layout---- */
@@ -388,7 +430,7 @@ header {
   .Title {
     font-size: 1.6em;
   }
-  .PageText {
+  .PageIndex {
     font-size: 1.6em;
   }
 }
@@ -401,7 +443,7 @@ header {
     .Title {
     font-size: .7em;
   }
-    .PageText {
+    .PageIndex {
     font-size: .7em;
   }
 }
@@ -414,15 +456,9 @@ header {
     .Title {
     font-size: .45em;
   }
-    .PageText {
+    .PageIndex {
     font-size: .45em;
   }
-}
-
-@media screen and (min-height: 600px) and (min-width: 600px)  and (orientation: landscape) {
-  .PageText {
-  font-size: 7.5vh;
-}
 }
 
 @media screen and (max-width: 500px) and (orientation: portrait) {
@@ -437,11 +473,27 @@ header {
   .Title {
     font-size: 8vw;
   }
-  .PageText {
+  .PageIndex {
     font-size: 8vw;
   }
   .WikiProfile {
     width: calc(100% - 32px);
     max-width: calc(100% - 32px);
   }
+}
+
+
+@keyframes DontSay1 {
+  0% { opacity: 0; }
+  40% { opacity: 0; }
+  50% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes DontSay2 {
+  0% {color: #ffffff; filter: blur(0px);}
+  40% {color: #ffffff; filter: blur(0px);}
+  50% {color: #7c7c7c; filter: blur(5px);}
+  90% {color: #7c7c7c; filter: blur(5px);}
+  100% {color: #ffffff; filter: blur(0px);}
 }

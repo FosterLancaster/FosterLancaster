@@ -308,6 +308,9 @@ button {
 }
 
 @media screen and (orientation: portrait) {
+header {
+    justify-content: right;
+  }
   .Page {
   height: calc(90dvh / 6);
   background-size: auto calc(90vh / 6);

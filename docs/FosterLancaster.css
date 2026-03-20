@@ -353,6 +353,9 @@ button {
 }
 
 @media screen and (orientation: landscape) {
+header {
+    justify-content: left;
+  }
 .FLNameText {
   font-size: 8vh;
 }

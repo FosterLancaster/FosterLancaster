@@ -4,7 +4,7 @@
   max-width: calc(10vh - 20px);
   height: 35px;
   max-height: calc(10vh - 20px);
-  position: fixed;
+  position: relative;
   top: 0px;
   right: 0px;
   margin: 10px;

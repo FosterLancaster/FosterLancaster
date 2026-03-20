@@ -131,15 +131,15 @@ footer {
   max-width: 10vh;
   height: 35px;
   max-height: 10vh;
+  margin: 5px;
   opacity: 1;
   position: relative;
   z-index: 5;
   transition-duration: .2s;
-  border-radius: 50%;
   background-color: transparent;
 }
 .FLName:hover .FLNameSayButton {
-  transform: scale(1.5);
+  transform: scale(1.2);
 }
 /*-------------------FLName---------------------*/
 /*----NameLetter Styling----*/

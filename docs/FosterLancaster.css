@@ -51,9 +51,10 @@ a:hover {
 header {
   display: inline-flex;
   height: 10vh;
+  min-width: 10vh;
   min-height: 55px;
   width: auto;
-  overflow: hidden;
+  overflow: visible;
   opacity: 1;
   outline: none;
   position: fixed;
@@ -375,10 +376,6 @@ header {
   #Player {
     min-width: 200vh;
     min-height: 200vw;
-  }
-  .Intro { 
-    height: 80vh; 
-    top: calc(50% - 40vh);
   }
 }
 

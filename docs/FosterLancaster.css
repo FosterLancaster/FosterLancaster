@@ -63,7 +63,6 @@ header {
   -webkit-tap-highlight-color: transparent;
   display: flex;  /* vertical centering */
   text-indent: 2px;
-  justify-content: right;
 }
 hr {
   border: solid .5px #ffffff80;
@@ -309,7 +308,7 @@ button {
 
 @media screen and (orientation: portrait) {
 header {
-    justify-content: right;
+    right: 0px;
   }
   .Page {
   height: calc(90dvh / 6);
@@ -347,7 +346,7 @@ header {
 
 @media screen and (orientation: landscape) {
 header {
-    justify-content: left;
+    left: 0px;
   }
   .LancasterMenu {
     display: none;

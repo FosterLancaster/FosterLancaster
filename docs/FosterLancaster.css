@@ -53,7 +53,6 @@ header {
   line-height: 10vh;
   min-height: 45px;
   width: auto;
-  display: inline;
   overflow: hidden;
   opacity: 1;
   background-color: transparent;
@@ -341,10 +340,6 @@ header {
     width: 200vh;
     height: 200vw;
   }
-  .Intro { 
-  height: 40vh; 
-  top: calc(50% - 20vh);
-}
 }
 
 @media screen and (orientation: landscape) {
@@ -381,10 +376,6 @@ header {
   #Player {
     min-width: 200vh;
     min-height: 200vw;
-  }
-  .Intro { 
-    height: 80vh; 
-    top: calc(50% - 40vh);
   }
 }
 

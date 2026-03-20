@@ -57,7 +57,7 @@ header {
   outline: none;
   position: fixed;
   top: 0;
-  z-index: 5;
+  z-index: 4;
   width: 100vw;
   -webkit-tap-highlight-color: transparent;
   display: flex;  /* vertical centering */
@@ -183,7 +183,7 @@ footer {
   top: 0vh;
   right: 0px;
   position: relative;
-  z-index: 3;
+  z-index: 5;
 }
 #Navigation {
   height: 90vh;

@@ -324,11 +324,6 @@ table {
   z-index: 0;
   transition-duration: .5s;
 }
-.MusicButton {
-  height: auto;
-  width: auto;
-  position: relative;
-}
 .BuyButtonIcon {
   width: auto;
   height: 1.5em;
@@ -376,9 +371,6 @@ table {
 .nextprev-btn:hover {
   background-color: rgba(255, 255, 0, .5);
 }
-.Complete {
-  animation: clickhere2 1s linear infinite;
-}
 #playBtn {
   cursor: pointer;
   box-shadow: none;
@@ -407,6 +399,12 @@ table {
   width: 90px;
   max-width: 80%;
 }
+.MusicButton {
+  height: auto;
+  width: auto;
+  position: relative;
+  animation: clickhere2 1s linear infinite;
+}
 /* Listen counter badge */
 .listenCounter {
   color: #ffffff;
@@ -414,12 +412,12 @@ table {
   position: relative;
   height: 0px;
   width: 100%;
-  max-height: 25px;
-  line-height: 25px;
-  margin-top: -25px;
+  max-height: 20px;
+  line-height: 20px;
+  margin-top: -20px;
   top: 0px;
   z-index: 3;                  /* above play button */
-  font-size: 12px;
+  font-size: 13px;
   opacity: 0;
   display: block;
   align-items: center;
@@ -748,14 +746,14 @@ input[type="range"]::-webkit-slider-thumb {
 <table>
 <td id="buyBtn"> 
 <a href="https://www.paypal.com/ncp/payment/KU5W8WACXP7N2" target="_blank">
-<div class="Complete">
-<img src="fmp3simages/PWKEY.png" id="buyLogo" class="MusicButton">
+<div class="MusicButton">
+<img src="fmp3simages/PWKEY.png" id="buyLogo">
 </div>
 </a>
 </td> 
 <td id="playBtn">
-<div class="Complete">
-<img src="fmp3simages/PLAY.png" id="playLogo" class="MusicButton">
+<div class="MusicButton">
+<img src="fmp3simages/PLAY.png" id="playLogo">
 </div>
 <div class="listenCounter"><span id="listenCounter">4</span>&nbsp;Listens&nbsp;Left</div>
 </td>  

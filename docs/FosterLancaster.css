@@ -51,14 +51,14 @@ a:hover {
 header {
   display: inline-flex;
   height: 10vh;
-  min-width: 10vh;
-  min-height: 55px;
-  width: auto;
+  width: 10vh;
+  line-height: 10vh;
+  position: fixed;
+  top: 0;
+  left: calc(50% - 5vh);
   overflow: visible;
   opacity: 1;
   outline: none;
-  position: fixed;
-  top: 0;
   z-index: 6;
 }
 hr {
@@ -102,11 +102,11 @@ footer {
   font-size: 1.5em;
   min-height: 10vh;
   line-height: 10vh;
+  padding-top: 10vh;
   overflow: visible;
   position: relative;
   text-align: center;
   width: auto;
-  padding: 0;
   border-radius: 5px;
   display: flex;               /* changed from inline-block to flex */
   align-items: center;         /* vertical centering */
@@ -123,13 +123,8 @@ footer {
 }
 /* TOP HALF — WHITE */
 .FLNameSayButton {
-  width: 35px;
-  height: 35px;
-  max-width: calc(10vh - 20px);
-  max-height: calc(10vh - 20px);
-  min-width: 35px;
-  min-height: 35px;
-  margin: 10px;
+  width: 10vh;
+  height: 10vh;
   opacity: 1;
   position: relative;
   transition-duration: .2s;
@@ -305,9 +300,6 @@ button {
 }
 
 @media screen and (orientation: portrait) {
-header {
-    right: 0px;
-  }
   .Page {
   height: calc(90dvh / 6);
   background-size: auto calc(90vh / 6);
@@ -343,9 +335,6 @@ header {
 }
 
 @media screen and (orientation: landscape) {
-header {
-  left: 0px;
-  }
   .LancasterMenu {
     display: none;
   }

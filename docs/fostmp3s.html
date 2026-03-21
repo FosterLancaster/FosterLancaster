@@ -1023,22 +1023,29 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const togglePlayPause = () => {
-    if (!audio) return;
+  if (!audio) return;
 
-    if (audio.paused) {
-      const p = audio.play();
-      if (p && typeof p.then === "function") {
-        p.then(() => {
-          if (playLogo) playLogo.src = 'fmp3simages/PAUSE.png';
-          defaultImage && defaultImage.classList.add('playing');
-        }).catch(() => {});
-      }
-    } else {
-      audio.pause();
-      if (playLogo) playLogo.src = 'fmp3simages/PLAY.png';
-      defaultImage && defaultImage.classList.remove('playing');
+  if (audio.paused) {
+    // 🔹 Update UI FIRST
+    if (playLogo) playLogo.src = 'fmp3simages/PAUSE.png';
+    defaultImage && defaultImage.classList.add('playing');
+
+    const p = audio.play();
+    if (p && typeof p.then === "function") {
+      p.catch(() => {
+        // 🔹 Revert UI if play fails
+        if (playLogo) playLogo.src = 'fmp3simages/PLAY.png';
+        defaultImage && defaultImage.classList.remove('playing');
+      });
     }
-  };
+  } else {
+    // 🔹 Update UI FIRST
+    if (playLogo) playLogo.src = 'fmp3simages/PLAY.png';
+    defaultImage && defaultImage.classList.remove('playing');
+
+    audio.pause();
+  }
+};
 
   const handleSongButtonClick = (index) => {
     // When Clicking A Song

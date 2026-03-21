@@ -129,8 +129,10 @@ footer {
   position: relative;
   transition-duration: .2s;
   background-color: transparent;
+  opacity: .7;
 }
 .FLName:hover .FLNameSayButton {
+  opacity: 1;
   transform: scale(1.2);
 }
 /*-------------------FLName---------------------*/

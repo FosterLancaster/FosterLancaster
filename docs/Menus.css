@@ -1,12 +1,7 @@
 /*---- Interactive Menu ----*/
 .LancasterMenu {
-  width: 35px;
-  height: 35px;
-  max-width: calc(10vh - 20px);
-  max-height: calc(10vh - 20px);
-  min-width: 35px;
-  min-height: 35px;
-  margin: 10px;
+  width: 10vh;
+  height: 10vh;
   position: fixed;
   top: 0px;
   right: 0px;
@@ -15,15 +10,18 @@
   background-image: url(images/Menu.png);
   background-position: center center;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: 65%;
   background-repeat: no-repeat;
   border-radius: 50%;
   background-color: transparent;
   transition-duration: .5s;
   transform: rotate(0deg);
+  opacity: .7;
+}
+.LancasterMenu:hover {
+  opacity: 1;
 }
 .LancasterMenu.active {
-  opacity: .5;
   animation: none;
   transform: rotate(360deg);
 }

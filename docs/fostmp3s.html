@@ -965,46 +965,51 @@ document.addEventListener("DOMContentLoaded", () => {
     return false;
   };
 
-  // Set Song as Playing
+
+//-------------While Loading Fix-----------
+
   const playSong = (index) => {
-    if (!audio) return;
+  if (!audio) return;
 
-    // Update if Haven't Updated
-    if (!decrementListenCount()) return;
+  // Update if Haven't Updated
+  if (!decrementListenCount()) return;
 
-    // Stop intro audio if it was playing (since we’re starting a real song)
-    if (introAudio) {
-      try { introAudio.pause(); } catch {}
-      try { introAudio.currentTime = 0; } catch {}
-    }
+  // 🔹 CHANGE UI IMMEDIATELY (while loading)
+  if (playLogo) playLogo.src = 'fmp3simages/PAUSE.png';
+  defaultImage && defaultImage.classList.add('playing');
 
-    // Organize Song Order
-    const btn = songButtons[index];
-    if (!btn) return;
+  // Stop intro audio if it was playing
+  if (introAudio) {
+    try { introAudio.pause(); } catch {}
+    try { introAudio.currentTime = 0; } catch {}
+  }
 
-    const songPath = btn.dataset.song;
-    if (!songPath) return;
+  const btn = songButtons[index];
+  if (!btn) return;
 
-    const preloadedAudio = audioPreload[songPath];
+  const songPath = btn.dataset.song;
+  if (!songPath) return;
 
-    if (preloadedAudio) {
-      // For All Preloaded Audio
-      audio.src = preloadedAudio.src;
-    } else {
-      audio.src = songPath;
-    }
+  const preloadedAudio = audioPreload[songPath];
 
-    audio.load();
-    audio.currentTime = 0;
+  if (preloadedAudio) {
+    audio.src = preloadedAudio.src;
+  } else {
+    audio.src = songPath;
+  }
 
-    const p = audio.play();
-    if (p && typeof p.then === "function") {
-      p.then(() => {
-        if (playLogo) playLogo.src = 'fmp3simages/PAUSE.png';
-        defaultImage && defaultImage.classList.add('playing');
-      }).catch(() => {});
-    }
-  };
+  audio.load();
+  audio.currentTime = 0;
+
+  const p = audio.play();
+  if (p && typeof p.then === "function") {
+    p.catch(() => {
+      // 🔹 Revert if play fails
+      if (playLogo) playLogo.src = 'fmp3simages/PLAY.png';
+      defaultImage && defaultImage.classList.remove('playing');
+    });
+  }
+};
 
   const selectSong = (index) => {
     // Reset Current Song

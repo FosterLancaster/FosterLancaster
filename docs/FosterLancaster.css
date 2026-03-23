@@ -68,7 +68,7 @@ line-height: auto;
 }
 section {
   /*--------Important---------*/
-  min-height: 100dvh;
+  min-height: 90vh;
   /*--------Important---------*/
   position: relative;
   height: auto;

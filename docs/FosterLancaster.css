@@ -74,6 +74,7 @@ section {
   position: relative;
 }
 article {
+  position: relative;
   height: auto;
   display: block;
 }

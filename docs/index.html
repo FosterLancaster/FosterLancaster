@@ -33,7 +33,6 @@
 <link rel="stylesheet" href="Menus.css">
 <style>
 .fostmp3s {
-  width: 200px;
   height: 400px;
   position: absolute;
   bottom: 0px;
@@ -42,12 +41,17 @@
   .fostmp3s {
   right: 0px;
   width: 200px;
-  height: 400px;
 }
 }
 @media screen and (orientation: landscape) {
   .fostmp3s { 
   left: 0px;
+  width: 200px;
+}
+@media screen and (min-width: 1000px) and (orientation: landscape) {
+  .fostmp3s { 
+  left: 0px;
+  width: 400px;
 }
 }
 </style>

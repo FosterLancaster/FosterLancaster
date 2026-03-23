@@ -50,15 +50,11 @@ a:hover {
 }
 header {
   display: inline-flex;
-  height: 10vh;
-  width: 10vh;
-  line-height: 10vh;
   position: fixed;
-  top: 0;
-  left: calc(50% - 5vh);
   overflow: visible;
   opacity: 1;
   outline: none;
+  top: 0px;
   z-index: 6;
 }
 hr {
@@ -94,7 +90,6 @@ footer {
   text-align: right;
 }
 .Title {
-  /* ----- American Flag Writing -----*/
  /* Outline width */
   background-color: #ffffff;
   background-clip: text;
@@ -123,8 +118,6 @@ footer {
 }
 /* TOP HALF — WHITE */
 .FLNameSayButton {
-  width: 10vh;
-  height: 10vh;
   opacity: 1;
   position: relative;
   transition-duration: .2s;
@@ -297,6 +290,16 @@ button {
 }
 
 @media screen and (orientation: portrait) {
+  header {
+    height: 10vh;
+    width: 10vh;
+    line-height: 10vh;
+    left: calc(50% - 5vh);
+  }
+  .FLNameSayButton {
+    width: 10vh;
+    height: 10vh;
+  }
   .Page {
   height: calc(90dvh / 6);
   background-size: auto calc(90vh / 6);
@@ -325,13 +328,20 @@ button {
     width: 200vh;
     height: 200vw;
   }
-  .Intro { 
-  height: 40vh; 
-  top: calc(50% - 20vh);
-}
 }
 
 @media screen and (orientation: landscape) {
+  header {
+    height: 20vh;
+    width: 20vh;
+    line-height: 20vh;
+    padding: 2vh;
+    left: 0px;
+  }
+  .FLNameSayButton {
+    width: 20vh;
+    height: 20vh;
+  }
   .LancasterMenu {
     display: none;
   }
@@ -405,14 +415,9 @@ button {
   }
 }
 
-@media screen and (min-height: 550px) and (min-width: 550px)  and (orientation: landscape) {
+@media screen and (min-height: 550px) and (min-width: 550px) and (orientation: landscape) {
 .PageText {
   font-size: 6vh;
-}
-.FLNameSayButton {
-  width: 70px;
-  height: 70px;
-  margin: 10px;
 }
 }
 

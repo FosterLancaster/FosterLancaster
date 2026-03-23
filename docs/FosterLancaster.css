@@ -69,11 +69,12 @@ line-height: auto;
 section {
   position: relative;
   height: 100%;
+  min-height: 90vh;
   width: 68vw; 
   max-width: 68vw;
 }
 article {
-  /*-----------No Relative Within Relative------*/
+/*-----------No Relative Within Relative------*/
   height: auto;
   display: block;
 }

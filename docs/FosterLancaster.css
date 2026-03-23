@@ -67,11 +67,13 @@ font-size: 25px;
 line-height: auto;
 }
 section {
+  /*--------Important---------*/
+  min-height: 90vh;
+  /*--------Important---------*/
+  position: relative;
   height: auto;
-  min-height: 100%;
   width: 68vw; 
   max-width: 68vw;
-  position: relative;
 }
 article {
   position: relative;
@@ -423,9 +425,6 @@ button {
 }
 
 @media screen and (max-width: 500px) and (orientation: portrait) {
-  article {
-    top: 14vw;
-  }
   .Page {
     font-size: 8vw;
     line-height: 8vw;

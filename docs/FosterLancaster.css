@@ -361,7 +361,6 @@ button {
     opacity: 1;
   }
   section {
-    min-height: 90vh;
     width: 68vw;
     max-width: 68vw;
   }

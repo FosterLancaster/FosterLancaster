@@ -68,7 +68,7 @@ line-height: auto;
 }
 section {
   /*--------Important---------*/
-  min-height: 90dvh;
+  min-height: 90vh;
   /*--------Important---------*/
   position: relative;
   height: auto;
@@ -363,10 +363,6 @@ button {
   section {
     width: 68vw;
     max-width: 68vw;
-  }
-  .Segment {
-    width: 50%;
-    min-width: 500px;
   }
   #Navigation {
     width: 33vw;

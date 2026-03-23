@@ -67,16 +67,13 @@ font-size: 25px;
 line-height: auto;
 }
 section {
-  /*--------Important---------*/
-  min-height: 90dvh;
-  /*--------Important---------*/
   position: relative;
-  height: auto;
+  height: 100%;
   width: 68vw; 
   max-width: 68vw;
 }
 article {
-  position: relative;
+  /*-----------No Relative Within Relative------*/
   height: auto;
   display: block;
 }

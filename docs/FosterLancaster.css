@@ -160,13 +160,8 @@ footer {
 .Page:hover {
   filter: brightness(1.5);
 }
-.Page:hover .PageText{
-  transform: scale(.8);
-}
 .PageText {
   color: #ffffff;
-  transition-duration: .2s;
-  transform: scale(1);
 }
 #Menu {
   position: fixed;

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <!----Foster Lancaster---->
-<title>FOSTMp3's version 2.1</title>
+<title>FOSTMp3's version 2.0</title>
 <!----Style Sheets---->
 
 <!----Fost Mp3's----
@@ -69,6 +69,7 @@ table {
 }
 .LancasterFrame:hover .songSelection {
   opacity: 1;
+  pointer-events: all;
 }
 .LancasterFrame:hover .ControlBar {
   height: 40px;
@@ -190,9 +191,8 @@ table {
   table-layout: fixed;        /* 🔑 forces equal-width cells */
 }
 .EngageBar td {                 /* each td = half */
-  display: flex;              /* 🔑 THIS is the fix */
-  justify-content: center;    /* horizontal */
-  align-items: center;        /* vertical */
+  text-align: center;
+  vertical-align: middle;     /* vertical center for table */
   padding: 0;
   outline: none;
   box-shadow: none;
@@ -245,6 +245,7 @@ table {
   border-bottom-right-radius: 20px;
   opacity: 0;
   transition-duration: .2s;
+  pointer-events: none;
   display: block;
 }
 .OffMusicHeader {
@@ -371,10 +372,6 @@ table {
   background-color: rgba(255, 255, 0, .5);
 }
 #playBtn {
-  position: relative;   /* needed for absolute child */
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
   box-shadow: none;
   border: none;
@@ -406,21 +403,19 @@ table {
   height: auto;
   width: auto;
   position: relative;
-  animation: glow linear 2s infinite;
+  animation: clickhere2 1s linear infinite;
 }
 /* Listen counter badge */
 .listenCounter {
   color: #ffffff;
   font-family: 'futura';
-  position: absolute;   /* 🔑 KEY FIX */
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
   height: 0px;
-  width: auto;
+  width: 100%;
   max-height: 20px;
   line-height: 20px;
   margin-top: -20px;
+  top: 0px;
   z-index: 3;                  /* above play button */
   font-size: 13px;
   opacity: 0;
@@ -646,10 +641,10 @@ input[type="range"]::-webkit-slider-thumb {
   50% { opacity: 0; }
   100% { opacity: 1; }
 }
-@keyframes glow {
-  0%   { box-shadow: 0 0 7px #ffff00; }
-  50%  { box-shadow: 0 0 0px #ffff00; }
-  100% { box-shadow: 0 0 7px #ffff00; }
+@keyframes clickhere2 {
+  0% { transform: scale(1); }
+  50% { transform: scale(.8); }
+  100% { transform: scale(1);}
 }
 @keyframes rise {
   0% { background-position: center 0px; }
@@ -749,18 +744,18 @@ input[type="range"]::-webkit-slider-thumb {
 <!-----Engage Bar---->
 <div class="EngageBar">
 <table>
-<td>
-<div class="MusicButton" id="buyBtn"> 
+<td id="buyBtn"> 
 <a href="https://www.paypal.com/ncp/payment/KU5W8WACXP7N2" target="_blank">
+<div class="MusicButton">
 <img src="fmp3simages/PWKEY.png" id="buyLogo">
+</div>
 </a>
-</div>
 </td> 
-<td>
-<div class="MusicButton" id="playBtn">
+<td id="playBtn">
+<div class="MusicButton">
 <img src="fmp3simages/PLAY.png" id="playLogo">
-<div class="listenCounter"><span id="listenCounter">10</span>&nbsp;Listens&nbsp;Left</div>
 </div>
+<div class="listenCounter"><span id="listenCounter">4</span>&nbsp;Listens&nbsp;Left</div>
 </td>  
 </table>
 </div>

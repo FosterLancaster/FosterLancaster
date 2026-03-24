@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!----Foster Lancaster---->
+<title>Name Reflect version 1.0</title>
+<!----Style Sheets---->
+
+<!----Name Reflect----
+<iframe src="https://fostmp3s.com/name_reflect.html" style="border: none;"></iframe>
+<-----Name Reflect---->
+
+<style>
+body {
+  background-color: transparent;
+}
+/*-------------------FLName---------------------*/
+.FLName {
+  height: auto;
+  width: auto;              
+  cursor: pointer;
+  font-family: 'FL';
+  z-index: 2;
+  position: relative;
+  border: none;
+}
+/* TOP HALF — WHITE */
+.FLNameSayButton {
+  opacity: 1;
+  position: relative;
+  transition-duration: .2s;
+  background-color: transparent;
+  opacity: .7;
+}
+.FLName:hover .FLNameSayButton {
+  opacity: 1;
+  transform: scale(1.2);
+}
+/*-------------------FLName---------------------*/
+@media screen and (orientation: portrait) {
+  .FLNameSayButton {
+    width: 10vh;
+    height: 10vh;
+  }
+}
+@media screen and (orientation: landscape) {
+  .FLNameSayButton {
+    width: 20vh;
+    height: 20vh;
+  }
+}
+</style>
+</head>
+<body>
+  
+  <div class="FLName" id="FLName" title="Foster Lancaster" alt="Foster Lancaster">
+    <img class="FLNameSayButton" src="name_reflect/name_reflect_button.png">
+    <audio id="FLNameAudio" src="name_reflect/name_reflect_audio.mp3" playsinline></audio>
+    </div>
+              
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+const FLNameAudio  = document.getElementById("FLNameAudio");
+const FLName = document.getElementById("FLName");
+
+let flickerTimeout = null;
+
+FLName.addEventListener("click", () => {
+
+// --- Audio restart (mobile-safe) ---
+try { FLNameAudio.pause(); } catch {}
+try { FLNameAudio.currentTime = 0; } catch {}
+try { FLNameAudio.load(); } catch {}
+
+const p = FLNameAudio.play();
+if (p && typeof p.catch === "function") p.catch(() => {});
+});
+
+});
+</script>
+
+</body>
+</html>

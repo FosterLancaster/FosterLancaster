@@ -270,8 +270,7 @@ button {
 
 @media screen and (orientation: portrait) {
   header {
-    height: 10vh;
-    width: 10vh;
+    height: auto;
     line-height: 10vh;
     left: calc(50% - 5vh);
   }
@@ -307,9 +306,7 @@ button {
 
 @media screen and (orientation: landscape) {
   header {
-    height: 20vh;
-    width: 20vh;
-    line-height: 20vh;
+    height: auto;
     padding: 2vh;
     left: 0px;
   }

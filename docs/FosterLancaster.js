@@ -1,34 +1,3 @@
-//Google Ads
-(function () {
-  const gtagScript = document.createElement("script");
-  gtagScript.async = true;
-  gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=AW-841279565";
-  document.head.appendChild(gtagScript);
-
-  window.dataLayer = window.dataLayer || [];
-
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-
-  window.gtag = gtag;
-
-  gtag('js', new Date());
-  gtag('config', 'AW-841279565');
-})();
-
-
-
-// Attach resize event
-window.addEventListener('resize', ScreenResize);
-
-/*
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'G-3FVY8XXHWS'); */
-
 // NameSayer
 
 document.addEventListener("DOMContentLoaded", () => {

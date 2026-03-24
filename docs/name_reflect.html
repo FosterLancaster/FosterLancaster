@@ -10,6 +10,15 @@
 <-----Name Reflect---->
 
 <style>
+body {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 6;
+    top: 0px;
+    left: 0px;
+    background-color: transparent;
+  }
 /*-------------------FLName---------------------*/
 .FLName {
   height: auto;
@@ -21,9 +30,6 @@
 }
 /* TOP HALF — WHITE */
 .FLNameSayButton {
-  width: 10vh;
-  height: 10vh;
-  opacity: 1;
   position: relative;
   transition-duration: .2s;
   background-color: transparent;
@@ -33,10 +39,18 @@
   opacity: 1;
   transform: scale(1.2);
 }
+@media screen and (orientation: portrait) {
+  .FLNameSayButton {
+  width: 15vh;
+  height: 15vh;
+  left: calc(50% - 7.5vh);
+}
+}
 @media screen and (orientation: landscape) {
   .FLNameSayButton {
-  width: 20vh;
-  height: 20vh;
+  width: 25vh;
+  height: 25vh;
+  position: 2.5vh;
 }
 }
 </style>

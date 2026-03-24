@@ -56,6 +56,7 @@ header {
   outline: none;
   top: 0px;
   z-index: 6;
+  height: 0px;
 }
 hr {
   border: solid .5px #ffffff80;
@@ -269,11 +270,6 @@ button {
 }
 
 @media screen and (orientation: portrait) {
-  header {
-    height: auto;
-    line-height: 10vh;
-    left: calc(50% - 5vh);
-  }
   .Page {
   height: calc(90dvh / 6);
   background-size: auto calc(90vh / 6);
@@ -305,11 +301,6 @@ button {
 }
 
 @media screen and (orientation: landscape) {
-  header {
-    height: auto;
-    padding: 2vh;
-    left: 0px;
-  }
   .FLNameSayButton {
     width: 20vh;
     height: 20vh;

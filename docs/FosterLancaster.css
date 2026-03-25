@@ -49,12 +49,15 @@ a:hover {
   color: #ffff00;
 }
 header {
-  display: inline-flex;
+  display: flex;               
+  text-align: center;      
+  align-items: center;           
   position: fixed;
+  top: 0;
+  width: 100%;             
   overflow: visible;
   opacity: 1;
   outline: none;
-  top: 0px;
   z-index: 6;
 }
 hr {
@@ -114,20 +117,29 @@ footer {
   width: auto;              
   cursor: pointer;
   font-family: 'FL';
-  z-index: 2;
+  z-index: 3;
   position: relative;
+  opacity: .7;
 }
-/* TOP HALF — WHITE */
+.FLNameWritten {
+  font-family: "FL";
+  font-size: 1.8em;
+  line-height: 1.8em;
+  margin: 0em .4em 0em .4em;
+  width: auto;
+  color: #ffffff;
+  display: block;
+  }
 .FLNameSayButton {
   opacity: 1;
   position: relative;
-  transition-duration: .2s;
   background-color: transparent;
-  opacity: .7;
+  display: none;
 }
-.FLName:hover .FLNameSayButton {
+.FLName:hover {
   opacity: 1;
-  transform: scale(1.2);
+  transform: scale(1.1);
+  transition-duration: .2s;
 }
 /*-------------------FLName---------------------*/
 /*----NameLetter Styling----*/
@@ -292,10 +304,7 @@ button {
 
 @media screen and (orientation: portrait) {
   header {
-    height: 10vh;
-    width: 10vh;
-    line-height: 10vh;
-    left: calc(50% - 5vh);
+    justify-content: center;                    
   }
   .FLNameSayButton {
     width: 10vh;
@@ -333,15 +342,11 @@ button {
 
 @media screen and (orientation: landscape) {
   header {
-    height: 20vh;
-    width: 20vh;
-    line-height: 20vh;
-    padding: 2vh;
-    left: 0px;
+    left: 0%;                      
   }
   .FLNameSayButton {
-    width: 20vh;
-    height: 20vh;
+    width: 25vh;
+    height: 25vh;
   }
   .LancasterMenu {
     display: none;
@@ -375,13 +380,13 @@ button {
 @media screen and (max-height: 600px) {
     /* ----Middle---- */
   .Page {
-    font-size: 1.6em;
+    font-size: 1.2em;
   }
   .Title {
-    font-size: 1.6em;
+    font-size: 1.2em;
   }
   .PageText {
-    font-size: 1.6em;
+    font-size: 1.2em;
   }
 }
 
@@ -396,6 +401,9 @@ button {
     .PageText {
     font-size: .7em;
   }
+  .FLNameWritten {
+    font-size: .8em;
+    }
 }
 
 @media screen and (max-height: 200px) {
@@ -411,7 +419,7 @@ button {
   }
 }
 
-@media screen and (min-height: 550px) and (min-width: 550px) and (orientation: landscape) {
+@media screen and (min-height: 500px) and (min-width: 500px) and (orientation: landscape) {
 .PageText {
   font-size: 6vh;
 }
@@ -434,3 +442,13 @@ button {
     max-width: calc(100% - 32px);
   }
 }
+
+/*---------Name Functional---------*/ 
+@supports (-webkit-touch-callout: none) {
+  .FLNameWritten {
+    display: none;
+  }
+  .FLNameSayButton {
+    display: block;
+  }
+  }

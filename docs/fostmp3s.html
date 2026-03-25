@@ -67,8 +67,12 @@ table {
   background-image: none;
   opacity: .9;
 }
-.LancasterFrame:hover .songSelection {
+.LancasterFrame:hover .songSelection:hover {
   opacity: 1;
+  pointer-events: all;
+}
+.songSelection:hover {
+  pointer-events: all;
 }
 .LancasterFrame:hover .ControlBar {
   height: 40px;
@@ -245,6 +249,7 @@ table {
   opacity: 0;
   transition-duration: .2s;
   display: block;
+  pointer-events: none;
 }
 .OffMusicHeader {
   height: calc((100vh - 202px) / 4);
@@ -732,7 +737,7 @@ input[type="range"]::-webkit-slider-thumb {
       <div class="PasswordUnlockBar">
         <div id="passwordUnlock" class="PasswordBar">
           <input id="passwordInput" class="Password" type="password" placeholder="* * * *"/>
-          <div class="PasswordSubmit" id="passwordSubmit" onclick="submitPassword()">Enter</div>
+          <div class="PasswordSubmit" id="passwordSubmit" onclick="submitPassword()"><img style="height: 100%; width: auto;" src="fmp3simages/Unlock.png"></div>
         </div>
         </div>
                 <audio class="audio-player" id="audio" preload="auto">
@@ -1183,7 +1188,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Reset
       if (Password) {
         Password.value = '';                    // clear the text
-        Password.placeholder = '✓ Approved';    // new placeholder
+        Password.placeholder = '✓';    // new placeholder
       }
 
       // Red (your note said Red but this is green; leaving your note)
@@ -1197,7 +1202,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (Password) {
         Password.value = '';                    // clear the text
-        Password.placeholder = '× Incorrect';   // new placeholder
+        Password.placeholder = '×';   // new placeholder
       }
 
       // Green (your note said Green but this is red; leaving your note)

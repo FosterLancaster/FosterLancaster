@@ -71,9 +71,6 @@ table {
   opacity: 1;
   pointer-events: all;
 }
-.songSelection:hover {
-  pointer-events: all;
-}
 .LancasterFrame:hover .ControlBar {
   height: 40px;
 }
@@ -148,8 +145,8 @@ table {
   border-left: solid .5px rgb(255, 255, 255, .7);
 }
 .PasswordSubmit:hover {
-  color: rgb(0, 0, 0, .7);
-  background-color: rgb(255, 255, 255, .7);
+  filter: saturate(none);
+  background-color: rgb(0, 0, 0, .7);
 }
 .PasswordBar {
   max-height: 40px;
@@ -249,7 +246,6 @@ table {
   opacity: 0;
   transition-duration: .2s;
   display: block;
-  pointer-events: none;
 }
 .OffMusicHeader {
   height: calc((100vh - 202px) / 4);

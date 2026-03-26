@@ -91,7 +91,16 @@ footer {
   font-size: 15px;
   line-height: 25px;
   border-top: solid .5px #ffffff;
-  text-align: center;
+  text-align: left;
+}
+.disclaimer {
+  height: auto; 
+  width: auto; 
+  font-size: 18px; 
+  margin: .5em; 
+  display: inline-block; 
+  color: #ffff00;
+  text-decoration: underline;
 }
 .Title {
  /* Outline width */

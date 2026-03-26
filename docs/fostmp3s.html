@@ -555,11 +555,16 @@ input[type="range"]::-webkit-slider-thumb {
   position: relative;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .embedContent textarea {
-  margin: 0px 45px 45px 45px;
-  width: calc(100% - 90px);
-  height: calc(100% - 90px);
+  margin: 0px;
+  width: 80%;
+  height: 300px;
+  max-height: 70%;
+  overflow: hidden;
   border: none;
 }
 #closeEmbed {

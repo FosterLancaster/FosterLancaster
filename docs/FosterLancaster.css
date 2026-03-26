@@ -342,7 +342,7 @@ button {
 
 @media screen and (orientation: landscape) {
   header {
-    left: 0%;                      
+    left: 2vh;                      
   }
   .FLNameSayButton {
     width: 25vh;

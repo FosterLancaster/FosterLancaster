@@ -129,6 +129,7 @@ footer {
   z-index: 3;
   position: relative;
   opacity: .7;
+  transition-duration: .5s;
 }
 .FLNameWritten {
   font-family: "FL";
@@ -146,7 +147,6 @@ footer {
 }
 .FLName:hover {
   opacity: 1;
-  transition-duration: .2s;
 }
 /*-------------------FLName---------------------*/
 /*----NameLetter Styling----*/

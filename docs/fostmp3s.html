@@ -550,17 +550,16 @@ input[type="range"]::-webkit-slider-thumb {
 }
 .embedContent {
   background: rgb(255, 255, 0, .8);
-  padding: 25px;
-  height: calc(100% - 100px);
-  width: calc(100% - 100px);
+  height: calc(100% - 40px);
+  width: calc(100% - 40px);
   position: relative;
-  overflow: hidden;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
 .embedContent textarea {
-  width: calc(100% - 5px);
-  height: calc(100% - 50px);
+  margin: 10px 30px 30px 30px;
+  width: calc(100% - 65px);
+  height: calc(100% - 130px);
   border: none;
 }
 #closeEmbed {
@@ -838,7 +837,7 @@ input[type="range"]::-webkit-slider-thumb {
   <div id="embedOverlay">
     <div class="embedContent">
       <button id="closeEmbed">✕</button>
-      <div style="font-size: 20px;">FOSTMp3's Embed Code</div>
+      <div style="font-size: 20px; text-align: center; width: 100%;">"Put FOSTMP3's wherever!<br> FOSTMp3's Embed Code</div>
       <textarea readonly>
         <iframe src="https://fostmp3s.com/fostmp3s.html" style="min-height: 400px; min-width: 200px; max-height: 100%; display: block; border: none;" class="fostmp3s"></iframe>
       </textarea>

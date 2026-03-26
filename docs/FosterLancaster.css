@@ -125,7 +125,6 @@ footer {
   font-family: "FL";
   font-size: 1.8em;
   line-height: 1.8em;
-  margin: 0em .4em 0em .4em;
   width: auto;
   color: #ffffff;
   display: block;
@@ -138,7 +137,6 @@ footer {
 }
 .FLName:hover {
   opacity: 1;
-  transform: scale(1.1);
   transition-duration: .2s;
 }
 /*-------------------FLName---------------------*/

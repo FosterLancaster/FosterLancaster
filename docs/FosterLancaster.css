@@ -42,7 +42,7 @@ body {
   outline: none;
 }
 a {
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
 }
 a:hover {
@@ -58,7 +58,7 @@ header {
   overflow: visible;
   opacity: 1;
   outline: none;
-  z-index: 5;
+  z-index: 4;
 }
 hr {
   border: solid .5px #ffffff80;
@@ -85,30 +85,31 @@ footer {
   width: calc(100% - 2em); /* Full width */
   height: auto;
   font-family: 'FL2';
-  color: #ffffff;
+  color: #000000;
   position: relative;
   padding: 1em;
   font-size: 15px;
   line-height: 25px;
   border-top: solid .5px #ffffff;
-  text-align: left;
+  text-align: center;
+  background-color: #be906a;
+  background-image: url('images/Dots.png');
+  background-size: auto 150px;
+  background-repeat: repeat;
+  animation: permit linear 3s infinite;
 }
 .disclaimer {
   height: 30px; 
   line-height: 30px;
-  width: auto; 
+  width: calc(100% - 8px - .8em); 
   font-size: 18px; 
   margin: .2em; 
   padding: .2em;
   display: inline-block; 
   color: #000000;
-  background-color: #dcad87;
-  background-image: url('images/Dots.png');
-  background-size: auto 50px;
-  background-repeat: repeat;
-  animation: permit linear 3s infinite;
   border-radius: 10px;
-  border: solid 4px #a16f45;
+  border: solid 4px #000000;
+  background-color: rgba(252, 133, 133, 0.5);
 }
 .Title {
  /* Outline width */
@@ -233,10 +234,10 @@ button {
   transition-duration: .1s;
   padding: .6em;
   margin-bottom: -4px;
+  filter: invert(1);
 }
 .SocialMedia:hover {
   transform: scale(1.2);
-  filter: drop-shadow(0px 0px 10px #ffff00);
 }
 .MusicVideo {
   width: 100%;
@@ -465,5 +466,5 @@ button {
 
 @keyframes permit {
   0% { background-position: center 0px; }
-  100% { background-position: center -50px; }
+  100% { background-position: center -150px; }
 }

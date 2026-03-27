@@ -94,14 +94,21 @@ footer {
   text-align: left;
 }
 .disclaimer {
-  height: auto; 
+  height: 30px; 
+  line-height: 30px;
   width: auto; 
   font-size: 18px; 
   margin: .2em; 
   padding: .2em;
   display: inline-block; 
   color: #000000;
-  background-color: rgba(255, 111, 0, 0.7);
+  background-color: #dcad87;
+  background-image: url('images/Dots.png');
+  background-size: auto 50px;
+  background-repeat: repeat;
+  animation: permit linear 3s infinite;
+  border-radius: 10px;
+  border: solid 4px #a16f45;
 }
 .Title {
  /* Outline width */
@@ -229,6 +236,7 @@ button {
 }
 .SocialMedia:hover {
   transform: scale(1.2);
+  filter: drop-shadow(0px 0px 10px #ffff00);
 }
 .MusicVideo {
   width: 100%;
@@ -453,4 +461,9 @@ button {
     width: calc(100% - 32px);
     max-width: calc(100% - 32px);
   }
+}
+
+@keyframes permit {
+  0% { background-position: center 0px; }
+  100% { background-position: center -50px; }
 }

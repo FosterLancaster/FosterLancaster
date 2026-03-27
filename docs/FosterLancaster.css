@@ -97,10 +97,11 @@ footer {
   height: auto; 
   width: auto; 
   font-size: 18px; 
-  margin: .5em; 
+  margin: .2em; 
+  padding: .2em;
   display: inline-block; 
-  color: #ffff00;
-  text-decoration: underline;
+  color: #000000;
+  background-color: rgba(255, 111, 0, 0.7);
 }
 .Title {
  /* Outline width */
@@ -133,17 +134,17 @@ footer {
 }
 .FLNameWritten {
   font-family: "FL";
-  font-size: 1.8em;
-  line-height: 1.8em;
+  font-size: 2em;
+  line-height: 2em;
   width: auto;
   color: #ffffff;
-  display: block;
   }
 .FLNameSayButton {
   opacity: 1;
   position: relative;
   background-color: transparent;
-  display: none;
+  width: 10vh;
+  height: 10vh;
 }
 .FLName:hover {
   opacity: 1;
@@ -313,9 +314,11 @@ button {
   header {
     justify-content: center;                    
   }
+  .FLNameWritten {
+    display: none;
+    }
   .FLNameSayButton {
-    width: 10vh;
-    height: 10vh;
+    display: block;
   }
   .Page {
   height: calc(90dvh / 6);
@@ -349,11 +352,13 @@ button {
 
 @media screen and (orientation: landscape) {
   header {
-    left: 2vh;                      
+    left: 1em;                      
   }
+  .FLNameWritten {
+    display: block;
+    }
   .FLNameSayButton {
-    width: 25vh;
-    height: 25vh;
+    display: none;
   }
   .LancasterMenu {
     display: none;
@@ -449,13 +454,3 @@ button {
     max-width: calc(100% - 32px);
   }
 }
-
-/*---------Name Functional---------*/ 
-@supports (-webkit-touch-callout: none) {
-  .FLNameWritten {
-    display: none;
-  }
-  .FLNameSayButton {
-    display: block;
-  }
-  }

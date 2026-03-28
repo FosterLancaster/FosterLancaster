@@ -42,7 +42,7 @@ body {
   outline: none;
 }
 a {
-  color: #000000;
+  color: #ffffff;
   text-decoration: none;
 }
 a:hover {
@@ -91,25 +91,16 @@ footer {
   font-size: 15px;
   line-height: 25px;
   border-top: solid .5px #ffffff;
-  text-align: center;
-  background-color: #be906a;
-  background-image: url('images/Dots.png');
-  background-size: auto 150px;
-  background-repeat: repeat;
-  animation: permit linear 3s infinite;
+  text-align: left;
 }
 .disclaimer {
   height: 30px; 
-  line-height: 30px;
-  width: calc(100% - 8px - .8em); 
+  font-family: 'FL';
+  width: auto; 
   font-size: 18px; 
-  margin: .2em; 
   padding: .2em;
   display: inline-block; 
-  color: #000000;
-  border-radius: 10px;
-  border: solid 4px #000000;
-  background-color: rgba(252, 133, 133, 0.5);
+  color: #078f00;
 }
 .Title {
  /* Outline width */
@@ -234,7 +225,6 @@ button {
   transition-duration: .1s;
   padding: .6em;
   margin-bottom: -4px;
-  filter: invert(1);
 }
 .SocialMedia:hover {
   transform: scale(1.2);
@@ -462,9 +452,4 @@ button {
     width: calc(100% - 32px);
     max-width: calc(100% - 32px);
   }
-}
-
-@keyframes permit {
-  0% { background-position: center 0px; }
-  100% { background-position: center -150px; }
 }

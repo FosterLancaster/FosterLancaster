@@ -90,16 +90,21 @@ footer {
   font-size: 15px;
   line-height: 25px;
   border-top: solid .5px #ffffff;
-  text-align: left;
+  text-align: right;
 }
 .disclaimer {
+  text-align: center;
   height: 30px; 
+  line-height: 30px;
   font-family: 'FL';
   width: auto; 
-  font-size: 18px; 
+  font-size: 20px; 
   padding: .2em;
   display: inline-block; 
-  color: #078f00;
+  color: #ffffff;
+  background-color: #626262;
+  border-radius: 5px;
+  transition-duration: .5s;
 }
 .Title {
  /* Outline width */

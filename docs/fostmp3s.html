@@ -12,6 +12,7 @@
 <style>
 a {
   text-decoration: none;
+  color: #000000;
 }
 button {
   outline: none;
@@ -389,7 +390,6 @@ table {
   cursor: pointer;
   transition-duration: .3s;
   max-width: 80%;
-  filter: drop-shadow(0px 0px 10px #ffff00);
 }
 #buyBtn {
   cursor: pointer;
@@ -399,7 +399,6 @@ table {
   height: auto;
   width: 90px;
   max-width: 80%;
-  filter: drop-shadow(0px 0px 10px #ffff00);
 }
 .MusicButton {
   height: auto;
@@ -537,6 +536,19 @@ input[type="range"]::-webkit-slider-thumb {
   position: relative;
   margin-top: -6px;
 }
+#XOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  color: #000000;
+}
 #embedOverlay {
   position: fixed;
   top: 0;
@@ -550,7 +562,7 @@ input[type="range"]::-webkit-slider-thumb {
   z-index: 10;
   color: #000000;
 }
-.embedContent {
+.MoreContent {
   background: rgb(255, 255, 0, .8);
   height: calc(100% - 40px);
   width: calc(100% - 40px);
@@ -561,16 +573,20 @@ input[type="range"]::-webkit-slider-thumb {
   flex-direction: column;
   align-items: center;
 }
-.embedInner {
+.MoreInner {
   top: 50%;
   left: 50%;
+  height: 100%;
+  width: calc(100% - 40px);
+  overflow-y: hidden;
   transform: translate(-50%, -50%);
   font-size: 17px; 
   text-align: center; 
-  width: 100%;
   position: absolute;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
-.embedContent textarea {
+.MoreContent textarea {
   margin: 0px;
   width: 60vw;
   max-width: 100%;
@@ -596,6 +612,39 @@ input[type="range"]::-webkit-slider-thumb {
   justify-content: center; 
   z-index: 11;
   outline: none;
+}
+#closeX {
+  font-size: 18px;
+  color: #000000;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: solid 1px #000000;
+  background-color: #ffffff;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  z-index: 11;
+  outline: none;
+}
+.XEmbed {
+  text-align: center;
+  font-size: 1em;
+  line-height: 2em;
+  height: calc(100% - 40px);
+  width: calc(100% - 40px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  color: #000000;
+  text-overflow: ellipsis;
+}
+.XPosts {
+  color: #000000;
+  text-overflow: ellipsis;
 }
 
 
@@ -665,7 +714,10 @@ input[type="range"]::-webkit-slider-thumb {
   display: none;
 }
 .shuffleBtn {
-  display: inline-block;
+  display: none;
+}
+.embedBtn {
+  display: block;
 }
 .nextprev-btn {
   display: inline-block;
@@ -854,18 +906,39 @@ input[type="range"]::-webkit-slider-thumb {
   </a>
   
   <div id="embedOverlay">
-    <div class="embedContent">
+    <div class="MoreContent">
     <button id="closeEmbed">X</button>
-    <div class="embedInner">FOSTMp3's Embed Code<br>
+    <div class="MoreInner">FOSTMp3's Embed Code<br>
       <textarea readonly>
         <iframe src="https://fostmp3s.com/fostmp3s.html" style="min-height: 400px; min-width: 200px; max-height: 100%; display: block; border: none;" class="fostmp3s"></iframe>
       </textarea>
-    </div>
   </div>
   </div>
+  </div>
+
+  <a href="#" id="XBtn">
+    <img src="fmp3simages/X.png" class="embedBtn" alt="Embed" title="Embed">
+  </a>
+  
+  <div id="XOverlay">
+    <div class="MoreContent">
+    <button id="closeX">X</button>
+    <div class="MoreInner"><b>Latest Foster Lancaster X Posts</b><br>
+<div class="XEmbed"/>
+<ul class="XPosts" id="feed">
+</ul>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+
 </td>
 </table>
 </div>
+
 <!------Music Header end------> 
             </div>
             </div>
@@ -873,6 +946,9 @@ input[type="range"]::-webkit-slider-thumb {
             </div>
 <!------Music Player------>
               </div>
+
+
+
 
 <script>
                 document.getElementById("embedBtn").onclick = function(e) {
@@ -883,6 +959,35 @@ input[type="range"]::-webkit-slider-thumb {
                 document.getElementById("closeEmbed").onclick = function() {
                   document.getElementById("embedOverlay").style.display = "none";
                 };
+
+                document.getElementById("XBtn").onclick = function(e) {
+                  e.preventDefault();
+                  document.getElementById("XOverlay").style.display = "flex";
+                };
+                
+                document.getElementById("closeX").onclick = function() {
+                  document.getElementById("XOverlay").style.display = "none";
+                };
+</script>
+
+<script>
+  fetch('https://rss.app/feeds/QvurbAJWuWmryCT7.xml')
+    .then(response => response.text())
+    .then(str => {
+      const parser = new DOMParser();
+      const xml = parser.parseFromString(str, "application/xml");
+      const items = xml.querySelectorAll("item");
+      const feedList = document.getElementById("feed");
+  
+      items.forEach(item => {
+        const title = item.querySelector("title").textContent;
+        const link = item.querySelector("link").textContent;
+        const li = document.createElement("li");
+        li.innerHTML = `<a href="${link}" target="_blank">${title}</a>`;
+        feedList.appendChild(li);
+      });
+    })
+    .catch(err => console.error("Error loading RSS feed:", err));
 </script>
 
 <script>

@@ -96,7 +96,7 @@ table {
   height: 100%; /* Important */
   text-align: center;
   color: #d3d3d3;
-  background-image: url('fmp3simages/FostMp3sLogo.png');
+  background-image: url('fmp3simages/FostMp3sLogoOutlined.png');
   background-size: 180px auto;
   background-position: center bottom;
   background-repeat: no-repeat;
@@ -116,7 +116,8 @@ table {
   width: 100%;
   max-width: 100%;
   -webkit-appearance: none;
-  color: #000000;
+  color: #ffff00;
+  -webkit-text-stroke: .7px #000000;
   appearance: none;
   flex-grow: 1; /* if in a flex container */
   min-width: 0; /* prevent overflow in flex */
@@ -164,7 +165,7 @@ table {
   background-size: 200px auto;
   background-attachment: scroll;
   background-repeat: no-repeat;
-  border: solid 5px #ffffff;
+  border: solid 5px #000000;
   background-color: rgb(255, 255, 0, .2);
   background-image: url('fmp3simages/FostMp3sLogoImprint.png');
 }
@@ -280,6 +281,7 @@ table {
   font-family: 'futura';
   font-size: 16px;
   color: #ffff00;
+  -webkit-text-stroke: .7px #000000;
   position: relative;
   width: calc(100% - 10px);
   overflow: hidden;
@@ -462,9 +464,9 @@ table {
   width: 60px;
   height: 10px;
   max-width: 100%;
-  background-color: transparent;
+  background-color: #ffff00;
   border-radius: 90px;
-  border: solid 1.5px #ffff00;
+  border: solid 1.5px #000000;
   cursor: pointer;
   overflow: hidden;
   margin: 0px 5px 0px 5px;
@@ -472,7 +474,7 @@ table {
 .progressBar span {
   display: block;
   height: 100%;
-  background-color: #ffff00;
+  background-color: #000000;
   width: 0;
 }
 .progressBar:hover {
@@ -480,7 +482,8 @@ table {
 }
 input::placeholder {
   opacity: 1;
-  color: #ffffff;
+  color: #ffff00;
+  -webkit-text-stroke: .7px #000000;
 }
 input:focus {
   animation: none;

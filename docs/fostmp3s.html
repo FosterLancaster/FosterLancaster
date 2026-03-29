@@ -349,7 +349,7 @@ table {
   height: 40px;
   width: auto;
 }
-.XBtn {
+.xBtn {
   cursor: pointer;
   margin-bottom: -13px;
   border: inline-block;
@@ -366,6 +366,9 @@ table {
   width: auto;
 }
 .embedBtn:hover {
+  background-color: rgba(255, 255, 0, .5);
+}
+.xBtn:hover {
   background-color: rgba(255, 255, 0, .5);
 }
 .shuffleBtn:hover {
@@ -544,7 +547,7 @@ input[type="range"]::-webkit-slider-thumb {
   position: relative;
   margin-top: -6px;
 }
-#XOverlay {
+#xOverlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -639,9 +642,9 @@ input[type="range"]::-webkit-slider-thumb {
   z-index: 11;
   outline: none;
 }
-.XEmbed {
+.xEmbed {
   text-align: center;
-  font-size: 1em;
+  font-size: .6em;
   line-height: 2em;
   height: calc(100% - 40px);
   width: calc(100% - 40px);
@@ -650,7 +653,7 @@ input[type="range"]::-webkit-slider-thumb {
   color: #000000;
   text-overflow: ellipsis;
 }
-.XPosts {
+.xPosts {
   color: #000000;
   text-overflow: ellipsis;
 }
@@ -725,7 +728,7 @@ input[type="range"]::-webkit-slider-thumb {
   display: none;
 }
 .XBtn {
-  display: block;
+  display: inline-block;
 }
 .nextprev-btn {
   display: inline-block;
@@ -924,24 +927,22 @@ input[type="range"]::-webkit-slider-thumb {
   </div>
   </div>
 
-  <a href="#" id="XBtn">
-    <img src="fmp3simages/X.png" class="XBtn" alt="Embed" title="Embed">
+  <a href="#" id="xBtn">
+  <img src="fmp3simages/X.png" class="xBtn" alt="X" title="X">
   </a>
   
-  <div id="XOverlay">
+  <div id="xOverlay">
     <div class="MoreContent">
     <button id="closeX">X</button>
     <div class="MoreInner"><b>Latest Foster Lancaster X Posts</b><br>
-<div class="XEmbed"/>
-<ul class="XPosts" id="feed">
+<div class="xEmbed"/>
+<ul class="xPosts" id="feed">
 </ul>
 
 </div>
-
 </div>
 </div>
 
-  </div>
 
 </td>
 </table>
@@ -968,13 +969,13 @@ input[type="range"]::-webkit-slider-thumb {
                   document.getElementById("embedOverlay").style.display = "none";
                 };
 
-                document.getElementById("XBtn").onclick = function(e) {
+                document.getElementById("xBtn").onclick = function(e) {
                   e.preventDefault();
-                  document.getElementById("XOverlay").style.display = "flex";
+                  document.getElementById("xOverlay").style.display = "flex";
                 };
                 
                 document.getElementById("closeX").onclick = function() {
-                  document.getElementById("XOverlay").style.display = "none";
+                  document.getElementById("xOverlay").style.display = "none";
                 };
 </script>
 

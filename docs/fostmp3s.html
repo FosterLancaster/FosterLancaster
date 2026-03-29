@@ -573,10 +573,10 @@ input[type="range"]::-webkit-slider-thumb {
   z-index: 10;
   color: #000000;
 }
-.MoreContent {
+.embedContent {
   background: rgb(255, 255, 0, .8);
-  height: calc(100% - 40px);
-  width: calc(100% - 40px);
+  width: 100%;
+  height: 100%;
   position: relative;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -584,27 +584,42 @@ input[type="range"]::-webkit-slider-thumb {
   flex-direction: column;
   align-items: center;
 }
-.MoreInner {
-  top: 50%;
-  left: 50%;
-  height: 100%;
-  width: 95%;
-  overflow-y: hidden;
-  transform: translate(-50%, -50%);
-  font-size: 17px; 
-  text-align: center; 
-  position: absolute;
+.embedContent,
+.xContent {
+  background: rgb(255, 255, 0, .8);
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
-.MoreContent textarea {
-  margin: 0px;
-  width: 60vw;
-  max-width: 100%;
-  height: 50vh;
-  max-height: 100%;
+.MoreInner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 40px 10px 10px 10px;
+  box-sizing: border-box;
   overflow: hidden;
-  border-radius: 10px;
+  min-width: 0;
+}
+.MoreHeader {
+  flex: 0 0 auto;
+  text-align: center;
+}
+.MoreBody {
+  flex: 1;
+  overflow-y: auto;
+}
+.MoreInner textarea {
+  flex: 1;
+  width: 100%;
+  height: calc(100% - 10px);
+  resize: none;
+  min-width: 0;
+  max-width: calc(100% - 10px);
+  flex: 1;
+  display: block;
 }
 #closeEmbed {
   font-size: 18px;
@@ -644,18 +659,25 @@ input[type="range"]::-webkit-slider-thumb {
 }
 .xEmbed {
   text-align: center;
-  font-size: .6em;
   line-height: 2em;
   height: calc(100% - 40px);
   width: 100%;
   overflow-y: scroll;
-  overflow-x: hidden;
-  color: #000000;
   text-overflow: ellipsis;
 }
 .xPosts {
-  color: #000000;
-  text-overflow: ellipsis;
+  width: 100%;
+  max-width: 100%;
+  flex: 1;
+  font-size: .8em;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  /* 🔑 critical fixes */
+  min-width: 0;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
 }
 
 
@@ -917,27 +939,34 @@ input[type="range"]::-webkit-slider-thumb {
   </a>
   
   <div id="embedOverlay">
-    <div class="MoreContent">
+    <div class="embedContent">
     <button id="closeEmbed">X</button>
-    <div class="MoreInner">FOSTMp3's Embed Code<br>
+    <div class="MoreInner">
+      <div class="MoreHeader">FOSTMp3's Embed Code</div>
+      <div class="MoreBody">
       <textarea readonly>
         <iframe src="https://fostmp3s.com/fostmp3s.html" style="min-height: 400px; min-width: 200px; max-height: 100%; display: block; border: none;" class="fostmp3s"></iframe>
       </textarea>
+    </div>
   </div>
   </div>
   </div>
+</td>
 
+<td>
   <a href="#" id="xBtn">
   <img src="fmp3simages/X.png" class="xBtn" alt="X" title="X">
   </a>
   
   <div id="xOverlay">
-    <div class="MoreContent">
+    <div class="xContent">
     <button id="closeX">X</button>
-    <div class="MoreInner"><b>Latest Foster Lancaster X Posts</b><br>
-<div class="xEmbed"/>
+    <div class="MoreInner">
+      <div class="MoreHeader">FOSTMp3's X Posts</div>
+      <div class="MoreBody">
 <ul class="xPosts" id="feed">
 </ul>
+</div>
 
 </div>
 </div>

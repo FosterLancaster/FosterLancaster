@@ -573,25 +573,16 @@ input[type="range"]::-webkit-slider-thumb {
   z-index: 10;
   color: #000000;
 }
-.embedContent {
-  background: rgb(255, 255, 0, .8);
-  width: 100%;
-  height: 100%;
-  position: relative;
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 .embedContent,
 .xContent {
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
   background: rgb(255, 255, 0, .8);
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  position: relative;
 }
 .MoreInner {
   display: flex;
@@ -627,8 +618,9 @@ input[type="range"]::-webkit-slider-thumb {
   font-size: 18px;
   color: #ffffff;
   position: absolute;
-  top: 2px;
-  right: 2px;
+  top: 0px;
+  right: 0px;
+  margin: 10px;
   cursor: pointer;
   height: 40px;
   width: 40px;
@@ -654,6 +646,7 @@ input[type="range"]::-webkit-slider-thumb {
   max-width: 100%;
   flex: 1;
   font-size: 1em;
+  line-height: 1.7em;
   overflow-y: auto;
   overflow-x: hidden;
 
@@ -946,7 +939,7 @@ input[type="range"]::-webkit-slider-thumb {
     <div class="xContent">
     <button id="closeX">X</button>
     <div class="MoreInner">
-      <div class="MoreHeader">FOSTMp3's X Posts</div>
+      <div class="MoreHeader">FOSTMp3's <img src="fmp3simages/X.png" style="height: 1.2em; margin-bottom: -.2em;"> Posts</div>
       <div class="MoreBody">
 <ul class="xPosts" id="feed">
 </ul>

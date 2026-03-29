@@ -88,23 +88,9 @@ footer {
   position: relative;
   padding: 1em;
   font-size: 15px;
-  line-height: 25px;
+  line-height: 2em;
   border-top: solid .5px #ffffff;
-  text-align: right;
-}
-.disclaimer {
   text-align: center;
-  height: 30px; 
-  line-height: 30px;
-  font-family: 'FL';
-  width: auto; 
-  font-size: 20px; 
-  padding: .2em;
-  display: inline-block; 
-  color: #ffffff;
-  background-color: #ffa7d5;
-  border-radius: 5px;
-  transition-duration: .5s;
 }
 .Title {
  /* Outline width */
@@ -220,15 +206,28 @@ button {
   font-size: .8em;
   width: 90%;
 }
+.disclaimer {
+  text-align: center;
+  height: 30px; 
+  line-height: 30px;
+  font-family: 'FL';
+  width: auto; 
+  font-size: 20px; 
+  padding: .2em;
+  display: inline-block; 
+  color: #ffffff;
+  background-color: rgba(255, 255, 0, .5);
+  border-radius: 7px;
+  transition-duration: .5s;
+}
 .SocialMedia {
   height: 1.2em;
-  line-height: 12px;
   width: auto;
   position: relative;
   display: inline-block;
   transition-duration: .1s;
   padding: .6em;
-  margin-bottom: -4px;
+  margin-bottom: -.8em;
 }
 .SocialMedia:hover {
   transform: scale(1.2);

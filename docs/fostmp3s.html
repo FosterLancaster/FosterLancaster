@@ -18,6 +18,7 @@ button {
 }
 body {
   font-family: 'futura';
+  background-color: #000000;
 }
 /* Hide default audio controls */
 .fostmp3s {
@@ -140,12 +141,11 @@ table {
   cursor: pointer;
   user-select: none; /* prevent highlighting text */
   pointer-events: auto;
-  background-color: transparent;
+  background-color: rgb(0, 0, 0, .7);
   border-left: solid .5px rgb(255, 255, 255, .7);
 }
 .PasswordSubmit:hover {
-  filter: saturate(0);
-  background-color: rgb(0, 0, 0, .7);
+  background-color: rgba(255, 255, 0, .5);
 }
 .PasswordBar {
   max-height: 40px;
@@ -792,8 +792,8 @@ input[type="range"]::-webkit-slider-thumb {
   <div align="center">
       <div class="PasswordUnlockBar">
         <div id="passwordUnlock" class="PasswordBar">
-          <input id="passwordInput" class="Password" type="password" placeholder="* * * *"/>
-          <div class="PasswordSubmit" id="passwordSubmit" onclick="submitPassword()"><img style="height: 100%; width: auto;" src="fmp3simages/Unlock.png"></div>
+          <input id="passwordInput" class="Password" type="password" placeholder="* * * *" alt="Password" title="Password"/>
+          <div class="PasswordSubmit" id="passwordSubmit" onclick="submitPassword()" alt="Submit" title="Submit"><img style="height: 100%; width: auto;" src="fmp3simages/Unlock.png"></div>
         </div>
         </div>
                 <audio class="audio-player" id="audio" preload="auto">
@@ -805,14 +805,14 @@ input[type="range"]::-webkit-slider-thumb {
 <!-----Engage Bar---->
 <div class="EngageBar">
 <table>
-<td id="buyBtn"> 
+<td id="buyBtn" alt="Buy Password" title="Buy Password"> 
 <a href="https://www.paypal.com/ncp/payment/KU5W8WACXP7N2" target="_blank">
 <div class="MusicButton">
 <img src="fmp3simages/PWKEY.png" id="buyLogo">
 </div>
 </a>
 </td> 
-<td id="playBtn">
+<td id="playBtn" alt="Play/Pause Music" title="Play/Pause Music">
 <div class="MusicButton">
 <img src="fmp3simages/PLAY.png" id="playLogo">
 </div>
@@ -825,21 +825,21 @@ input[type="range"]::-webkit-slider-thumb {
 <div class="ControlBar">
 <table>
 <td>
-<img src="fmp3simages/Prev.png" id="prevBtn" class="nextprev-btn">
+<img src="fmp3simages/Prev.png" id="prevBtn" class="nextprev-btn" alt="Previous" title="Previous">
 </td>
 <td>
-<div class="progressBar" id="progressBar">
+<div class="progressBar" id="progressBar" alt="Progress Bar" title="Progress Bar">
 <span id="progress"></span>
 </div>
 </td>
 <td>
-<img src="fmp3simages/Next.png" id="nextBtn" class="nextprev-btn">
+<img src="fmp3simages/Next.png" id="nextBtn" class="nextprev-btn" alt="Next" title="Next">
 </td>
 <td>
-<img src="fmp3simages/Shuffle.png" class="shuffleBtn" onclick="shuffle()">
+<img src="fmp3simages/Shuffle.png" class="shuffleBtn" onclick="shuffle()" alt="Shuffle" title="Shuffle">
 </td>
 <td>
-  <div class="volumeContainer">
+  <div class="volumeContainer" alt="Volume" title="Volume">
   <table>
   <td><img src="fmp3simages/Volume.png" class="volumeBtn"></td>
   <td><input type="range" id="volumeControl" min="0" max="1" step="0.01" value="1"></td>
@@ -848,7 +848,7 @@ input[type="range"]::-webkit-slider-thumb {
 </td>
 <td>
   <a href="#" id="embedBtn">
-    <img src="fmp3simages/Embed.png" class="embedBtn">
+    <img src="fmp3simages/Embed.png" class="embedBtn" alt="Embed" title="Embed">
   </a>
   
   <div id="embedOverlay">
@@ -936,7 +936,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Set Listen Count
-  const MAX_LISTENS = 10;
+  const MAX_LISTENS = 8;
   const LISTENS_KEY = 'listensLeft';
 
   // Check If Paid For Infinite

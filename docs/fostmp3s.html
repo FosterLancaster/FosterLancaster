@@ -575,9 +575,10 @@ input[type="range"]::-webkit-slider-thumb {
 }
 .embedContent,
 .xContent {
-  width: calc(100% - 10px);
-  height: calc(100% - 10px);
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
   background: rgb(255, 255, 0, .8);
+  background-image: linear-gradient(to top, #ffffff, #ffff00);
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
   display: flex;
@@ -609,24 +610,24 @@ input[type="range"]::-webkit-slider-thumb {
   height: calc(100% - 10px);
   resize: none;
   min-width: 0;
-  max-width: calc(100% - 10px);
   flex: 1;
   display: block;
+  border: none;
 }
 #closeEmbed,
 #closeX {
   font-size: 18px;
-  color: #ffffff;
+  color: #000000;
   position: absolute;
   top: 0px;
   right: 0px;
-  margin: 10px;
+  margin: 0px;
   cursor: pointer;
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  border: solid 1px #ffffff;
-  background-color: rgb(255, 255, 255, .3);
+  border: solid 1px #000000;
+  background-color: rgba(0, 0, 0, 0.3);
   display: flex; 
   align-items: center; 
   justify-content: center; 

@@ -58,7 +58,7 @@ table {
   background-position: center center;
   background-size: 100% 300px;
   animation: rise 2s linear infinite;
-  background-image: linear-gradient(to top, rgb(255, 255, 0, .2), transparent, rgb(255, 255, 0, .2));
+  background-image: linear-gradient(to top, rgb(255, 255, 255, .3), transparent, rgb(255, 255, 255, .3));
 }
 .LancasterFrame:hover {
   opacity: 1;
@@ -324,6 +324,7 @@ table {
   left: 0px;
   z-index: 0;
   transition-duration: .5s;
+  border-radius: 50%;
 }
 .BuyButtonIcon {
   width: auto;
@@ -565,8 +566,8 @@ input[type="range"]::-webkit-slider-thumb {
 .xContent {
   width: calc(100% - 20px);
   height: calc(100% - 20px);
-  background: rgb(255, 255, 0, .8);
-  background-image: linear-gradient(to top, #ffffff, #ffff00);
+  background: transparent;
+  background-image: linear-gradient(to top, rgba(255, 255, 255, .8), rgba(255, 255, 0, .8));
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
   display: flex;
@@ -591,6 +592,9 @@ input[type="range"]::-webkit-slider-thumb {
 .MoreBody {
   flex: 1;
   overflow-y: auto;
+  border: solid .5px #000000;
+  width: calc(100% - 1px);
+  border-radius: 10px;
 }
 .MoreInner textarea {
   flex: 1;
@@ -652,7 +656,7 @@ li {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
-  margin: 5px auto 15px auto; 
+  margin: 0px auto 15px auto; 
   padding: 5px 5px 5px 5px;
   width: calc(100% - 20px);
   max-width: 500px;  
@@ -889,6 +893,28 @@ li {
 <!------Control Bar------>
 <div class="ControlBar">
 <table>
+
+  <td>
+    <a href="#" id="embedBtn">
+      <img src="fmp3simages/Embed.png" class="embedBtn" alt="Embed" title="Embed">
+    </a>
+    
+    <div id="embedOverlay">
+      <div class="embedContent">
+      <button id="closeEmbed">X</button>
+      <div class="MoreInner">
+        <div class="MoreHeader">FOSTMp3's Embed Code</div>
+        <div class="MoreBody">
+        <textarea readonly>
+          <iframe src="https://fostmp3s.com/fostmp3s.html" style="min-height: 400px; min-width: 200px; max-height: 100%; display: block; border: none;" class="fostmp3s"></iframe>
+        </textarea>
+      </div>
+    </div>
+    </div>
+    </div>
+  </td>
+
+
 <td>
 <img src="fmp3simages/Prev.png" id="prevBtn" class="nextprev-btn" alt="Previous" title="Previous">
 </td>
@@ -911,25 +937,6 @@ li {
   </table>
   </div>
 </td>
-<td>
-  <a href="#" id="embedBtn">
-    <img src="fmp3simages/Embed.png" class="embedBtn" alt="Embed" title="Embed">
-  </a>
-  
-  <div id="embedOverlay">
-    <div class="embedContent">
-    <button id="closeEmbed">X</button>
-    <div class="MoreInner">
-      <div class="MoreHeader">FOSTMp3's Embed Code</div>
-      <div class="MoreBody">
-      <textarea readonly>
-        <iframe src="https://fostmp3s.com/fostmp3s.html" style="min-height: 400px; min-width: 200px; max-height: 100%; display: block; border: none;" class="fostmp3s"></iframe>
-      </textarea>
-    </div>
-  </div>
-  </div>
-  </div>
-</td>
 
 <td>
   <a href="#" id="xBtn">
@@ -940,7 +947,7 @@ li {
     <div class="xContent">
     <button id="closeX">X</button>
     <div class="MoreInner">
-      <div class="MoreHeader">FOSTMp3's <img src="fmp3simages/X.png" style="height: 1.2em; margin-bottom: -.2em;"> Posts</div>
+      <div class="MoreHeader"><a style="text-decoration: underline;" href="https://x.com/lancasterfoster" target="_blank">@LancasterFoster</a> <img src="fmp3simages/X.png" style="height: 1.2em; margin-bottom: -.2em;"> Posts</div>
       <div class="MoreBody">
 <ul class="xPosts" id="feed">
 </ul>
@@ -964,48 +971,6 @@ li {
               </div>
 
 
-
-
-<script>
-                document.getElementById("embedBtn").onclick = function(e) {
-                  e.preventDefault();
-                  document.getElementById("embedOverlay").style.display = "flex";
-                };
-                
-                document.getElementById("closeEmbed").onclick = function() {
-                  document.getElementById("embedOverlay").style.display = "none";
-                };
-
-                document.getElementById("xBtn").onclick = function(e) {
-                  e.preventDefault();
-                  document.getElementById("xOverlay").style.display = "flex";
-                };
-                
-                document.getElementById("closeX").onclick = function() {
-                  document.getElementById("xOverlay").style.display = "none";
-                };
-</script>
-
-<script>
-  fetch('https://rss.app/feeds/QvurbAJWuWmryCT7.xml')
-    .then(response => response.text())
-    .then(str => {
-      const parser = new DOMParser();
-      const xml = parser.parseFromString(str, "application/xml");
-      const items = xml.querySelectorAll("item");
-      const feedList = document.getElementById("feed");
-  
-      items.forEach(item => {
-        const title = item.querySelector("title").textContent;
-        const link = item.querySelector("link").textContent;
-        const li = document.createElement("li");
-        li.innerHTML = `<a href="${link}" target="_blank">${title}</a>`;
-        feedList.appendChild(li);
-      });
-    })
-    .catch(err => console.error("Error loading RSS feed:", err));
-</script>
-
 <script>
 // Foster Lancaster Music Player
 document.addEventListener("DOMContentLoaded", () => {
@@ -1025,6 +990,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const nextBtn       = document.getElementById('nextBtn');
   const prevBtn       = document.getElementById('prevBtn');
   const Password      = document.getElementById('passwordInput');
+  document.getElementById("embedBtn");
+  document.getElementById("embedOverlay");
+  document.getElementById("closeEmbed");
+  document.getElementById("xBtn");
+  document.getElementById("xOverlay");
+  document.getElementById("closeX");
+
 
   // Call Classes
   const passwordBar         = document.querySelector('.PasswordBar');
@@ -1462,6 +1434,46 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
+//Open and close overlays
+document.getElementById("embedBtn").onclick = function(e) {
+                  e.preventDefault();
+                  document.getElementById("embedOverlay").style.display = "flex";
+                };
+                
+                document.getElementById("closeEmbed").onclick = function() {
+                  document.getElementById("embedOverlay").style.display = "none";
+                };
+
+                document.getElementById("xBtn").onclick = function(e) {
+                  e.preventDefault();
+                  document.getElementById("xOverlay").style.display = "flex";
+                };
+                
+                document.getElementById("closeX").onclick = function() {
+                  document.getElementById("xOverlay").style.display = "none";
+                };
+
+                //Foster X
+
+  fetch('https://rss.app/feeds/xHHHCvAVnTnyN8hn.xml')
+    .then(response => response.text())
+    .then(str => {
+      const parser = new DOMParser();
+      const xml = parser.parseFromString(str, "application/xml");
+      const items = xml.querySelectorAll("item");
+      const feedList = document.getElementById("feed");
+  
+      items.forEach(item => {
+        const title = item.querySelector("title").textContent;
+        const link = item.querySelector("link").textContent;
+        const li = document.createElement("li");
+        li.innerHTML = `<a href="${link}" target="_blank">${title}</a>`;
+        feedList.appendChild(li);
+      });
+    })
+    .catch(err => console.error("Error loading RSS feed:", err));
+
 </script>
 
 </body>

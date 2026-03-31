@@ -221,13 +221,12 @@ button {
   transition-duration: .5s;
 }
 .SocialMedia {
-  height: 1.2em;
-  width: auto;
+  width: 3em;
+  height: auto;
+  margin: .5em;
   position: relative;
   display: inline-block;
   transition-duration: .1s;
-  padding: .6em;
-  margin-bottom: -.8em;
 }
 .SocialMedia:hover {
   transform: scale(1.2);
@@ -330,12 +329,6 @@ button {
   }
   .Page:hover {
     opacity: 1;
-  }
-  .SocIcon {
-    width: 4vw;   /* made larger so the image is actually visible */
-    height: 4vw;
-    padding: 4vw;
-    margin: 1vw;
   }
   section {
     width: 100%;

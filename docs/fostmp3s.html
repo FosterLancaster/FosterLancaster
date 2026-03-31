@@ -180,12 +180,12 @@ table {
   background-color: transparent;
 }
 .EngageBar {
-  height: 90px;
+  height: 94px;
   display: block;
   overflow: hidden;
 }
 .EngageBar table {
-  height: 90px;
+  height: 94px;
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;        /* 🔑 forces equal-width cells */
@@ -476,11 +476,12 @@ table {
   height: 10px;
   max-width: 100%;
   background-color: #ffff00;
-  border-radius: 90px;
   border: solid 1.5px #000000;
   cursor: pointer;
   overflow: hidden;
   margin: 0px 5px 0px 5px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 .progressBar span {
   display: block;
@@ -564,8 +565,8 @@ input[type="range"]::-webkit-slider-thumb {
 }
 .embedContent,
 .xContent {
-  width: calc(100% - 16px);
-  height: calc(100% - 16px);
+  width: calc(100% - 15px);
+  height: calc(100% - 15px);
   background: transparent;
   background-image: linear-gradient(to top, rgba(255, 255, 255, .8), rgba(255, 255, 0, .8));
   border-top-left-radius: 20px;

@@ -221,9 +221,10 @@ button {
   transition-duration: .5s;
 }
 .SocialMedia {
-  width: 3em;
+  width: 12vw;
+  max-width: 60px;
   height: auto;
-  margin: .5em;
+  margin: 1.2vw;
   position: relative;
   display: inline-block;
   transition-duration: .1s;
@@ -237,8 +238,7 @@ button {
   transition-duration: .5s;
   display: block;
   pointer-events: none;
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-radius: 10px;
 }
 .MusicVideoContainer {
   margin: 0px 10px 40px 10px;
@@ -246,11 +246,21 @@ button {
   height: 50vh;
   max-height: 50vw;
   background-color: transparent;
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
   overflow: hidden;
   padding: 5px;
   background-image: linear-gradient(to top, rgb(255, 255, 255, .3), transparent, rgb(255, 255, 255, .3));
+  border-radius: 10px;
+}
+.MusicVideoContainerThumbnail {
+  width: 6vw;
+  height: 7vh;
+  background-color: transparent;
+  overflow: hidden;
+  padding: .5vh;
+  background-image: linear-gradient(to top, rgb(255, 255, 255, .3), transparent, rgb(255, 255, 255, .3));
+  pointer-events: none;
+  display: inline-block;
+  border-radius: 10px;
 }
 .MusicVideoContainer:hover {
   opacity: .5;

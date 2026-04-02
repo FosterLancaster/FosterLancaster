@@ -253,6 +253,7 @@ button {
 }
 .MusicVideoContainerThumbnail {
   width: 6vw;
+  min-width: 10vh;
   height: 7vh;
   background-color: transparent;
   overflow: hidden;

@@ -350,7 +350,7 @@ table {
   height: 40px;
   width: auto;
 }
-.xBtn {
+.chatBtn {
   cursor: pointer;
   margin-bottom: -13px;
   border: inline-block;
@@ -369,7 +369,7 @@ table {
 .embedBtn:hover {
   background-color: rgba(255, 255, 0, .5);
 }
-.xBtn:hover {
+.chatBtn:hover {
   background-color: rgba(255, 255, 0, .5);
 }
 .shuffleBtn:hover {
@@ -550,7 +550,7 @@ input[type="range"]::-webkit-slider-thumb {
   margin-top: -6px;
 }
 #embedOverlay,
-#xOverlay {
+#chatOverlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -564,7 +564,7 @@ input[type="range"]::-webkit-slider-thumb {
   color: #000000;
 }
 .embedContent,
-.xContent {
+.chatContent {
   width: calc(100% - 17px);
   height: calc(100% - 17px);
   background: transparent;
@@ -609,7 +609,7 @@ input[type="range"]::-webkit-slider-thumb {
   overflow-x: hidden;
 }
 #closeEmbed,
-#closeX {
+#closeChat {
   font-size: 18px;
   color: #000000;
   position: absolute;
@@ -628,7 +628,7 @@ input[type="range"]::-webkit-slider-thumb {
   z-index: 11;
   outline: none;
 }
-.xEmbed {
+.chatEmbed {
   text-align: center;
   line-height: 2em;
   height: calc(100% - 40px);
@@ -636,7 +636,7 @@ input[type="range"]::-webkit-slider-thumb {
   overflow-y: scroll;
   text-overflow: ellipsis;
 }
-.xPosts {
+.chatPosts {
   padding: 0px 0 10px 0; 
   width: 100%;
   max-width: 100%;
@@ -940,17 +940,17 @@ li {
 </td>
 
 <td>
-  <a href="#" id="xBtn">
-  <img src="fmp3simages/X.png" class="xBtn" alt="X" title="X">
+  <a href="#" id="chatBtn">
+  <img src="fmp3simages/Chat.png" class="chatBtn" alt="X" title="X">
   </a>
   
-  <div id="xOverlay">
-    <div class="xContent">
-    <button id="closeX">X</button>
+  <div id="chatOverlay">
+    <div class="chatContent">
+    <button id="closeChat">X</button>
     <div class="MoreInner">
-      <div class="MoreHeader"><a style="text-decoration: underline;" href="https://x.com/lancasterfoster" target="_blank">@LancasterFoster</a> <img src="fmp3simages/X.png" style="height: 1.2em; margin-bottom: -.2em;"> Posts</div>
+      <div class="MoreHeader"><a style="text-decoration: underline;" href="https://x.com/lancasterfoster" target="_blank">@LancasterFoster</a> <img src="fmp3simages/Chat.png" style="height: 1.2em; margin-bottom: -.2em;"> Posts</div>
       <div class="MoreBody">
-<ul class="xPosts" id="feed">
+<ul class="chatPosts" id="feed">
 </ul>
 </div>
 
@@ -1446,13 +1446,13 @@ document.getElementById("embedBtn").onclick = function(e) {
                   document.getElementById("embedOverlay").style.display = "none";
                 };
 
-                document.getElementById("xBtn").onclick = function(e) {
+                document.getElementById("chatBtn").onclick = function(e) {
                   e.preventDefault();
-                  document.getElementById("xOverlay").style.display = "flex";
+                  document.getElementById("chatOverlay").style.display = "flex";
                 };
                 
-                document.getElementById("closeX").onclick = function() {
-                  document.getElementById("xOverlay").style.display = "none";
+                document.getElementById("closeChat").onclick = function() {
+                  document.getElementById("chatOverlay").style.display = "none";
                 };
 
                 //Foster X

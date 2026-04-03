@@ -59,6 +59,7 @@ header {
   opacity: 1;
   outline: none;
   z-index: 4;
+  background-color: rgba(255, 255, 255, .1);
 }
 hr {
   border: solid .5px #ffffff80;
@@ -90,7 +91,7 @@ footer {
   font-size: 15px;
   line-height: 2em;
   border-top: solid .5px #ffffff;
-  text-align: center;
+  text-align: right;
 }
 .Title {
  /* Outline width */
@@ -252,9 +253,9 @@ button {
   border-radius: 10px;
 }
 .MusicVideoContainerThumbnail {
-  width: 6vw;
-  min-width: 7vh;
-  height: 7vh;
+  width: 8vw;
+  max-width: 7vh;
+  height: 5vh;
   background-color: transparent;
   overflow: hidden;
   padding: .5vh;

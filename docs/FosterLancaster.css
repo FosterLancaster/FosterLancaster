@@ -126,7 +126,7 @@ footer {
   font-family: "FL";
   font-size: 8.25vw;
   line-height: 10vh;
-  padding: 1vh;
+  padding: 0vh .25vw 0vh 25vw;
   width: auto;
   color: #ffffff;
   }

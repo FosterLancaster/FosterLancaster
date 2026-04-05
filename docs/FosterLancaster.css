@@ -356,7 +356,7 @@ button {
 
 @media screen and (orientation: landscape) {
   header {
-    padding-left: 2.5vh;                  
+    justify-content: left;            
   }
   .FLNameWritten {
     font-family: "FL";

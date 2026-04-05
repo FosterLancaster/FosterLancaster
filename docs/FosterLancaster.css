@@ -124,7 +124,7 @@ footer {
 }
 .FLNameWritten {
   font-family: "FL";
-  font-size: 2em;
+  font-size: 8.5vw;
   line-height: 10vh;
   width: auto;
   color: #ffffff;
@@ -357,6 +357,13 @@ button {
   header {
     padding-left: 2.5vh;                  
   }
+  .FLNameWritten {
+    font-family: "FL";
+    font-size: 2em;
+    line-height: 10vh;
+    width: auto;
+    color: #ffffff;
+    }
   .LancasterMenu {
     display: none;
   }

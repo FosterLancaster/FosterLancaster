@@ -125,16 +125,17 @@ footer {
 .FLNameWritten {
   font-family: "FL";
   font-size: 2em;
-  line-height: 2em;
+  line-height: 10vh;
   width: auto;
   color: #ffffff;
   }
 .FLNameSayButton {
-  opacity: 1;
+  opacity: 0;
   position: relative;
   background-color: transparent;
   width: 10vh;
   height: 10vh;
+  display: none;
 }
 .FLName:hover {
   opacity: 1;
@@ -328,12 +329,6 @@ button {
   header {
     justify-content: center;                    
   }
-  .FLNameWritten {
-    display: none;
-    }
-  .FLNameSayButton {
-    display: block;
-  }
   .Page {
   height: calc(90dvh / 6);
   background-size: auto calc(90vh / 6);
@@ -360,13 +355,7 @@ button {
 
 @media screen and (orientation: landscape) {
   header {
-    padding-left: 1em;                  
-  }
-  .FLNameWritten {
-    display: block;
-    }
-  .FLNameSayButton {
-    display: none;
+    padding-left: 2.5vh;                  
   }
   .LancasterMenu {
     display: none;

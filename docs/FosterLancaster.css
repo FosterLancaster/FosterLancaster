@@ -122,7 +122,7 @@ footer {
   opacity: .7;
   transition-duration: .5s;
   background-image: url('images/Me.png');
-  background-size: auto 70px;
+  background-size: auto 80%;
   background-repeat: no-repeat;
   background-position: center center;
 }

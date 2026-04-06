@@ -10,13 +10,13 @@
   background-image: url(images/Menu.png);
   background-position: center center;
   background-attachment: fixed;
-  background-size: 30%;
+  background-size: 40%;
   background-repeat: no-repeat;
   border-radius: 50%;
   background-color: transparent;
   transition-duration: .5s;
   transform: rotate(0deg);
-  opacity: .7;
+  opacity: .6;
 }
 .LancasterMenu:hover {
   opacity: 1;

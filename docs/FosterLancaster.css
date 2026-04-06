@@ -121,16 +121,26 @@ footer {
   position: relative;
   opacity: .7;
   transition-duration: .5s;
+  background-image: url('images/Me.png');
+  background-size: auto 70px;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 .FLNameWritten {
   font-family: "FL";
   line-height: 10vh;
   padding: 0vh 2vh 0vh 2vh;
   width: auto;
-  color: #ffffff;
+  color: transparent;
+  background-clip: text;
+  background-image: linear-gradient(to top, rgb(255, 255, 255, .5), transparent, rgb(255, 255, 255, .5));
+  background-size: 100% 100px;
+  background-repeat: repeat-y;
+  background-position: center center;
+  animation: namerise linear 1s infinite;
   }
 .FLName:hover {
-  opacity: 1;
+  transform: scale(1.05);
 }
 /*-------------------FLName---------------------*/
 /*----NameLetter Styling----*/
@@ -448,4 +458,9 @@ button {
     width: calc(100% - 32px);
     max-width: calc(100% - 32px);
   }
+}
+
+@keyframes namerise {
+  0% { background-position: center 0px; }
+  100% { background-position: center -100px; }
 }

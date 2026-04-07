@@ -1,7 +1,7 @@
 /*---- Interactive Menu ----*/
 .LancasterMenu {
-  width: 10vh;
-  height: 10vh;
+  width: 2em;
+  height: 2em;
   position: fixed;
   top: 0px;
   right: 0px;
@@ -10,7 +10,7 @@
   background-image: url(images/Menu.png);
   background-position: center center;
   background-attachment: fixed;
-  background-size: 30% 30%;
+  background-size: 50% 50%;
   background-repeat: no-repeat;
   background-color: transparent;
   transition-duration: .5s;

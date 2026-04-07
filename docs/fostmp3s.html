@@ -6,7 +6,7 @@
 <!----Style Sheets---->
 
 <!----Fost Mp3's----
-<iframe src="https://fostmp3s.com/fostmp3s.html" style="min-height: 400px; min-width: 200px; max-height: 100%; display: block; border: none;" class="fostmp3s"></iframe>
+<iframe src="https://fostmp3s.com/fostmp3s.html" style="width: 400px; height: 400px; min-height: 400px; min-width: 200px; max-height: 100%; display: block; border: none;" class="fostmp3s"></iframe>
 <----Fost Mp3's---->
 
 <style>
@@ -662,6 +662,7 @@ li {
   width: calc(100% - 20px);
   max-width: 500px;  
   text-align: center;
+  pointer-events: none;
 }
 
 /*------100vh Controls Sum Portrait = (228px - 212 (added 10px for mobile))-------*/
@@ -907,7 +908,7 @@ li {
         <div class="MoreHeader">FOSTMp3's Embed Code</div>
         <div class="MoreBody">
         <textarea readonly>
-          <iframe src="https://fostmp3s.com/fostmp3s.html" style="min-height: 400px; min-width: 200px; max-height: 100%; display: block; border: none;" class="fostmp3s"></iframe>
+          <iframe src="https://fostmp3s.com/fostmp3s.html" style="width: 400px; height: 400px; min-height: 400px; min-width: 200px; max-height: 100%; display: block; border: none;" class="fostmp3s"></iframe>
         </textarea>
       </div>
     </div>
@@ -948,7 +949,7 @@ li {
     <div class="chatContent">
     <button id="closeChat">X</button>
     <div class="MoreInner">
-      <div class="MoreHeader"><a style="text-decoration: underline;" href="https://x.com/lancasterfoster" target="_blank">@LancasterFoster</a> <img src="fmp3simages/Chat.png" style="height: 1.2em; margin-bottom: -.2em;"> Posts</div>
+      <div class="MoreHeader">Foster Lancaster Updates <img src="fmp3simages/Chat.png" style="height: 1.2em; margin-bottom: -.2em;"></div>
       <div class="MoreBody">
 <ul class="chatPosts" id="feed">
 </ul>
@@ -1376,7 +1377,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (Password) {
         Password.value = '';                    // clear the text
-        Password.placeholder = '×';   // new placeholder
+        Password.placeholder = '✗';   // new placeholder
       }
 
       // Green (your note said Green but this is red; leaving your note)
@@ -1457,7 +1458,7 @@ document.getElementById("embedBtn").onclick = function(e) {
 
                 //Foster X
 
-  fetch('https://rss.app/feeds/xHHHCvAVnTnyN8hn.xml')
+  fetch('https://rss.app/feeds/zpBfyPr99lIZ4ND7.xml')
     .then(response => response.text())
     .then(str => {
       const parser = new DOMParser();

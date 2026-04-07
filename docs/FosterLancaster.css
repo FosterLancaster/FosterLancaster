@@ -136,8 +136,8 @@ footer {
   animation: namerise linear 1s infinite;
   }
 .FLNameIcon {
-  height: 6.5vh; 
-  margin: 0vh -1vh -2vh 1vh; 
+  height: 7vh; 
+  margin: 0vh -1vh -2.5vh 1vh; 
   width: auto;
   }
 .FLName:hover {

@@ -1459,7 +1459,7 @@ document.getElementById("embedBtn").onclick = function(e) {
                 //Foster X
 
 
-  fetch('https://fostchat.wordpress.com/feed/')
+  fetch('https://fostchat.wordpress.com/?feed=rss2')
   .then(r => r.text())
   .then(str => {
     const parser = new DOMParser();

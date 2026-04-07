@@ -121,10 +121,6 @@ footer {
   position: relative;
   opacity: .4;
   transition-duration: 1s;
-  background-image: url('images/Me.png');
-  background-size: auto 80%;
-  background-repeat: no-repeat;
-  background-position: center center;
 }
 .FLNameWritten {
   font-family: "FL";
@@ -133,7 +129,7 @@ footer {
   width: auto;
   color: transparent;
   background-clip: text;
-  background-image: linear-gradient(to top, rgb(255, 255, 255, .5), transparent, rgb(255, 255, 255, .5));
+  background-image: linear-gradient(to top, #ffffff, transparent, #ffffff);
   background-size: 100% 100px;
   background-repeat: repeat-y;
   background-position: center center;
@@ -364,7 +360,7 @@ button {
     justify-content: left;            
   }
   .FLNameWritten {
-    font-size: 2em;
+    font-size: 6vh;
     }
   .LancasterMenu {
     display: none;

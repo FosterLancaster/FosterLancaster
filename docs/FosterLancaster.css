@@ -135,6 +135,11 @@ footer {
   background-position: center center;
   animation: namerise linear 1s infinite;
   }
+.FLNameIcon {
+  height: 6.5vh; 
+  margin: 0vh -1vh -2vh 1vh; 
+  width: auto;
+  }
 .FLName:hover {
   transform: scale(1.05);
   opacity: 1;
@@ -329,7 +334,7 @@ button {
     justify-content: center;                    
   }
   .FLNameWritten {
-    font-size: 8.2vw;
+    font-size: 7vw;
   }
   .Page {
   height: calc(90dvh / 6);

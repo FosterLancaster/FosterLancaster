@@ -129,7 +129,7 @@ footer {
   width: auto;
   color: transparent;
   background-clip: text;
-  background-image: linear-gradient(to top, #ffffff, transparent, #ffffff), url('images/America.jpg');
+  background-image: linear-gradient(to top, #ffff00, transparent, #ffff00), url('images/America.jpg');
   background-size: cover, 100% 300px;
   background-repeat: repeat-y, repeat-y;
   background-position: center center, center center;

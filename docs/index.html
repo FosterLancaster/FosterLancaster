@@ -56,6 +56,17 @@
   width: 400px;
 }
 }
+@media screen and (max-width: 400px) and (orientation: portrait) {
+body {
+  margin: 0;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+article {
+  flex: 1;
+}
+}
 </style>
 </head>
 

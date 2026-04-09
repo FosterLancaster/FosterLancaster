@@ -79,8 +79,6 @@ section {
   max-width: 68vw;
 }
 article {
-/*-----------No Relative Within Relative------*/
-  height: auto;
   display: block;
 }
 footer {

@@ -334,7 +334,7 @@ button {
     justify-content: center;                    
   }
   .FLNameWritten {
-    font-size: 7vw;
+    font-size: 6vw;
   }
   .FLNameIcon {
     height: 9vw;
@@ -370,7 +370,7 @@ button {
     justify-content: left;            
   }
   .FLNameWritten {
-    font-size: 6vh;
+    font-size: 5vh;
     }
   .LancasterMenu {
     display: none;

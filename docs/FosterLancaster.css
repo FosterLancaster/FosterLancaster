@@ -322,7 +322,8 @@ button {
   top: 50%;
   left: 50%;
   width: 100vw;
-  height: calc(100dvh + 10px);
+  min-height: calc(100dvh + 10px);
+  height: 100%;
   object-fit: cover;
   object-position: center 0px; /* moves crop focus lower */
   transform: translate(-50%, -50%);

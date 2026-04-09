@@ -127,7 +127,7 @@ footer {
   line-height: 10vh;
   padding: 0vh 2vh 0vh 2vh;
   width: auto;
-  color: transparent;
+  color: rgba(255, 255, 0, .2);
   background-clip: text;
   background-image: url('images/America.jpg');
   background-size: 100% 300px;

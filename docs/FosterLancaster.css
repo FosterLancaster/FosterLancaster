@@ -342,8 +342,9 @@ button {
     margin: 0vw -1vw -3vw 1vw; 
     }
     .LancasterMenu {
-      width: 9vw;
-      height: 9vw;
+      width: 8vw;
+      height: 8vw;
+      background-size: 4vw;
     }
   .Page {
   height: calc(90dvh / 6);

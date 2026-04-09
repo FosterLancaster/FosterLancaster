@@ -1,24 +1,25 @@
 /*---- Interactive Menu ----*/
 .LancasterMenu {
-  width: 2em;
-  height: 2em;
+  width: 10vh;
+  height: 10vh;
   position: fixed;
   top: 0px;
   right: 0px;
   z-index: 5;
   cursor: pointer;
-  background-image: url(images/Menu.png);
+  background-image: url('images/Menu.png');
   background-position: center center;
   background-attachment: fixed;
-  background-size: 50% 50%;
+  background-size: 4vw 4vw;
   background-repeat: no-repeat;
   background-color: transparent;
-  transition-duration: .5s;
+  transition-duration: 0s;
   transform: rotate(0deg);
   opacity: 1;
   overflow: hidden;
 }
 .LancasterMenu:hover {
+  transition-duration: .5s;
   opacity: .5;
 }
 .LancasterMenu.active {

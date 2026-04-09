@@ -299,7 +299,7 @@ button {
 }
 .FirstVideoScreen {
   position: absolute;
-  top: 0;          /* keep your spacing */
+  top: 10dvh;        
   left: 0;
   width: 100vw;
   max-width: 100vw;

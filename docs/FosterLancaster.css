@@ -129,10 +129,10 @@ footer {
   width: auto;
   color: transparent;
   background-clip: text;
-  background-image: linear-gradient(to top, #ffff00, transparent, #ffff00), url('images/America.jpg');
-  background-size: cover, 100% 300px;
-  background-repeat: repeat-y, repeat-y;
-  background-position: center center, center center;
+  background-image: url('images/America.jpg');
+  background-size: 100% 300px;
+  background-repeat: repeat-y;
+  background-position: center center;
   animation: namerise linear 10s infinite;
   }
 .FLNameIcon {
@@ -468,6 +468,6 @@ button {
 }
 
 @keyframes namerise {
-  0% { background-position: center center, center 0px;  }
-  100% { background-position: center center, center -300px; }
+  0% { background-position: center 0px;  }
+  100% { background-position: center -300px; }
 }

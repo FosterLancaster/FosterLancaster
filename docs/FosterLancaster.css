@@ -128,13 +128,7 @@ footer {
   line-height: 10vh;
   padding: 0vh 2vh 0vh 2vh;
   width: auto;
-  color: rgba(255, 255, 0, .2);
-  background-clip: text;
-  background-image: url('images/America.jpg');
-  background-size: 100% 300px;
-  background-repeat: repeat-y;
-  background-position: center center;
-  animation: namerise linear 10s infinite;
+  color: #ffffff;
   }
 .FLNameIcon {
   height: 7vh; 
@@ -465,9 +459,4 @@ button {
     width: calc(100% - 32px);
     max-width: calc(100% - 32px);
   }
-}
-
-@keyframes namerise {
-  0% { background-position: center 0px;  }
-  100% { background-position: center -300px; }
 }

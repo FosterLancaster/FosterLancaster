@@ -129,7 +129,13 @@ footer {
   padding: 0vh 2vh 0vh 2vh;
   width: auto;
   color: #ffffff;
-  }
+  text-shadow:
+  1px 1px 0 #9a00f4,
+  2px 2px 0 #9a00f4,
+  3px 3px 0 #9a00f4,
+  4px 4px 0 #9a00f4,
+  5px 5px 0 #9a00f4;
+}
 .FLNameIcon {
   height: 7vh; 
   margin: 0vh -1vh -2vh 1vh; 

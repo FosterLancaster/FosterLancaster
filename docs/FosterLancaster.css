@@ -133,8 +133,8 @@ footer {
   1px 1px 0 #9a00f4,
   2px 2px 0 #9a00f4,
   3px 3px 0 #9a00f4,
-  4px 4px 0 #9a00f4,
-  5px 5px 0 #9a00f4;
+  4px 4px 0 #9a00f4;
+  animation: Huey 5s linear infinite;
 }
 .FLNameIcon {
   height: 7vh; 
@@ -465,4 +465,10 @@ button {
     width: calc(100% - 32px);
     max-width: calc(100% - 32px);
   }
+}
+
+@keyframes Huey {
+  0% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(180deg); }
+  100% { filter: hue-rotate(360deg); }
 }

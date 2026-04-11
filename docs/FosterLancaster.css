@@ -55,12 +55,13 @@ header {
   align-items: center;           
   position: fixed;
   bottom: 0px;
+  height: calc(10dvh - 1px);
   width: 100%;             
-  overflow: visible;
+  overflow: hidden;
   opacity: 1;
   outline: none;
   z-index: 6;
-  background-color: #b16918;
+  background-color: #834702;
 }
 hr {
   border: solid .5px #ffffff80;
@@ -74,7 +75,7 @@ line-height: auto;
 section {
   position: relative;
   height: auto;
-  min-height: 90vh;
+  min-height: 90dvh;
   width: 68vw; 
   max-width: 68vw;
 }
@@ -88,7 +89,7 @@ footer {
   height: auto;
   font-family: 'FL2';
   position: relative;
-  padding: 1em 1em calc(1em + 10vh) 1em;
+  padding: 1em 1em calc(1em + 10dvh) 1em;
   font-size: 15px;
   line-height: 2em;
   border-top: solid .5px #ffffff;

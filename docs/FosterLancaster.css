@@ -59,8 +59,8 @@ header {
   overflow: visible;
   opacity: 1;
   outline: none;
-  z-index: 4;
-  background-color: #a55800;
+  z-index: 6;
+  background-color: #b16918;
 }
 hr {
   border: solid .5px #ffffff80;
@@ -174,7 +174,7 @@ footer {
   top: 0vh;
   right: 0px;
   position: relative;
-  z-index: 6;
+  z-index: 5;
 }
 #Navigation {
   height: 90vh;

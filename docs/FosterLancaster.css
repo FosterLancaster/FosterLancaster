@@ -94,6 +94,9 @@ footer {
   border-top: solid .5px #ffffff;
   text-align: right;
 }
+footer a {
+  color: rgb(255, 255, 255, .4);
+}
 .Title {
  /* Outline width */
   background-color: #ffffff;

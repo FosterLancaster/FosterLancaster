@@ -55,7 +55,7 @@ header {
   align-items: center;           
   position: fixed;
   bottom: 0px;
-  height: calc(10dvh - 1px);
+  height: calc(10dvh - .5px);
   width: 100%;             
   overflow: hidden;
   opacity: 1;

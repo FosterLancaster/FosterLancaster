@@ -60,7 +60,7 @@ header {
   opacity: 1;
   outline: none;
   z-index: 4;
-  background-color: rgba(255, 255, 255, .7);
+  background-color: #381e00;
 }
 hr {
   border: solid .5px #ffffff80;
@@ -93,9 +93,6 @@ footer {
   line-height: 2em;
   border-top: solid .5px #ffffff;
   text-align: right;
-}
-footer a {
-  color: rgb(255, 255, 255, .4);
 }
 .Title {
  /* Outline width */

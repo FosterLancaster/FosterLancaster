@@ -84,7 +84,11 @@ table {
 #playBtn:hover .listenCounter {
   opacity: 1;
 }
- .MusicHeader {
+.PasswordBar:hover .PasswordSubmit {
+  width: 100px;
+  max-width: 100px;
+}
+.MusicHeader {
   transition-duration: .2s;
   padding: 40px 0px 40px 0px;
   position: relative;
@@ -131,12 +135,13 @@ table {
   display: block;
 }
 .PasswordSubmit {
+  transition-duration: .1s;
   font-size: 19px;
   font-family: 'futura';
   height: 40px;
   margin: 0px;
-  width: auto;
-  padding: 0px 4vw 0px 4vw;
+  width: 0px;
+  max-width: 0px;
   color: #ffff00;
   text-align: center;
   cursor: pointer;
@@ -1363,7 +1368,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Reset
       if (Password) {
         Password.value = '';                    // clear the text
-        Password.placeholder = '✓';    // new placeholder
+        Password.placeholder = '✓Right';    // new placeholder
       }
 
       // Red (your note said Red but this is green; leaving your note)
@@ -1377,7 +1382,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (Password) {
         Password.value = '';                    // clear the text
-        Password.placeholder = '✗';   // new placeholder
+        Password.placeholder = '✗Wrong';   // new placeholder
       }
 
       // Green (your note said Green but this is red; leaving your note)

@@ -101,8 +101,8 @@ footer {
   background-clip: text;
   color: #ffffff;
   font-size: 1.5em;
-  min-height: 10vh;
-  line-height: 10vh;
+  min-height: 10dvh;
+  line-height: 10dvh;
   overflow: visible;
   position: relative;
   text-align: center;

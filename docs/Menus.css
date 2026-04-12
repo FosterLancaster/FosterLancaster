@@ -20,7 +20,6 @@
 }
 .LancasterMenu:hover {
   transition-duration: .5s;
-  opacity: .5;
 }
 .LancasterMenu.active {
   animation: none;

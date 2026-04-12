@@ -63,7 +63,7 @@ body {
   background-attachment: scroll;
   background-repeat: no-repeat;
   border: solid 5px #000000;
-  background-color: rgb(255, 255, 0, .2);
+  background-color: rgb(0, 0, 0, .5);
   background-image: url('fmp3simages/FostMp3sLogoImprint.png');
 }
 a {
@@ -107,6 +107,11 @@ a:hover {
   .Return:hover {
     background-color: #000000;
   }
+  @keyframes clickhere2 {
+  0% { transform: scale(1); }
+  50% { transform: scale(.8); }
+  100% { transform: scale(1);}
+}
 </style>
 </head>
 
@@ -119,7 +124,7 @@ Thank you for your purchase! The FOSTMp3's password is:<br>
 </blockquote>
 
   <div align="center">
-      <div class="PasswordUnlockBar">
+      <div class="PasswordUnlockBar" style="animation: clickhere2 3s linear infinite;">
         <div id="passwordUnlock" class="PasswordBar">
           <input id="passwordInput" class="Password" value="SingToMe"/>
         </div>

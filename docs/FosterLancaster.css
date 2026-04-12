@@ -61,7 +61,8 @@ header {
   opacity: 1;
   outline: none;
   z-index: 6;
-  background-color: #b08b5b;
+  background-color: #000000;
+  border-top: .5px solid #ffffff;
 }
 hr {
   border: solid .5px #ffffff80;
@@ -121,14 +122,14 @@ footer {
   z-index: 3;
   position: relative;
   opacity: 1;
-  transition-duration: 1s;
+  transition-duration: .5s;
 }
 .FLNameWritten {
   font-family: "FL";
   line-height: 10vh;
   padding: 0vh 2vh 0vh 2vh;
   width: auto;
-  color: #000000;
+  color: #222222;
 }
 .FLNameIcon {
   height: 7.2vh; 
@@ -137,7 +138,6 @@ footer {
   }
 .FLName:hover {
   transform: scale(1.05);
-  opacity: .5;
 }
 /*-------------------FLName---------------------*/
 /*----NameLetter Styling----*/

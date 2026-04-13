@@ -61,7 +61,7 @@ header {
   opacity: 1;
   outline: none;
   z-index: 6;
-  background-color: #000000;
+  background-color: #ffff00;
   border-top: .5px solid #ffffff;
 }
 hr {
@@ -129,7 +129,7 @@ footer {
   line-height: 10vh;
   padding: 0vh 2vh 0vh 2vh;
   width: auto;
-  color: #222222;
+  color: #000000;
 }
 .FLNameIcon {
   height: 7.2vh; 

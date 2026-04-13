@@ -129,7 +129,6 @@ table {
   overflow: hidden;
   background-color: transparent;
   border: none;
-  animation: clickhere 2s linear infinite;
   white-space: nowrap;
   text-overflow: ellipsis;
   display: block;
@@ -148,7 +147,6 @@ table {
   user-select: none; /* prevent highlighting text */
   pointer-events: auto;
   background-color: rgb(0, 0, 0, .7);
-  border-left: solid .5px rgb(255, 255, 255, .7);
 }
 .PasswordSubmit:hover {
   background-color: rgba(255, 255, 0, .5);
@@ -329,7 +327,8 @@ table {
   left: 0px;
   z-index: 0;
   transition-duration: .5s;
-  border-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
 }
 .BuyButtonIcon {
   width: auto;
@@ -407,7 +406,7 @@ table {
   cursor: pointer;
   transition-duration: .3s;
   max-width: 80%;
-  animation: clickhere2 1s linear infinite;
+  animation: clickhere 1s linear infinite;
 }
 #buyBtn {
   cursor: pointer;
@@ -774,11 +773,6 @@ li {
 }
 
 @keyframes clickhere {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
-}
-@keyframes clickhere2 {
   0% { transform: scale(1); }
   50% { transform: scale(.8); }
   100% { transform: scale(1);}

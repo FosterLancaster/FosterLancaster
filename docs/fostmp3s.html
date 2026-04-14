@@ -1457,10 +1457,7 @@ document.getElementById("embedBtn").onclick = function(e) {
 
                 //Foster X
 
-
-
-
-                fetch('https://fostchat-rss.fostmp3s.workers.dev/')
+   fetch('https://fostchat-rss.fostmp3s.workers.dev/')
   .then(response => response.text())
   .then(str => {
     const parser = new DOMParser();
@@ -1498,6 +1495,40 @@ document.getElementById("embedBtn").onclick = function(e) {
   .catch(err => console.error("Error loading RSS feed:", err));
 </script>
 
+<!-----Fetcher
+export default {
+  async fetch(request) {
+
+    const rssUrl = "https://fequd5ata7a5z.wordpress.com/feed/";
+    const response = await fetch(rssUrl);
+    let text = await response.text();
+
+    // Add images from <content:encoded> if they exist
+    text = text.replace(
+      /<content:encoded><!\[CDATA\[(.*?)\]\]><\/content:encoded>/gs,
+      (match, content) => {
+
+        // Force all images to be full width
+        const updatedContent = content.replace(
+          /<img /g,
+          '<img style="width:100%; height:auto; display:block;" '
+        );
+
+        return `<content:encoded><![CDATA[${updatedContent}]]></content:encoded>`;
+      }
+    );
+
+    const headers = new Headers();
+    headers.set("Content-Type", "application/rss+xml");
+    headers.set("Access-Control-Allow-Origin", "*");
+
+    return new Response(text, {
+      status: 200,
+      headers
+    });
+  }
+};
+  ----->
 </body>
 </html>
 

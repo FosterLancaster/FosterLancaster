@@ -62,7 +62,6 @@ header {
   outline: none;
   z-index: 6;
   background-color: #ffff00;
-  border-top: .5px solid #ffffff;
 }
 hr {
   border: solid .5px #ffffff80;
@@ -123,21 +122,21 @@ footer {
   position: relative;
   opacity: 1;
   transition-duration: .5s;
+  margin: 0px 4vh 0px 4vh;
+  animation: nameless 3s linear infinite;
 }
 .FLNameWritten {
   font-family: "FL";
   line-height: 10vh;
-  padding: 0vh 2vh 0vh 2vh;
   width: auto;
   color: #000000;
 }
 .FLNameIcon {
-  height: 7.2vh; 
-  margin: 0vh -1vh -2vh 1vh; 
+  height: 7.5vh; 
   width: auto;
   }
 .FLName:hover {
-  transform: scale(1.02);
+  transform: scale(1.05);
 }
 /*-------------------FLName---------------------*/
 /*----NameLetter Styling----*/
@@ -333,7 +332,7 @@ button {
   .FLNameIcon {
     height: 9vw;
     width: 9vw;
-    margin: 0vw -1vw -3vw 1vw; 
+    margin: 0vw 1vw -3vw 1vw; 
     }
   .Page {
   height: calc(90dvh / 6);
@@ -366,6 +365,11 @@ button {
   .FLNameWritten {
     font-size: 5vh;
     }
+    .FLNameIcon {
+      height: 8vh;
+      width: 8vh;
+      margin: 0vh .8vh -2.8vh .8vh; 
+      }
   .LancasterMenu {
     display: none;
   }
@@ -459,4 +463,10 @@ button {
     width: calc(100% - 32px);
     max-width: calc(100% - 32px);
   }
+}
+
+@keyframes nameless {
+  0% { filter: brightness(1); }
+  50% { filter: brightness(2); }
+  100% { filter: brightness(1); }
 }

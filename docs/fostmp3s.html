@@ -1264,27 +1264,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-//Play on first tap (touch devices)
-    let hasTouched = false;
 
-playBtn.addEventListener('touchstart', (e) => {
+    
+    playBtn.addEventListener('touchstart', (e) => {
   if (!audio) return;
 
-  // prevent weird double-trigger with click
-  e.preventDefault();
+  e.preventDefault(); // stop ghost click / double trigger
 
-  // FIRST TAP on mobile
-  if (!hasTouched) {
-    hasTouched = true;
-
-    if (currentSongIndex === -1) {
-      selectSong(0);
-      playSong(0); // 🔑 actually play
-    } else {
-      togglePlayPause();
-    }
+  if (currentSongIndex === -1) {
+    selectSong(0);
+    playSong(0);
+  } else {
+    togglePlayPause(); // 🔑 this now pauses too
   }
 }, { passive: false });
+
+
 
 
   }

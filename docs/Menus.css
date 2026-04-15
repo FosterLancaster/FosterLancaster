@@ -31,8 +31,9 @@
   overflow: hidden;
   z-index: 2;
   width: calc(90% - 1px);
-  border: solid .5px #ffffff80;
+  background-color: rgba(255, 255, 255, .05);
   border-radius: 20px;
+  border: solid .5 transparent;
 }
 .carousel-track {
   display: flex;

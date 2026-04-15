@@ -1263,9 +1263,7 @@ document.addEventListener("DOMContentLoaded", () => {
       togglePlayPause();
     });
 
-
-
-    
+//Play on first touch (touch screens)
     playBtn.addEventListener('touchstart', (e) => {
   if (!audio) return;
 
@@ -1278,9 +1276,6 @@ document.addEventListener("DOMContentLoaded", () => {
     togglePlayPause(); // 🔑 this now pauses too
   }
 }, { passive: false });
-
-
-
 
   }
   // Progress Bar

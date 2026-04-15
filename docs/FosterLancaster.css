@@ -93,7 +93,7 @@ footer {
   padding: 1em 1em calc(1em + 10dvh) 1em;
   font-size: 15px;
   line-height: 2em;
-  border-top: solid .5px #ffffff;
+  border-top: solid .5px transparent;
   text-align: right;
 }
 .Title {
@@ -152,7 +152,7 @@ footer {
   background-position: center left;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  border: solid .5px #ffffff;
+  border: solid .5px transparent;
   text-align: center;
   padding: 0px;
   margin: 0px;

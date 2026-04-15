@@ -1263,13 +1263,31 @@ document.addEventListener("DOMContentLoaded", () => {
       togglePlayPause();
     });
 
-    // Play Song On Touch Screen Devices (prime audio)
-    playBtn.addEventListener('touchstart', () => {
-      if (!audio) return;
-      audio.play().then(() => audio.pause()).catch(() => {});
-    }, { once: true });
-  }
 
+//Play on first tap (touch devices)
+    let hasTouched = false;
+
+playBtn.addEventListener('touchstart', (e) => {
+  if (!audio) return;
+
+  // prevent weird double-trigger with click
+  e.preventDefault();
+
+  // FIRST TAP on mobile
+  if (!hasTouched) {
+    hasTouched = true;
+
+    if (currentSongIndex === -1) {
+      selectSong(0);
+      playSong(0); // 🔑 actually play
+    } else {
+      togglePlayPause();
+    }
+  }
+}, { passive: false });
+
+
+  }
   // Progress Bar
   if (progressBar) {
     progressBar.addEventListener('click', (e) => {

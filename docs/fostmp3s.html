@@ -595,7 +595,9 @@ input[type="range"]::-webkit-slider-thumb {
   flex: 1;
   overflow-y: auto;
   width: calc(100% - 1px);
+  border: solid .5px transparent;
   border-radius: 5px;
+  background-color: rgba(0, 0, 0, .1);
 }
 .MoreInner textarea {
   flex: 1;
@@ -637,7 +639,8 @@ input[type="range"]::-webkit-slider-thumb {
   text-overflow: ellipsis;
 }
 .chatPosts {
-  padding: 10px 0 10px 0; 
+  padding: 0px;
+  margin: 0px; 
   width: 100%;
   max-width: 100%;
   flex: 1;
@@ -655,7 +658,7 @@ li {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
-  margin: 0px auto 15px auto; 
+  margin: 10px auto 10px auto; 
   padding: 5px 5px 5px 5px;
   width: calc(100% - 20px);
   max-width: 500px;  

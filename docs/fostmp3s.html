@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <!----Foster Lancaster---->
-<title>FOSTMp3's version 1.3</title>
+<title>FOSTMp3's version 1.4</title>
 <!----Style Sheets---->
 
 <!----Fost Mp3's----
@@ -665,6 +665,9 @@ li {
   text-align: center;
   pointer-events: none;
 }
+#chatLockedMessage {
+  display: flex;
+}
 
 /*------100vh Controls Sum Portrait = (228px - 212 (added 10px for mobile))-------*/
 @media screen and (max-width: 500px) {
@@ -945,6 +948,9 @@ li {
     <div class="chatContent">
     <button id="closeChat">X</button>
     <div class="MoreInner">
+      <div id="chatLockedMessage" style="display:none; height:100%; width:100%; align-items:center; justify-content:center; text-align:center; font-size:1.2em;">
+        Enter the fan password continue
+      </div>
       <div class="MoreHeader">Foster Lancaster Updates <img src="fmp3simages/Chat.png" style="height: 1.2em; margin-bottom: -.2em;"></div>
       <div class="MoreBody">
 <ul class="chatPosts" id="feed">
@@ -1451,16 +1457,43 @@ document.getElementById("embedBtn").onclick = function(e) {
                   document.getElementById("embedOverlay").style.display = "none";
                 };
 
-                document.getElementById("chatBtn").onclick = function(e) {
-                  e.preventDefault();
-                  document.getElementById("chatOverlay").style.display = "flex";
-                };
-                
-                document.getElementById("closeChat").onclick = function() {
-                  document.getElementById("chatOverlay").style.display = "none";
-                };
 
-                //Foster X
+
+//Show Chat if passsword entered
+
+document.getElementById("chatBtn").onclick = function(e) {
+  e.preventDefault();
+
+  const overlay = document.getElementById("chatOverlay");
+  const lockedMsg = document.getElementById("chatLockedMessage");
+  const chatBody = document.querySelector(".MoreBody");
+
+  // same logic you already use
+  const isUnlocked = localStorage.getItem('infiniteListen') === 'true';
+
+  overlay.style.display = "flex";
+
+  if (!isUnlocked) {
+    // show locked message
+    lockedMsg.style.display = "flex";
+    chatBody.style.display = "none";
+  } else {
+    // show real chat
+    lockedMsg.style.display = "none";
+    chatBody.style.display = "block";
+  }
+};
+                
+document.getElementById("closeChat").onclick = function() {
+  document.getElementById("chatOverlay").style.display = "none";
+
+  // reset view
+  document.getElementById("chatLockedMessage").style.display = "none";
+  document.querySelector(".MoreBody").style.display = "block";
+};
+
+              
+//Foster Chat From Wordpress
 
    fetch('https://fostchat-rss.fostmp3s.workers.dev/')
   .then(response => response.text())

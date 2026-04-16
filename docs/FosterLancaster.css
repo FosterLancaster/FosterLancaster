@@ -93,6 +93,7 @@ footer {
   font-size: 15px;
   line-height: 2em;
   border-top: solid .5px transparent;
+  background-color: rgba(0, 0, 0, .4);
   text-align: right;
 }
 .Title {

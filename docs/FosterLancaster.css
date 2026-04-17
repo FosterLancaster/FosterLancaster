@@ -61,6 +61,7 @@ header {
   outline: none;
   z-index: 6;
   background-color: #000000;
+  background-image: linear-gradient(to top, #000000 0%, #000000 50%, #381e00 50%, #381e00 100%);
   border-top: solid .5px #ffffff;
 }
 hr {
@@ -93,7 +94,7 @@ footer {
   font-size: 15px;
   line-height: 2em;
   border-top: solid .5px transparent;
-  background-color: rgb(56, 30, 0, .5);
+  background-color: #000000;
   text-align: right;
 }
 .Title {
@@ -130,7 +131,7 @@ footer {
 .FLNameWritten {
   font-family: "FL";
   width: auto;
-  color: #ffff00;
+  color: #ffffff;
 }
 .FLVowels {
   opacity: .5;
@@ -336,9 +337,9 @@ button {
     font-size: 6vw;
   }
   .FLNameIcon {
-    height: 9vw;
-    width: 9vw;
-    margin: 0vw 1vw -2.5vw 1vw; 
+    height: 10vw;
+    width: 10vw;
+    margin: 0vw 1vw -3vw 1vw; 
     }
   .Page {
   height: calc(90dvh / 6);

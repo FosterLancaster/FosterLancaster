@@ -126,6 +126,7 @@ footer {
   opacity: 1;
   transition-duration: .5s;
   padding: 0px 2vh 0px 2vh;
+  bottom: -2.3vh;
 }
 .FLNameWritten {
   font-family: "FL";
@@ -133,7 +134,7 @@ footer {
   color: #ffffff;
 }
 .FLVowels {
-  opacity: .5;
+  opacity: .4;
   padding-right: .5vh;
 }
 .FLNameIcon {
@@ -332,16 +333,13 @@ button {
   header {
     justify-content: center;                    
   }
-  .FLName {
-    bottom: -2vh;
-  }
   .FLNameWritten {
     font-size: 1.1em;
   }
   .FLNameIcon {
-    height: 2.2em;
-    width: 2.2em;
-    margin: 0em .4em -.8em .4em; 
+    height: 6vh;
+    width: 6vh;
+    margin: 0em .4em -2vh .4em; 
     }
   .Page {
   height: calc(90dvh / 6);
@@ -370,9 +368,6 @@ button {
 @media screen and (orientation: landscape) {
   header {
     justify-content: right;            
-  }
-  .FLName {
-    bottom: -2.2vh;
   }
   .FLNameWritten {
     font-size: 4vh;

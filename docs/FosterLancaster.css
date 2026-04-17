@@ -93,7 +93,7 @@ footer {
   font-size: 15px;
   line-height: 2em;
   border-top: solid .5px transparent;
-  background-color: rgba(0, 0, 0, .4);
+  background-color: rgb(56, 30, 0, .5);
   text-align: right;
 }
 .Title {
@@ -133,13 +133,13 @@ footer {
   color: #ffff00;
 }
 .FLVowels {
-  opacity: .25;
+  opacity: .5;
   padding-right: .5vh;
 }
 .FLNameIcon {
   height: 7.5vh; 
   width: auto;
-  animation: nameless 2s linear infinite;
+  animation: nameless 3s linear infinite;
   }
 .FLName:hover {
   transform: scale(.9);

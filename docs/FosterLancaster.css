@@ -60,7 +60,8 @@ header {
   opacity: 1;
   outline: none;
   z-index: 6;
-  background-color: #ffff00;
+  background-color: #000000;
+  border-top: solid .5px #ffffff;
 }
 hr {
   border: solid .5px #ffffff80;
@@ -125,12 +126,11 @@ footer {
   opacity: 1;
   transition-duration: .5s;
   padding: 0px 2vh 0px 2vh;
-  animation: nameless 2s linear infinite;
 }
 .FLNameWritten {
   font-family: "FL";
   width: auto;
-  color: #000000;
+  color: #ffff00;
 }
 .FLVowels {
   opacity: .25;
@@ -139,6 +139,7 @@ footer {
 .FLNameIcon {
   height: 7.5vh; 
   width: auto;
+  animation: nameless 2s linear infinite;
   }
 .FLName:hover {
   transform: scale(.9);
@@ -337,7 +338,7 @@ button {
   .FLNameIcon {
     height: 9vw;
     width: 9vw;
-    margin: 0vw 1vw -1.5vw 1vw; 
+    margin: 0vw 1vw -2.5vw 1vw; 
     }
   .Page {
   height: calc(90dvh / 6);
@@ -373,7 +374,7 @@ button {
     .FLNameIcon {
       height: 6vh;
       width: 6vh;
-      margin: 0vh 1vh -1.5vh 1vh; 
+      margin: 0vh 1vh -1.6vh 1vh; 
       }
   .LancasterMenu {
     display: none;

@@ -124,7 +124,8 @@ footer {
   opacity: 1;
   transition-duration: .5s;
   padding: 0px 2vh 0px 2vh;
-  animation: nameless 2s linear infinite;
+  animation: nameless 3s linear infinite;
+  transform: scale(.7);
 }
 .FLNameWritten {
   font-family: "FL";
@@ -134,7 +135,7 @@ footer {
 }
 .FLVowels {
   opacity: .5;
-  animation: initials 3s linear infinite;
+  animation: initials 6s linear infinite;
   padding-right: .5vh;
 }
 .FLNameIcon {
@@ -142,7 +143,7 @@ footer {
   width: auto;
   }
 .FLName:hover {
-  transform: scale(1.05);
+  transform: scale(1);
 }
 /*-------------------FLName---------------------*/
 /*----NameLetter Styling----*/

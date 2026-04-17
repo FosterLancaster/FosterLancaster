@@ -124,7 +124,7 @@ footer {
   transition-duration: .5s;
   padding: 0px 2vh 0px 2vh;
   animation: nameless 3s linear infinite;
-  bottom: -1vh;
+  bottom: -.5vh;
 }
 .FLNameWritten {
   font-family: "FL";

@@ -124,11 +124,12 @@ footer {
   opacity: 1;
   transition-duration: .5s;
   margin: 0px 4vh 0px 4vh;
-  animation: nameless 3s linear infinite;
+  animation: nameless 2s linear infinite;
 }
 .FLNameWritten {
   font-family: "FL";
   line-height: 10vh;
+  padding: .5vh;
   width: auto;
   color: #000000;
 }

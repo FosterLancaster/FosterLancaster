@@ -125,7 +125,7 @@ footer {
   opacity: 1;
   transition-duration: .5s;
   padding: 0px 2vh 0px 2vh;
-  animation: nameless 3s linear infinite;
+  animation: nameless 2s linear infinite;
 }
 .FLNameWritten {
   font-family: "FL";
@@ -133,8 +133,7 @@ footer {
   color: #000000;
 }
 .FLVowels {
-  opacity: .5;
-  animation: initials 6s linear infinite;
+  opacity: .25;
   padding-right: .5vh;
 }
 .FLNameIcon {
@@ -142,7 +141,7 @@ footer {
   width: auto;
   }
 .FLName:hover {
-  transform: scale(.8);
+  transform: scale(.9);
 }
 /*-------------------FLName---------------------*/
 /*----NameLetter Styling----*/
@@ -472,9 +471,4 @@ button {
   0% { filter: brightness(1); }
   50% { filter: brightness(2); }
   100% { filter: brightness(1); }
-}
-@keyframes initials {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
 }

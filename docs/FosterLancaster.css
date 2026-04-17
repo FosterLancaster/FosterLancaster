@@ -132,6 +132,10 @@ footer {
   width: auto;
   color: #000000;
 }
+.FLVowels {
+  opacity: .5;
+  animation: initials 3s linear infinite;
+}
 .FLNameIcon {
   height: 7.5vh; 
   width: auto;
@@ -470,4 +474,9 @@ button {
   0% { filter: brightness(1); }
   50% { filter: brightness(2); }
   100% { filter: brightness(1); }
+}
+@keyframes initials {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }

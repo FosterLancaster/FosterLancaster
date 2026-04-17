@@ -334,15 +334,15 @@ button {
     justify-content: center;                    
   }
   .FLName {
-    bottom: -.9em;
+    bottom: -.7em;
   }
   .FLNameWritten {
-    font-size: 1.2em;
+    font-size: 1.1em;
   }
   .FLNameIcon {
     height: 2.2em;
     width: 2.2em;
-    margin: 0em .4em -.5em .4em; 
+    margin: 0em .4em -.7em .4em; 
     }
   .Page {
   height: calc(90dvh / 6);

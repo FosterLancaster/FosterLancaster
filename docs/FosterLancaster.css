@@ -129,14 +129,13 @@ footer {
 .FLNameWritten {
   font-family: "FL";
   line-height: 10vh;
-  padding: 1vh;
   width: auto;
   color: #000000;
 }
 .FLVowels {
   opacity: .5;
   animation: initials 3s linear infinite;
-  padding: 0px .5vh 0px .5vh;
+  padding-right: .5vh;
 }
 .FLNameIcon {
   height: 7.5vh; 

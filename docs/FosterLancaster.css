@@ -51,8 +51,7 @@ a:hover {
 }
 header {
   display: flex;               
-  text-align: center;      
-  align-items: center;           
+  text-align: center;                
   position: fixed;
   bottom: 0px;
   height: calc(10dvh - .5px);
@@ -120,16 +119,15 @@ footer {
   cursor: pointer;
   font-family: 'FL';
   z-index: 3;
-  position: relative;
+  position: absolute;
   opacity: 1;
   transition-duration: .5s;
   padding: 0px 2vh 0px 2vh;
   animation: nameless 3s linear infinite;
-  transform: scale(.7);
+  bottom: -1vh;
 }
 .FLNameWritten {
   font-family: "FL";
-  line-height: 10vh;
   width: auto;
   color: #000000;
 }
@@ -143,7 +141,7 @@ footer {
   width: auto;
   }
 .FLName:hover {
-  transform: scale(1);
+  transform: scale(.8);
 }
 /*-------------------FLName---------------------*/
 /*----NameLetter Styling----*/
@@ -339,7 +337,7 @@ button {
   .FLNameIcon {
     height: 9vw;
     width: 9vw;
-    margin: 0vw 1vw -3vw 1vw; 
+    margin: 0vw 1vw -1.5vw 1vw; 
     }
   .Page {
   height: calc(90dvh / 6);
@@ -375,7 +373,7 @@ button {
     .FLNameIcon {
       height: 8vh;
       width: 8vh;
-      margin: 0vh .8vh -2.8vh .8vh; 
+      margin: 0vh .8vh -1.5vh .8vh; 
       }
   .LancasterMenu {
     display: none;

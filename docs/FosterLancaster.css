@@ -140,10 +140,11 @@ footer {
 .FLNameIcon {
   height: 7.5vh; 
   width: auto;
+  transition-duration: 1s;
   animation: nameless 3s linear infinite;
   }
 .FLName:hover {
-  transform: scale(.9);
+  transform: translateY(-5px);
 }
 /*-------------------FLName---------------------*/
 /*----NameLetter Styling----*/

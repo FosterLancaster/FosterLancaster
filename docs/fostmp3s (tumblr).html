@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <!----Foster Lancaster---->
-<title>FOSTMp3's version 1.4</title>
+<title>FOSTMp3's version 1.4 (Tumblr Version)</title>
 <!----Style Sheets---->
 
 <!----Fost Mp3's----
@@ -46,9 +46,12 @@ table {
   border-spacing: 0;
 }
  .LancasterFrame {
+/*----For Tumblr----*/
+  margin-top: 50px; 
+/*----For Tumblr----*/
   font-size: 18px;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 50px);
   overflow: hidden;
   position: relative;
   opacity: 1;
@@ -228,12 +231,13 @@ table {
   border-top: none;
 }
 
+/*----50 Extra For Tumblr----*/
 /*------100vh Controls Sum Landscape = (218px - 202px (16px))-------*/
 /*----Bars----*/
 .songSelection {
   /*----Music----*/
-  height: calc(100vh - 218px);
-  min-height: calc(100vh - 218px);
+  height: calc(100vh - 268px);
+  min-height: calc(100vh - 268px);
   padding: 5px;
   margin: 4px;
   border-radius: 0px;
@@ -248,9 +252,10 @@ table {
   display: block;
   pointer-events: none;
 }
+/*----50 Extra For Tumblr----*/
 .OffMusicHeader {
-  height: calc((100vh - 202px) / 4);
-  min-height: calc((100vh - 202px) / 4);
+  height: calc((100vh - 252px) / 4);
+  min-height: calc((100vh - 252px) / 4);
   width: 100%;
   display: flex; 
   align-items: center; 
@@ -260,9 +265,10 @@ table {
   max-width: 95%;
   overflow: hidden;
 }
+/*----50 Extra For Tumblr----*/
  .BuyButton {
-  height: calc((100vh - 202px) / 4);
-  min-height: calc((100vh - 202px) / 4);
+  height: calc((100vh - 252px) / 4);
+  min-height: calc((100vh - 252px) / 4);
   font-family: "FL";
   position: relative;
   width: calc(100% - 1px);
@@ -430,13 +436,13 @@ table {
   line-height: 20px;
   margin-top: -20px;
   top: 0px;
-  z-index: 3;                  /* above play button */
+  z-index: 3;            
   font-size: 13px;
   opacity: 0;
   display: block;
   align-items: center;
   justify-content: center;
-  pointer-events: none;        /* clicks pass through */
+  pointer-events: none;      
   background-color: rgba(0, 0, 0, .5);
   transition-duration: .8s;
   overflow: hidden;
@@ -553,10 +559,11 @@ input[type="range"]::-webkit-slider-thumb {
 #embedOverlay,
 #chatOverlay {
   position: fixed;
-  top: 0;
+  /*----50 Extra For Tumblr----*/
+  top: 50px;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 50px);
   background: transparent;
   display: none;
   justify-content: center;
@@ -566,7 +573,8 @@ input[type="range"]::-webkit-slider-thumb {
 }
 .embedContent,
 .chatContent {
-  width: calc(100% - 17px);
+  width: 100%;
+  /*----50 Extra For Tumblr----*/
   height: calc(100% - 17px);
   background: transparent;
   background-image: linear-gradient(to top, rgba(255, 255, 255, .8), rgba(255, 255, 0, .8));
@@ -715,18 +723,19 @@ li {
   overflow: hidden;
 }
 /*----Music----*/
+/*----50 Extra For Tumblr----*/
 .songSelection {
-  height: calc(100vh - 228px);
-  min-height: calc(100vh - 228px);
+  height: calc(100vh - 278px);
+  min-height: calc(100vh - 278px);
   overflow-y: scroll;
 }
 .OffMusicHeader {
-  height: calc((100vh - 212px) / 4);
-  min-height: calc((100vh - 212px) / 4);
+  height: calc((100vh - 262px) / 4);
+  min-height: calc((100vh - 262px) / 4);
 }
  .BuyButton {
-  height: calc((100vh - 212px) / 4);
-  min-height: calc((100vh - 212px) / 4);
+  height: calc((100vh - 262px) / 4);
+  min-height: calc((100vh - 262px) / 4);
  }
 }
 

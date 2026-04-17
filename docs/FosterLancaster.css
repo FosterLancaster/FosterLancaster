@@ -114,7 +114,9 @@ footer {
 }
 /*-------------------FLName---------------------*/
 .FLName {
-  height: auto;
+  line-height: 10vh;
+  height: 10vh;
+  bottom: -2.5vh;
   width: auto;              
   cursor: pointer;
   font-family: 'FL';
@@ -124,7 +126,6 @@ footer {
   transition-duration: .5s;
   padding: 0px 2vh 0px 2vh;
   animation: nameless 3s linear infinite;
-  bottom: -.5vh;
 }
 .FLNameWritten {
   font-family: "FL";
@@ -368,12 +369,12 @@ button {
     justify-content: right;            
   }
   .FLNameWritten {
-    font-size: 5vh;
+    font-size: 4vh;
     }
     .FLNameIcon {
-      height: 8vh;
-      width: 8vh;
-      margin: 0vh .8vh -1.5vh .8vh; 
+      height: 6vh;
+      width: 6vh;
+      margin: 0vh 1vh -1.5vh 1vh; 
       }
   .LancasterMenu {
     display: none;
@@ -428,9 +429,6 @@ button {
     .PageText {
     font-size: .7em;
   }
-  .FLNameWritten {
-    font-size: .8em;
-    }
 }
 
 @media screen and (max-height: 200px) {

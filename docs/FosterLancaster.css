@@ -139,7 +139,6 @@ footer {
 .FLNameIcon {
   height: 7.5vh; 
   width: auto;
-  transition-duration: 1s;
   animation: nameless 3s linear infinite;
   }
 .FLName:hover {
@@ -334,7 +333,7 @@ button {
     justify-content: center;                    
   }
   .FLName {
-    bottom: -.55em;
+    bottom: -2vh;
   }
   .FLNameWritten {
     font-size: 1.1em;
@@ -373,7 +372,7 @@ button {
     justify-content: right;            
   }
   .FLName {
-    bottom: -2.3vh;
+    bottom: -2.4vh;
   }
   .FLNameWritten {
     font-size: 4vh;

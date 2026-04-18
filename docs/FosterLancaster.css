@@ -131,7 +131,7 @@ footer {
   position: absolute;
   opacity: 1;
   transition-duration: .5s;
-  bottom: -.5vh;
+  bottom: -.75vh;
 }
 .FLNameWritten {
   font-size: calc(1.7vw + 1.7vh);

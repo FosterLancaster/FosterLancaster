@@ -126,7 +126,7 @@ footer {
   opacity: 1;
   transition-duration: .5s;
   padding: 0px 2vh 0px 2vh;
-  bottom: -2.5vh;
+  bottom: -2.25vh;
 }
 .FLNameWritten {
   font-size: 4vh;

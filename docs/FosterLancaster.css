@@ -134,13 +134,13 @@ footer {
   bottom: -.5vh;
 }
 .FLNameWritten {
-  font-size: calc(1.4vw + 1.4vh);
+  font-size: calc(1.7vw + 1.7vh);
   font-family: "FL";
   width: auto;
   color: #ffffff;
   display: inline-block;
   opacity: 0;
-  padding: 0px 2vh 0px 2vh;
+  padding: 0px .5vh 0px .5vh;
   animation: FLTeach 3s linear 0s infinite;
 }
 .FLNameIcon {

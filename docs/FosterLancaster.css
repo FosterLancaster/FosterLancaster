@@ -125,7 +125,6 @@ footer {
   position: absolute;
   opacity: 1;
   transition-duration: .5s;
-  padding: 0px 2vh 0px 2vh;
   bottom: -2.25vh;
 }
 .FLNameWritten {
@@ -136,6 +135,7 @@ footer {
   color: #ffffff;
   display: inline-block;
   opacity: 0;
+  padding: 0px 2vh 0px 2vh;
   animation: FLTeach 3s linear 0s infinite;
 }
 .FLNameIcon {

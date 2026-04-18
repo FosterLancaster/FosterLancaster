@@ -134,7 +134,7 @@ footer {
   bottom: -.5vh;
 }
 .FLNameWritten {
-  font-size: calc(1.7vw + 1.7vh);
+  font-size: calc(1.4vw + 1.4vh);
   font-family: "FL";
   width: auto;
   color: #ffffff;

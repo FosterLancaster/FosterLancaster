@@ -4,7 +4,7 @@
   height: 10vh;
   position: fixed;
   bottom: 0px;
-  right: -2.5vh;
+  right: 0px;
   z-index: 5;
   cursor: pointer;
   background-image: url('images/Menu.png');

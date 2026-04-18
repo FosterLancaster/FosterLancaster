@@ -131,10 +131,10 @@ footer {
   position: absolute;
   opacity: 1;
   transition-duration: .5s;
-  bottom: -.75vh;
+  bottom: -.5vh;
 }
 .FLNameWritten {
-  font-size: calc(1.7vw + 1.7vh);
+  font-size: 3vh;
   font-family: "FL";
   width: auto;
   color: #ffffff;

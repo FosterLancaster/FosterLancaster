@@ -25,11 +25,6 @@ body {
   font-size: 22px;
   z-index: 0;
   background-color: #0560ef;
-  background-image: url('images/FosterLancasterLogoOverlay.png');
-  background-size: 100% auto;
-  background-position: center top;
-  background-repeat: repeat-y;
-  background-attachment: scroll;
 }
 @font-face {
   font-family: 'FL';

@@ -24,7 +24,7 @@ body {
   font-family: 'FL';
   font-size: 22px;
   z-index: 0;
-  background-color: #381e00;
+  background-color: #0560ef;
   background-image: url('images/FosterLancasterLogoOverlay.png');
   background-size: 100% auto;
   background-position: center top;
@@ -60,7 +60,7 @@ header {
   opacity: 1;
   outline: none;
   z-index: 6;
-  background-image: linear-gradient(to top, #000000 0%, #000000 50%, #381e00 50%, #381e00 100%);
+  background-image: linear-gradient(to top, #000000 0%, #000000 50%, #0560ef 50%, #0560ef 100%);
   border-top: solid .5px #ffffff;
 }
 .headerhalf {
@@ -98,7 +98,7 @@ footer {
   font-size: 15px;
   line-height: 2em;
   border-top: solid .5px transparent;
-  background-color: rgb(0, 0, 0, .2);
+  background-color: rgb(0, 0, 0, .5);
   text-align: right;
 }
 .Title {
@@ -159,7 +159,7 @@ footer {
   font-family: 'FL';
   font-size: 3.2em;
   line-height: calc(90vh / 6);
-  background-color: #381e00;
+  background-color: #0560ef;
   background-image: url('images/FosterLancasterLogoOverlay.png');
   background-size: auto calc(90vh / 6);
   background-position: center left;
@@ -318,8 +318,9 @@ button {
   z-index: -1;
   margin: 0;
   border-radius: 0;
-  background-image: url('images/TheGoodLinkClean.png');
-  background-size: cover;
+  background-image: url('images/MoreThanJustAFan.jpg');
+  background-size: auto 110%;
+  background-repeat: no-repeat;
   background-position: center center;
 }
 .FirstVideoScreen video {

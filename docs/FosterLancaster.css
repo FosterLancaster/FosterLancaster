@@ -145,8 +145,8 @@ footer {
   animation: FLTeach 3s linear 0s infinite;
 }
 .FLNameIcon {
-  height: 7vh; 
-  margin-bottom: -3dvh;
+  height: 7dvh; 
+  margin: 1.5dvh;
   width: auto;
   display: inline-block;
   opacity: 0;

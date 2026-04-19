@@ -55,8 +55,8 @@ header {
   opacity: 1;
   outline: none;
   z-index: 6;
-  background-image: linear-gradient(to top, #000000 0%, #000000 50%, #0560ef 50%, #0560ef 100%);
   border-top: solid .5px #ffffff;
+  background-color: #000000;
 }
 .headerhalf {
   width: 100%;
@@ -314,7 +314,7 @@ button {
   margin: 0;
   border-radius: 0;
   background-image: url('images/MoreThanJustAFan.jpg');
-  background-size: auto 110%;
+  background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center center;
 }

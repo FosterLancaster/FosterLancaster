@@ -338,7 +338,7 @@ button {
 
 @media screen and (max-width: 400px) and (orientation: portrait) {
   .FLNameWritten {
-    font-size: 15px;
+    font-size: 3vw;
   }
 }
 

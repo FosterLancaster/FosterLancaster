@@ -358,6 +358,9 @@ button {
 }
 
 @media screen and (orientation: landscape) {
+  .FLNameWritten {
+    font-size: 1.5em;
+  }
   .LancasterMenu {
     display: none;
   }

@@ -120,7 +120,11 @@ footer {
 }
 /*-------------------FLName---------------------*/
 .FLName {
-  height: auto;
+  height: 10dvh;
+  line-height: 10dvh;
+  display: flex;               /* changed from inline-block to flex */
+  align-items: center;         /* vertical centering */
+  justify-content: center;     /* horizontal centering */
   width: auto;              
   cursor: pointer;
   font-family: 'FL';
@@ -128,7 +132,7 @@ footer {
   position: absolute;
   opacity: 1;
   transition-duration: .5s;
-  bottom: 0px;
+  position: relative;
 }
 .FLNameWritten {
   font-size: 2.5vh;
@@ -142,7 +146,7 @@ footer {
 }
 .FLNameIcon {
   height: 7vh; 
-  margin-bottom: -3vh;
+  margin-bottom: -3dvh;
   width: auto;
   display: inline-block;
   opacity: 0;
@@ -359,7 +363,7 @@ button {
 
 @media screen and (orientation: landscape) {
   .FLNameWritten {
-    font-size: 1.5em;
+    font-size: 5vh;
   }
   .LancasterMenu {
     display: none;

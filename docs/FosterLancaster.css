@@ -152,7 +152,7 @@ footer {
   line-height: calc(90vh / 6);
   background-color: #0560ef;
   background-image: url('images/FosterLancasterLogoOverlay.png');
-  background-size: auto calc(90vh / 6);
+  background-size: auto 60%;
   background-position: center left;
   background-repeat: no-repeat;
   background-attachment: scroll;

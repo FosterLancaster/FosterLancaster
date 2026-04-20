@@ -28,11 +28,7 @@ body {
 }
 @font-face {
   font-family: 'FL';
-  src: url('ALBAS___.TTF') format('truetype');
-}
-@font-face {
-  font-family: 'FL2';
-  src: url('ALBA____.TTF') format('truetype');
+  src: url('CampGranadaNF.ttf') format('truetype');
 }
 :focus {
   outline: none;
@@ -87,7 +83,7 @@ article {
 footer {
   width: calc(100% - 2em); /* Full width */
   height: auto;
-  font-family: 'FL2';
+  font-family: 'FL';
   position: relative;
   padding: 1em 1em calc(1em + 10dvh) 1em;
   font-size: 15px;

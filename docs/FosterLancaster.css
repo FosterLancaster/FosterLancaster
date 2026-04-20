@@ -152,7 +152,7 @@ footer {
   line-height: calc(90vh / 6);
   background-color: #0560ef;
   background-image: url('images/FosterLancasterLogoOverlay.png');
-  background-size: auto 60%;
+  background-size: auto 80%;
   background-position: center left;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -313,7 +313,7 @@ button {
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center center;
-  animation: Shiny 5s linear infinite;
+  animation: Shiny 4s linear infinite;
 }
 .FirstVideoScreen video {
   opacity: 0;
@@ -338,7 +338,6 @@ button {
 @media screen and (orientation: portrait) {
   .Page {
   height: calc(90dvh / 6);
-  background-size: auto calc(90vh / 6);
   width: 100vw;
   opacity: .9;
   }

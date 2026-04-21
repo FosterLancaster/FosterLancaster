@@ -166,7 +166,7 @@ footer {
   border-radius: 0px;
 }
 .Page:hover {
-  filter: brightness(1.5);
+  opacity: 1;
 }
 .PageText {
   color: #ffffff;
@@ -339,10 +339,10 @@ button {
   .Page {
   height: calc(90dvh / 6);
   width: 100vw;
-  opacity: .9;
+  opacity: 1;
   }
   .Page:hover {
-    opacity: 1;
+    opacity: .6;
   }
   section {
     width: 100%;

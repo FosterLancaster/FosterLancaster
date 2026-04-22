@@ -40,8 +40,7 @@ a {
 a:hover {
   color: #ffff00;
 }
-header {
-  display: flex;               
+header {              
   text-align: center;                
   position: fixed;
   bottom: 0px;
@@ -56,8 +55,8 @@ header {
 }
 .headerhalf {
   width: 100%;
-  height: 10dvh;
-  line-height: 10dvh;
+  height: 100%;
+  line-height: 100%;
 }
 hr {
   border: solid .5px #ffffff80;
@@ -111,10 +110,8 @@ footer {
 }
 /*-------------------FLName---------------------*/
 .FLName {
-  height: 10dvh;
-  line-height: 10dvh;
-  display: flex;               /* changed from inline-block to flex */
-  align-items: center;         /* vertical centering */
+  height: 10vh;
+  display: flex;         /* changed from inline-block to flex */
   justify-content: center;     /* horizontal centering */
   width: auto;              
   cursor: pointer;
@@ -126,18 +123,15 @@ footer {
   position: relative;
 }
 .FLNameWritten {
-  font-size: 2.5vh;
   font-family: "FL";
   width: auto;
   color: #000000;
   display: inline-block;
   opacity: 0;
-  padding: 0px .5vh 0px .5vh;
   animation: FLTeach 3s linear 0s infinite;
 }
 .FLNameIcon {
   height: 7dvh; 
-  margin: 1.5dvh;
   width: auto;
   display: inline-block;
   opacity: 0;
@@ -361,7 +355,8 @@ button {
 
 @media screen and (orientation: landscape) {
   .FLNameWritten {
-    font-size: 5vh;
+    line-height: 5dvh;
+    font-size: 5dvh;
   }
   .LancasterMenu {
     display: none;

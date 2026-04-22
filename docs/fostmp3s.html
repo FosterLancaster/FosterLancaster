@@ -47,8 +47,8 @@ table {
 }
  .LancasterFrame {
   font-size: 18px;
-  width: 100%;
-  height: 100%;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
   overflow: hidden;
   position: relative;
   opacity: 1;
@@ -58,7 +58,8 @@ table {
   background-position: center center;
   background-size: 100% 300px;
   animation: rise 2s linear infinite;
-  background-image: linear-gradient(to top, rgb(255, 255, 0, .3), transparent, rgb(255, 255, 0, .3));
+  background-image: linear-gradient(to top, rgb(100, 100, 100, .5), transparent, rgb(100, 100, 100, .5));
+  border: solid .5px #ffff00;
 }
 .LancasterFrame:hover .LancasterMusicPlayer{
   background-image: none;

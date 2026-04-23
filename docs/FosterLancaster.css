@@ -24,7 +24,7 @@ body {
   font-family: 'FL';
   font-size: 22px;
   z-index: 0;
-  background-color: #0560ef;
+  background-color: #023993;
 }
 @font-face {
   font-family: 'FL';
@@ -296,7 +296,7 @@ button {
   width: 100vw;
   max-width: 100vw;
   height: 90dvh; 
-  background-color: #023993;
+  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;

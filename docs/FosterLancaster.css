@@ -114,7 +114,7 @@ line-height: auto;
 }
 section {
   position: relative;
-  min-height: calc(100vh - 10vh);
+  min-height: 90vh;
   width: 68vw; 
   max-width: 68vw;
 }
@@ -191,7 +191,7 @@ footer {
   z-index: 5;
 }
 #Navigation {
-  height: 90dvh;
+  height: 90vh;
   width: 0px;
   right: 0px;
   display: flex;
@@ -329,7 +329,7 @@ button {
   top: 50%;
   left: 50%;
   width: 100vw;
-  height: calc(90dvh + 10px);
+  height: calc(90vh + 10px);
   object-fit: cover;
   object-position: center 0px; /* moves crop focus lower */
   transform: translate(-50%, -50%);

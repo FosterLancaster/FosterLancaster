@@ -384,11 +384,23 @@ button {
     opacity: 1;
   }
   section {
+    /*-----------For ipad----------*/
+    min-height: 90vh;
     width: 68vw;
     max-width: 68vw;
   }
+  .FirstVideoScreen {
+    position: absolute;      
+    left: 0;
+    width: 100vw;
+    max-width: 100vw;
+    /*-----------For ipad----------*/
+    height: 90vh; 
+  }
   #Navigation {
     width: 33vw;
+    /*-----------For ipad----------*/
+    height: 90vh; 
     }
   #Player {
     min-width: 200vh;

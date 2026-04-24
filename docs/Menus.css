@@ -9,7 +9,7 @@
   cursor: pointer;
   background-image: url('images/Menu.png');
   background-position: center center;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-size: 40%;
   background-repeat: no-repeat;
   background-color: transparent;

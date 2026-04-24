@@ -63,10 +63,12 @@ header {
 }
 /*-------------------FLName---------------------*/
 .FLName {
+  width: 100%;
+  padding-right: 10vh;
+  box-sizing: border-box;
   height: 10dvh;
   display: flex;         /* changed from inline-block to flex */
-  justify-content: center;     /* horizontal centering */
-  width: auto;              
+  justify-content: center;     /* horizontal centering */             
   cursor: pointer;
   font-family: 'FL';
   z-index: 3;

@@ -94,10 +94,10 @@ header {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  height: 8dvh; 
-  width: 8dvh;
-  margin: 1dvh;
-  font-size: 3dvh;
+  height: 10dvh; 
+  width: 10dvh;
+  margin: 3dvh;
+  font-size: 4dvh;
   line-height: 10dvh;
   opacity: 0;
   animation: FLTeach 3s linear 1.5s infinite;

@@ -79,7 +79,10 @@ table {
 .LancasterFrame:hover .MusicHeader {
   padding: 0px;
 }
-#playBtn:hover .listenCounter {
+#playBtn:hover .moreInfo {
+  opacity: 1;
+}
+#buyBtn:hover .moreInfo {
   opacity: 1;
 }
 .PasswordBar:hover .PasswordSubmit {
@@ -421,23 +424,23 @@ table {
   position: relative;
 }
 /* Listen counter badge */
-.listenCounter {
+.moreInfo {
   color: #ffffff;
   font-family: 'futura';
   position: relative;
   height: 0px;
   width: 100%;
   max-height: 20px;
-  line-height: 20px;
+  line-height: 15px;
   margin-top: -20px;
   top: 0px;
-  z-index: 3;                  /* above play button */
-  font-size: 13px;
+  z-index: 3;
+  font-size: 15px;
   opacity: 0;
   display: block;
   align-items: center;
   justify-content: center;
-  pointer-events: none;        /* clicks pass through */
+  pointer-events: none;
   background-color: rgba(0, 0, 0, .5);
   transition-duration: .8s;
   overflow: hidden;
@@ -855,14 +858,14 @@ li {
             <div class="OffMusicHeader">
               Keep Listening For $2.25
             </div>
-            <a style="margin: 0px; padding: 0px;" href="https://www.paypal.com/ncp/payment/KU5W8WACXP7N2" target="_blank">
-              <div class="BuyButton" style="background-color: rgba(90, 199, 227, 0.7);">
-              <img class="PwkeyIcon" src="fmp3simages/PWKEYStore.png"><img class="BuyButtonIcon" src="fmp3simages/Paypal.png">
+            <a style="margin: 0px; padding: 0px;" href="https://buy.stripe.com/8x24gzb4HgL55nAgr124005" target="_blank">
+              <div class="BuyButton" style="background-color: rgba(217, 203, 254, 0.7);">
+              <img class="PwkeyIcon" src="fmp3simages/PWKEYStore.png"><img class="BuyButtonIcon" src="fmp3simages/Stripe.png">
               </div>
               </a>
-           <a style="margin: 0px; padding: 0px;" href="https://buy.stripe.com/8x24gzb4HgL55nAgr124005" target="_blank">
-              <div class="BuyButton" style="background-color: rgb(35, 13, 91, 0.7);">
-              <img class="PwkeyIcon" src="fmp3simages/PWKEYStore.png"><img class="BuyButtonIcon" src="fmp3simages/Stripe.png">
+            <a style="margin: 0px; padding: 0px;" href="https://www.paypal.com/ncp/payment/KU5W8WACXP7N2" target="_blank">
+              <div class="BuyButton" style="background-color: rgba(209, 245, 254, 0.7);">
+              <img class="PwkeyIcon" src="fmp3simages/PWKEYStore.png"><img class="BuyButtonIcon" src="fmp3simages/Paypal.png">
               </div>
               </a>
             <a style="margin: 0px; padding: 0px;" href="https://square.link/u/MzJHLUQb" target="_blank">
@@ -896,18 +899,19 @@ li {
 <!-----Engage Bar---->
 <div class="EngageBar">
 <table>
-<td id="buyBtn" alt="Buy Password" title="Buy Password"> 
-<a href="https://www.paypal.com/ncp/payment/KU5W8WACXP7N2" target="_blank">
+<td id="buyBtn" alt="Buy Password" title="Buy Password">
+<a href="https://buy.stripe.com/8x24gzb4HgL55nAgr124005" target="_blank" style="display: block; text-decoration: none; color: inherit;">
 <div class="MusicButton">
-<img src="fmp3simages/PWKEY.png" id="buyLogo">
+<img src="fmp3simages/PWBUY.png" id="buyLogo">
 </div>
 </a>
-</td> 
+<div class="moreInfo">Buy for $2.25</div>
+</td>
 <td id="playBtn" alt="Play/Pause Music" title="Play/Pause Music">
 <div class="MusicButton">
 <img src="fmp3simages/PLAY.png" id="playLogo">
 </div>
-<div class="listenCounter"><span id="listenCounter"></span>&nbsp;Listens&nbsp;Left</div>
+<div class="moreInfo"><span id="listenCounter"></span>&nbsp;Listens&nbsp;Left</div>
 </td>  
 </table>
 </div>

@@ -82,7 +82,8 @@ header {
   line-height: 10dvh;
   bottom: 0px;
   width: auto;
-  color: #000000;
+  color: transparent;
+  -webkit-text-stroke: .05em #000000;
   display: flex;
   opacity: 0;
   animation: FLTeach 3s linear 0s infinite;
@@ -339,7 +340,7 @@ button {
 
 @media screen and (orientation: portrait) {
   .FLNameWritten {
-    font-size: 2dvh;
+    font-size: 4vw;
   }
   .Page {
   height: calc(90dvh / 6);

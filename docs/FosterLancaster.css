@@ -338,9 +338,15 @@ button {
   overflow: hidden;
 }
 
+@media screen and (max-width: 400px) {
+  .FLNameWritten {
+    font-size: 2.5vw;
+  }
+}
+
 @media screen and (orientation: portrait) {
   .FLNameWritten {
-    font-size: 3.5vw;
+    font-size: 5vw;
   }
   .Page {
   height: calc(90dvh / 6);

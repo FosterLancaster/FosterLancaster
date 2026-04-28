@@ -54,9 +54,10 @@ table {
   opacity: 1;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  background-color: rgba(255, 255, 255, .3);
+  background-image: linear-gradient(to top, rgba(255, 255, 255, .7), transparent, rgba(255, 255, 255, .7));
+  background-size: 100% 500px;
   background-position: center center;
-  background-size: 100% 300px;
+  animation: rise 2s linear infinite;
   border: solid .5px #4e4e4e;
 }
 .LancasterFrame:hover .LancasterMusicPlayer{
@@ -480,12 +481,11 @@ table {
   height: 10px;
   max-width: 100%;
   background-color: transparent;
-  border: solid .75px #4e4e4e;
+  border: solid 2px #4e4e4e;
   cursor: pointer;
   overflow: hidden;
   margin: 0px 5px 0px 5px;
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-radius: 90px;
 }
 .progressBar span {
   display: block;
@@ -800,7 +800,7 @@ li {
 
 @keyframes rise {
   0% { background-position: center 0px; }
-  100% { background-position: center -600px; }
+  100% { background-position: center -500px; }
 }
 </style>
 </head>

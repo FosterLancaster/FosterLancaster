@@ -92,13 +92,13 @@ header {
   font-family: "FL";
   color: rgb(255, 255, 255, .6);
   background-image: url('images/Me.png');
-  background-size: cover;
+  background-size: 80%;
   background-position: center center;
   background-repeat: no-repeat;
   height: 10dvh; 
   width: 10dvh;
-  margin: 3dvh;
-  font-size: 4dvh;
+  margin: 3.5dvh;
+  font-size: 3dvh;
   line-height: 10dvh;
   opacity: 0;
   animation: FLTeach 3s linear 1.5s infinite;
@@ -157,7 +157,7 @@ footer {
 .Page {
   height: calc((90vh / 6) - 1px);
   font-family: 'FL';
-  font-size: 3.2em;
+  font-size: 4em;
   line-height: calc(90vh / 6);
   background-color: #0560ef;
   background-image: url('images/FosterLancasterLogoOverlay.png');
@@ -419,59 +419,59 @@ button {
 @media screen and (max-height: 600px) {
     /* ----Middle---- */
   .Page {
-    font-size: 1.2em;
+    font-size: 1.4em;
   }
   .Title {
-    font-size: 1.2em;
+    font-size: 1.4em;
   }
   .PageText {
-    font-size: 1.2em;
+    font-size: 1.4em;
   }
 }
 
 @media screen and (max-height: 400px) {
     /* ----Small---- */
   .Page {
-    font-size: .7em;
+    font-size: .9em;
   }
     .Title {
-    font-size: .7em;
+    font-size: .9em;
   }
     .PageText {
-    font-size: .7em;
+    font-size: .9em;
   }
 }
 
 @media screen and (max-height: 200px) {
    /* ----Smallest---- */
   .Page {
-    font-size: .45em;
+    font-size: .6em;
   }
     .Title {
-    font-size: .45em;
+    font-size: .6em;
   }
     .PageText {
-    font-size: .45em;
+    font-size: .6em;
   }
 }
 
 @media screen and (min-height: 500px) and (min-width: 500px) and (orientation: landscape) {
 .PageText {
-  font-size: 6vh;
+  font-size: 7.5vh;
 }
 }
 
 @media screen and (max-width: 500px) and (orientation: portrait) {
   .Page {
-    font-size: 8vw;
-    line-height: 8vw;
+    font-size: 10vw;
+    line-height: 10vw;
     height: calc(90dvh / 6);
   }
   .Title {
-    font-size: 8vw;
+    font-size: 10vw;
   }
   .PageText {
-    font-size: 8vw;
+    font-size: 10vw;
   }
   .WikiProfile {
     width: calc(100% - 32px);

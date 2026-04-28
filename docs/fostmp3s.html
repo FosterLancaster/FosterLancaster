@@ -54,9 +54,8 @@ table {
   opacity: 1;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  background-color: rgba(255, 255, 255, .2);
-  background-image: linear-gradient(to top, rgba(255, 255, 255, .5), transparent, rgba(255, 255, 255, .5));
-  background-size: 100% 300px;
+  background-image: linear-gradient(to top, rgba(255, 255, 255, .7), transparent, rgba(255, 255, 255, .7));
+  background-size: 100% 500px;
   background-position: center center;
   animation: rise 2s linear infinite;
   border: solid .5px #4e4e4e;
@@ -230,6 +229,7 @@ table {
   border: none;
   justify-content: right;
   border-top: none;
+  background-color: rgb(255, 255, 255, .5);
 }
 
 /*------100vh Controls Sum Landscape = (218px - 202px (16px))-------*/
@@ -801,7 +801,7 @@ li {
 
 @keyframes rise {
   0% { background-position: center 0px; }
-  100% { background-position: center -300px; }
+  100% { background-position: center -500px; }
 }
 </style>
 </head>
@@ -881,19 +881,86 @@ li {
 <!------Music Header------>
 <div class="MusicHeader">
 
-<!-----Password Unlocker---->
-  <div align="center">
-      <div class="PasswordUnlockBar">
-        <div id="passwordUnlock" class="PasswordBar">
-          <input id="passwordInput" class="Password" type="password" placeholder="* * * *" alt="Password" title="Password"/>
-          <div class="PasswordSubmit" id="passwordSubmit" onclick="submitPassword()" alt="Submit" title="Submit"><img style="height: 100%; width: auto;" src="fmp3simages/Unlock.png"></div>
+
+<!------Control Bar------>
+<div class="ControlBar">
+  <table>
+  
+    <td>
+      <a href="#" id="embedBtn">
+        <img src="fmp3simages/Embed.png" class="embedBtn" alt="Embed" title="Embed">
+      </a>
+      
+      <div id="embedOverlay">
+        <div class="embedContent">
+        <button id="closeEmbed">X</button>
+        <div class="MoreInner">
+          <div class="MoreHeader">FOSTMp3's Embed Code</div>
+          <div class="MoreBody">
+          <textarea readonly>
+            <iframe src="https://fostmp3s.com/fostmp3s.html" style="width: 400px; height: 400px; min-height: 400px; min-width: 200px; max-height: 100%; display: block; border: none;" class="fostmp3s"></iframe>
+          </textarea>
         </div>
+      </div>
+      </div>
+      </div>
+    </td>
+  
+  
+  <td>
+  <img src="fmp3simages/Prev.png" id="prevBtn" class="nextprev-btn" alt="Previous" title="Previous">
+  </td>
+  <td>
+  <div class="progressBar" id="progressBar" alt="Progress Bar" title="Progress Bar">
+  <span id="progress"></span>
+  </div>
+  </td>
+  <td>
+  <img src="fmp3simages/Next.png" id="nextBtn" class="nextprev-btn" alt="Next" title="Next">
+  </td>
+  <td>
+  <img src="fmp3simages/Shuffle.png" class="shuffleBtn" onclick="shuffle()" alt="Shuffle" title="Shuffle">
+  </td>
+  <td>
+    <div class="volumeContainer" alt="Volume" title="Volume">
+    <table>
+    <td><img src="fmp3simages/Volume.png" class="volumeBtn"></td>
+    <td><input type="range" id="volumeControl" min="0" max="1" step="0.01" value="1"></td>
+    </table>
+    </div>
+  </td>
+  
+  <td>
+    <a href="#" id="chatBtn">
+    <img src="fmp3simages/Chat.png" class="chatBtn" alt="Chat" title="Chat">
+    </a>
+    
+    <div id="chatOverlay">
+      <div class="chatContent">
+      <button id="closeChat">X</button>
+      <div class="MoreInner">
+        <div class="MoreHeader">Foster Lancaster Updates <img src="fmp3simages/Chat.png" style="height: 1.2em; margin-bottom: -.2em;"></div>
+        <div id="chatLockedMessage">
+          <a href="https://buy.stripe.com/8x24gzb4HgL55nAgr124005" target="_blank">
+          Enter The Fan Password To Continue <br>
+          <u>Buy Now</u><br>
+          <img style="width: 100%; max-width: 50px; height: auto;" src="fmp3simages/PWKEYStoreChat.png">
+         </a>
         </div>
-                <audio class="audio-player" id="audio" preload="auto">
-                  <source src="" type="audio/mp3">
-                  Your browser does not support the audio element.
-                </audio>  
-                    </div>          
+        <div class="MoreBody">
+  <ul class="chatPosts" id="feed">
+  </ul>
+  </div>
+  
+  </div>
+  </div>
+  </div>
+  
+  
+  </td>
+  </table>
+  </div>
+
 
 <!-----Engage Bar---->
 <div class="EngageBar">
@@ -915,84 +982,21 @@ li {
 </table>
 </div>
 
-<!------Control Bar------>
-<div class="ControlBar">
-<table>
 
-  <td>
-    <a href="#" id="embedBtn">
-      <img src="fmp3simages/Embed.png" class="embedBtn" alt="Embed" title="Embed">
-    </a>
-    
-    <div id="embedOverlay">
-      <div class="embedContent">
-      <button id="closeEmbed">X</button>
-      <div class="MoreInner">
-        <div class="MoreHeader">FOSTMp3's Embed Code</div>
-        <div class="MoreBody">
-        <textarea readonly>
-          <iframe src="https://fostmp3s.com/fostmp3s.html" style="width: 400px; height: 400px; min-height: 400px; min-width: 200px; max-height: 100%; display: block; border: none;" class="fostmp3s"></iframe>
-        </textarea>
-      </div>
+<!-----Password Unlocker---->
+<div align="center">
+  <div class="PasswordUnlockBar">
+    <div id="passwordUnlock" class="PasswordBar">
+      <input id="passwordInput" class="Password" type="password" placeholder="* * * *" alt="Password" title="Password"/>
+      <div class="PasswordSubmit" id="passwordSubmit" onclick="submitPassword()" alt="Submit" title="Submit"><img style="height: 100%; width: auto;" src="fmp3simages/Unlock.png"></div>
     </div>
     </div>
-    </div>
-  </td>
+            <audio class="audio-player" id="audio" preload="auto">
+              <source src="" type="audio/mp3">
+              Your browser does not support the audio element.
+            </audio>  
+                </div>        
 
-
-<td>
-<img src="fmp3simages/Prev.png" id="prevBtn" class="nextprev-btn" alt="Previous" title="Previous">
-</td>
-<td>
-<div class="progressBar" id="progressBar" alt="Progress Bar" title="Progress Bar">
-<span id="progress"></span>
-</div>
-</td>
-<td>
-<img src="fmp3simages/Next.png" id="nextBtn" class="nextprev-btn" alt="Next" title="Next">
-</td>
-<td>
-<img src="fmp3simages/Shuffle.png" class="shuffleBtn" onclick="shuffle()" alt="Shuffle" title="Shuffle">
-</td>
-<td>
-  <div class="volumeContainer" alt="Volume" title="Volume">
-  <table>
-  <td><img src="fmp3simages/Volume.png" class="volumeBtn"></td>
-  <td><input type="range" id="volumeControl" min="0" max="1" step="0.01" value="1"></td>
-  </table>
-  </div>
-</td>
-
-<td>
-  <a href="#" id="chatBtn">
-  <img src="fmp3simages/Chat.png" class="chatBtn" alt="Chat" title="Chat">
-  </a>
-  
-  <div id="chatOverlay">
-    <div class="chatContent">
-    <button id="closeChat">X</button>
-    <div class="MoreInner">
-      <div class="MoreHeader">Foster Lancaster Updates <img src="fmp3simages/Chat.png" style="height: 1.2em; margin-bottom: -.2em;"></div>
-      <div id="chatLockedMessage">
-        <a href="https://buy.stripe.com/8x24gzb4HgL55nAgr124005" target="_blank">
-        Enter The Fan Password To Continue <br>
-        <u>Buy Now</u><br>
-        <img style="width: 100%; max-width: 50px; height: auto;" src="fmp3simages/PWKEYStoreChat.png">
-       </a>
-      </div>
-      <div class="MoreBody">
-<ul class="chatPosts" id="feed">
-</ul>
-</div>
-
-</div>
-</div>
-</div>
-
-
-</td>
-</table>
-</div>
 
 <!------Music Header end------> 
             </div>

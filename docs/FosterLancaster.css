@@ -52,7 +52,7 @@ header {
   outline: none;
   z-index: 6;
   border-top: solid .5px #ffffff;
-  background-color: #ffff00;
+  background-color: #000000;
 }
 .headerhalf {
   width: 100%;
@@ -83,14 +83,14 @@ header {
   bottom: 0px;
   width: auto;
   color: transparent;
-  -webkit-text-stroke: .05em #000000;
+  -webkit-text-stroke: .05em #ffffff;
   display: flex;
   opacity: 0;
   animation: FLTeach 3s linear 0s infinite;
 }
 .FLNameIcon {
   font-family: "FL";
-  color: rgb(255, 255, 0, .6);
+  color: rgb(255, 255, 255, .6);
   background-image: url('images/Me.png');
   background-size: cover;
   background-position: center center;

@@ -146,10 +146,10 @@ table {
   cursor: pointer;
   user-select: none; /* prevent highlighting text */
   pointer-events: auto;
-  background-color: rgb(255, 255, 255, .5);
+  background-color: rgba(255, 255, 255, .5);
 }
 .PasswordSubmit:hover {
-  background-color: rgba(255, 255, 255, .5);
+  background-color: rgba(0, 0, 0, .5);
 }
 .PasswordBar {
   max-height: 40px;
@@ -280,7 +280,7 @@ table {
   overflow: hidden;
  }
  .BuyButton:hover {
-  filter: brightness(1.5);
+  filter: saturate(2);
  }
 .song-button {
   font-family: 'futura';
@@ -482,7 +482,7 @@ table {
   height: 10px;
   max-width: 100%;
   background-color: rgb(255, 255, 255, .5);
-  border: solid 2px #ffffff;
+  border: solid .5px #000000;
   cursor: pointer;
   overflow: hidden;
   margin: 0px 5px 0px 5px;
@@ -678,6 +678,9 @@ li {
   position: absolute;
   background-color: rgba(255, 255, 255, .7);
   background-image: linear-gradient(to top, #ffffff 60%, transparent);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   border-radius: 8px;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
   margin: 40px auto 15px auto; 
@@ -795,9 +798,9 @@ li {
 }
 
 @keyframes clickhere {
-  0% { transform: scale(1); }
+  0% { transform: scale(1.1); }
   50% { transform: scale(.8); }
-  100% { transform: scale(1);}
+  100% { transform: scale(1.1);}
 }
 
 @keyframes rise {
@@ -859,18 +862,18 @@ li {
               Keep Listening For $2.25
             </div>
             <a style="margin: 0px; padding: 0px;" href="https://buy.stripe.com/8x24gzb4HgL55nAgr124005" target="_blank">
-              <div class="BuyButton" style="background-color: rgba(217, 203, 254, 0.7);">
-              <img class="PwkeyIcon" src="fmp3simages/PWKEYStore.png"><img class="BuyButtonIcon" src="fmp3simages/Stripe.png">
+              <div class="BuyButton" style="background-color: rgba(64, 32, 154, 0.9);">
+              <img class="PwkeyIcon" src="fmp3simages/PWBUY.png"><img class="BuyButtonIcon" src="fmp3simages/Stripe.png">
               </div>
               </a>
             <a style="margin: 0px; padding: 0px;" href="https://www.paypal.com/ncp/payment/KU5W8WACXP7N2" target="_blank">
-              <div class="BuyButton" style="background-color: rgba(209, 245, 254, 0.7);">
-              <img class="PwkeyIcon" src="fmp3simages/PWKEYStore.png"><img class="BuyButtonIcon" src="fmp3simages/Paypal.png">
+              <div class="BuyButton" style="background-color: rgba(90, 222, 255, 0.9);">
+              <img class="PwkeyIcon" src="fmp3simages/PWBuy.png"><img class="BuyButtonIcon" src="fmp3simages/Paypal.png">
               </div>
               </a>
             <a style="margin: 0px; padding: 0px;" href="https://square.link/u/MzJHLUQb" target="_blank">
-              <div class="BuyButton" style="background-color: rgba(241, 241, 241, 0.7);">
-              <img class="PwkeyIcon" src="fmp3simages/PWKEYStore.png"><img class="BuyButtonIcon" src="fmp3simages/Square.png">
+              <div class="BuyButton" style="background-color: rgba(203, 203, 203, 0.9);">
+              <img class="PwkeyIcon" src="fmp3simages/PWBUY.png"><img class="BuyButtonIcon" src="fmp3simages/Square.png">
               </div>
               </a>
             </div>
@@ -945,7 +948,7 @@ li {
           <a href="https://buy.stripe.com/8x24gzb4HgL55nAgr124005" target="_blank">
           Enter The Fan Password To Continue <br>
           <u>Buy Now</u><br>
-          <img style="width: 100%; max-width: 50px; height: auto;" src="fmp3simages/PWKEYStoreChat.png">
+          <img style="width: 100%; max-width: 50px; height: auto;" src="fmp3simages/PWBUY.png">
          </a>
         </div>
         <div class="MoreBody">

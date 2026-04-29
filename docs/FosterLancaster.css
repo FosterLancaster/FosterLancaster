@@ -53,9 +53,9 @@ header {
   z-index: 6;
   border-top: solid .5px #ffffff;
   background-color: #b6b6b6;
-  background-image: url('images/MetalPattern.png');
-  background-size: 500px;
-  background-position: center center;
+  background-image: url('images/MetalPattern.png'), linear-gradient(to right, #000000, #ffffff, #000000);
+  background-size: 500px auto, cover;
+  background-position: center center, center center;
 }
 .headerhalf {
   width: 100%;
@@ -85,10 +85,11 @@ header {
   line-height: 10dvh;
   bottom: 0px;
   width: auto;
-  color: #000000;
+  color: #ffffff;
   display: flex;
   opacity: 0;
-  animation: FLTeach 3s linear 0s infinite;
+  animation: FLTeach 6s linear 0s infinite;
+  -webkit-text-stroke: .06em #000000;
 }
 .FLNameIcon {
   font-family: "FL";
@@ -103,7 +104,7 @@ header {
   font-size: 3dvh;
   line-height: 10dvh;
   opacity: 0;
-  animation: FLTeach 3s linear 1.5s infinite;
+  animation: FLTeach 6s linear 3s infinite;
   }
 /*-------------------FLName---------------------*/
 hr {
@@ -143,7 +144,7 @@ footer {
   background-color: #ffffff;
   background-clip: text;
   color: #ffffff;
-  font-size: 1.5em;
+  font-size: 2em;
   min-height: 10dvh;
   line-height: 10dvh;
   overflow: hidden;
@@ -222,20 +223,6 @@ button {
 .merch {
   font-size: .8em;
   width: 90%;
-}
-.disclaimer {
-  text-align: center;
-  height: 30px; 
-  line-height: 30px;
-  font-family: 'FL';
-  width: auto; 
-  font-size: 20px; 
-  padding: .2em;
-  display: inline-block; 
-  color: #ffffff;
-  background-color: rgba(255, 255, 0, .5);
-  border-radius: 7px;
-  transition-duration: .5s;
 }
 .SocialMedia {
   width: 12vw;
@@ -484,7 +471,9 @@ button {
 @keyframes FLTeach {
   0% { opacity: 0; }
   25% { opacity: 0; }
+  30% { opacity: 1; }
   50% { opacity: 1; }
+  70% { opacity: 1; }
   75% { opacity: 0; }
   100% { opacity: 0; }
 }

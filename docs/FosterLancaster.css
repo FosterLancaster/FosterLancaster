@@ -52,10 +52,7 @@ header {
   outline: none;
   z-index: 6;
   border-top: solid .5px #ffffff;
-  background-color: #b6b6b6;
-  background-image: url('images/MetalPattern.png'), linear-gradient(to right, #000000, #ffffff, #000000);
-  background-size: 500px auto, cover;
-  background-position: center center, center center;
+  background-color: #000c43;
 }
 .headerhalf {
   width: 100%;
@@ -89,11 +86,10 @@ header {
   display: flex;
   opacity: 0;
   animation: FLTeach 6s linear 0s infinite;
-  -webkit-text-stroke: .06em #000000;
 }
 .FLNameIcon {
   font-family: "FL";
-  color: rgb(255, 255, 255, .6);
+  color: rgba(169, 236, 255, 0.6);
   background-image: url('images/Me.png');
   background-size: 80%;
   background-position: center center;
@@ -136,7 +132,7 @@ footer {
   font-size: 15px;
   line-height: 2em;
   border-top: solid .5px transparent;
-  background-color: rgb(0, 0, 0, .5);
+  background-color: #000000;
   text-align: right;
 }
 .Title {
@@ -471,9 +467,9 @@ button {
 @keyframes FLTeach {
   0% { opacity: 0; }
   25% { opacity: 0; }
-  30% { opacity: 1; }
-  50% { opacity: 1; }
-  70% { opacity: 1; }
+  30% { opacity: 1; filter: blur(0px); }
+  50% { opacity: 1; filter: blur(2px); }
+  70% { opacity: 1; filter: blur(0px); }
   75% { opacity: 0; }
   100% { opacity: 0; }
 }

@@ -52,7 +52,12 @@ header {
   outline: none;
   z-index: 6;
   border-top: solid .5px #ffffff;
-  background-color: #000c43;
+  background-color: #ffffff;
+  color: #000000;
+}
+header:hover {
+  background-color: #000000;
+  color: #ffffff;
 }
 .headerhalf {
   width: 100%;
@@ -82,14 +87,13 @@ header {
   line-height: 10dvh;
   bottom: 0px;
   width: auto;
-  color: #ffffff;
   display: flex;
   opacity: 0;
   animation: FLTeach 6s linear 0s infinite;
 }
 .FLNameIcon {
   font-family: "FL";
-  color: rgba(169, 236, 255, 0.6);
+  color: #ffffff;
   background-image: url('images/Me.png');
   background-size: 80%;
   background-position: center center;
@@ -133,7 +137,7 @@ footer {
   line-height: 2em;
   border-top: solid .5px transparent;
   background-color: #000000;
-  text-align: right;
+  text-align: center;
 }
 .Title {
  /* Outline width */
@@ -322,6 +326,16 @@ button {
   display: block;
   overflow: hidden;
 }
+.Socials {
+  line-height: 5vh;
+  width: auto;
+  display: inline-block;
+  font-size: 13px;
+  font-family: Futura;
+}
+.Socials:hover {
+  text-decoration: underline;
+}
 
 @media screen and (orientation: portrait) {
   .FLNameWritten {
@@ -467,9 +481,9 @@ button {
 @keyframes FLTeach {
   0% { opacity: 0; }
   25% { opacity: 0; }
-  30% { opacity: 1; filter: blur(0px); }
-  50% { opacity: 1; filter: blur(2px); }
-  70% { opacity: 1; filter: blur(0px); }
+  30% { opacity: 1; }
+  50% { opacity: 1; }
+  70% { opacity: 1; }
   75% { opacity: 0; }
   100% { opacity: 0; }
 }

@@ -70,7 +70,7 @@ header:hover {
 /*-------------------FLName---------------------*/
 .FLName {
   width: 100%;
-  padding-right: 10vh;
+  padding-right: 10vw;
   box-sizing: border-box;
   height: 10dvh;
   display: flex;         /* changed from inline-block to flex */

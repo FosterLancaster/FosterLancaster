@@ -51,11 +51,12 @@ header {
   opacity: 1;
   outline: none;
   z-index: 6;
-  border-top: solid .5px #ffffff;
+  border-top: solid .5px #000000;
   background-color: #ffffff;
   color: #000000;
 }
 header:hover {
+  border-top: solid .5px #ffffff;
   background-color: #000000;
   color: #ffffff;
 }
@@ -89,7 +90,7 @@ header:hover {
   width: auto;
   display: flex;
   opacity: 0;
-  animation: FLTeach 6s linear 0s infinite;
+  animation: FLTeach 6s ease 0s infinite;
 }
 .FLNameIcon {
   font-family: "FL";
@@ -104,7 +105,7 @@ header:hover {
   font-size: 3dvh;
   line-height: 10dvh;
   opacity: 0;
-  animation: FLTeach 6s linear 3s infinite;
+  animation: FLTeach 6s ease 3s infinite;
   }
 /*-------------------FLName---------------------*/
 hr {
@@ -487,10 +488,10 @@ button {
 
 @keyframes FLTeach {
   0% { opacity: 0; }
-  25% { opacity: 0; }
-  30% { opacity: 1; }
+  25% { opacity: 0; transform: translateY(.4em);}
+  35% { opacity: 1; transform: translateY(0px);}
   50% { opacity: 1; }
-  70% { opacity: 1; }
+  65% { opacity: 1; }
   75% { opacity: 0; }
   100% { opacity: 0; }
 }

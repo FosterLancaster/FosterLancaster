@@ -2,19 +2,114 @@
 <html lang="en">
 <head>
 <!----Send Off---->
-<title>Fan Password</title>
+<title>FOSTMP3S.COM Fan Password!</title>
 <link rel="shortcut icon" href="images/FLFavicon.ico" type="image/x-icon"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-<meta name="author" content="" />
-<meta name="description" content="" />
+<meta name="keywords" content="FostMp3s, The Good Link, Black Jeans, Pop Singer, IRL, Forever">
+<meta name="author" content="Foster Lancaster">
+<meta name="description" content="The official fostmp3s.com password" />
+<link rel="stylesheet" href="FosterLancaster.css">
+<link rel="stylesheet" href="MusicPlayer.css">
+<link rel="stylesheet" href="Menus.css">
+<link rel="stylesheet" href="Password.css">
 </head>
+<style>
+  body {
+    background-color: #ffffff;
+    background-image: url('images/PWSale.jpg');
+    background-size: cover;
+  }
+</style>
 
 <body>
-  <script>
-    window.onload = function() {
-    window.location.href = "https://www.paypal.com/ncp/payment/KU5W8WACXP7N2";
-    };
-  </script>
+<div align='center'>
+  <div class="PasswordSale">
+    Buy the Fan Password for $2.25
+
+  <div class="PWcarousel-container">
+    <div class="PWcarousel-track">
+    
+    <!----TFP---->
+    <div class="PWcarousel-slide">
+      <div align="center">
+      <img class="PWAlbum" src="fmp3simages/MoreThanJustAFan.jpg">
+      </div>
+      </div>
+
+      <div class="PWcarousel-slide">
+        <div align="center">
+        <img class="PWAlbum" src="fmp3simages/TheGoodLink.png">
+        </div>
+        </div>
+
+        <div class="PWcarousel-slide">
+          <div align="center">
+          <img class="PWAlbum" src="fmp3simages/FCompilation.jpg">
+          </div>
+          </div>
+
+          <div class="PWcarousel-slide">
+            <div align="center">
+            <img class="PWAlbum" src="fmp3simages/Attachment.jpg">
+            </div>
+            </div>
+
+    </div>
+
+    <button class="PWcarousel-btn PWprev-btn">
+      <img class="PWprev-btn" src="images/VPrev.png" alt="Previous">
+    </button>
+    <button class="PWcarousel-btn PWnext-btn">
+      <img class="PWnext-btn" src="images/VNext.png" alt="Next">
+    </button>
+  </div>
+
+  
+</div>
+
+<a style="margin: 0px; padding: 0px;" href="https://buy.stripe.com/8x24gzb4HgL55nAgr124005" target="_blank">
+<div class="PWLink">
+<img class="PwkeyIcon" src="fmp3simages/PWBUY.png"><img class="PWBuyButtonIcon" src="fmp3simages/Stripe.png">
+</div>
+</a>
+
+<a style="margin: 0px; padding: 0px;" href="https://www.paypal.com/ncp/payment/KU5W8WACXP7N2" target="_blank">
+<div class="PWLink">
+<img class="PwkeyIcon" src="fmp3simages/PWBUY.png"><img class="PWBuyButtonIcon" src="fmp3simages/Paypal.png">
+</div>
+</a>
+
+<a style="margin: 0px; padding: 0px;" href="https://square.link/u/MzJHLUQb" target="_blank">
+<div class="PWLink">
+<img class="PwkeyIcon" src="fmp3simages/PWBUY.png"><img class="PWBuyButtonIcon" src="fmp3simages/Square.png">
+</div>
+</a>
+
+</div>
+</div>
+
+<script>
+  const pwtrack = document.querySelector('.PWcarousel-track');
+  const pwslides = Array.from(pwtrack.children);
+  const pwprevButton = document.querySelector('.PWprev-btn');
+  const pwnextButton = document.querySelector('.PWnext-btn');
+  let pwcurrentIndex = 0;
+
+  function pwupdateCarousel() {
+    pwtrack.style.transform = `translateX(-${pwcurrentIndex * 100}%)`;
+  }
+
+  pwnextButton.addEventListener('click', () => {
+    pwcurrentIndex = (pwcurrentIndex + 1) % pwslides.length;
+    pwupdateCarousel();
+  });
+
+  pwprevButton.addEventListener('click', () => {
+    pwcurrentIndex = (pwcurrentIndex - 1 + pwslides.length) % pwslides.length;
+    pwupdateCarousel();
+  });
+</script>
+
 </body>
 </html>

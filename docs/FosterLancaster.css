@@ -488,7 +488,7 @@ button {
 
 @keyframes FLTeach {
   0% { opacity: 0; }
-  25% { opacity: 0; transform: translateY(.4em);}
+  25% { opacity: 0; transform: translateY(.7em);}
   35% { opacity: 1; transform: translateY(0px);}
   50% { opacity: 1; }
   65% { opacity: 1; }

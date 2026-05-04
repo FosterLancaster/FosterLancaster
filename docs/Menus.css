@@ -43,7 +43,6 @@
   max-height: 100%;
   min-width: 100%;
   overflow: hidden;
-  box-sizing: border-box;
 }
 .carousel-btn {
   position: absolute;   /* float inside carousel-container */
@@ -51,7 +50,7 @@
   transform: translateY(-50%);
   border: none;
   color: #000000;
-  font-size: 2rem;
+  font-size: 2em;
   cursor: pointer;
   background-color: transparent;
   z-index: 3;           /* above iframe */

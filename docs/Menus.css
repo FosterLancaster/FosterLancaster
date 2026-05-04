@@ -57,7 +57,7 @@
 }
 .prev-btn {
   left: 0px;           /* place on left side */
-  height: 75px;
+  height: 80px;
   width: auto;
   opacity: .6;
   transition-duration: .5s;
@@ -67,7 +67,7 @@
 }
 .next-btn {
   right: 0px;          /* place on right side */
-  height: 75px;
+  height: 80px;
   width: auto;
   opacity: .6;
   transition-duration: .5s;

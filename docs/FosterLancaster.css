@@ -90,7 +90,7 @@ header:hover {
   width: auto;
   display: flex;
   opacity: 0;
-  animation: FLTeach 6s ease 0s infinite;
+  animation: FLTeach 4s ease 0s infinite;
 }
 .FLNameIcon {
   font-family: "FL";
@@ -105,7 +105,7 @@ header:hover {
   font-size: 3dvh;
   line-height: 10dvh;
   opacity: 0;
-  animation: FLTeach 6s ease 3s infinite;
+  animation: FLTeach 4s ease 2s infinite;
   }
 /*-------------------FLName---------------------*/
 hr {
@@ -406,8 +406,8 @@ button {
   .FirstVideoScreen {
     position: absolute;      
     left: 0;
-    width: 100vw;
-    max-width: 100vw;
+    width: 100%;
+    max-width: 100%;
     /*-----------For ipad----------*/
     height: 90vh; 
   }
@@ -488,7 +488,7 @@ button {
 
 @keyframes FLTeach {
   0% { opacity: 0; }
-  25% { opacity: 0; transform: translateY(.7em);}
+  25% { opacity: 0; transform: translateY(2.5vh);}
   35% { opacity: 1; transform: translateY(0px);}
   50% { opacity: 1; }
   65% { opacity: 1; }

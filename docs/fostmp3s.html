@@ -35,9 +35,11 @@ audio {
 }
 #PayOff {
   display: none;
+  position: relative;
  }
  #PayOn {
   display: block;
+  position: relative;
  }
 td {
   padding: 0;
@@ -75,10 +77,6 @@ table {
 .LancasterFrame:hover .LancasterMusicPlayer{
   background-image: none;
   opacity: 1;
-}
-.LancasterFrame:hover .songSelection {
-  opacity: 1;
-  pointer-events: all;
 }
 .LancasterFrame:hover .ControlBar {
   height: 40px;
@@ -239,6 +237,13 @@ table {
 
 /*------100vh Controls Sum Landscape = (218px - 202px (16px))-------*/
 /*----Bars----*/
+
+#PayOn:hover .songSelection{
+  opacity: 1;
+}
+#PayOn:hover .songSelectionOption {
+  opacity: 0;
+}
 .songSelection {
   /*----Music----*/
   height: calc(100vh - 219px);
@@ -253,14 +258,27 @@ table {
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
   opacity: 0;
-  transition-duration: .2s;
+  transition-duration: 2s;
   display: block;
-  pointer-events: none;
   background-color: rgba(0, 0, 0, .1);
+  pointer-events: all;
+}
+.songSelectionOption {
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  object-fit: cover;
+  object-position: center 0px; /* moves crop focus lower */
+  transform: translate(-50%, -50%);
+  display: block;
+  overflow: hidden;
+  color: #000000;
 }
 .OffMusicHeader {
-  height: calc((100vh - 203px) / 4);
-  min-height: calc((100vh - 203px) / 4);
+  height: calc(100vh - 203px);
+  min-height: calc(100vh - 203px);
   width: 100%;
   display: flex; 
   align-items: center; 
@@ -270,24 +288,6 @@ table {
   max-width: 95%;
   overflow: hidden;
 }
- .BuyButton {
-  height: calc((100vh - 203px) / 4);
-  min-height: calc((100vh - 203px) / 4);
-  font-family: "FL";
-  position: relative;
-  width: calc(100% - 1px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: .5px solid #ffffff;
-  background-color: #ffffff;
-  color: #ffffff;
-  border-radius: 0px;
-  overflow: hidden;
- }
- .BuyButton:hover {
-  filter: saturate(2);
- }
 .song-button {
   font-family: 'futura';
   font-size: 18px;
@@ -418,7 +418,7 @@ table {
 }
 /* Listen counter badge */
 .moreInfo {
-  color: #ffffff;
+  color: #000000;
   font-family: 'futura';
   position: relative;
   height: 0px;
@@ -434,7 +434,7 @@ table {
   align-items: center;
   justify-content: center;
   pointer-events: none;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(255, 255, 255, .9);
   transition-duration: .8s;
   overflow: hidden;
 }
@@ -717,13 +717,9 @@ li {
   overflow-y: scroll;
 }
 .OffMusicHeader {
-  height: calc((100vh - 213px) / 4);
-  min-height: calc((100vh - 213px) / 4);
+  height: calc(100vh - 213px);
+  min-height: calc(100vh - 213px);
 }
- .BuyButton {
-  height: calc((100vh - 213px) / 4);
-  min-height: calc((100vh - 213px) / 4);
- }
 }
 
 /* ------------ Miniature Adjustments ----------*/
@@ -799,8 +795,9 @@ li {
   
   <!----PayOn---->
         <div id="PayOn">
+          <div class="songSelectionOption">Pick A Song</div>
           <div class="songSelection" id="songSelection"  alt="Song Selector" title="Song Selector">
-
+          
           <div align='center'>
             <audio id="introAudio" preload="auto" src="https://dl.dropbox.com/scl/fi/xd4g0uvlmnbgoehte1nbs/Sale.mp3?rlkey=o2bnskspdmj1enbecex866698"></audio>
             <button preload="auto" class ="song-button MoreThanJustAFan" data-song="https://dl.dropbox.com/scl/fi/t2jyzec1c9jgz6sdaxa7a/More-Than-Just-A-Fan.mp3?rlkey=c92ejnylydfvjmal547ipoc9g"><img src="fmp3simages/MoreThanJustAFan.jpg" class="AlbumThumbnail">"More Than Just A Fan"</button>
@@ -834,8 +831,10 @@ li {
             <!--<button preload="auto" class ="song-button FCompilation" data-song="https://dl.dropbox.com/scl/fi/lnyuij7d1ccnzsge4o9m7/F13.mp3?rlkey=ln3ksoixs8en3ctxi8evxopq"><img src="fmp3simages/FCompilation.jpg" class="AlbumThumbnail">"Butterflies Come In Every Color"</button>-->
             <!--<button preload="auto" class ="song-button FCompilation" data-song="https://dl.dropbox.com/scl/fi/8wb0d8b99dfs52pqzslm2/F14.mp3?rlkey=jqykalxikpfhe2zdab6q6syxc" class="AlbumThumbnail">"Accountability"</button>-->
           </div>
+
           </div>
-          </div>
+        </div>
+
 
 
             <!----PayOff---->
@@ -844,21 +843,6 @@ li {
             <div class="OffMusicHeader">
               Keep Listening For $2.25
             </div>
-            <a style="margin: 0px; padding: 0px;" href="https://buy.stripe.com/8x24gzb4HgL55nAgr124005" target="_blank">
-              <div class="BuyButton" style="background-color: rgba(64, 32, 154, 0.9);">
-              <img class="PwkeyIcon" src="fmp3simages/PWBUY.png"><img class="BuyButtonIcon" src="fmp3simages/Stripe.png">
-              </div>
-              </a>
-            <a style="margin: 0px; padding: 0px;" href="https://www.paypal.com/ncp/payment/KU5W8WACXP7N2" target="_blank">
-              <div class="BuyButton" style="background-color: rgba(90, 222, 255, 0.9);">
-              <img class="PwkeyIcon" src="fmp3simages/PWBuy.png"><img class="BuyButtonIcon" src="fmp3simages/Paypal.png">
-              </div>
-              </a>
-            <a style="margin: 0px; padding: 0px;" href="https://square.link/u/MzJHLUQb" target="_blank">
-              <div class="BuyButton" style="background-color: rgba(203, 203, 203, 0.9);">
-              <img class="PwkeyIcon" src="fmp3simages/PWBUY.png"><img class="BuyButtonIcon" src="fmp3simages/Square.png">
-              </div>
-              </a>
             </div>
         </div>
 

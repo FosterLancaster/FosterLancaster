@@ -51,14 +51,16 @@ header {
   opacity: 1;
   outline: none;
   z-index: 6;
-  border-top: solid .5px #000000;
-  background-color: #ffffff;
-  color: #000000;
-}
-header:hover {
   border-top: solid .5px #ffffff;
   background-color: #000000;
   color: #ffffff;
+  background-size: cover;
+  background-position: center center;
+}
+header:hover {
+  border-top: solid .5px #000000;
+  background-color: #ffffff;
+  color: #000000;
 }
 .headerhalf {
   width: 100%;
@@ -70,7 +72,6 @@ header:hover {
 /*-------------------FLName---------------------*/
 .FLName {
   width: 100%;
-  padding-right: 10vw;
   box-sizing: border-box;
   height: 10dvh;
   display: flex;         /* changed from inline-block to flex */
@@ -89,24 +90,9 @@ header:hover {
   bottom: 0px;
   width: auto;
   display: flex;
-  opacity: 0;
-  animation: FLTeach 4s ease 0s infinite;
+  opacity: 1;
+  animation: FastLane 4s ease 0s infinite;
 }
-.FLNameIcon {
-  font-family: "FL";
-  color: #ffffff;
-  background-image: url('images/Me.png');
-  background-size: 80%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  height: 10dvh; 
-  width: 10dvh;
-  margin: 3.5dvh;
-  font-size: 3dvh;
-  line-height: 10dvh;
-  opacity: 0;
-  animation: FLTeach 4s ease 2s infinite;
-  }
 /*-------------------FLName---------------------*/
 hr {
   border: solid .5px #ffffff80;
@@ -347,7 +333,7 @@ button {
 
 @media screen and (orientation: portrait) {
   .FLNameWritten {
-    font-size: 4vw;
+    font-size: 6vw;
   }
   .Page {
   height: calc(90dvh / 6);
@@ -369,12 +355,6 @@ button {
   #Player {
     width: 200vh;
     height: 200vw;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .FLNameWritten {
-    font-size: 3vw;
   }
 }
 
@@ -486,12 +466,12 @@ button {
   }
 }
 
-@keyframes FLTeach {
-  0% { opacity: 0; }
-  25% { opacity: 0; transform: translateY(2.5vh);}
-  35% { opacity: 1; transform: translateY(0px);}
-  50% { opacity: 1; }
-  65% { opacity: 1; }
-  75% { opacity: 0; }
-  100% { opacity: 0; }
+@keyframes FastLane {
+  0% { transform: translateX(0); }
+  40% { transform: translateX(0); }
+  50% { transform: translateX(120vw); opacity: 1;}
+  51% { transform: translateX(120vw); opacity: 0;}
+  52% { transform: translateX(-120vw); opacity: 0;}
+  53% { transform: translateX(-120vw); opacity: 1;}
+  100% { transform: translateX(0); }
 }

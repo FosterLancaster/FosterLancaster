@@ -54,6 +54,7 @@ header {
   border-top: solid .5px #ffffff;
   background-color: #000000;
   color: #ffffff;
+  -webkit-text-stroke: .04em #000000;
   background-size: cover;
   background-position: center center;
 }
@@ -61,6 +62,7 @@ header:hover {
   border-top: solid .5px #000000;
   background-color: #ffffff;
   color: #000000;
+  -webkit-text-stroke: .04em #ffffff;
 }
 .headerhalf {
   width: 100%;

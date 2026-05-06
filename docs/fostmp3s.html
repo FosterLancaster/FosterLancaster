@@ -268,6 +268,7 @@ table {
   position: absolute;
   top: 50%;
   left: 50%;
+  max-height: 100%;
   width: auto;
   object-fit: cover;
   object-position: center 0px; /* moves crop focus lower */
@@ -277,6 +278,12 @@ table {
   color: #000000;
   -webkit-text-stroke: .03em #ffffff;
   font-size: 1.5em;
+}
+.songSelectionOptionBtn {
+  opacity: .1;
+  width: auto;
+  height: 90%;
+  max-height: 100%;
 }
 .OffMusicHeader {
   height: calc(100vh - 203px);
@@ -403,7 +410,7 @@ table {
   cursor: pointer;
   transition-duration: .3s;
   max-width: 80%;
-  animation: clickhere 1.5s linear infinite;
+  animation: clickhere 1s linear infinite;
 }
 #buyBtn {
   cursor: pointer;
@@ -413,7 +420,6 @@ table {
   height: auto;
   width: 90px;
   max-width: 80%;
-  animation: clickhere 1.5s linear infinite;
 }
 .MusicButton {
   height: auto;
@@ -761,9 +767,9 @@ li {
 }
 
 @keyframes clickhere {
-  0% { transform: scale(1.1); }
-  50% { transform: scale(.8); }
-  100% { transform: scale(1.1);}
+  0% { transform: scale(1.1); filter: invert(0); }
+  50% { transform: scale(.8); filter: invert(1);  }
+  100% { transform: scale(1.1); filter: invert(0); }
 }
 
 @keyframes rise {
@@ -779,7 +785,7 @@ li {
   
   <!----PayOn---->
         <div id="PayOn">
-          <div class="songSelectionOption">Pick A Song</div>
+          <div class="songSelectionOption"><img class="songSelectionOptionBtn" src="fmp3simages/SongSelect.png"></div>
           <div class="songSelection" id="songSelection"  alt="Song Selector" title="Song Selector">
           
           <div align='center'>

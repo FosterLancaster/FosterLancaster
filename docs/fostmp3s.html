@@ -269,21 +269,19 @@ table {
   top: 50%;
   left: 50%;
   max-height: 100%;
-  width: auto;
-  object-fit: cover;
-  object-position: center 0px; /* moves crop focus lower */
+  width: 100%;
+  height: 100%;
   transform: translate(-50%, -50%);
   display: block;
   overflow: hidden;
   color: #000000;
   -webkit-text-stroke: .03em #ffffff;
   font-size: 1.5em;
-}
-.songSelectionOptionBtn {
-  opacity: .1;
-  width: auto;
-  height: 90%;
-  max-height: 100%;
+  background-image: url('fmp3simages/SongSelect.png');
+  background-size: auto 100%;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 .OffMusicHeader {
   height: calc(100vh - 203px);
@@ -785,7 +783,7 @@ li {
   
   <!----PayOn---->
         <div id="PayOn">
-          <div class="songSelectionOption"><img class="songSelectionOptionBtn" src="fmp3simages/SongSelect.png"></div>
+          <div class="songSelectionOption"></div>
           <div class="songSelection" id="songSelection"  alt="Song Selector" title="Song Selector">
           
           <div align='center'>

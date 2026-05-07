@@ -84,9 +84,6 @@ header:hover {
 }
 .FLNameWritten {
   font-family: "FL";
-  height: 10dvh;
-  line-height: 10dvh;
-  bottom: 0px;
   width: auto;
   display: flex;
   opacity: 1;
@@ -331,6 +328,7 @@ button {
 @media screen and (orientation: portrait) {
   .FLNameWritten {
     font-size: 8vw;
+    height: 10vw;
   }
   .Page {
   height: calc(90dvh / 6);
@@ -358,6 +356,7 @@ button {
 @media screen and (orientation: landscape) {
   .FLNameWritten {
     font-size: 8dvh;
+    height: 10dvh;
   }
   .LancasterMenu {
     display: none;

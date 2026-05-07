@@ -87,7 +87,7 @@ header:hover {
   width: auto;
   display: flex;
   opacity: 1;
-  animation: FastLane 1.5s ease 0s infinite;
+  animation: FastLane 3s ease infinite;
 }
 /*-------------------FLName---------------------*/
 hr {

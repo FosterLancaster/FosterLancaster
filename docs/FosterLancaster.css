@@ -466,14 +466,14 @@ button {
   0% {
     transform: translateX(0);
   }
-  60% {
+  85% {
     transform: translateX(0);
   }
-  70% {
+  90% {
     transform: translateX(120vw);
   }
   /* instant jump to left offscreen */
-  70.01% {
+  90.01% {
     transform: translateX(-120vw);
   }
   100% {

@@ -31,7 +31,7 @@
   overflow: hidden;
   z-index: 2;
   width: calc(90% - 1px);
-  background-color: rgba(255, 255, 255, .05);
+  background-color: rgba(0, 0, 0, .04);
   border-radius: 20px;
   border: solid .5 transparent;
 }

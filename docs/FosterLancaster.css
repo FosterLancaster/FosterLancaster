@@ -20,11 +20,11 @@ body {
   height: 100%;
   margin: 0;
   min-height: 100%;
-  color: #ffffff;
+  color: #0053d8;
   font-family: 'FL';
   font-size: 22px;
   z-index: 0;
-  background-color: #0053d8;
+  background-color: #ffffff;
 }
 @font-face {
   font-family: 'FL';
@@ -156,7 +156,7 @@ footer a:hover {
   font-family: 'FL';
   font-size: 4em;
   line-height: calc(90vh / 6);
-  background-color: #0560ef;
+  background-color: #ffffff;
   background-image: url('images/FosterLancasterLogoOverlay.png');
   background-size: auto 100%;
   background-position: center center;
@@ -176,7 +176,7 @@ footer a:hover {
   opacity: 1;
 }
 .PageText {
-  color: #ffffff;
+  color: #0560ef;
 }
 #Menu {
   position: fixed;

@@ -111,10 +111,10 @@ table {
   height: 100%; /* Important */
   text-align: center;
   color: #d3d3d3;
-  background-image: url('fmp3simages/FostMp3sLogo.png');
-  background-size: 180px auto;
-  background-position: center bottom;
-  background-repeat: no-repeat;
+  background-image: url('fmp3simages/FostMp3sLogo.png'), linear-gradient(to top, rgba(0, 0, 0, .8), transparent);
+  background-size: 180px auto, 100% 70px;
+  background-position: center bottom, center bottom;
+  background-repeat: no-repeat, no-repeat;
   position: relative;
   overflow: hidden;
 }
@@ -264,7 +264,7 @@ table {
   transition: opacity 2s ease;
 }
 .songSelectionOption {
-  opacity: 1;
+  opacity: .2;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -278,7 +278,7 @@ table {
   -webkit-text-stroke: .03em #ffffff;
   font-size: 1.5em;
   background-image: url('fmp3simages/SongSelect.png');
-  background-size: auto 50px;
+  background-size: auto 30%;
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;

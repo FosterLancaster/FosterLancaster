@@ -51,16 +51,15 @@ header {
   opacity: 1;
   outline: none;
   z-index: 6;
-  border-top: solid .5px #ffffff;
-  background-color: #000000;
-  color: #ffffff;
+  border-top: solid .5px #000000;
+  background-color: #0053d8;
+  color: #ffff00;
   background-size: cover;
   background-position: center center;
 }
 header:hover {
-  border-top: solid .5px #000000;
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #ffff00;
+  color: #0053d8;
 }
 .headerhalf {
   width: 100%;
@@ -331,7 +330,7 @@ button {
 
 @media screen and (orientation: portrait) {
   .FLNameWritten {
-    font-size: 6vw;
+    font-size: 3.5vw;
   }
   .Page {
   height: calc(90dvh / 6);
@@ -358,7 +357,7 @@ button {
 
 @media screen and (orientation: landscape) {
   .FLNameWritten {
-    font-size: 4dvh;
+    font-size: 2.5dvh;
   }
   .LancasterMenu {
     display: none;
@@ -465,11 +464,20 @@ button {
 }
 
 @keyframes FastLane {
-  0% { transform: translateX(0); display: block;}
-  40% { transform: translateX(0); display: block;}
-  50% { transform: translateX(120vw); display: block;}
-  51% { transform: translateX(120vw); display: none;}
-  52% { transform: translateX(-120vw); display: none;}
-  53% { transform: translateX(-120vw); display: block;}
-  100% { transform: translateX(0); display: block;}
+  0% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(100vw);
+  }
+  /* instant jump to left offscreen */
+  50.01% {
+    transform: translateX(-200vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }

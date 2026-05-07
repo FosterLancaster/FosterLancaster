@@ -91,7 +91,7 @@ header:hover {
   width: auto;
   display: flex;
   opacity: 1;
-  animation: FastLane 4s ease 0s infinite;
+  animation: FastLane 2s ease 0s infinite;
 }
 /*-------------------FLName---------------------*/
 hr {
@@ -467,9 +467,9 @@ button {
 @keyframes FastLane {
   0% { transform: translateX(0); }
   40% { transform: translateX(0); }
-  50% { transform: translateX(120vw); opacity: 1;}
-  51% { transform: translateX(120vw); opacity: 0;}
-  52% { transform: translateX(-120vw); opacity: 0;}
-  53% { transform: translateX(-120vw); opacity: 1;}
+  50% { transform: translateX(120vw); display: block;}
+  51% { transform: translateX(120vw); display: none;}
+  52% { transform: translateX(-120vw); display: none;}
+  53% { transform: translateX(-120vw); display: block;}
   100% { transform: translateX(0); }
 }

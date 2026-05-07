@@ -90,7 +90,7 @@ header:hover {
   width: auto;
   display: flex;
   opacity: 1;
-  animation: FastLane 2s ease 0s infinite;
+  animation: FastLane 1.5s ease 0s infinite;
 }
 /*-------------------FLName---------------------*/
 hr {
@@ -330,7 +330,7 @@ button {
 
 @media screen and (orientation: portrait) {
   .FLNameWritten {
-    font-size: 3.5vw;
+    font-size: 8vw;
   }
   .Page {
   height: calc(90dvh / 6);
@@ -357,7 +357,7 @@ button {
 
 @media screen and (orientation: landscape) {
   .FLNameWritten {
-    font-size: 2.5dvh;
+    font-size: 8dvh;
   }
   .LancasterMenu {
     display: none;
@@ -467,15 +467,15 @@ button {
   0% {
     transform: translateX(0);
   }
-  40% {
+  60% {
     transform: translateX(0);
   }
-  50% {
-    transform: translateX(100vw);
+  70% {
+    transform: translateX(120vw);
   }
   /* instant jump to left offscreen */
-  50.01% {
-    transform: translateX(-200vw);
+  70.01% {
+    transform: translateX(-120vw);
   }
   100% {
     transform: translateX(0);

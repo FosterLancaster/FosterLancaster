@@ -122,11 +122,12 @@ footer a:hover {
  /* Outline width */
   font-size: 40px;
   height: 40px;
+  line-height: 40px;
   margin: 2vh 0px 2vh 0px;
-  padding: 5px;
+  padding: 10px;
   overflow: hidden;
   position: relative;
-  width: calc(100% - 10px);
+  width: calc(100% - 20px);
   border-radius: 5px;
   background-color: rgba(255, 255, 255, .7);
 }

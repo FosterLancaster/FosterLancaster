@@ -217,11 +217,10 @@ select {
   text-decoration: underline;
 }
 .Booking {
+  margin-top: 50px;
   width: 100vw;
   height: 100px;
   position: relative;
-  border-radius: 20px;
-  border: solid 1px #000000;
   display: flex;               
   justify-content: center;     
   align-items: center;   

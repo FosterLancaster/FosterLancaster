@@ -232,7 +232,7 @@ select {
   color: #ffffff;
 }
 .Booking:hover {
-  transform: scale(1.2);
+  font-size: 2em;
   color: #ffff00;
 }
 

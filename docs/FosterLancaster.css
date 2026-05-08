@@ -230,6 +230,7 @@ select {
   background-image: url('images/Gifs/ConcertSimulation.gif');
   background-size: cover;
   background-position: center center;
+  background-color: #ffffff;
   color: #ffffff;
 }
 .Booking:hover {

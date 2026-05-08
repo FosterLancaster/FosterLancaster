@@ -217,8 +217,7 @@ select {
   text-decoration: underline;
 }
 .Booking {
-  margin: 30px;
-  width: 80vw;
+  width: 100vw;
   height: 100px;
   position: relative;
   border-radius: 20px;

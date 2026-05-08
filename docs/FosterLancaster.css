@@ -227,7 +227,7 @@ select {
   justify-content: center;     
   align-items: center;   
   transition-duration: 1s;
-  background-image: url('images/ConcertSimulation.gif');
+  background-image: url('images/Gifs/ConcertSimulation.gif');
   background-size: cover;
   background-position: center center;
   color: #ffffff;

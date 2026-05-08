@@ -128,7 +128,7 @@ footer a:hover {
   width: calc(100% - 30px);
   margin: 3vh 0px 3vh 0px;
   border-radius: 5px;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, .5);
 }
 select { 
     outline: none; 
@@ -202,7 +202,7 @@ select {
   overflow: hidden;
   z-index: -1;
   background-image: url('images/MoreThanJustAFan.jpg');
-  background-size: auto 40%;
+  background-size: 15em auto;
   background-repeat: no-repeat;
   background-position: center center;
 }

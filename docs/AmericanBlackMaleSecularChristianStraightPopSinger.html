@@ -19,10 +19,11 @@
 <meta name="author" content="Foster Lancaster">
 <meta name="description" content="American, Black, Male, Secular, Christian, Straight, Pop-Singer" />
 <link rel="stylesheet" href="FosterLancaster.css">
-<link rel="stylesheet" href="Menus.css">
-<style></style>
+<link rel="stylesheet" href="FChat.css">
 </head>
+
 <body>
+<div class="FirstScreen"></div>
 
 <!----Header---->
 <header>
@@ -32,54 +33,59 @@
           </div>
     <audio id="FLNameAudio" src="SayName.mp3" playsinline></audio>
   </div>
-  <div class="LancasterMenu" onclick="MenuToggle()"></div>
 </header>
 <!----Header---->
-
-<!----Navigation---->
-<div class="NavigationFrame">
-  <div id="Navigation">
-    <a href="http://fostmp3s.com/" target="_self" class="nav-link">
-      <button class="Page"><div class="PageText">Home</div></button>
-    </a>
-    <a href="http://fostmp3s.com/music" target="_self" class="nav-link">
-      <button class="Page"><img class="PageText" style="width: 100%; height: 100%; object-fit: contain;" src="fmp3simages/FostMp3sLogoWhite.png"></button>
-    </a>
-    <a href="http://fostmp3s.com/videos" target="_self" class="nav-link">
-      <button class="Page" style="background-color: #000000;">    
-    <div class="MusicVideoContainerThumbnail">
-    <iframe class="MusicVideoThumbnail" src="https://www.youtube.com/embed/PRT82_MWUhw?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-    <div class="MusicVideoContainerThumbnail">
-    <iframe class="MusicVideoThumbnail" src="https://www.youtube.com/embed/OIto3pzpIag?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-    <div class="MusicVideoContainerThumbnail">
-    <iframe class="MusicVideoThumbnail" src="https://www.youtube.com/embed/EH2MdaHAvOs?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>   
-    </button>
-    </a>
-    <a href="http://fostmp3s.com/tour" target="_self" class="nav-link">
-      <button class="Page"><div class="PageText">Tour</div></button>
-    </a>
-    <a href="http://fostmp3s.com/bio" target="_self" class="nav-link">
-      <button class="Page"><div class="PageText">Bio</div></button>
-    </a>
-    <a href="http://fostmp3s.com/store" target="_self" class="nav-link">
-      <button class="Page"><div class="PageText">Store</div></button>
-    </a>
-  </div>
-  </div>
-<!----Navigation---->
+<div align="Center">
 <article>
-<section>
+<section style="display: flex; flex-direction: column;">
 
-<div class="FirstVideoScreen"></div>
 
+<div class="Title">fostmp3s</div>
 <!----Fost Mp3's---->
-<iframe src="https://fostmp3s.com/fostmp3s.html" style="width: 100%; height: 90dvh; min-width: 200px; max-height: 100%; display: block; border: none;" class="fostmp3s"></iframe>
+<iframe src="https://fostmp3s.com/fostmp3s.html" style="margin: 0px 10vw 0px 10vw; width: 80vw; height: 80vw; max-height: 80dvh; display: flex; border: none;" class="fostmp3s" loading="lazy" allow="autoplay; fullscreen">
+</iframe>
+<!----Fost Mp3's---->
+
+
+<div class="Title">Updates</div>
+<!------Chat------->
+  <div class="FchatContent">
+    <div class="FMoreInner">
+    <div class="FMoreHeader">Foster Lancaster Updates <img src="fmp3simages/Chat.png" style="height: 1.2em; margin-bottom: -.2em;"></div>
+    <div class="FMoreBody"><ul class="FchatPosts" id="feed"></ul></div>
+    </div>
+    </div>
+<!------Chat------->
+
+<div class="Title">Videos</div>
+
+<!--?autoplay=1&mute=1"-->
+<a class="MusicVideoContainer" href="https://www.youtube.com/watch?v=PRT82_MWUhw" target="_blank">
+  <iframe class="MusicVideo" src="https://www.youtube.com/embed/PRT82_MWUhw?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </a>
+  
+  <a class="MusicVideoContainer" href="https://www.youtube.com/watch?v=OIto3pzpIag" target="_blank">
+  <iframe class="MusicVideo" src="https://www.youtube.com/embed/OIto3pzpIag?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </a>
+  
+  <a class="MusicVideoContainer" href="https://www.youtube.com/watch?v=EH2MdaHAvOs" target="_blank">
+  <iframe class="MusicVideo" src="https://www.youtube.com/embed/EH2MdaHAvOs?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </a>
+
+  <br>
+
+  <a href="mailto:fostmp3s@gmail.com" target="_blank">
+    <div class="Booking" style="color: #000000;">
+    Book Foster Today!
+    </div>
+    </a>
+
+</div>
 
 </section>
 </article>
+
+</div>
 
 <footer>
   *Use Social Media At Your Own Risk*<br>
@@ -105,6 +111,47 @@
     | <a href="http://fostmp3s.com/appropriateaudiencesintended" target="_blank">Appropriate Audiences Intended</a>
     | <a href="http://fostmp3s.com/transactions" target="_blank">Transaction Adjustments</a>
   </footer>
+
+  <script>
+    //Foster Chat From Wordpress
+    
+       fetch('https://fostchat-rss.fostmp3s.workers.dev/')
+      .then(response => response.text())
+      .then(str => {
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(str, "application/xml");
+        const items = xml.querySelectorAll("item");
+        const feedList = document.getElementById("feed");
+    
+        items.forEach(item => {
+          const title = item.querySelector("title")?.textContent;
+          const link = item.querySelector("link")?.textContent;
+    
+          // 🔑 NEW: content:encoded support
+          const contentEncoded =
+            item.getElementsByTagName("content:encoded")[0]?.textContent || "";
+    
+          // Try multiple image sources
+          let image =
+            item.querySelector("enclosure")?.getAttribute("url") ||
+            item.querySelector("media\\:content")?.getAttribute("url") ||
+            contentEncoded.match(/<img.*?src="(.*?)"/)?.[1] ||
+            item.querySelector("description")?.textContent.match(/<img.*?src="(.*?)"/)?.[1];
+    
+          const li = document.createElement("li");
+    
+          li.innerHTML = `
+            <a href="${link}" target="_blank">
+              ${image ? `<img src="${image}" style="max-width:100%; display:block;">` : ""}
+              ${title}
+            </a>
+          `;
+    
+          feedList.appendChild(li);
+        });
+      })
+      .catch(err => console.error("Error loading RSS feed:", err));
+    </script>
 
 </body>
 </html>

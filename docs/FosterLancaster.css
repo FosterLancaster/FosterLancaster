@@ -121,6 +121,7 @@ footer a:hover {
 .Title {
  /* Outline width */
   font-size: 40px;
+  line-height: 40px;
   overflow: hidden;
   position: relative;
   width: 100%;

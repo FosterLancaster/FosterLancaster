@@ -120,13 +120,12 @@ footer a:hover {
 }
 .Title {
  /* Outline width */
-  font-size: 30px;
-  line-height: 30px;
-  padding: 10px;
+  font-size: 40px;
+  line-height: 40px;
+  padding: 5px;
   overflow: hidden;
   position: relative;
-  width: calc(100% - 20px);
-  margin: 1vh 0px 1vh 0px;
+  width: calc(100% - 10px);
   border-radius: 5px;
   background-color: rgba(255, 255, 255, .7);
 }

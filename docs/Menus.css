@@ -28,22 +28,21 @@
 .carousel-container {
   position: relative;
   height: 100%;
-  max-height: 80dvh;
-  overflow: scroll;
   z-index: 2;
   width: calc(90% - 1px);
   background-color: rgba(0, 0, 0, .04);
   border-radius: 20px;
   border: solid .5 transparent;
+  overflow-x: hidden;
 }
 .carousel-track {
   display: flex;
   transition: transform 0.2s ease;
 }
 .carousel-slide {
-  max-height: 100%;
   min-width: 100%;
-  overflow: hidden;
+  max-height: 80dvh;
+  overflow-y: scroll;
 }
 .carousel-btn {
   position: absolute;   /* float inside carousel-container */

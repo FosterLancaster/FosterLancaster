@@ -1,8 +1,8 @@
 .FchatContent {
   margin: 0px 10vw 0px 10vw;
-  width: 80vw; 
-  height: 28em; 
-  max-height: auto;
+  width: calc(80vw - 2px); 
+  height: 100vw; 
+  max-height: 28em;
   bottom: 0px;
   right: 0px;  
   background: rgba(0, 0, 0, .5);

@@ -129,10 +129,10 @@ footer a:hover {
   font-size: 40px;
   height: 25px;  /* change with font */
   line-height: 30px;
-  padding: 5px;
+  padding: 10px;
   overflow: hidden;
   position: relative;
-  width: calc(100% - 10px);
+  width: calc(100% - 20px);
   background-color: #9e6034;
 }
 select { 
@@ -152,9 +152,10 @@ select {
 }
 .MusicVideoContainer {
   margin: 10px 10% 10px 10%;
-  width: 80%;
+  width: calc(80% - 1px);
   height: 70vh;
   max-height: 50vw;
+  border: solid .5px #ffffff;
 
   display: block;
   box-sizing: border-box;
@@ -255,13 +256,6 @@ select {
   }
   .FLNameWritten {
     font-size: 8dvh;
-  }
-  .LancasterMenu {
-    display: none;
-  }
-  .Title {
-  min-height: 12vh;
-  line-height: 12vh;
   }
   .FirstVideoScreen {
     position: absolute;      

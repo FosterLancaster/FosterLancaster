@@ -1,6 +1,6 @@
 .FchatContent {
   margin: 10px 10vw 10px 10vw;
-  width: calc(80vw - 2px); 
+  width: calc(80vw - 1px); 
   height: 120vw; 
   max-height: 75vh;
   bottom: 0px;
@@ -12,7 +12,7 @@
   z-index: 6;
   font-family: 'futura';
   font-size: 18px;
-  border: solid 1px #ffffff;
+  border: solid .5px #ffffff;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }

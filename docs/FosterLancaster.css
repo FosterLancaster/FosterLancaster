@@ -202,7 +202,6 @@ select {
   overflow: hidden;
   z-index: -1;
   background-image: url('images/MoreThanJustAFan.jpg');
-  background-size: 17em auto;
   background-repeat: no-repeat;
   background-position: center center;
 }
@@ -236,12 +235,18 @@ select {
 }
 
 @media screen and (orientation: portrait) {
+  .FirstScreen {
+    background-size: 90% auto;
+  }
   .FLNameWritten {
     font-size: 8vw;
   }
 }
 
 @media screen and (orientation: landscape) {
+  .FirstScreen {
+    background-size: auto 65%;
+  }
   .FLNameWritten {
     font-size: 8dvh;
   }

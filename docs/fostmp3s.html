@@ -242,6 +242,7 @@ table {
   opacity: 1;
 }
 #PayOn:hover .songSelectionOption {
+  animation: none;
   opacity: 0;
 }
 .songSelection {
@@ -264,7 +265,7 @@ table {
   transition: opacity .4s ease;
 }
 .songSelectionOption {
-  opacity: .4;
+  opacity: 1;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -283,6 +284,7 @@ table {
   background-attachment: fixed;
   background-repeat: no-repeat;
   transition: opacity .4s ease;
+  animation: seven 4s linear infinite;
 }
 .OffMusicHeader {
   height: calc(100vh - 203px);
@@ -769,6 +771,12 @@ li {
   0% { filter: invert(0); }
   50% { filter: invert(1);  }
   100% { filter: invert(0); }
+}
+
+@keyframes seven {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 @keyframes rise {

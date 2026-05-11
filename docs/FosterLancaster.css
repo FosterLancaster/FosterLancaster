@@ -136,13 +136,13 @@ footer {
 }
 .Title {
   font-size: 40px;
-  height: 25px;  /* change with font */
+  height: 25px;
   line-height: 30px;
   padding: 10px;
   overflow: hidden;
   position: relative;
-  width: auto;
-  display: inline-block;
+  width: fit-content;
+  display: block;
   background-color: #9e6034;
 }
 select { 
@@ -161,8 +161,9 @@ select {
   transform: scale(1.2);
 }
 .MusicVideoContainer {
-  margin: 10px 10% 10px 10%;
+  margin: auto;
   width: calc(80% - 1px);
+  max-width: 50vh;
   height: 70vh;
   max-height: 50vw;
   border: solid .5px #ffffff;

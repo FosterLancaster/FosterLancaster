@@ -240,6 +240,7 @@ table {
 
 #PayOn:hover .songSelection{
   opacity: 1;
+  pointer-events: all;
 }
 #PayOn:hover .songSelectionOption {
   animation: none;
@@ -261,7 +262,7 @@ table {
   opacity: 0;
   display: block;
   background-color: rgba(0, 0, 0, .1);
-  pointer-events: all;
+  pointer-events: none;
   transition: opacity .4s ease;
 }
 .songSelectionOption {
@@ -279,12 +280,11 @@ table {
   -webkit-text-stroke: .03em #ffffff;
   font-size: 1.5em;
   background-image: url('fmp3simages/SongSelect.png');
-  background-size: auto 30%;
-  background-position: center center;
+  background-size: auto 40%;
+  background-position: right 10px;
   background-attachment: fixed;
   background-repeat: no-repeat;
   transition: opacity .4s ease;
-  animation: seven 4s linear infinite;
 }
 .OffMusicHeader {
   height: calc(100vh - 203px);
@@ -411,7 +411,7 @@ table {
   cursor: pointer;
   transition-duration: .3s;
   max-width: 80%;
-  animation: clickhere 1s linear infinite;
+  animation: bounce .5s ease infinite;
 }
 #buyBtn {
   cursor: pointer;
@@ -767,16 +767,10 @@ li {
 }
 }
 
-@keyframes clickhere {
-  0% { filter: invert(0); }
-  50% { filter: invert(1);  }
-  100% { filter: invert(0); }
-}
-
-@keyframes seven {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
+@keyframes bounce {
+  0% { transform: translateY(0px);}
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
 }
 
 @keyframes rise {

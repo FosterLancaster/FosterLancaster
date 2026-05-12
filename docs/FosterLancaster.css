@@ -103,15 +103,11 @@ font-size: 25px;
 line-height: auto;
 }
 section {
-  position: relative;
-  min-height: 90dvh;
   width: 100%; 
-  max-width: 100%;
 }
 article {
 /*-----------No Relative Within Relative------*/
   height: auto;
-  display: block;
 }
 footer {
   width: calc(100% - 2em); /* Full width */

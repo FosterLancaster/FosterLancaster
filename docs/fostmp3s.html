@@ -247,27 +247,29 @@ table {
   opacity: 0;
 }
 .songSelection {
+  position: relative;
+  opacity: 0;
+  z-index: 1;
+  display: block;
   /*----Music----*/
   height: calc(100vh - 219px);
   min-height: calc(100vh - 219px);
   padding: 5px;
   margin: 4px;
   border-radius: 0px;
-  position: relative;
   border: solid .5px #ffffff;
   width: calc(100% - 20px);
   overflow-y: scroll;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  opacity: 0;
-  display: block;
   background-color: rgba(0, 0, 0, .1);
   pointer-events: none;
   transition: opacity .4s ease;
 }
 .songSelectionOption {
-  opacity: 1;
   position: absolute;
+  opacity: 1;
+  z-index: 2;
   top: 50%;
   left: 50%;
   max-height: 100%;

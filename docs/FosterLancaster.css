@@ -81,7 +81,7 @@ header {
   display: block;
   opacity: 1;
   transform: translateX(-100vw);
-  animation: FastLane .2s linear 3s 1 forwards;
+  animation: FastLane .2s linear 1s 1 forwards;
 }
 .FLNameWritten2 {
   font-family: "FL";
@@ -90,7 +90,7 @@ header {
   display: block;
   opacity: 1;
   transform: translateX(-100vw);
-  animation: FastLane 4s linear 1 forwards;
+  animation: FastLane 2s linear 1 forwards;
 }
 .Menu {
   padding: 10px;

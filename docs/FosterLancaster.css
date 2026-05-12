@@ -45,7 +45,7 @@ header {
   bottom: 0;
   width: 100vw;
   height: 10dvh;
-
+  cursor: pointer;
   display: flex;
   justify-content: center;  /* horizontal */
   align-items: center;      /* vertical */
@@ -57,13 +57,6 @@ header {
   border-top: solid .5px #000000;
   background-color: #0053d8;
   color: #ffff00;
-
-  background-size: cover;
-  background-position: center center;
-}
-header:hover {
-  background-color: #ffff00;
-  color: #0053d8;
 }
 /*-------------------FLName---------------------*/
 .FLName {

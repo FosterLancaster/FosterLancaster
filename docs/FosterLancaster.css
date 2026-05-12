@@ -132,6 +132,7 @@ footer {
   width: fit-content;
   display: block;
   background-color: #9e6034;
+  border-radius: 10px;
 }
 select { 
   outline: none; 

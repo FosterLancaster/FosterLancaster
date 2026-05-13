@@ -1,6 +1,6 @@
 .FchatContent {
   margin: 10px 5vw 10px 5vw;
-  width: calc(90vw - 19px); 
+  width: calc(90vw - 18px); 
   height: 120vw; 
   max-height: 75vh;
   bottom: 0px;
@@ -21,7 +21,7 @@
 }
 .FtvContent {
   margin: 10px 5vw 10px 5vw;
-  width: calc(90vw - 19px); 
+  width: calc(90vw - 18px); 
   height: 120vw; 
   max-height: 75vh;
   bottom: 0px;

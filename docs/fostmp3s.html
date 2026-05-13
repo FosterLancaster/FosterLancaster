@@ -237,21 +237,20 @@ table {
 
 /*------100vh Controls Sum Landscape = (218px - 202px (16px))-------*/
 /*----Bars----*/
-
-#PayOn:hover .songSelection{
+#PayOn:hover .songSelection,
+.songSelection:hover {
   opacity: 1;
   pointer-events: all;
 }
-#PayOn:hover .songSelectionOption {
-  animation: none;
+#PayOn:hover .songSelectionOption,
+.songSelection:hover + .songSelectionOption {
   opacity: 0;
+  pointer-events: none;
 }
 .songSelection {
   position: relative;
   opacity: 0;
   z-index: 2;
-  display: block;
-  /*----Music----*/
   height: calc(100vh - 219px);
   min-height: calc(100vh - 219px);
   padding: 5px;
@@ -276,7 +275,6 @@ table {
   width: 100%;
   height: 100%;
   transform: translate(-50%, -50%);
-  display: block;
   overflow: hidden;
   color: #000000;
   -webkit-text-stroke: .03em #ffffff;

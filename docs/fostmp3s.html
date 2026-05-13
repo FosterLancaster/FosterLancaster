@@ -240,13 +240,12 @@ table {
 
 #PayOn:hover .songSelection{
   opacity: 1;
-  z-index: 2;
   pointer-events: all;
 }
 #PayOn:hover .songSelectionOption {
-  animation: none;
   opacity: 0;
-  z-index: 1;
+  display: none;
+  animation: none;
 }
 .songSelection {
   position: relative;
@@ -266,27 +265,21 @@ table {
   border-bottom-right-radius: 20px;
   background-color: rgba(0, 0, 0, .1);
   transition: opacity .4s ease;
+  pointer-events: none;
 }
 .songSelectionOption {
   position: absolute;
   opacity: 1;
   z-index: 2;
-  top: 50%;
-  left: 50%;
+  top: 0px;
+  right: 0px;
   max-height: 100%;
-  width: 100%;
-  height: 100%;
-  transform: translate(-50%, -50%);
-  display: block;
+  width: auto;
+  height: 40%;
   overflow: hidden;
   color: #000000;
   -webkit-text-stroke: .03em #ffffff;
   font-size: 1.5em;
-  background-image: url('fmp3simages/SongSelect.png');
-  background-size: auto 40%;
-  background-position: right top;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
   transition: opacity .4s ease;
 }
 .OffMusicHeader {
@@ -789,7 +782,7 @@ li {
   
   <!----PayOn---->
         <div id="PayOn">
-          <div class="songSelectionOption"></div>
+          <img class="songSelectionOption" src='fmp3simages/SongSelect.png'>
           <div class="songSelection" id="songSelection"  alt="Song Selector" title="Song Selector">
           
           <div align='center'>

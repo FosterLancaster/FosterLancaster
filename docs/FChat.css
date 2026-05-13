@@ -17,7 +17,7 @@
   border-bottom-right-radius: 20px;
 }
 .FchatContent a{
-  color: #000000;
+  color: #ffffff;
 }
 .FtvContent {
   margin: 10px 5vw 10px 5vw;
@@ -54,7 +54,7 @@
 }
 li {
   list-style: none;
-  background-color: #ffffff;
+  background-color: #9e6034;
   border-radius: 8px;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
   margin: 10px auto 10px auto; 

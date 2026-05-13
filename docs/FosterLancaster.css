@@ -96,6 +96,7 @@ header {
   padding: 10px;
   z-index: 7;
   position: fixed;
+  font-size: 18px;
 }
 /*-------------------FLName---------------------*/
 h1 {
@@ -150,9 +151,8 @@ select {
   transform: scale(1.2);
 }
 .MusicVideoContainer {
-  margin: auto;
-  width: calc(80% - 1px);
-  max-width: 50vh;
+  margin: 10px;
+  width: calc(100% - 20px);
   height: 70vh;
   max-height: 50vw;
   border: solid .5px #ffffff;

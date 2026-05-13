@@ -1,6 +1,6 @@
 .FchatContent {
   margin: 10px 5vw 10px 5vw;
-  width: calc(90vw - 1px); 
+  width: calc(90vw - 19px); 
   height: 120vw; 
   max-height: 75vh;
   bottom: 0px;
@@ -21,7 +21,7 @@
 }
 .FtvContent {
   margin: 10px 5vw 10px 5vw;
-  width: calc(90vw - 1px); 
+  width: calc(90vw - 19px); 
   height: 120vw; 
   max-height: 75vh;
   bottom: 0px;
@@ -40,7 +40,7 @@
 .FchatPosts {
   padding: 0px;
   margin: 0px; 
-  width: 90%;
+  width: calc(100% - 10px);
   max-width: 100%;
   flex: 1;
   font-size: .9em;
@@ -67,8 +67,8 @@ li {
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: calc(100% - 10px);
-  padding: 10px 5px 10px 5px;
+  width: 100%;
+  padding: 10px 0px 10px 0px;
   box-sizing: border-box;
   overflow: hidden;
   min-width: 0;

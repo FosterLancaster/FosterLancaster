@@ -35,10 +35,9 @@ body {
 }
 a {
   color: #ffff00;
-  text-decoration: none;
 }
 a:hover {
-  color: #ffffff;
+  color: #000000;
 }
 header {              
   position: fixed;

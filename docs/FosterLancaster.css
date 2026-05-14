@@ -93,8 +93,8 @@ header {
   animation: FastLane 2s linear 1 forwards;
 }
 .FLNameSay {
-  height: 10dvh;
-  width: 10dvh;
+  height: 8dvh;
+  width: 8dvh;
 }
 .Menu {
   padding: 10px;

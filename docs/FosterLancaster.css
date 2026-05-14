@@ -24,7 +24,7 @@ body {
   font-family: 'FL';
   font-size: 22px;
   z-index: 0;
-  background-color: #9e6034;
+  background-color: #000000;
 }
 @font-face {
   font-family: 'FL';
@@ -34,11 +34,11 @@ body {
   outline: none;
 }
 a {
-  color: #ff6600;
+  color: #ffff00;
   text-decoration: none;
 }
 a:hover {
-  color: #0053d8;
+  color: #ffffff;
 }
 header {              
   position: fixed;
@@ -119,9 +119,8 @@ footer {
   font-size: 15px;
   line-height: 2em;
   border-top: solid .5px transparent;
-  background-color: #ffff00;
+  background-color: #0053d8;
   text-align: center;
-  color: #0053d8;
 }
 .Title {
   font-size: 40px;
@@ -132,7 +131,7 @@ footer {
   position: relative;
   width: fit-content;
   display: block;
-  background-color: #9e6034;
+  background-color: #000000;
   border-radius: 10px;
 }
 select { 

@@ -92,6 +92,10 @@ header {
   transform: translateX(-100vw);
   animation: FastLane 2s linear 1 forwards;
 }
+.FLNameSay {
+  height: 10dvh;
+  width: 10dvh;
+}
 .Menu {
   padding: 10px;
   z-index: 7;

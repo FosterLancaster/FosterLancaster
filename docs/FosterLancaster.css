@@ -35,6 +35,7 @@ body {
 }
 a {
   color: #ffff00;
+  text-decoration: none;
 }
 a:hover {
   color: #c0580d;

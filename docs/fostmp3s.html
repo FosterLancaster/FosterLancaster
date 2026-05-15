@@ -113,7 +113,7 @@ table {
   text-align: center;
   color: #d3d3d3;
   background-image: url('fmp3simages/FostMp3sLogo.png'), linear-gradient(to top, rgba(0, 0, 0, .5), transparent);
-  background-size: 180px auto, 100% 70px;
+  background-size: 130px auto, 100% 70px;
   background-position: center bottom, center bottom;
   background-repeat: no-repeat, no-repeat;
   position: relative;
@@ -896,7 +896,7 @@ li {
       <div class="chatContent">
       <button id="closeChat">X</button>
       <div class="MoreInner">
-        <div class="MoreHeader">fostchat<img src="fmp3simages/Chat.png" style="height: 1.2em; margin-bottom: -.2em;"></div>
+        <div class="MoreHeader">fostchat (written by Foster Lancaster)<img src="fmp3simages/Chat.png" style="height: 1.2em; margin-bottom: -.2em;"></div>
 
         <div class="MoreBody">
   <ul class="chatPosts" id="feed">
@@ -1496,7 +1496,7 @@ document.getElementById("chatOverlay").style.display = "none";
 export default {
   async fetch(request) {
 
-    const rssUrl = "https://fequd5ata7a5z.wordpress.com/feed/";
+    const rssUrl = "https://fostchatupdates.wordpress.com/feed/";
     const response = await fetch(rssUrl);
     let text = await response.text();
 

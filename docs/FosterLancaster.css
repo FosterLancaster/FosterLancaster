@@ -24,7 +24,7 @@ body {
   font-family: 'FL';
   font-size: 22px;
   z-index: 0;
-  background-color: #000000;
+  background-color: #a65615;
 }
 @font-face {
   font-family: 'FL';
@@ -38,7 +38,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: #c0580d;
+  color: #000000;
 }
 header {              
   position: fixed;
@@ -58,9 +58,9 @@ header {
   background-color: #0053d8;
   color: #ffff00;
 }
-header:hover {
-  color: #0053d8;
-  background-color: #ffff00;
+header:hover .FLNameSay{
+  height: 10dvh;
+  width: 10dvh; 
 }
 /*-------------------FLName---------------------*/
 .FLName {
@@ -99,12 +99,13 @@ header:hover {
 .FLNameSay {
   height: 8dvh;
   width: 8dvh;
+  transition-duration: .2s;
 }
 .Menu {
   padding: 10px;
   z-index: 7;
   position: fixed;
-  font-size: 18px;
+  font-size: 15px;
   top: 0px;
   width: calc(100% - 20px);
 }
@@ -252,7 +253,7 @@ select {
 
 @media screen and (orientation: portrait) {
   .FirstScreen {
-    background-size: 100% auto;
+    background-size: 90% auto;
   }
 }
 

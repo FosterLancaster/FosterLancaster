@@ -18,7 +18,7 @@
 }
 li {
   list-style: none;
-  background-color: #000000;
+  background-color: #a65615;
   border-radius: 8px;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
   margin: 10px 0px 10px 0px; 
@@ -26,7 +26,6 @@ li {
   width: calc(100% - 21px);
   text-align: center;
   pointer-events: none;
-  border: solid .5px #ffffff;
 }
 .FchatContent a {
   color: #ffffff;

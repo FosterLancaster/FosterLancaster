@@ -20,7 +20,7 @@ body {
   height: 100%;
   margin: 0;
   min-height: 100%;
-  color: #0053d8;
+  color: #ffffff;
   font-family: 'FL';
   font-size: 22px;
   z-index: 0;
@@ -34,11 +34,11 @@ body {
   outline: none;
 }
 a {
-  color: #ffff00;
+  color: #ff9e44;
   text-decoration: none;
 }
 a:hover {
-  color: #ff8800;
+  color: #000000;
 }
 header {              
   position: fixed;
@@ -107,7 +107,7 @@ header:hover .FLNameSay{
   position: fixed;
   font-size: 15px;
   top: 0px;
-  width: calc(100% - 20px);
+  left: 0px;
 }
 /*-------------------FLName---------------------*/
 h1 {
@@ -243,11 +243,9 @@ select {
   justify-content: center;     
   align-items: center;   
   transition-duration: 1s;
-  color: #000000;
 }
 .Booking:hover {
   font-size: 1.5em;
-  color: #ff8800;
 }
 
 @media screen and (orientation: portrait) {

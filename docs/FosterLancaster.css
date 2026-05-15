@@ -24,7 +24,7 @@ body {
   font-family: 'FL';
   font-size: 22px;
   z-index: 0;
-  background-color: #af5b17;
+  background-color: #995931;
 }
 @font-face {
   font-family: 'FL';
@@ -85,7 +85,7 @@ header:hover .FLNameSay{
   display: block;
   opacity: 1;
   transform: translateX(-100vw);
-  animation: FastLane .2s linear 1s 1 forwards;
+  animation: FastLane .5s linear 1s 1 forwards;
 }
 .FLNameWritten2 {
   font-family: "FL";
@@ -94,7 +94,7 @@ header:hover .FLNameSay{
   display: block;
   opacity: 1;
   transform: translateX(-100vw);
-  animation: FastLane 1.5s linear 1 forwards;
+  animation: FastLane 2s linear 1 forwards;
 }
 .FLNameSay {
   height: 6dvh;

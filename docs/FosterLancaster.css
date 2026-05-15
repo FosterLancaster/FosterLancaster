@@ -38,7 +38,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: #000000;
+  color: #ff8800;
 }
 header {              
   position: fixed;
@@ -94,11 +94,11 @@ header:hover .FLNameSay{
   display: block;
   opacity: 1;
   transform: translateX(-100vw);
-  animation: FastLane 2s linear 1 forwards;
+  animation: FastLane 1.5s linear 1 forwards;
 }
 .FLNameSay {
-  height: 8dvh;
-  width: 8dvh;
+  height: 6dvh;
+  width: 6dvh;
   transition-duration: .2s;
 }
 .Menu {
@@ -126,12 +126,15 @@ footer {
   height: auto;
   font-family: 'FL';
   position: relative;
-  padding: 1em 1em calc(1em + 10dvh) 1em;
+  padding: 2em 1em calc(2em + 10dvh) 1em;
   font-size: 15px;
   line-height: 2em;
   border-top: solid .5px transparent;
   background-color: #0053d8;
   text-align: center;
+  background-image: url('https://dl.dropbox.com/scl/fi/acpce2btmvyu4cxk0b4wr/ConcertSimulation.gif?rlkey=rlqbc5fd3fclvzbdqwv10fjml');
+  background-size: cover;
+  background-position: center center;
 }
 .Title {
   font-size: 40px;
@@ -240,10 +243,6 @@ select {
   justify-content: center;     
   align-items: center;   
   transition-duration: 1s;
-  background-image: url('https://dl.dropbox.com/scl/fi/acpce2btmvyu4cxk0b4wr/ConcertSimulation.gif?rlkey=rlqbc5fd3fclvzbdqwv10fjml');
-  background-size: cover;
-  background-position: center center;
-  background-color: #ffffff;
   color: #ffffff;
 }
 .Booking:hover {

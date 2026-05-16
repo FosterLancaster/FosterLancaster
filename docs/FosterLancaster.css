@@ -145,7 +145,7 @@ footer {
   position: relative;
   width: fit-content;
   display: block;
-  background-image: linear-gradient(to right, transparent, #ffff00, transparent);
+  background-image: linear-gradient(to right, transparent 0%, #ffff00 20%, #ffff00 80%, transparent 100%);
   background-color: transparent;
   color: #000000;
   min-width: 45vw; 
@@ -237,13 +237,16 @@ select {
   text-decoration: underline;
 }
 .Booking {
-  width: 100vw;
-  height: 100px;
+  margin: 10px 5vw 10px 5vw;
+  width: calc(90vw - 19px);
+  height: 50px; 
   position: relative;
   display: flex;               
   justify-content: center;     
   align-items: center;   
   transition-duration: 1s;
+  background-color: rgba(0, 0, 0, .5);
+  border: solid .5px #ffffff;
 }
 .Booking:hover {
   font-size: 1.5em;

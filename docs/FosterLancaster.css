@@ -58,10 +58,6 @@ header {
   background-color: #ffff00;
   color: #000000;
 }
-header:hover .FLNameSay{
-  height: 10dvh;
-  width: 10dvh; 
-}
 /*-------------------FLName---------------------*/
 .FLName {
   display: flex;
@@ -97,8 +93,8 @@ header:hover .FLNameSay{
   animation: FastLane 2s linear 1 forwards;
 }
 .FLNameSay {
-  height: 6dvh;
-  width: 6dvh;
+  height: 7dvh;
+  width: 7dvh;
   transition-duration: .2s;
 }
 .Menu {
@@ -238,7 +234,8 @@ select {
 }
 .Booking {
   margin: 10px 5vw 10px 5vw;
-  width: calc(90vw - 19px);
+  padding: 10px 10px 5px 10px;
+  width: calc(90vw - 39px);
   height: 50px; 
   position: relative;
   display: flex;               

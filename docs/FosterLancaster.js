@@ -2,21 +2,37 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  const FLNameAudio  = document.getElementById("FLNameAudio");
+  const FLNameAudio = document.getElementById("FLNameAudio");
   const FLName = document.getElementById("FLName");
+  const FLNameSay = document.querySelector(".FLNameSay");
 
-let flickerTimeout = null;
+  let flickerTimeout = null;
 
-FLName.addEventListener("click", () => {
+  FLName.addEventListener("click", () => {
 
-  // --- Audio restart (mobile-safe) ---
-  try { FLNameAudio.pause(); } catch {}
-  try { FLNameAudio.currentTime = 0; } catch {}
-  try { FLNameAudio.load(); } catch {}
+    // --- Audio restart (mobile-safe) ---
+    try { FLNameAudio.pause(); } catch {}
+    try { FLNameAudio.currentTime = 0; } catch {}
+    try { FLNameAudio.load(); } catch {}
 
-  const p = FLNameAudio.play();
-  if (p && typeof p.catch === "function") p.catch(() => {});
-});
+    // Resize while audio plays
+    if (FLNameSay) {
+      FLNameSay.style.width = "10dvh";
+      FLNameSay.style.height = "10dvh";
+    }
+
+    const p = FLNameAudio.play();
+    if (p && typeof p.catch === "function") p.catch(() => {});
+
+  });
+
+  // Return to normal size when audio ends
+  FLNameAudio.addEventListener("ended", () => {
+    if (FLNameSay) {
+      FLNameSay.style.width = "";
+      FLNameSay.style.height = "";
+    }
+  });
 
 });
 

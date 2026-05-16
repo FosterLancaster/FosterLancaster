@@ -246,8 +246,7 @@ select {
   border: solid .5px #ffffff;
 }
 .Booking:hover {
-  font-size: 1.5em;
-  color: #ff0000;
+  text-decoration: underline;
 }
 
 @media screen and (orientation: portrait) {

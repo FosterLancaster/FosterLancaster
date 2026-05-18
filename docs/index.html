@@ -75,15 +75,9 @@
 <div class="FtvContent">
 <div class="MusicVideoContainer">
 
-    <video class="MusicVideo" 
-    id="myVideo"
-    playsinline
-    muted
-    preload="auto"
-    controls>
+    <video class="MusicVideo" preload="auto" controls preload="metadata" poster="GFY.jpg">
     <source src="GFYVIdeo.mp4" type="video/mp4">
     </video>
-
 
   <a href="mailto:fostmp3s@gmail.com" target="_blank">
     <div class="Booking">
@@ -106,64 +100,5 @@
   </footer>
 </body>
 
-<script>
-  const video = document.getElementById("myVideo");
-  
-  async function generateThumbnail() {
-  
-    // Wait until metadata is loaded
-    if (video.readyState < 1) {
-      await new Promise(resolve => {
-        video.addEventListener("loadedmetadata", resolve, { once: true });
-      });
-    }
-  
-    // iOS Safari fix
-    video.muted = true;
-    video.playsInline = true;
-  
-    // Wait until enough video data exists
-    if (video.readyState < 2) {
-      await new Promise(resolve => {
-        video.addEventListener("loadeddata", resolve, { once: true });
-      });
-    }
-  
-    // Capture frame after seek
-    const captureTime = Math.min(1, video.duration / 2);
-  
-    await new Promise(resolve => {
-  
-      const onSeeked = () => {
-        resolve();
-        video.removeEventListener("seeked", onSeeked);
-      };
-  
-      video.addEventListener("seeked", onSeeked);
-  
-      video.currentTime = captureTime;
-    });
-  
-    // Create canvas
-    const canvas = document.createElement("canvas");
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
-  
-    const ctx = canvas.getContext("2d");
-    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-  
-    // Generate thumbnail
-    const thumbnail = canvas.toDataURL("image/jpeg", 0.8);
-  
-    // Set poster
-    video.poster = thumbnail;
-  
-    // Reset video
-    video.currentTime = 0;
-  }
-  
-  // Run after page loads
-  window.addEventListener("load", generateThumbnail);
-  </script>
 </html>
 

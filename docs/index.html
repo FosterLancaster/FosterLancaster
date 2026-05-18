@@ -74,9 +74,11 @@
 <!--?autoplay=1&mute=1"-->
 <div class="FtvContent">
 <div class="MusicVideoContainer">
-<iframe class="MusicVideo" src="https://www.youtube.com/embed/hYUEe0EJqTA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-</div>
+
+    <video id="myVideo" class="MusicVideo" controls preload="metadata">
+      <source src="https://dl.dropbox.com/scl/fi/zylkvehc0xfz450vabzc5/Good-For-You.mp4?rlkey=j0efvab1bbpnnakptbuxclc47" type="video/mp4">
+    </video>
+
 
   <a href="mailto:fostmp3s@gmail.com" target="_blank">
     <div class="Booking">
@@ -98,5 +100,42 @@
     | <a href="http://fostmp3s.com/transactions" target="_blank">Transaction Adjustments</a>
   </footer>
 </body>
+
+<script>
+  const video = document.getElementById("myVideo");
+  
+  // Automatically create thumbnail from video frame
+  video.addEventListener("loadeddata", () => {
+  
+    // Jump to frame at 1 second
+    video.currentTime = 1;
+  
+    video.addEventListener("seeked", function captureFrame() {
+  
+      // Create canvas
+      const canvas = document.createElement("canvas");
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+  
+      // Draw video frame
+      const ctx = canvas.getContext("2d");
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+  
+      // Convert frame to image
+      const thumbnail = canvas.toDataURL("image/png");
+  
+      // Set thumbnail as poster
+      video.setAttribute("poster", thumbnail);
+  
+      // Reset video
+      video.currentTime = 0;
+  
+      // Remove event so it only runs once
+      video.removeEventListener("seeked", captureFrame);
+  
+    }, { once: true });
+  
+  });
+  </script>
 </html>
 

@@ -36,6 +36,7 @@ body {
 a {
   color: #ff9e44;
   text-decoration: none;
+  transition-duration: .5s;
 }
 a:hover {
   color: #ffff00;
@@ -141,7 +142,7 @@ footer {
   position: relative;
   width: fit-content;
   display: block;
-  background-image: linear-gradient(to right, transparent 0%, #ffff00 20%, #ffff00 80%, transparent 100%);
+  background-image: linear-gradient(to top, #ffffff, #ffff00);
   background-color: transparent;
   color: #000000;
   min-width: 45vw; 
@@ -240,7 +241,6 @@ select {
   display: flex;               
   justify-content: center;     
   align-items: center;   
-  transition-duration: 1s;
   background-color: rgba(0, 0, 0, .5);
   border: solid .5px #ffffff;
 }

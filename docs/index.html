@@ -104,38 +104,61 @@
 <script>
   const video = document.getElementById("myVideo");
   
-  // Automatically create thumbnail from video frame
-  video.addEventListener("loadeddata", () => {
+  async function generateThumbnail() {
   
-    // Jump to frame at 1 second
-    video.currentTime = 1;
+    // Wait until metadata is loaded
+    if (video.readyState < 1) {
+      await new Promise(resolve => {
+        video.addEventListener("loadedmetadata", resolve, { once: true });
+      });
+    }
   
-    video.addEventListener("seeked", function captureFrame() {
+    // iOS Safari fix
+    video.muted = true;
+    video.playsInline = true;
   
-      // Create canvas
-      const canvas = document.createElement("canvas");
-      canvas.width = video.videoWidth;
-      canvas.height = video.videoHeight;
+    // Wait until enough video data exists
+    if (video.readyState < 2) {
+      await new Promise(resolve => {
+        video.addEventListener("loadeddata", resolve, { once: true });
+      });
+    }
   
-      // Draw video frame
-      const ctx = canvas.getContext("2d");
-      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+    // Capture frame after seek
+    const captureTime = Math.min(1, video.duration / 2);
   
-      // Convert frame to image
-      const thumbnail = canvas.toDataURL("image/png");
+    await new Promise(resolve => {
   
-      // Set thumbnail as poster
-      video.setAttribute("poster", thumbnail);
+      const onSeeked = () => {
+        resolve();
+        video.removeEventListener("seeked", onSeeked);
+      };
   
-      // Reset video
-      video.currentTime = 0;
+      video.addEventListener("seeked", onSeeked);
   
-      // Remove event so it only runs once
-      video.removeEventListener("seeked", captureFrame);
+      video.currentTime = captureTime;
+    });
   
-    }, { once: true });
+    // Create canvas
+    const canvas = document.createElement("canvas");
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
   
-  });
+    const ctx = canvas.getContext("2d");
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+  
+    // Generate thumbnail
+    const thumbnail = canvas.toDataURL("image/jpeg", 0.8);
+  
+    // Set poster
+    video.poster = thumbnail;
+  
+    // Reset video
+    video.currentTime = 0;
+  }
+  
+  // Run after page loads
+  window.addEventListener("load", generateThumbnail);
   </script>
 </html>
 

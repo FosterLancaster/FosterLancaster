@@ -1,10 +1,10 @@
 /*------------fostChat--------------- */
 .FchatContent {
   color: #ffffff;
-  margin: 10px 5vw 10px 5vw;
+  margin: 0px 5vw 0px 5vw;
   width: calc(90vw - 18px); 
   height: 120vw; 
-  max-height: 75vh;
+  max-height: 85vh;
   bottom: 0px;
   right: 0px;  
   background: rgba(0, 0, 0, .5);
@@ -37,10 +37,10 @@ li img {
   color: #ffffff;
 }
 .FtvContent {
-  margin: 10px 5vw 10px 5vw;
+  margin: 0px 5vw 0px 5vw;
   width: calc(90vw - 18px); 
   height: 120vw; 
-  max-height: 75vh;
+  max-height: 85vh;
   bottom: 0px;
   right: 0px;  
   background: rgba(0, 0, 0, .5);

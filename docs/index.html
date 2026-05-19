@@ -93,7 +93,6 @@
       src="ftvimages/FostTVPlay.png"
       alt="Play"
     >
-
   </button>
 
 
@@ -120,35 +119,47 @@
 
 <script>
 
-  const video = document.getElementById("musicVideo");
-  const btn = document.getElementById("playPauseBtn");
-  const icon = document.getElementById("playPauseIcon");
-  
-  btn.addEventListener("click", () => {
-  
-    if(video.paused) {
-  
-      video.play();
-  
-      icon.src = "ftvimages/FostTVPause.png";
-  
-    } else {
-  
-      video.pause();
-  
-      icon.src = "ftvimages/FostTVPlay.png";
-  
-    }
-  
-  });
-  
-  video.addEventListener("ended", () => {
-  
-    icon.src = "ftvimages/FostTVPlay.png";
-  
-  });
-  
-  </script>
+const video = document.getElementById("musicVideo");
+const btn = document.getElementById("playPauseBtn");
+const icon = document.getElementById("playPauseIcon");
+
+/* Button click */
+btn.addEventListener("click", () => {
+
+  if (video.paused) {
+
+    video.play();
+
+  } else {
+
+    video.pause();
+
+  }
+
+});
+
+/* Sync icon whenever video plays */
+video.addEventListener("play", () => {
+
+  icon.src = "ftvimages/FostTVPause.png";
+
+});
+
+/* Sync icon whenever video pauses */
+video.addEventListener("pause", () => {
+
+  icon.src = "ftvimages/FostTVPlay.png";
+
+});
+
+/* Reset icon when video ends */
+video.addEventListener("ended", () => {
+
+  icon.src = "ftvimages/FostTVPlay.png";
+
+});
+
+</script>
 
 </html>
 

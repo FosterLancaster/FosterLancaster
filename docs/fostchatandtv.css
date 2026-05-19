@@ -113,10 +113,8 @@ li img {
   bottom: 0px;
   left: 0px;
   margin: 20px;
-  width: 20vw;
-  height: 20vw;
-  max-width: 150px;
-  max-height: 150px;
+  width: 100px;
+  height: 100px;
   border: none;
   cursor: pointer;
   display: flex;
@@ -136,10 +134,8 @@ li img {
 }
 /* Button Images */
 .PlayPauseBtn img {
-  width: 20vw;
-  height: 20vw;
-  max-width: 150px;
-  max-height: 150px;
+  max-width: 100px;
+  max-height: 100px;
   object-fit: contain;
   pointer-events: none;
   filter: drop-shadow(0 2px 2px rgb(0, 0, 0, .5));
@@ -165,29 +161,23 @@ li img {
 .MusicVideo::-webkit-media-controls-panel {
   background-color: transparent;
   border-radius: 0px;
-  margin-left: 150px;
+  left: 110px;
+  bottom: 0px;
   background-image: none;
+  position: absolute;
 }
-
 /* Progress bar */
 .MusicVideo::-webkit-media-controls-timeline {
   border: solid 1px #ffffff;
   border-radius: 999px;
   height: 5px;
 }
-
 /* Volume slider */
 .MusicVideo::-webkit-media-controls-volume-slider {
-  background-color: #000000;
-  border: solid 1px #ffffff;
-  border-radius: 999px;
-  height: 10px;
+  display: none;
 }
 .MusicVideo::-webkit-slider-thumb {
-  background-color: #ffffff;
-  border: solid 1px #ffffff;
-  border-radius: 999px;
-  height: 10px;
+  display: none;
 }
 /* Play button */
 .MusicVideo::-webkit-media-controls-play-button {

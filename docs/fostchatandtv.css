@@ -110,9 +110,9 @@ li img {
 /*------------fostTV--------------- */
 .PlayPauseBtn {
   position: absolute;
-  bottom: 0px;
-  left: 0px;
-  margin: 20px;
+  top: 0px;
+  right: 0px;
+  margin: 10px;
   width: 100px;
   height: 100px;
   border: none;
@@ -148,61 +148,4 @@ li img {
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
   overflow: hidden;
-}
-/* Fullscreen mode */
-.MusicVideoContainer:fullscreen .PlayPauseBtn,
-.MusicVideoContainer:-webkit-full-screen .PlayPauseBtn {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  z-index: 999999;
-}
-/* Entire controls bar */
-.MusicVideo::-webkit-media-controls-panel {
-  background-color: transparent;
-  border-radius: 0px;
-  left: 110px;
-  bottom: 0px;
-  background-image: none;
-  position: absolute;
-}
-/* Progress bar */
-.MusicVideo::-webkit-media-controls-timeline {
-  border: solid 1px #ffffff;
-  border-radius: 999px;
-  height: 5px;
-}
-/* Volume slider */
-.MusicVideo::-webkit-media-controls-volume-slider {
-  display: none;
-}
-.MusicVideo::-webkit-slider-thumb {
-  display: none;
-}
-/* Play button */
-.MusicVideo::-webkit-media-controls-play-button {
-  display: none;
-}
-/* Mute button */
-.MusicVideo::-webkit-media-controls-mute-button {
-  display: none;
-}
-/* Picture-in-picture */
-.MusicVideo::-webkit-media-controls-picture-in-picture-button {
-  display: none;
-}
-.MusicVideo::-webkit-media-controls-fullscreen-button {
-  display: none;
-}
-/* Time text */
-.MusicVideo::-webkit-media-controls-current-time-display,
-.MusicVideo::-webkit-media-controls-time-remaining-display {
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: bold;
-}
-/* Optional hover glow */
-.MusicVideo::-webkit-media-controls-timeline:hover,
-.MusicVideo::-webkit-media-controls-volume-slider:hover {
-  filter: brightness(1.4);
 }

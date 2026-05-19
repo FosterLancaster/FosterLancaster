@@ -34,12 +34,12 @@ body {
   outline: none;
 }
 a {
-  color: #ff9e44;
+  color: #ffffff;
   text-decoration: none;
   transition-duration: .5s;
 }
 a:hover {
-  color: #000000;
+  color: #ffff00;
 }
 header {              
   position: fixed;
@@ -55,9 +55,10 @@ header {
   outline: none;
   z-index: 7;
   border-top: solid .5px #000000;
-  background-color: #ffff00;
+  background-color: transparent;
   color: #000000;
-  background-image: linear-gradient(to top, #ffffff, #ffff00);
+  background-image: linear-gradient(to top, rgb(255, 255, 255, .5), rgb(255, 255, 0, .5));
+  backdrop-filter: blur(10px);
 }
 /*-------------------FLName---------------------*/
 .FLName {

@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Resize while audio plays
     if (FLNameSay) {
-      FLNameSay.style.width = "10dvh";
-      FLNameSay.style.height = "10dvh";
+      FLNameSay.style.width = "9dvh";
+      FLNameSay.style.height = "9dvh";
     }
 
     const p = FLNameAudio.play();

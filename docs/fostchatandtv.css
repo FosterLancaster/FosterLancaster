@@ -110,8 +110,9 @@ li img {
 /*------------fostTV--------------- */
 .PlayPauseBtn {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
+  top: 0px;
+  right: 0px;
+  margin: 20px;
   width: 20vw;
   height: 20vw;
   max-width: 150px;
@@ -124,13 +125,14 @@ li img {
   transition: 0.3s ease;
   padding: 0;
   background-color: transparent;
+  opacity: .9;
 }
 /* Hover */
 .PlayPauseBtn:hover {
-  transform: scale(1.1);
+  opacity: 1;
 }
 .PlayPauseBtn:active {
-  transform: scale(0.95);
+  opacity: .5;
 }
 /* Button Images */
 .PlayPauseBtn img {

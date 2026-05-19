@@ -58,6 +58,7 @@ header {
   border-top: solid .5px #000000;
   background-color: #ffff00;
   color: #000000;
+  background-image: linear-gradient(to top, #ffffff, #ffff00);
 }
 /*-------------------FLName---------------------*/
 .FLName {

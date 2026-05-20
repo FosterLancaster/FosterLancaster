@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!----Foster Lancaster---->
+<title>FOSTMp3's version 2.0</title>
+<!----Style Sheets---->
+
+<!----Fost Mp3's----
+<iframe src="https://fostmp3s.com/fostmp3s.html" style="width: 400px; height: 400px; min-height: 400px; min-width: 200px; max-height: 100%; display: block; border: none;" class="fostmp3s"></iframe>
+<----Fost Mp3's---->
+
+<style>
+a {
+  text-decoration: none;
+  color: #000000;
+}
+button {
+  outline: none;
+}
+body {
+  font-family: 'futura';
+}
+/* Hide default audio controls */
+.fostmp3s {
+  display: block;
+}
+audio {
+  display: none;
+}
+.audio-player-container img.default-image {
+  display: block;
+}
+.audio-player-container img.playing {
+  display: none;
+}
+#PayOff {
+  display: none;
+  position: relative;
+ }
+ #PayOn {
+  display: block;
+  position: relative;
+ }
+td {
+  padding: 0;
+}
+table {
+  border-spacing: 0;
+}
+.progressBar:hover, 
+.volumeContainer:hover, 
+.nextprev-btn:hover, 
+.embedBtn:hover, 
+.chatBtn:hover, 
+.shuffleBtn:hover {
+  background-color: #000000;
+}
+.EngageBar td:hover {
+  background-color: #000000;
+}
+ .LancasterFrame {
+  font-size: 18px;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+  overflow: hidden;
+  position: relative;
+  opacity: 1;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, .3), transparent, rgba(0, 0, 0, .3));
+  background-size: 100% 700px;
+  background-position: center center;
+  animation: rise 2s linear infinite;
+  border: solid .5px #ffffff;
+  filter: drop-shadow(0 2px 2px rgb(0, 0, 0, .5));
+  background-color: rgba(255, 255, 255, .1);
+}
+.LancasterFrame:hover .LancasterMusicPlayer{
+  background-image: none;
+  opacity: 1;
+}
+.LancasterFrame:hover .ControlBar {
+  height: 40px;
+}
+.LancasterFrame:hover .PasswordBar {
+  height: 40px;
+  opacity: 1;
+}
+.LancasterFrame:hover .MusicHeader {
+  padding: 0px;
+}
+#playBtn:hover .moreInfo {
+  opacity: 1;
+}
+#buyBtn:hover .moreInfo {
+  opacity: 1;
+}
+.PasswordBar:hover .PasswordSubmit {
+  width: 100px;
+  max-width: 100px;
+}
+.MusicHeader {
+  transition-duration: .2s;
+  padding: 40px 0px 40px 0px;
+  position: relative;
+  text-align: left;
+  max-height: 250px;
+  overflow: hidden;
+}
+ .LancasterMusicPlayer {
+  width: 100%;
+  height: 100%; /* Important */
+  text-align: center;
+  color: #d3d3d3;
+  background-image: url('fmp3simages/FostMp3sLogo.png'), linear-gradient(to top, rgba(0, 0, 0, .5), transparent);
+  background-size: 200px auto, 100% 70px;
+  background-position: center bottom, center bottom;
+  background-repeat: no-repeat, no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+/*----Bars----*/
+.Password {
+  font-size: 19px;
+  font-family: 'Futura';
+  line-height: 40px;
+  height: 40px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  margin: 0px;
+  text-indent: 5px;
+  width: 100%;
+  max-width: 100%;
+  -webkit-appearance: none;
+  color: #ffff00;
+  appearance: none;
+  flex-grow: 1; /* if in a flex container */
+  min-width: 0; /* prevent overflow in flex */
+  overflow: hidden;
+  background-color: transparent;
+  border: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+}
+.PasswordSubmit {
+  transition-duration: .1s;
+  font-size: 19px;
+  font-family: 'futura';
+  height: 40px;
+  margin: 0px;
+  width: 0px;
+  max-width: 0px;
+  color: #ffffff;
+  text-align: center;
+  cursor: pointer;
+  user-select: none; /* prevent highlighting text */
+  pointer-events: auto;
+  background-color: #ffffff;
+}
+.PasswordSubmit:hover {
+  background-color: rgba(0, 0, 0, .5);
+}
+.PasswordBar {
+  max-height: 40px;
+  line-height: 40px;
+  height: 0px;
+  opacity: 0;
+  transition-duration: .2s;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 10px);
+  overflow: hidden;
+  border-radius: 90px;
+  background-position: center center;
+  background-size: 200px auto;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  border: double 5px #ffffff;
+  background-color: #000000;
+  background-image: url('fmp3simages/FostMp3sLogoImprint.png');
+}
+/* PasswordUnlockBar */
+.PasswordUnlockBar {
+  position: relative;
+  width: 100%;
+  left: 0px;
+  overflow: hidden;
+  margin: 0px;
+  background-color: transparent;
+}
+.EngageBar {
+  height: 93px;
+  display: block;
+  overflow: hidden;
+}
+.EngageBar table {
+  height: 93px;
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;        /* 🔑 forces equal-width cells */
+}
+.EngageBar td {                 /* each td = half */
+  text-align: center;
+  vertical-align: middle;     /* vertical center for table */
+  padding: 0;
+  outline: none;
+  box-shadow: none;
+}
+/* Center content inside each td */
+.EngageBar td > * {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+.EngageBar td:focus,
+.EngageBar td:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.ControlBar {
+  max-height: 40px;
+  line-height: 40px;
+  height: 0px;
+  transition: height .2s ease;
+  overflow: hidden;
+  display: flex;
+  align-items: center;      
+  border: none;
+  justify-content: center;
+  border-top: none;
+}
+
+/*------100vh Controls Sum Landscape = (218px - 202px (16px))-------*/
+/*----Bars----*/
+
+#PayOn:hover .songSelection{
+  opacity: 1;
+  pointer-events: all;
+}
+#PayOn:hover .songSelectionOption {
+  opacity: 0;
+  animation: none;
+  display: none;
+}
+.songSelection {
+  position: relative;
+  opacity: 0;
+  z-index: 1;
+  display: block;
+  /*----Music----*/
+  height: calc(100vh - 219px);
+  min-height: calc(100vh - 219px);
+  padding: 5px;
+  margin: 4px;
+  border-radius: 0px;
+  border: solid .5px #ffffff;
+  width: calc(100% - 20px);
+  overflow-y: scroll;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: rgba(0, 0, 0, .1);
+  transition: opacity .4s ease;
+}
+.songSelectionOption {
+  position: absolute;
+  opacity: 1;
+  z-index: 2;
+  top: 0px;
+  right: 0px;
+  max-height: 100%;
+  width: auto;
+  height: 40%;
+  max-height: 120px;
+  margin: 10px;
+  overflow: hidden;
+  color: #000000;
+  display: block;
+}
+.OffMusicHeader {
+  height: calc(100vh - 203px);
+  min-height: calc(100vh - 203px);
+  width: 100%;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  color: #ffffff;
+  font-size: 1em;
+  max-width: 95%;
+  overflow: hidden;
+}
+.song-button {
+  font-family: 'futura';
+  font-size: 18px;
+  color: #ffffff;
+  -webkit-text-stroke: .05em #000000;
+  position: relative;
+  width: calc(100% - 10px);
+  overflow: hidden;
+  height: 38px;
+  line-height: 18px;
+  margin: 1px 5px 1px 5px;
+  border: solid .5px #ffffff;
+  background-color: transparent;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, .5), transparent, rgba(255, 255, 255, .5));
+  background-size: cover;
+  text-align: left;
+  padding-left: 44px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  opacity: 1;
+  transition-duration: .5s;
+  cursor: pointer;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+}
+.song-button:hover {
+  background-color: rgb(0, 0, 0, .8);
+  height: 100px;
+  padding-left: 106px;
+  width: 100%;
+  margin: 1px 0px 1px 0px;
+}
+.song-button:focus {
+  background-color: rgb(0, 0, 0, .8);
+  height: 100px;
+  padding-left: 106px;
+}
+.AlbumThumbnail {
+  height: 100%; /* Fill the height of the button */
+  width: auto; /* Maintain the aspect ratio */
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+  transition-duration: .5s;
+}
+.BuyButtonIcon {
+  width: auto;
+  height: 1.5em;
+  display: block; /* prevents inline spacing */
+  object-fit: contain; /* preserves aspect ratio */
+  margin: .5em;
+}
+.PwkeyIcon {
+  height: 3em;
+  width: auto;
+}
+.audio-player {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+}
+.embedBtn {
+  cursor: pointer;
+  margin-bottom: -13px;
+  border: inline-block;
+  cursor: pointer;
+  height: 40px;
+  width: auto;
+}
+.chatBtn {
+  cursor: pointer;
+  margin-bottom: -13px;
+  border: inline-block;
+  cursor: pointer;
+  height: 40px;
+  width: auto;
+}
+.shuffleBtn {
+  cursor: pointer;
+  margin-bottom: -13px;
+  border: inline-block;
+  cursor: pointer;
+  height: 40px;
+  width: auto;
+}
+.nextprev-btn {
+  cursor: pointer;
+  margin-bottom: -13px;
+  width: 40px;
+  height: 40px;
+}
+#playBtn {
+  cursor: pointer;
+  box-shadow: none;
+  border: none;
+}
+#playBtn:focus {
+  outline: none;
+  box-shadow: none;
+}
+/* Play button */
+#playLogo {
+  height: auto;
+  width: 90px;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  transition-duration: .3s;
+  max-width: 80%;
+  animation: bounce .5s ease infinite;
+}
+#buyBtn {
+  cursor: pointer;
+  border: none;
+}
+#buyLogo {
+  height: auto;
+  width: 90px;
+  max-width: 80%;
+}
+.MusicButton {
+  height: auto;
+  width: auto;
+  position: relative;
+}
+/* Listen counter badge */
+.moreInfo {
+  color: #000000;
+  font-family: 'futura';
+  position: relative;
+  height: 0px;
+  width: 100%;
+  max-height: 20px;
+  line-height: 15px;
+  margin-top: -20px;
+  top: 0px;
+  z-index: 3;
+  font-size: 15px;
+  opacity: 0;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  background-color: rgba(255, 255, 255, .9);
+  transition-duration: .8s;
+  overflow: hidden;
+}
+/*----Bars----*/
+.SongProgressBar {
+  position: relative;
+  bottom: 0px;
+  height: 40px;
+}
+/*---- Volume ----*/
+.volumeBtn {
+  line-height: 40px;
+  height: 40px;
+  width: auto;
+}
+#volumeControl {
+  position: relative;
+  display: block;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+.volumeContainer {
+  height: 40px;
+  width: 80px;
+  display: block;
+}
+.progressBar {
+  width: 60px;
+  height: 10px;
+  max-width: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  border: solid .5px #ffffff;
+  cursor: pointer;
+  overflow: hidden;
+  margin: 0px 5px 0px 5px;
+  border-radius: 90px;
+}
+.progressBar span {
+  display: block;
+  height: 100%;
+  background-color: #ffffff;
+  width: 0;
+}
+input::placeholder {
+  color: #ffff00;
+}
+input:focus {
+  animation: none;
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  -webkit-appearance: none;
+  background: transparent;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: solid 1px #000000;
+  margin-bottom: 10px;
+}
+/* Range input styling */
+input[type="range"] {
+  background-color: transparent;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  background-color: #000000;
+  border: solid 1px #ffffff;
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+input[type=range] {
+  width: 100%;
+  margin: 0; /* Prevent extra margin */
+  padding: 0;
+  overflow: visible;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #000000;
+  border: solid 1px #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  margin-top: -6px;
+}
+#embedOverlay,
+#chatOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  color: #000000;
+}
+.embedContent,
+.chatContent {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  background-image: linear-gradient(to top, rgba(255, 255, 255, .8), rgba(0, 0, 0, .8));
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.MoreInner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 40px 5px 10px 5px;
+  box-sizing: border-box;
+  overflow: hidden;
+  min-width: 0;
+}
+.MoreHeader {
+  font-size: 1.15em;
+  flex: 0 0 auto;
+  text-align: center;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #ffffff;
+}
+.MoreBody {
+  flex: 1;
+  overflow-y: auto;
+  width: calc(100% - 1px);
+  border: solid .5px transparent;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, .1);
+}
+.MoreInner textarea {
+  flex: 1;
+  padding: 5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  resize: none;
+  min-width: 0;
+  display: block;
+  border: none;
+  overflow-x: hidden;
+}
+#closeEmbed,
+#closeChat {
+  font-size: 18px;
+  color: #000000;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin: 5px;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: solid 1px #000000;
+  background-color: #ffffff;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  z-index: 11;
+  outline: none;
+}
+.chatEmbed {
+  text-align: center;
+  line-height: 2em;
+  height: calc(100% - 40px);
+  width: 100%;
+  overflow-y: scroll;
+  text-overflow: ellipsis;
+}
+.chatPosts {
+  padding: 0px;
+  margin: 0px; 
+  width: 100%;
+  max-width: 100%;
+  flex: 1;
+  font-size: 1em;
+  line-height: 1.7em;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-width: 0;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
+  margin: 10px auto 10px auto; 
+  padding: 10px 5px 10px 5px;
+  width: calc(100% - 20px);
+  text-align: center;
+  pointer-events: none;
+}
+li img {
+  display: block;
+  margin: 0 auto;
+}
+
+/*------100vh Controls Sum Portrait = (228px - 212 (added 10px for mobile))-------*/
+@media screen and (max-width: 500px) {
+.LancasterFrame {
+  max-width: 100%;
+  width: 100%;
+  }  
+.Password {
+  line-height: 50px;
+  height: 50px; 
+  font-size: 22px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+}
+.PasswordSubmit {
+  height: 50px;
+  font-size: 22px;
+  width: auto;
+}
+.PasswordBar {
+  max-height: 50px;
+  line-height: 50px;
+  height: 0px;
+}
+.LancasterFrame:hover .PasswordBar {
+  height: 50px;
+}
+.MusicHeader {
+  transition-duration: .2s;
+  padding: 40px 0px 50px 0px;
+  max-height: 251px;
+  overflow: hidden;
+}
+/*----Music----*/
+.songSelection {
+  height: calc(100vh - 229px);
+  min-height: calc(100vh - 229px);
+  overflow-y: scroll;
+}
+.OffMusicHeader {
+  height: calc(100vh - 213px);
+  min-height: calc(100vh - 213px);
+}
+}
+
+/* ------------ Miniature Adjustments ----------*/
+@media screen and (max-width: 325px) {
+.song-button:hover {
+  height: 42px;
+  padding-left: 48px;
+}
+.song-button:focus {
+  height: 42px;
+  padding-left: 48px;
+}
+.OffMusicHeader {
+  font-size: 15px;
+}
+.embedBtn {
+  display: none;
+}
+.shuffleBtn {
+  display: none;
+}
+.XBtn {
+  display: inline-block;
+}
+.nextprev-btn {
+  display: inline-block;
+}
+.volumeContainer {
+  display: none;
+}
+.progressBar {
+  display: inline-block;
+  width: 50px;
+  height: 10px;
+  max-width: 100%;
+}
+#playBtn {
+  height: 90px;
+  line-height: 90px;
+}
+.ControlBar {
+  justify-content: center;
+}
+}
+
+@supports (-webkit-touch-callout: none) {
+  .volumeContainer {
+    display: none;
+  }
+  .song-button:hover {
+  background-color: transparent;
+  width: calc(100% - 10px);
+  margin: 1px 5px 1px 5px;
+}
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0px);}
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes rise {
+  0% { background-position: center 0px; }
+  100% { background-position: center -700px; }
+}
+</style>
+</head>
+<body>
+<!------Music Player------>
+<div class="LancasterFrame" id="LancasterFrame">
+<div class="LancasterMusicPlayer">
+  
+  <!----PayOn---->
+        <div id="PayOn">
+          <img class="songSelectionOption" src='fmp3simages/SongSelect.png'>
+          <div class="songSelection" id="songSelection"  alt="Song Selector" title="Song Selector">
+          
+          <div align='center'>
+            <audio id="introAudio" preload="auto" src="https://dl.dropbox.com/scl/fi/xd4g0uvlmnbgoehte1nbs/Sale.mp3?rlkey=o2bnskspdmj1enbecex866698"></audio>
+            <button preload="auto" class ="song-button GoodForYou" data-song="https://dl.dropbox.com/scl/fi/9w5dcpfavx1kega2b3uqn/Good-For-You.mp3?rlkey=i2bschb4oz30y6h75vq8n4q5l"><img src="fmp3simages/GoodForYou.jpg" class="AlbumThumbnail">"Good For You"</button>
+            <button preload="auto" class ="song-button MoreThanJustAFan" data-song="https://dl.dropbox.com/scl/fi/t2jyzec1c9jgz6sdaxa7a/More-Than-Just-A-Fan.mp3?rlkey=c92ejnylydfvjmal547ipoc9g"><img src="fmp3simages/MoreThanJustAFan.jpg" class="AlbumThumbnail">"More Than Just A Fan"</button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="https://dl.dropbox.com/scl/fi/splg1146vz7bf2l626apg/TGL1.mp3?rlkey=fwxc6250qxmqgtpdqdzjrd86j"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Black Jeans"</button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="https://dl.dropbox.com/scl/fi/4wncffbjqp596wg2fsva0/TGL2.mp3?rlkey=e4pttjj5cym67xgx92f78g9ok"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Ah, Ah, Ah"</button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="https://dl.dropbox.com/scl/fi/m4br2w7k0yd3ydf3u9uhe/TGL3.mp3?rlkey=dpgy5wz25mrgzq82f4rohfbrb"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Looks"</button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="https://dl.dropbox.com/scl/fi/famgabeqt538ht7c54yp0/TGL4.mp3?rlkey=xf7ojmak0091w2mr7zamzqbyw"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Became So Real"</button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="https://dl.dropbox.com/scl/fi/0x5iyuksxuboa7hm349ub/TGL5.mp3?rlkey=dj7q2dtsgm2lwh1jhavw24att"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Dry"</button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="https://dl.dropbox.com/scl/fi/q12wgzec3p8qg6s6v3vm0/TGL6.mp3?rlkey=pyka6rsw678n3qqdunn5wn50j"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Black Panther"</button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="https://dl.dropbox.com/scl/fi/giclnavjwabooa71y9hai/TGL7.mp3?rlkey=6rq56s09tyo5m5b13xjk9n6dm"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Everything I Claim To Be"</button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="https://dl.dropbox.com/scl/fi/dm1rb8ejinqumta820kg7/TGL8.mp3?rlkey=98v6074h3h6zwy7xj529f7dzn"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Reality"</button>
+            <button preload="auto" class ="song-button Attachment" data-song="https://dl.dropbox.com/scl/fi/4y9rah97fyadpwlr9unh2/A7.mp3?rlkey=6wwlakwzan1khh0oaxjp770wh"><img src="fmp3simages/Attachment.jpg" class="AlbumThumbnail">"Life Of The Party (Cover)"</button>
+            <!--<button preload="auto" class ="song-button Attachment" data-song="https://dl.dropbox.com/scl/fi/4a4fyl6hoaxsppbvbe70f/A1.mp3?rlkey=7cjsvpy69wgnmskp32hhxsxp0"><img src="fmp3simages/Attachment.jpg" class="AlbumThumbnail">"The Right To Get Love Wrong"</button>-->
+            <!--<button preload="auto" class ="song-button Attachment" data-song="https://dl.dropbox.com/scl/fi/7qwxunml5lpmsq0mv6237/A2.mp3?rlkey=8rfpl2vbuukqvx7yy2w52yvl2"><img src="fmp3simages/Attachment.jpg" class="AlbumThumbnail">"Yeah, I Miss You"</button>-->
+            <button preload="auto" class ="song-button Attachment" data-song="https://dl.dropbox.com/scl/fi/7rpvf5vb5aezosrtu09ox/A3.mp3?rlkey=z8px6rgs0yiri7o4a0tpfzi5a"><img src="fmp3simages/Attachment.jpg" class="AlbumThumbnail">"Talking To The Wind"</button>
+            <!--<button preload="auto" class ="song-button Attachment" data-song="https://dl.dropbox.com/scl/fi/4r5jp97h6s5fame2pj4bc/A4.mp3?rlkey=9ktb5fxsojzuwfxvn7zuwhuge"><img src="fmp3simages/Attachment.jpg" class="AlbumThumbnail">"Tease"</button>-->
+            <!--<button preload="auto" class ="song-button Attachment" data-song="https://dl.dropbox.com/scl/fi/vt5h3wki2z9nv3kac78fo/A5.mp3?rlkey=wevxe3jt8lmndop437tdwbqje"><img src="fmp3simages/Attachment.jpg" class="AlbumThumbnail">"Imagination"</button>-->
+            <!--<button preload="auto" class ="song-button Attachment" data-song="https://dl.dropbox.com/scl/fi/jpnkinp02ebxsda1xq7cj/A6.mp3?rlkey=guh7t6d48jegondeg40fw5n12"><img src="fmp3simages/Attachment.jpg" class="AlbumThumbnail">"Plea"</button>-->
+            <button preload="auto" class ="song-button FCompilation" data-song="https://dl.dropbox.com/scl/fi/q3wbvf0dpzxp3jcg4bteo/F1.mp3?rlkey=xn294vqmb6wt3jppnpub1dw7t"><img src="fmp3simages/FCompilation.jpg" class="AlbumThumbnail">"Standing Here"</button>
+            <button preload="auto" class ="song-button FCompilation" data-song="https://dl.dropbox.com/scl/fi/4xu54crzm918ygsi8b8ps/F2.mp3?rlkey=nnv2chx2hlzfucvjq2nykw4t2"><img src="fmp3simages/FCompilation.jpg" class="AlbumThumbnail">"IRL"</button>
+            <button preload="auto" class ="song-button FCompilation" data-song="https://dl.dropbox.com/scl/fi/aa0y762momqq683f8zpm8/F3.mp3?rlkey=mfal238s4vso9xu8j38z3jizm"><img src="fmp3simages/FCompilation.jpg" class="AlbumThumbnail">"BOTH"</button>
+            <button preload="auto" class ="song-button FCompilation" data-song="https://dl.dropbox.com/scl/fi/65h6m55c6md4hkx8i8tcy/F4.mp3?rlkey=eevqlwmshyrrnc1inw6e7ox2z"><img src="fmp3simages/FCompilation.jpg" class="AlbumThumbnail">"Wanna Be Me"</button>
+            <button preload="auto" class ="song-button FCompilation" data-song="https://dl.dropbox.com/scl/fi/cvv0f6ovpwcin3yymdr2r/F5.mp3?rlkey=0ludjcfosxo9v4rlls6hdt1cw"><img src="fmp3simages/FCompilation.jpg" class="AlbumThumbnail">"YouAin'tLookingForLove"</button>
+            <button preload="auto" class ="song-button FCompilation" data-song="https://dl.dropbox.com/scl/fi/bmlpbc4a4hekf5u16i5ir/F6.mp3?rlkey=tidzxy1ybirkhyqxc2d270cos"><img src="fmp3simages/FCompilation.jpg" class="AlbumThumbnail">"Dream Boat"</button>     
+            <button preload="auto" class ="song-button FCompilation" data-song="https://dl.dropbox.com/scl/fi/qcme4alawvolerbfky8gt/F7.mp3?rlkey=u8irtk7q4htl3zd69ox8v8hd0"><img src="fmp3simages/FCompilation.jpg" class="AlbumThumbnail">"Why Are You Singing?"</button>
+            <!--<button preload="auto" class ="song-button FCompilation" data-song="https://dl.dropbox.com/scl/fi/9wuvq3fhn43i1u09h406w/F8.mp3?rlkey=ma1w46uz72u5wttrqwmdpxnq0"><img src="fmp3simages/FCompilation.jpg" class="AlbumThumbnail">"Lips Too Small"</button>-->
+            <!--<button preload="auto" class ="song-button FCompilation" data-song="https://dl.dropbox.com/scl/fi/angpx4jdp32rf0gohv9kh/F9.mp3?rlkey=ierrm1vzs1hpu4nqyb5tru8e3"><img src="fmp3simages/FCompilation.jpg" class="AlbumThumbnail">"My Building"</button>-->
+            <button preload="auto" class ="song-button FCompilation" data-song="https://dl.dropbox.com/scl/fi/lixfduj23zp90co00sm7p/F10.mp3?rlkey=oz2u1r5ia36hb6zlmorwx666y"><img src="fmp3simages/FCompilation.jpg" class="AlbumThumbnail">"BCIEC Acoustic"</button>
+            <button preload="auto" class ="song-button FCompilation" data-song="https://dl.dropbox.com/scl/fi/ey7kllbnwu3vpouwyidco/F11.mp3?rlkey=ecdjmzdczxo7q5xxc4svml1j0"><img src="fmp3simages/FCompilation.jpg" class="AlbumThumbnail">"Monogamy"</button>
+            <button preload="auto" class ="song-button FCompilation" data-song="https://dl.dropbox.com/scl/fi/1ykjq3cscqk5sd3qx3hey/F12.mp3?rlkey=hvhaidm03ym94cq9osmn7y0gm"><img src="fmp3simages/FCompilation.jpg" class="AlbumThumbnail">"Dog's Don't Cry"</button>
+            <!--<button preload="auto" class ="song-button FCompilation" data-song="https://dl.dropbox.com/scl/fi/lnyuij7d1ccnzsge4o9m7/F13.mp3?rlkey=ln3ksoixs8en3ctxi8evxopq"><img src="fmp3simages/FCompilation.jpg" class="AlbumThumbnail">"Butterflies Come In Every Color"</button>-->
+            <!--<button preload="auto" class ="song-button FCompilation" data-song="https://dl.dropbox.com/scl/fi/8wb0d8b99dfs52pqzslm2/F14.mp3?rlkey=jqykalxikpfhe2zdab6q6syxc" class="AlbumThumbnail">"Accountability"</button>-->
+          </div>
+
+          </div>
+        </div>
+
+
+
+            <!----PayOff---->
+        <div id="PayOff">
+          <div align="center">
+            <div class="OffMusicHeader">
+              Keep Listening For $2.25
+            </div>
+            </div>
+        </div>
+
+
+ <!----Not Pay On or Off-->
+
+<!------Music Header------>
+<div class="MusicHeader">
+
+
+<!------Control Bar------>
+<div class="ControlBar">
+  <table>
+  
+    <td>
+      <a href="#" id="embedBtn">
+        <img src="fmp3simages/Embed.png" class="embedBtn" alt="Embed" title="Embed">
+      </a>
+      
+      <div id="embedOverlay">
+        <div class="embedContent">
+        <button id="closeEmbed">X</button>
+        <div class="MoreInner">
+          <div class="MoreHeader">FOSTMp3's Embed Code</div>
+          <div class="MoreBody">
+          <textarea readonly>
+            <iframe src="https://fostmp3s.com/fostmp3s.html" style="width: 400px; height: 400px; min-height: 400px; min-width: 200px; max-height: 100%; display: block; border: none;" class="fostmp3s"></iframe>
+          </textarea>
+        </div>
+      </div>
+      </div>
+      </div>
+    </td>
+  
+  
+  <td>
+  <img src="fmp3simages/Prev.png" id="prevBtn" class="nextprev-btn" alt="Previous" title="Previous">
+  </td>
+  <td>
+  <div class="progressBar" id="progressBar" alt="Progress Bar" title="Progress Bar">
+  <span id="progress"></span>
+  </div>
+  </td>
+  <td>
+  <img src="fmp3simages/Next.png" id="nextBtn" class="nextprev-btn" alt="Next" title="Next">
+  </td>
+  <td>
+  <img src="fmp3simages/Shuffle.png" class="shuffleBtn" onclick="shuffle()" alt="Shuffle" title="Shuffle">
+  </td>
+  <td>
+    <div class="volumeContainer" alt="Volume" title="Volume">
+    <table>
+    <td><img src="fmp3simages/Volume.png" class="volumeBtn"></td>
+    <td><input type="range" id="volumeControl" min="0" max="1" step="0.01" value="1"></td>
+    </table>
+    </div>
+  </td>
+  
+  <td>
+    <a href="#" id="chatBtn">
+    <img src="fmp3simages/Chat.png" class="chatBtn" alt="Chat" title="Chat">
+    </a>
+    
+    <div id="chatOverlay">
+      <div class="chatContent">
+      <button id="closeChat">X</button>
+      <div class="MoreInner">
+        <div class="MoreHeader">"fostchat" <img src="fmp3simages/FostMp3sLogo.png" style="height: 1em; margin-bottom: -.2em;"></div>
+        <div class="MoreBody">
+  <ul class="chatPosts" id="feed">
+  </ul>
+  </div>
+  
+  </div>
+  </div>
+  </div>
+  
+  
+  </td>
+  </table>
+  </div>
+
+
+<!-----Engage Bar---->
+<div class="EngageBar">
+<table>
+<td id="buyBtn" alt="Buy Password" title="Buy Password">
+<a href="https://fostmp3s.com/pw" target="_blank" style="display: block; text-decoration: none; color: inherit;">
+<div class="MusicButton">
+<img src="fmp3simages/PWBUY.png" id="buyLogo">
+</div>
+</a>
+<div class="moreInfo">Buy for $2.25</div>
+</td>
+<td id="playBtn" alt="Play/Pause Music" title="Play/Pause Music">
+<div class="MusicButton">
+<img src="fmp3simages/PLAY.png" id="playLogo">
+</div>
+<div class="moreInfo"><span id="listenCounter"></span>&nbsp;Listens&nbsp;Left</div>
+</td>  
+</table>
+</div>
+
+
+<!-----Password Unlocker---->
+<div align="center">
+  <div class="PasswordUnlockBar">
+    <div id="passwordUnlock" class="PasswordBar">
+      <input id="passwordInput" class="Password" type="password" placeholder="* * * *" alt="Password" title="Password"/>
+      <div class="PasswordSubmit" id="passwordSubmit" onclick="submitPassword()" alt="Submit" title="Submit"><img style="height: 100%; width: auto;" src="fmp3simages/Unlock.png"></div>
+    </div>
+    </div>
+            <audio class="audio-player" id="audio" preload="auto">
+              <source src="" type="audio/mp3">
+              Your browser does not support the audio element.
+            </audio>  
+                </div>        
+
+
+<!------Music Header end------> 
+            </div>
+            </div>
+            </div>
+            </div>
+<!------Music Player------>
+              </div>
+
+
+<script>
+// Foster Lancaster Music Player
+document.addEventListener("DOMContentLoaded", () => {
+
+  // Call ID's
+  const volumeControl = document.getElementById('volumeControl');
+  const playBtn       = document.getElementById('playBtn');
+  const buyBtn        = document.getElementById('buyBtn');
+  const playLogo      = document.getElementById('playLogo');
+  const audio         = document.getElementById('audio');
+  const introAudio    = document.getElementById('introAudio'); // NEW (now used ONLY when you run out of plays)
+  const progressBar   = document.getElementById('progressBar');
+  const progress      = document.getElementById('progress');
+  const counterDiv    = document.getElementById('listenCounter');
+  const payOff        = document.getElementById('PayOff');
+  const payOn         = document.getElementById('PayOn');
+  const nextBtn       = document.getElementById('nextBtn');
+  const prevBtn       = document.getElementById('prevBtn');
+  const Password      = document.getElementById('passwordInput');
+  document.getElementById("embedBtn");
+  document.getElementById("embedOverlay");
+  document.getElementById("closeEmbed");
+  document.getElementById("xBtn");
+  document.getElementById("xOverlay");
+  document.getElementById("closeX");
+
+
+  // Call Classes
+  const passwordBar         = document.querySelector('.PasswordBar');
+  const defaultImage        = document.querySelector('.default-image');
+  const LancasterMusicPlayer= document.querySelector('.LancasterMusicPlayer');
+
+  // Set Order of Songs
+  let songButtons = Array.from(document.querySelectorAll('.song-button'));
+  const audioPreload = {};
+
+  // ---- Safety guards (a missing element can stop the whole script and make the play button "not work") ----
+  if (!audio) console.warn('[FOSTMp3s] Missing #audio element');
+  if (!playBtn) console.warn('[FOSTMp3s] Missing #playBtn element');
+  if (!playLogo) console.warn('[FOSTMp3s] Missing #playLogo element');
+
+  // Load Songs
+  songButtons.forEach((btn) => {
+    const song = btn.dataset.song;
+    if (!song) return;
+    const audioObj = new Audio(song);
+    audioObj.preload = 'auto';
+    audioPreload[song] = audioObj;
+  });
+
+  // Set Password
+  const PASSWORD = "FastLane";
+  let currentSongIndex = -1;
+
+  // Hide Volume
+  if (/iPhone|iPad|iPod/.test(navigator.userAgent) && volumeControl) {
+    volumeControl.style.display = 'none';
+  }
+
+  // Set Listen Count
+  const MAX_LISTENS = 20;
+  const LISTENS_KEY = 'listensLeft';
+
+  // Check If Paid For Infinite
+  const isInfiniteListen = () => {
+    // Check for infinite and infinite image
+    if (localStorage.getItem('infiniteListen') === 'true') return true;
+    if (!counterDiv) return false;
+
+    // Create Image Variable
+    const img = counterDiv.querySelector('img');
+    if (!img) return false;
+
+    // Swap Variable With Image
+    return img.src.includes('Infinity.png');
+  };
+
+  // Load Listen Count
+  let listensLeft = loadLocalListens();
+  function loadLocalListens() {
+    const v = parseInt(localStorage.getItem(LISTENS_KEY), 10);
+    return Number.isFinite(v) ? v : MAX_LISTENS;
+  }
+
+  // Save Local Listen Count Variable
+  function saveLocalListens() {
+    localStorage.setItem(LISTENS_KEY, String(listensLeft));
+  }
+
+  // If Not An Image, Gather The Listen Count
+  const updateListenUI = () => {
+    if (!counterDiv) return;
+
+    if (isInfiniteListen()) {
+      counterDiv.innerHTML = '<img src="fmp3simages/Infinity.png" style="width: 1.2em; padding: 10px; margin: -10px;" alt="∞">';
+    } else {
+      counterDiv.textContent = String(listensLeft);
+    }
+  };
+
+  // Load Listens from API
+  async function fetchListenCountFromServer() {
+    try {
+      const res = await fetch('/api/listens', { method: 'GET', credentials: 'include' });
+      if (!res.ok) throw new Error('Network error');
+      const data = await res.json();
+
+      if (typeof data.listensLeft === 'number') {
+        listensLeft = data.listensLeft;
+        saveLocalListens();
+      } else {
+        listensLeft = loadLocalListens();
+      }
+
+      if (data.infinite) localStorage.setItem('infiniteListen', 'true');
+    } catch (e) {
+      listensLeft = loadLocalListens();
+    }
+    updateListenUI();
+  }
+
+  async function saveListenCountToServer() {
+    saveLocalListens();
+    try {
+      await fetch('/api/listens', {
+        method: 'POST',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ listensLeft, infinite: isInfiniteListen() })
+      });
+    } catch (e) {
+      // ignore; local already saved
+    }
+  }
+
+  updateListenUI();
+
+  // ---- Run-out-of-plays event (intro moved here) ----
+  function onRunOutOfPlays() {
+    // Change to Payment Screen
+    if (payOff) payOff.style.display = 'block';
+    if (payOn)  payOn.style.display  = 'none';
+    if (playBtn) playBtn.style.display = 'none';
+
+    // Play Intro (AUDIO) when you run out
+    if (introAudio) {
+      try { introAudio.pause(); } catch {}
+      try { introAudio.currentTime = 0; } catch {}
+      const p = introAudio.play();
+      if (p && typeof p.catch === "function") p.catch(() => {});
+    }
+
+    // Play Intro Video (if you have it) when you run out
+    document.getElementById("TheIntroPlayer")?.play().catch(()=>{});
+  }
+
+  // Decrement Listen Count
+  const decrementListenCount = () => {
+    if (isInfiniteListen()) return true;
+
+    if (listensLeft > 0) {
+      listensLeft--;
+      updateListenUI();
+      saveListenCountToServer();
+      return true;
+    }
+
+    // If you hit 0, trigger the run-out event (intro moved here)
+    onRunOutOfPlays();
+    return false;
+  };
+
+
+//-------------While Loading Fix-----------
+
+  const playSong = (index) => {
+  if (!audio) return;
+
+  // Update if Haven't Updated
+  if (!decrementListenCount()) return;
+
+  // 🔹 CHANGE UI IMMEDIATELY (while loading)
+  if (playLogo) playLogo.src = 'fmp3simages/PAUSE.png';
+  defaultImage && defaultImage.classList.add('playing');
+
+  // Stop intro audio if it was playing
+  if (introAudio) {
+    try { introAudio.pause(); } catch {}
+    try { introAudio.currentTime = 0; } catch {}
+  }
+
+  const btn = songButtons[index];
+  if (!btn) return;
+
+  const songPath = btn.dataset.song;
+  if (!songPath) return;
+
+  const preloadedAudio = audioPreload[songPath];
+
+  if (preloadedAudio) {
+    audio.src = preloadedAudio.src;
+  } else {
+    audio.src = songPath;
+  }
+
+  audio.load();
+  audio.currentTime = 0;
+
+  const p = audio.play();
+  if (p && typeof p.then === "function") {
+    p.catch(() => {
+      // 🔹 Revert if play fails
+      if (playLogo) playLogo.src = 'fmp3simages/PLAY.png';
+      defaultImage && defaultImage.classList.remove('playing');
+    });
+  }
+};
+
+  const selectSong = (index) => {
+    // Reset Current Song
+    if (currentSongIndex !== -1 && songButtons[currentSongIndex]) {
+      songButtons[currentSongIndex].style.backgroundColor = '';
+    }
+
+    currentSongIndex = index;
+
+    if (songButtons[index]) {
+      // Set Current Song
+      songButtons[index].style.backgroundColor = 'rgba(0, 0, 0, .8)';
+    }
+  };
+
+  const togglePlayPause = () => {
+  if (!audio) return;
+
+  if (audio.paused) {
+    // 🔹 Update UI FIRST
+    if (playLogo) playLogo.src = 'fmp3simages/PAUSE.png';
+    defaultImage && defaultImage.classList.add('playing');
+
+    const p = audio.play();
+    if (p && typeof p.then === "function") {
+      p.catch(() => {
+        // 🔹 Revert UI if play fails
+        if (playLogo) playLogo.src = 'fmp3simages/PLAY.png';
+        defaultImage && defaultImage.classList.remove('playing');
+      });
+    }
+  } else {
+    // 🔹 Update UI FIRST
+    if (playLogo) playLogo.src = 'fmp3simages/PLAY.png';
+    defaultImage && defaultImage.classList.remove('playing');
+
+    audio.pause();
+  }
+};
+
+  const handleSongButtonClick = (index) => {
+    // When Clicking A Song
+    if (currentSongIndex !== index) {
+      selectSong(index);
+      // (Common expectation) clicking a different song starts it
+      playSong(index);
+      return;
+    }
+    // Same song clicked: toggle play/pause
+    togglePlayPause();
+  };
+
+  // Event Listeners - compute index at click time so it matches shuffled order
+  songButtons.forEach((btn) => {
+    // When Any Button Clicked
+    btn.addEventListener('click', () => {
+      const index = songButtons.indexOf(btn);
+      if (index !== -1) {
+        // Order Assigned
+        handleSongButtonClick(index);
+      }
+    });
+  });
+
+  if (playBtn) {
+    playBtn.addEventListener('click', () => {
+      // Play First Song  (FIX: it used to select(0) and return without playing)
+      if (currentSongIndex === -1) {
+        selectSong(0);
+        playSong(0);
+        return;
+      }
+
+      // Playing The Song
+      togglePlayPause();
+    });
+
+//Play on first touch (touch screens)
+    playBtn.addEventListener('touchstart', (e) => {
+  if (!audio) return;
+
+  e.preventDefault(); // stop ghost click / double trigger
+
+  if (currentSongIndex === -1) {
+    selectSong(0);
+    playSong(0);
+  } else {
+    togglePlayPause(); // 🔑 this now pauses too
+  }
+}, { passive: false });
+
+  }
+  // Progress Bar
+  if (progressBar) {
+    progressBar.addEventListener('click', (e) => {
+      if (!audio) return;
+      if (!isNaN(audio.duration)) {
+        audio.currentTime = (e.offsetX / progressBar.clientWidth) * audio.duration;
+      }
+    });
+  }
+
+  // Time Update
+  function updateProgressFor(active) {
+    if (!progress) return;
+    if (!isNaN(active.duration) && active.duration > 0) {
+      progress.style.width = `${(active.currentTime / active.duration) * 100}%`;
+    } else {
+      progress.style.width = '0%';
+    }
+  }
+
+  if (audio) {
+    audio.addEventListener('timeupdate', () => updateProgressFor(audio));
+
+    // When Song Ends
+    audio.addEventListener('ended', () => {
+      let nextIndex = currentSongIndex + 1;
+      if (nextIndex >= songButtons.length) nextIndex = 0;
+      selectSong(nextIndex);
+      playSong(nextIndex);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      // Next
+      let nextIndex = currentSongIndex + 1;
+      if (nextIndex >= songButtons.length) nextIndex = 0;
+      selectSong(nextIndex);
+      playSong(nextIndex);
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      // Previous
+      let prevIndex = currentSongIndex - 1;
+      if (prevIndex < 0) prevIndex = songButtons.length - 1;
+      selectSong(prevIndex);
+      playSong(prevIndex);
+    });
+  }
+
+  if (volumeControl) {
+    // Volume Listener
+    volumeControl.addEventListener('input', e => {
+      if (audio) audio.volume = e.target.value;
+      if (introAudio) introAudio.volume = e.target.value; // mirror volume on intro
+    });
+  }
+
+  // Input Password
+  const passwordInput = document.getElementById('passwordInput');
+  if (passwordInput) {
+    // Enter Submit
+    passwordInput.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        submitPassword();
+      }
+    });
+  }
+
+  window.submitPassword = () => {
+    if (document.getElementById('passwordInput')?.value === PASSWORD) {
+      localStorage.setItem('infiniteListen', 'true');
+      listensLeft = MAX_LISTENS; // or 0, doesn't matter since infinite overrides UI
+      updateListenUI();
+
+      // Update to Infinite
+      saveListenCountToServer();  // let server know this IP is infinite
+
+      // Set to Normal UI
+      if (payOff) payOff.style.display = 'none';
+      if (payOn)  payOn.style.display  = 'block';
+      if (playBtn) playBtn.style.display = 'block';
+
+      // Reset
+      if (Password) {
+        Password.value = '';                    // clear the text
+        Password.placeholder = '✓Right';    // new placeholder
+      }
+
+      // Red (your note said Red but this is green; leaving your note)
+      if (passwordBar) passwordBar.style.backgroundColor = 'rgba(18, 177, 0, .7)';
+
+      // Play First Song (optional)
+      selectSong(0);
+      playSong(0);
+
+    } else {
+
+      if (Password) {
+        Password.value = '';                    // clear the text
+        Password.placeholder = '✗Wrong';   // new placeholder
+      }
+
+      // Green (your note said Green but this is red; leaving your note)
+      if (passwordBar) passwordBar.style.backgroundColor = 'rgba(255, 0, 1, .7)';
+    }
+  };
+
+  window.shuffle = () => {
+    const container = document.getElementById("songSelection");
+    if (!container || songButtons.length === 0) return;
+
+    // Order of Songs
+    let newOrder = [...songButtons];
+
+    // Set Current Song Apart
+    if (currentSongIndex !== -1 && songButtons[currentSongIndex]) {
+
+      // There is a "current" song – keep it at the top
+      const currentBtn = songButtons[currentSongIndex];
+
+      // Remove Current Song
+      newOrder = newOrder.filter(btn => btn !== currentBtn);
+
+      // Shuffle Songs
+      for (let i = newOrder.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newOrder[i], newOrder[j]] = [newOrder[j], newOrder[i]];
+      }
+
+      // Put Current Up
+      newOrder.unshift(currentBtn);
+
+      // Set New Order
+      newOrder.forEach(btn => container.appendChild(btn));
+      songButtons = newOrder;
+      currentSongIndex = 0; // current song is now at top, but playback state is unchanged
+
+    } else {
+
+      // No current song selected: just shuffle and start the first one
+      for (let i = newOrder.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newOrder[i], newOrder[j]] = [newOrder[j], newOrder[i]];
+      }
+
+      newOrder.forEach(btn => container.appendChild(btn));
+      songButtons = newOrder;
+
+    }
+  }
+  fetchListenCountFromServer();
+
+    // Launch Shuffle On Load
+  if (songButtons.length > 0) {
+    window.shuffle();
+  }
+
+});
+
+//Open and close overlays
+document.getElementById("embedBtn").onclick = function(e) {
+   e.preventDefault();
+   document.getElementById("embedOverlay").style.display = "flex";
+   };
+                
+   document.getElementById("closeEmbed").onclick = function() {
+   document.getElementById("embedOverlay").style.display = "none";
+   };
+
+//Show Chat
+document.getElementById("chatBtn").onclick = function(e) {
+  e.preventDefault();
+  const overlay = document.getElementById("chatOverlay");
+  overlay.style.display = "flex";
+};
+                
+document.getElementById("closeChat").onclick = function() {
+document.getElementById("chatOverlay").style.display = "none";
+};
+
+              
+//Foster Chat From Wordpress
+
+   fetch('https://fostchat-rss.fostmp3s.workers.dev/')
+  .then(response => response.text())
+  .then(str => {
+    const parser = new DOMParser();
+    const xml = parser.parseFromString(str, "application/xml");
+    const items = xml.querySelectorAll("item");
+    const feedList = document.getElementById("feed");
+
+    items.forEach(item => {
+      const title = item.querySelector("title")?.textContent;
+      const link = item.querySelector("link")?.textContent;
+
+      // 🔑 NEW: content:encoded support
+      const contentEncoded =
+        item.getElementsByTagName("content:encoded")[0]?.textContent || "";
+
+      // Try multiple image sources
+      let image =
+        item.querySelector("enclosure")?.getAttribute("url") ||
+        item.querySelector("media\\:content")?.getAttribute("url") ||
+        contentEncoded.match(/<img.*?src="(.*?)"/)?.[1] ||
+        item.querySelector("description")?.textContent.match(/<img.*?src="(.*?)"/)?.[1];
+
+      const li = document.createElement("li");
+
+      li.innerHTML = `
+        <a href="${link}" target="_blank">
+          ${image ? `<img src="${image}" style="max-width:100%; display:block;">` : ""}
+          ${title}
+        </a>
+      `;
+
+      feedList.appendChild(li);
+    });
+  })
+  .catch(err => console.error("Error loading RSS feed:", err));
+</script>
+
+<!-----Fetcher
+export default {
+  async fetch(request) {
+
+    const rssUrl = "https://fostchatupdates.wordpress.com/feed/";
+    const response = await fetch(rssUrl);
+    let text = await response.text();
+
+    // Add images from <content:encoded> if they exist
+    text = text.replace(
+      /<content:encoded><!\[CDATA\[(.*?)\]\]><\/content:encoded>/gs,
+      (match, content) => {
+
+        // Force all images to be full width
+        const updatedContent = content.replace(
+          /<img /g,
+          '<img style="width:100%; height:auto; display:block;" '
+        );
+
+        return `<content:encoded><![CDATA[${updatedContent}]]></content:encoded>`;
+      }
+    );
+
+    const headers = new Headers();
+    headers.set("Content-Type", "application/rss+xml");
+    headers.set("Access-Control-Allow-Origin", "*");
+
+    return new Response(text, {
+      status: 200,
+      headers
+    });
+  }
+};
+  ----->
+</body>
+</html>
+
+

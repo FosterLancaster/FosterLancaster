@@ -1,0 +1,83 @@
+/* SideNav */
+liri {
+height: auto;
+width: auto; 
+background-color: transparent;
+cursor: pointer;
+position: relative; 
+font-size: 15px; 
+padding: 2px 5px 2px 5px;
+}
+liri:hover {
+text-decoration: underline;
+}
+ulri {
+height: auto;
+width: auto;
+z-index: 5;
+position: fixed; 
+right: 10px; 
+top: 0px; 
+line-height: 131px;
+}
+.SideNavContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centers vertically */
+  align-items: center;     /* centers horizontally */
+  height: 100vh;           /* or the height of your container */
+}
+.SideNavLink {
+  margin: 1em 0;   /* lighter spacing between links */
+  min-width: 5em;
+  overflow-x: hidden;
+}
+.Rimenu {
+height: 1em;
+width: 1em;
+margin: 1.2em;
+position: fixed;
+top: 0px;
+right: 0px;
+z-index: 5;
+cursor: pointer;
+}
+/*Menu*/
+.overlay {
+  height: 100%;
+  width: 0%;
+  position: fixed;
+  z-index: 5;
+  top: 0px;
+  right: 0px;
+  background-color: rgba(0, 0, 0, .7);
+  overflow-x: hidden;
+  overflow-y: hidden;
+  transition: 0.1s;
+  }
+.overlay-content {
+  position: relative;
+  top: 0px;
+  right: 0px;
+  text-align: center;
+  float: right;
+  background-color: #000000;
+  height: 100vh; 
+  width: 50%;
+border-left: solid 1px rgba(255, 255, 255, .17);
+  }
+.overlay a {
+  text-decoration: none;
+  }
+.overlay .closebtn {
+  display: block;
+  position: fixed;
+  cursor: pointer;
+  z-index: 3;
+  background-position: center center;
+  }
+.closebtn {
+width: 1em;
+height: 1em;
+margin: 1.2em;
+}

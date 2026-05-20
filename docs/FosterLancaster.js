@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /* Sync icon whenever video plays */
     video.addEventListener("play", () => {
 
-      icon.src = "ftvimages/FostTVPause.png";
+      icon.src = "images/FostTVPause.png";
 
       resetInactivityTimer();
 
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /* Sync icon whenever video pauses */
     video.addEventListener("pause", () => {
 
-      icon.src = "ftvimages/FostTVPlay.png";
+      icon.src = "images/FostTVPlay.png";
 
       showButton(); // Stay opaque while paused
 
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /* Reset icon when video ends */
     video.addEventListener("ended", () => {
 
-      icon.src = "ftvimages/FostTVPlay.png";
+      icon.src = "images/FostTVPlay.png";
 
       showButton();
 

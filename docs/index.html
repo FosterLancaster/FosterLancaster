@@ -52,7 +52,7 @@
 
 <div class="Title">fostmp3s</div>
 <!----Fost Mp3's---->
-<iframe src="https://fostmp3s.com/fostmp3s.html" style="margin: -10px 5vw -10px 5vw; width: 90vw; height: 120vw; max-height: 85vh; display: flex; border: none;" class="fostmp3s" loading="lazy" allow="autoplay; fullscreen">
+<iframe src="https://fostmp3s.com/fostmp3s.html" style="margin: -10px 5vw -10px 5vw; width: 90vw; height: 80dvh; display: flex; border: none;" class="fostmp3s" loading="lazy" allow="autoplay; fullscreen">
 </iframe>
 <!----Fost Mp3's---->
 
@@ -78,6 +78,7 @@
     id="musicVideo"
     preload="metadata"
     poster="ftvimages/GFY.jpg"
+    controls
   >
     <source src="https://dl.dropbox.com/scl/fi/byoqvv6uh2gn9cgcbxeja/GFYVIdeo.mp4?rlkey=a1ju12puv9fnp5qzxkhtu8jxg" type="video/mp4">
   </video>
@@ -113,50 +114,5 @@
 </section>
 </article>
 </body>
-
-<script>
-
-const video = document.getElementById("musicVideo");
-const btn = document.getElementById("playPauseBtn");
-const icon = document.getElementById("playPauseIcon");
-
-/* Button click */
-btn.addEventListener("click", () => {
-
-  if (video.paused) {
-
-    video.play();
-
-  } else {
-
-    video.pause();
-
-  }
-
-});
-
-/* Sync icon whenever video plays */
-video.addEventListener("play", () => {
-
-  icon.src = "ftvimages/FostTVPause.png";
-
-});
-
-/* Sync icon whenever video pauses */
-video.addEventListener("pause", () => {
-
-  icon.src = "ftvimages/FostTVPlay.png";
-
-});
-
-/* Reset icon when video ends */
-video.addEventListener("ended", () => {
-
-  icon.src = "ftvimages/FostTVPlay.png";
-
-});
-
-</script>
-
 </html>
 

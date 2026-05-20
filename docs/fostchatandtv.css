@@ -3,8 +3,7 @@
   color: #ffffff;
   margin: 0px 5vw 0px 5vw;
   width: calc(90vw - 18px); 
-  height: 120vw; 
-  max-height: 85vh;
+  height: 80dvh; 
   bottom: 0px;
   right: 0px;  
   background: rgba(0, 0, 0, .5);
@@ -39,8 +38,7 @@ li img {
 .FtvContent {
   margin: 0px 5vw 0px 5vw;
   width: calc(90vw - 18px); 
-  height: 120vw; 
-  max-height: 85vh;
+  height: 80dvh; 
   bottom: 0px;
   right: 0px;  
   background: rgba(0, 0, 0, .5);
@@ -111,8 +109,9 @@ li img {
 /*------------fostTV--------------- */
 .PlayPauseBtn {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   margin: 10px;
   width: 100px;
   height: 100px;
@@ -128,10 +127,10 @@ li img {
 }
 /* Hover */
 .PlayPauseBtn:hover {
-  opacity: 1;
+  opacity: .5;
 }
 .PlayPauseBtn:active {
-  opacity: .5;
+  opacity: 0;
 }
 /* Button Images */
 .PlayPauseBtn img {

@@ -3,7 +3,7 @@
   color: #ffffff;
   margin: 0px 5vw 0px 5vw;
   width: calc(90vw - 18px); 
-  height: 80dvh; 
+  height: 80vh; 
   bottom: 0px;
   right: 0px;  
   background: rgba(0, 0, 0, .5);
@@ -38,7 +38,7 @@ li img {
 .FtvContent {
   margin: 0px 5vw 0px 5vw;
   width: calc(90vw - 18px); 
-  height: 80dvh; 
+  height: 80vh; 
   bottom: 0px;
   right: 0px;  
   background: rgba(0, 0, 0, .5);

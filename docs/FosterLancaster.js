@@ -135,53 +135,91 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
-  // Foster Chat From Wordpress
+// Foster Chat From Tumblr
 
-  fetch("https://fostchat-rss.fostmp3s.workers.dev/")
-    .then(response => response.text())
-    .then(str => {
+fetch("https://fostchat-rss.fostmp3s.workers.dev/")
+  .then(response => response.text())
+  .then(str => {
 
-      const parser = new DOMParser();
-      const xml = parser.parseFromString(str, "application/xml");
-      const items = xml.querySelectorAll("item");
-      const feedList = document.getElementById("feed");
+    const parser = new DOMParser();
+    const xml = parser.parseFromString(str, "application/xml");
+    const items = xml.querySelectorAll("item");
+    const feedList = document.getElementById("feed");
 
-      items.forEach(item => {
+    items.forEach(item => {
 
-        const title = item.querySelector("title")?.textContent || "";
-        const link = item.querySelector("link")?.textContent || "#";
+      const title =
+        item.querySelector("title")?.textContent?.trim() || "";
 
-        // content:encoded support
-        const contentEncoded =
-          item.getElementsByTagName("content:encoded")[0]?.textContent || "";
+      const link =
+        item.querySelector("link")?.textContent?.trim() || "#";
 
-        // Try multiple image sources
-        const image =
-          item.querySelector("enclosure")?.getAttribute("url") ||
-          item.querySelector("media\\:content")?.getAttribute("url") ||
-          contentEncoded.match(/<img.*?src="(.*?)"/)?.[1] ||
-          item.querySelector("description")?.textContent?.match(/<img.*?src="(.*?)"/)?.[1];
+      // content:encoded support
+      const contentEncoded =
+        item.getElementsByTagName("content:encoded")[0]?.textContent || "";
 
-        const li = document.createElement("li");
+      // Raw description
+      const rawDescription =
+        item.querySelector("description")?.textContent || "";
 
-        li.innerHTML = `
-          <a href="${link}" target="_blank">
-            ${
-              image
-                ? `<img src="${image}" style="max-width:100%; display:block;">`
-                : ""
-            }
-            ${title}
-          </a>
-        `;
+      // Convert HTML to text
+      const tempDiv = document.createElement("div");
+      tempDiv.innerHTML = rawDescription;
 
-        if (feedList) {
-          feedList.appendChild(li);
-        }
+      let cleanDescription =
+        tempDiv.textContent || tempDiv.innerText || "";
 
-      });
+      cleanDescription = cleanDescription
+        .replace(/\s+/g, " ")
+        .replace(/^undefined$/i, "")
+        .trim();
 
-    })
-    .catch(err => console.error("Error loading RSS feed:", err));
+      // FINAL protection against undefined/null
+      if (
+        !cleanDescription ||
+        cleanDescription === "undefined" ||
+        cleanDescription === "null"
+      ) {
+        cleanDescription = "";
+      }
 
+      // Try multiple image sources
+      const image =
+        item.querySelector("enclosure")?.getAttribute("url") ||
+        item.querySelector("media\\:content")?.getAttribute("url") ||
+        contentEncoded.match(/<img.*?src="(.*?)"/)?.[1] ||
+        rawDescription.match(/<img.*?src="(.*?)"/)?.[1] ||
+        "";
+
+      const li = document.createElement("li");
+
+      li.innerHTML = `
+        <a href="${link}" target="_blank">
+
+          ${
+            image
+              ? `<img src="${image}" style="max-width:100%; display:block;">`
+              : ""
+          }
+
+          <div class="feedTitle">${title}</div>
+
+          ${
+            cleanDescription
+              ? `<div class="feedDescription">${cleanDescription}</div>`
+              : ""
+          }
+
+        </a>
+      `;
+
+      if (feedList) {
+        feedList.appendChild(li);
+      }
+
+    });
+
+  })
+  .catch(err => console.error("Error loading RSS feed:", err));
+  
 });

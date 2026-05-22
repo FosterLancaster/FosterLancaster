@@ -659,8 +659,11 @@ li {
   margin: 10px auto 10px auto; 
   padding: 10px 5px 10px 5px;
   width: calc(100% - 20px);
+  max-width: 1000px;
   text-align: center;
   pointer-events: none;
+  font-size: 0 !important;
+  color: transparent !important;
 }
 li img {
   display: block;
@@ -1434,44 +1437,93 @@ document.getElementById("chatOverlay").style.display = "none";
 };
 
               
-//Foster Chat From Wordpress
+// Foster Chat From Tumblr
 
-   fetch('https://fostchat-rss.fostmp3s.workers.dev/')
+/*---     fetch("https://fostchat-rss.fostmp3s.workers.dev/")
   .then(response => response.text())
   .then(str => {
+
     const parser = new DOMParser();
     const xml = parser.parseFromString(str, "application/xml");
     const items = xml.querySelectorAll("item");
     const feedList = document.getElementById("feed");
 
     items.forEach(item => {
-      const title = item.querySelector("title")?.textContent;
-      const link = item.querySelector("link")?.textContent;
 
-      // 🔑 NEW: content:encoded support
+      const title =
+        item.querySelector("title")?.textContent?.trim() || "";
+
+      const link =
+        item.querySelector("link")?.textContent?.trim() || "#";
+
+      // content:encoded support
       const contentEncoded =
         item.getElementsByTagName("content:encoded")[0]?.textContent || "";
 
+      // Raw description
+      const rawDescription =
+        item.querySelector("description")?.textContent || "";
+
+      // Convert HTML to text
+      const tempDiv = document.createElement("div");
+      tempDiv.innerHTML = rawDescription;
+
+      let cleanDescription =
+        tempDiv.textContent || tempDiv.innerText || "";
+
+      cleanDescription = cleanDescription
+        .replace(/\s+/g, " ")
+        .replace(/^undefined$/i, "")
+        .trim();
+
+      // FINAL protection against undefined/null
+      if (
+        !cleanDescription ||
+        cleanDescription === "undefined" ||
+        cleanDescription === "null"
+      ) {
+        cleanDescription = "";
+      }
+
       // Try multiple image sources
-      let image =
+      const image =
         item.querySelector("enclosure")?.getAttribute("url") ||
         item.querySelector("media\\:content")?.getAttribute("url") ||
         contentEncoded.match(/<img.*?src="(.*?)"/)?.[1] ||
-        item.querySelector("description")?.textContent.match(/<img.*?src="(.*?)"/)?.[1];
+        rawDescription.match(/<img.*?src="(.*?)"/)?.[1] ||
+        "";
 
       const li = document.createElement("li");
 
       li.innerHTML = `
         <a href="${link}" target="_blank">
-          ${image ? `<img src="${image}" style="max-width:100%; display:block;">` : ""}
-          ${title}
+
+          ${
+            image
+              ? `<img src="${image}" style="max-width:100%; display:block;">`
+              : ""
+          }
+
+          <div class="feedTitle">${title}</div>
+
+          ${
+            cleanDescription
+              ? `<div class="feedDescription">${cleanDescription}</div>`
+              : ""
+          }
+
         </a>
       `;
 
-      feedList.appendChild(li);
+      if (feedList) {
+        feedList.appendChild(li);
+      }
+
     });
+
   })
-  .catch(err => console.error("Error loading RSS feed:", err));
+  .catch(err => console.error("Error loading RSS feed:", err));-----*/
+  
 </script>
 
 <!-----Fetcher

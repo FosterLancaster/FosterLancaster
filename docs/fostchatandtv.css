@@ -17,6 +17,9 @@
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+.FchatContent a {
+  color: #ffffff;
+}
 li {
   list-style: none;
   background-color: #995931;
@@ -31,9 +34,6 @@ li {
 li img {
   display: block;
   margin: 0 auto;
-}
-.FchatContent a {
-  color: #ffffff;
 }
 .FtvContent {
   margin: 0px 5vw 0px 5vw;

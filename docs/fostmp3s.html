@@ -662,8 +662,6 @@ li {
   max-width: 1000px;
   text-align: center;
   pointer-events: none;
-  font-size: 0 !important;
-  color: transparent !important;
 }
 li img {
   display: block;
@@ -1438,8 +1436,7 @@ document.getElementById("chatOverlay").style.display = "none";
 
               
 // Foster Chat From Tumblr
-
-/*---     fetch("https://fostchat-rss.fostmp3s.workers.dev/")
+  fetch("https://fostchat-rss.fostmp3s.workers.dev/")
   .then(response => response.text())
   .then(str => {
 
@@ -1522,7 +1519,7 @@ document.getElementById("chatOverlay").style.display = "none";
     });
 
   })
-  .catch(err => console.error("Error loading RSS feed:", err));-----*/
+  .catch(err => console.error("Error loading RSS feed:", err));
   
 </script>
 

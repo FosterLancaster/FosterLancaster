@@ -30,6 +30,10 @@ body {
   font-family: 'FL';
   src: url('freshmarker.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'FL2';
+  src: url('MARSNEVENEKSK.otf') format('truetype');
+}
 :focus {
   outline: none;
 }
@@ -67,13 +71,13 @@ header {
   justify-content: center;
   align-items: center;
   width: auto;
-  line-height: 1.5dvh;
-  font-size: 3dvh;
+  line-height: 1.5vh;
+  font-size: 3vh;
   font-family: 'FL';
   position: absolute;
-  top: 0dvh;
-  right: 0dvh;
-  margin: 3dvh;
+  top: 0vh;
+  right: 0vh;
+  margin: 3vh;
   z-index: 4;
 }
 .FLNameWritten1 {
@@ -84,7 +88,7 @@ header {
   opacity: 1;
   transform: translateX(-100vw);
   animation: FastLane .4s linear 1s 1 forwards;
-  color: #ccffbc; 
+  color: #ffffff; 
 }
 .FLNameWritten2 {
   font-family: "FL";
@@ -94,29 +98,32 @@ header {
   opacity: 1;
   transform: translateX(-100vw);
   animation: FastLane 2s linear 1 forwards;
-  color: #ccffbc; 
+  color: #ffffff; 
 }
 .FLNameSay {
-  height: 7dvh;
-  width: 7dvh;
+  height: 7vh;
+  width: 7vh;
   transition-duration: .2s;
   cursor: pointer;
-  margin: 1.2dvh;
+  margin: 1.2vh;
 }
-.Menu {
+.MenuLeft {
   z-index: 3;
   position: absolute;
   font-size: .6em;
   line-height: 3.5vh;
-  left: 0dvh;
-  top: 0dvh;
+  left: 0vh;
+  top: 0vh;
 }
-.Menu a {
-  color: #ff0000;
+.MenuMiddle {
+  z-index: 3;
+  position: absolute;
+  font-size: .6em;
+  line-height: 3.5vh;
+  left: calc(50% - 3.5vh);
+  top: 0vh;
 }
-.Menu a:hover {
-  color: #ffffff;
-}
+
 /*-------------------FLName---------------------*/
 h1 {
 font-size: 25px;
@@ -142,6 +149,7 @@ footer {
   text-align: center;
 }
 .Title {
+  font-family: 'FL2';
   font-size: 40px;
   height: 40px;
   line-height: 40px;

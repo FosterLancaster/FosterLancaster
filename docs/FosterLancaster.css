@@ -107,7 +107,7 @@ header {
   z-index: 3;
   position: absolute;
   font-size: 2dvh;
-  line-height: 2dvh;
+  line-height: 3.5dvh;
   left: 0dvh;
   top: 0dvh;
 }

@@ -105,20 +105,19 @@ header {
   width: 7vh;
   transition-duration: .2s;
   cursor: pointer;
-  margin: 1.5vh;
+  margin: 1.5vh 0px 1.5vh 0px;
 }
 .MenuLeft {
   z-index: 3;
   position: absolute;
   font-size: .6em;
   line-height: 3.5vh;
-  left: 0vh;
+  left: 1.5vh;
   top: 0vh;
 }
 .MenuMiddle {
   z-index: 3;
   position: absolute;
-  font-size: .6em;
   line-height: 3.5vh;
   left: calc(50% - 3.5vh);
   top: 0vh;

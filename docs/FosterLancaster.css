@@ -79,7 +79,7 @@ header {
 .FLNameWritten1 {
   font-family: "FL";
   width: auto;
-  height: 2dvh;
+  height: 2vh;
   display: block;
   opacity: 1;
   transform: translateX(-100vw);
@@ -89,7 +89,7 @@ header {
 .FLNameWritten2 {
   font-family: "FL";
   width: auto;
-  height: 2dvh;
+  height: 2vh;
   display: block;
   opacity: 1;
   transform: translateX(-100vw);
@@ -106,8 +106,8 @@ header {
 .Menu {
   z-index: 3;
   position: absolute;
-  font-size: 2dvh;
-  line-height: 3.5dvh;
+  font-size: 2vh;
+  line-height: 3.5vh;
   left: 0dvh;
   top: 0dvh;
 }

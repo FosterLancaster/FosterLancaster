@@ -82,7 +82,8 @@ header {
   display: block;
   opacity: 1;
   transform: translateX(-100vw);
-  animation: FastLane .5s linear 1s 1 forwards;
+  animation: FastLane .4s linear 1s 1 forwards;
+  color: #ccffbc; 
 }
 .FLNameWritten2 {
   font-family: "FL";
@@ -92,20 +93,28 @@ header {
   opacity: 1;
   transform: translateX(-100vw);
   animation: FastLane 2s linear 1 forwards;
+  color: #ccffbc; 
 }
 .FLNameSay {
   height: 7dvh;
   width: 7dvh;
   transition-duration: .2s;
-  animation: Pulsate 1s linear infinite;
   cursor: pointer;
+  margin: 1.2dvh;
 }
 .Menu {
   z-index: 7;
   position: absolute;
   font-size: .6em;
-  line-height: 4dvh;
+  line-height: 3dvh;
   left: 2dvh;
+  top: 0dvh;
+}
+.Menu a {
+  color: #ff0000;
+}
+.Menu a:hover {
+  color: #ffffff;
 }
 /*-------------------FLName---------------------*/
 h1 {
@@ -136,6 +145,7 @@ footer {
   height: auto;
   line-height: 40px;
   padding: 10px 10px 5px 10px;
+  border-radius: 10px;
   margin: 10px;
   overflow: hidden;
   position: relative;
@@ -246,10 +256,4 @@ select {
 @keyframes FastLane {
   0% { transform: translateX(-100vw); }
   100% { transform: translateX(0); }
-}
-
-@keyframes Pulsate {
-  0% { transform: scale(1);}
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
 }

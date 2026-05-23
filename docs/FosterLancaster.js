@@ -27,8 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Resize while audio plays
       if (FLNameSay) {
-        FLNameSay.style.width = "9dvh";
-        FLNameSay.style.height = "9dvh";
+        FLNameSay.style.transform = "scale(1.1)";
       }
 
       const p = FLNameAudio.play();
@@ -43,13 +42,14 @@ document.addEventListener("DOMContentLoaded", () => {
     FLNameAudio.addEventListener("ended", () => {
 
       if (FLNameSay) {
-        FLNameSay.style.width = "";
-        FLNameSay.style.height = "";
+        FLNameSay.style.transform = "scale(1)";
       }
 
     });
 
   }
+
+});
 
   // Videos
 
@@ -222,4 +222,3 @@ fetch("https://fostchat-rss.fostmp3s.workers.dev/")
   })
   .catch(err => console.error("Error loading RSS feed:", err));
   
-});

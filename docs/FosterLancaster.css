@@ -67,15 +67,14 @@ header {
   justify-content: center;
   align-items: center;
   width: auto;
-  line-height: 2.5dvh;
-  font-size: 3.5dvh;
+  line-height: 1.5dvh;
+  font-size: 3dvh;
   font-family: 'FL';
   position: absolute;
   top: 0dvh;
   right: 0dvh;
-  margin: 2dvh;
+  margin: 3dvh;
   z-index: 4;
-  transition-duration: .5s;
 }
 .FLNameWritten1 {
   font-family: "FL";
@@ -107,8 +106,8 @@ header {
 .Menu {
   z-index: 3;
   position: absolute;
-  font-size: .6em;
-  line-height: 3dvh;
+  font-size: 2dvh;
+  line-height: 2dvh;
   left: 0dvh;
   top: 0dvh;
 }
@@ -144,11 +143,11 @@ footer {
 }
 .Title {
   font-size: 40px;
-  height: auto;
+  height: 40px;
   line-height: 40px;
-  padding: 10px 10px 5px 10px;
+  padding: 10px 10px 0px 10px;
+  margin: 10px 10px 5px 10px;
   border-radius: 10px;
-  margin: 10px;
   overflow: hidden;
   position: relative;
   width: fit-content;

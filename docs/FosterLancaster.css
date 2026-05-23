@@ -150,7 +150,7 @@ footer {
   overflow: hidden;
   position: relative;
   width: fit-content;
-  display: block;
+  display: inline-block;
   background-image: linear-gradient(to top, #ffffff, #ffff00);
   background-color: transparent;
   color: #000000;

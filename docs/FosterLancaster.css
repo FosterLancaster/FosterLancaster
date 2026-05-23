@@ -71,7 +71,9 @@ header {
   font-size: 3.5dvh;
   font-family: 'FL';
   position: absolute;
-  right: 1.2dvh;
+  top: 0dvh;
+  right: 0dvh;
+  margin: 2dvh;
   z-index: 4;
   transition-duration: .5s;
 }

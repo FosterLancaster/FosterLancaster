@@ -106,7 +106,7 @@ header {
 .Menu {
   z-index: 3;
   position: absolute;
-  font-size: 2vh;
+  font-size: .6em;
   line-height: 3.5vh;
   left: 0dvh;
   top: 0dvh;

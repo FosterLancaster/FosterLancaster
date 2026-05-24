@@ -1,8 +1,8 @@
 /*------------fostChat--------------- */
 .FchatContent {
   color: #ffffff;
-  margin: 0px 5vw 0px 5vw;
-  width: calc(90vw - 18px); 
+  margin: 0px 10px 0px 10px;
+  width: calc(100vw - 20px); 
   height: 70vh; 
   bottom: 0px;
   right: 0px;  
@@ -37,8 +37,8 @@ li img {
   margin: 0 auto;
 }
 .FtvContent {
-  margin: 0px 5vw 0px 5vw;
-  width: calc(90vw - 18px); 
+  margin: 0px 10px 0px 10px;
+  width: calc(100vw - 20px); 
   height: 70vh; 
   bottom: 0px;
   right: 0px;  

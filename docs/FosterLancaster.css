@@ -76,8 +76,9 @@ header {
   font-family: 'FL';
   position: absolute;
   top: 0vh;
-  right: 0vh;
-  margin: 3vh;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 3vh 0vh 3vh 0vh;
   z-index: 4;
 }
 .FLNameWritten1 {
@@ -88,7 +89,7 @@ header {
   opacity: 1;
   transform: translateX(-100vw);
   animation: FastLane .4s linear 1s 1 forwards;
-  color: #ffffff; 
+  color: #000000; 
 }
 .FLNameWritten2 {
   font-family: "FL";
@@ -98,7 +99,7 @@ header {
   opacity: 1;
   transform: translateX(-100vw);
   animation: FastLane 2s linear 1 forwards;
-  color: #ffffff; 
+  color: #000000; 
 }
 .FLNameSay {
   height: 7vh;
@@ -115,13 +116,17 @@ header {
   left: 1.5vh;
   top: 0vh;
 }
-.MenuMiddle {
+.MenuRight {
   z-index: 3;
   position: absolute;
   line-height: 3.5vh;
-  left: calc(50% - 3.5vh);
+  right: 1.5vh;
   top: 0vh;
 }
+.MenuLeft:hover, .MenuRight:hover {
+  transition-duration: .3s;
+  transform: scale(1.1);
+} 
 
 /*-------------------FLName---------------------*/
 h1 {
@@ -222,22 +227,22 @@ select {
 .Socials:hover {
   text-decoration: underline;
 }
-.Booking {
-  margin: 10px 5vw 10px 5vw;
+.MoreInfo {
+  margin: 20px;
   padding: 10px 10px 5px 10px;
-  width: calc(90vw - 39px);
-  height: 50px; 
+  height: auto;
+  width: auto; 
+  box-sizing: border-box;
+  border-radius: 10px;
   position: relative;
-  display: flex;               
+  display: inline-block;               
   justify-content: center;     
   align-items: center;   
   background-color: rgba(0, 0, 0, .5);
-  border: solid .5px #ffffff;
-  background-image: url('https://dl.dropbox.com/scl/fi/acpce2btmvyu4cxk0b4wr/ConcertSimulation.gif?rlkey=rlqbc5fd3fclvzbdqwv10fjml');
-  background-size: cover;
-  background-position: center center;
+  border: solid 2px #ffff00;
+  color: #ffff00;
 }
-.Booking:hover {
+.MoreInfo:hover {
   text-decoration: underline;
 }
 

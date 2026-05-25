@@ -76,8 +76,7 @@ header {
   font-family: 'FL';
   position: absolute;
   top: 0vh;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 1.5vh;
   margin: 3vh 0vh 3vh 0vh;
   z-index: 4;
 }
@@ -88,8 +87,8 @@ header {
   display: block;
   opacity: 1;
   transform: translateX(-100vw);
-  animation: FastLane .4s linear 1s 1 forwards;
-  color: #000000; 
+  animation: FastLane .3s linear 1s 1 forwards;
+  color: #00fb2e;
 }
 .FLNameWritten2 {
   font-family: "FL";
@@ -98,8 +97,8 @@ header {
   display: block;
   opacity: 1;
   transform: translateX(-100vw);
-  animation: FastLane 2s linear 1 forwards;
-  color: #000000; 
+  animation: FastLane 1.8s linear 1 forwards;
+  color: #00fb2e;
 }
 .FLNameSay {
   height: 7vh;
@@ -116,11 +115,12 @@ header {
   left: 1.5vh;
   top: 0vh;
 }
-.MenuRight {
+.MenuMiddle {
   z-index: 3;
   position: absolute;
   line-height: 3.5vh;
-  right: 1.5vh;
+  left: 50%;
+  transform: translateX(-50%);
   top: 0vh;
 }
 .MenuLeft:hover, .MenuRight:hover {
@@ -153,7 +153,7 @@ footer {
   text-align: center;
 }
 .Title {
-  font-family: 'FL2';
+  font-family: 'FL';
   font-size: 40px;
   height: 40px;
   line-height: 40px;

@@ -50,6 +50,7 @@ header {
   bottom: 0px;
   width: 100vw;
   height: 10vh;
+  line-height: 0vh;
   display: inline-flex;
   justify-content: center;  /* horizontal */
   align-items: center;      /* vertical */
@@ -59,70 +60,19 @@ header {
   outline: none;
   z-index: 7;
   border-top: solid .5px #000000;
-  background-color: transparent;
+  background-color: rgb(0, 0, 0, .7);
   color: #000000;
-  background-image: linear-gradient(to top, rgb(255, 255, 255, .5), rgb(255, 255, 0, .5));
   backdrop-filter: blur(10px);
 }
 /*-------------------FLName---------------------*/
-.FLName {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: auto;
-  line-height: 1.5vh;
-  font-size: 3vh;
-  font-family: 'FL';
-  position: absolute;
-  top: 0vh;
-  right: 1.5vh;
-  margin: 3vh 0vh 3vh 0vh;
-  z-index: 4;
-}
-.FLNameWritten1 {
-  font-family: "FL";
-  width: auto;
-  height: 2vh;
-  display: block;
-  opacity: 1;
-  transform: translateX(-100vw);
-  animation: FastLane .3s linear 1s 1 forwards;
-  color: #00fb2e;
-}
-.FLNameWritten2 {
-  font-family: "FL";
-  width: auto;
-  height: 2vh;
-  display: block;
-  opacity: 1;
-  transform: translateX(-100vw);
-  animation: FastLane 1.8s linear 1 forwards;
-  color: #00fb2e;
-}
-.FLNameSay {
+.FLHeaderButton {
   height: 7vh;
   width: 7vh;
   transition-duration: .2s;
   cursor: pointer;
-  margin: 1.5vh 0px 1.5vh 0px;
+  margin: 3vh;
 }
-.MenuLeft {
-  z-index: 3;
-  position: absolute;
-  font-size: .6em;
-  line-height: 3.5vh;
-  left: 1.5vh;
-  top: 0vh;
-}
-.MenuMiddle {
-  z-index: 3;
-  position: absolute;
-  line-height: 3.5vh;
-  left: calc(50% - 3.5vh);
-  top: 0vh;
-}
-.MenuLeft:hover, .MenuMiddle:hover {
+.FLHeaderButton:hover {
   transition-duration: .3s;
   transform: scale(1.1);
 } 
@@ -264,9 +214,4 @@ select {
     /*-----------For ipad----------*/
     height: 90vh; 
   }
-}
-
-@keyframes FastLane {
-  0% { transform: translateX(-100vw); }
-  100% { transform: translateX(0); }
 }

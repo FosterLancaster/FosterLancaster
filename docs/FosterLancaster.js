@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const FLNameAudio = document.getElementById("FLNameAudio");
   const FLName = document.getElementById("FLName");
-  const FLNameSay = document.querySelector(".FLNameSay");
+  const FLNameSay = document.querySelector("FLNameButtonS");
 
   let flickerTimeout = null;
 
@@ -51,89 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-  // Videos
-
-  const video = document.getElementById("musicVideo");
-  const btn = document.getElementById("playPauseBtn");
-  const icon = document.getElementById("playPauseIcon");
-
-  let inactivityTimer;
-
-  if (video && btn && icon) {
-
-    /* Show button */
-    function showButton() {
-      btn.style.opacity = "1";
-    }
-
-    /* Hide button */
-    function hideButton() {
-
-      /* Stay visible while paused */
-      if (!video.paused) {
-        btn.style.opacity = "0";
-      }
-
-    }
-
-    /* Reset inactivity timer */
-    function resetInactivityTimer() {
-
-      clearTimeout(inactivityTimer);
-
-      showButton();
-
-      inactivityTimer = setTimeout(() => {
-        hideButton();
-      }, 2000);
-
-    }
-
-    /* Button click */
-    btn.addEventListener("click", () => {
-
-      if (video.paused) {
-        video.play();
-      } else {
-        video.pause();
-      }
-
-      resetInactivityTimer();
-
-    });
-
-    /* Sync icon whenever video plays */
-    video.addEventListener("play", () => {
-
-      icon.src = "images/FostTVPause.png";
-
-      resetInactivityTimer();
-
-    });
-
-    /* Sync icon whenever video pauses */
-    video.addEventListener("pause", () => {
-
-      icon.src = "images/FostTVPlay.png";
-
-      showButton(); // Stay opaque while paused
-
-    });
-
-    /* Reset icon when video ends */
-    video.addEventListener("ended", () => {
-
-      icon.src = "images/FostTVPlay.png";
-
-      showButton();
-
-    });
-
-    /* Detect activity */
-    video.addEventListener("mousemove", resetInactivityTimer);
-    video.addEventListener("touchstart", resetInactivityTimer);
-
-  }
 
 // Foster Chat From Tumblr
 

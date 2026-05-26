@@ -70,7 +70,7 @@ header {
   width: 7vh;
   transition-duration: .2s;
   cursor: pointer;
-  margin: 3vh;
+  margin: 3vh .75vh 3vh .75vh;
 }
 .FLHeaderButton:hover {
   transition-duration: .3s;

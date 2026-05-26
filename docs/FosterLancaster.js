@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const FLNameAudio = document.getElementById("FLNameAudio");
   const FLName = document.getElementById("FLName");
-  const FLNameSay = document.querySelector("FLNameButtonS");
+  const FLNameSay = document.querySelector(".FLHeaderButton");
 
   let flickerTimeout = null;
 
@@ -25,24 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
         FLNameAudio.load();
       } catch (e) {}
 
-      // Resize while audio plays
-      if (FLNameSay) {
-        FLNameSay.style.transform = "scale(1.1)";
-      }
-
       const p = FLNameAudio.play();
 
       if (p && typeof p.catch === "function") {
         p.catch(() => {});
-      }
-
-    });
-
-    // Return to normal size when audio ends
-    FLNameAudio.addEventListener("ended", () => {
-
-      if (FLNameSay) {
-        FLNameSay.style.transform = "scale(1)";
       }
 
     });

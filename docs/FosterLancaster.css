@@ -118,7 +118,8 @@ footer {
   height: 60px;
   line-height: 60px;
   margin: 10px 10px 5px 10px;
-  border-radius: 0px;
+  padding: 0px 10px 0px 10px;
+  border-radius: 10px;
   overflow: hidden;
   position: relative;
   width: fit-content;

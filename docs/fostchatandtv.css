@@ -35,22 +35,6 @@ li img {
   display: block;
   margin: 0 auto;
 }
-.FtvContent {
-  margin: 0px 10px 0px 10px;
-  width: calc(100vw - 20px); 
-  bottom: 0px;
-  right: 0px;  
-  background: rgba(0, 0, 0, .5);
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  z-index: 6;
-  font-family: 'futura';
-  font-size: 18px;
-  border: solid .5px #ffffff;
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
 .FchatPosts {
   padding: 0px;
   margin: 0px; 
@@ -109,38 +93,21 @@ li img {
   overflow-x: hidden;
 }
 /*------------fostTV--------------- */
-.PlayPauseBtn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 10px;
-  width: 100px;
-  height: 100px;
-  border: none;
-  cursor: pointer;
+.FtvContent {
+  margin: 0px 10px 0px 10px;
+  width: calc(100vw - 21px); 
+  bottom: 0px;
+  right: 0px;  
+  background: rgba(0, 0, 0, .5);
   display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s ease;
-  padding: 0;
-  background-color: transparent;
-  opacity: .9;
-}
-/* Hover */
-.PlayPauseBtn:hover {
-  opacity: .5;
-}
-.PlayPauseBtn:active {
-  opacity: 0;
-}
-/* Button Images */
-.PlayPauseBtn img {
-  max-width: 100px;
-  max-height: 100px;
-  object-fit: contain;
-  pointer-events: none;
-  filter: drop-shadow(0 2px 2px rgb(0, 0, 0, .5));
+  flex-direction: column;
+  position: relative;
+  z-index: 6;
+  font-family: 'futura';
+  font-size: 18px;
+  border: solid .5px #ffffff;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 .MusicVideo {
   width: 100%;

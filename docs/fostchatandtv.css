@@ -110,7 +110,7 @@ li img {
   border-bottom-right-radius: 20px;
 }
 .MusicVideo {
-  width: 100%;
+  width: calc(100% - 1px);
   height: 100%;
   display: block;
   border: 0;

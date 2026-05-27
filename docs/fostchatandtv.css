@@ -108,6 +108,7 @@ li img {
   border: solid .5px #ffffff;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  overflow: hidden;
 }
 .MusicVideo {
   width: calc(100% - 1px);

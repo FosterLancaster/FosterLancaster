@@ -11,22 +11,37 @@
 <link rel="stylesheet" href="fostchatandtv.css">
 </head>
 <style>
-  body {
-    height: 100%;
-    max-height: 100dvh;
-    overflow: hidden;
-    }
-    .fostmp3s, .FchatContent, .FtvContent {
-      min-height: auto;
-      max-height: auto;
-      height: calc(90dvh - 100px); 
-      overflow-y: scroll;
-    }
-    .fostmp3s {
-      margin-top: -10px;
-      height: calc(90dvh - 80px);  
-      width: 100vw;
-    }
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  min-height: 100svh;
+  overflow: hidden;
+}
+
+/* Shared containers */
+.fostmp3s,
+.FchatContent,
+.FtvContent {
+  height: calc(100svh - 100px);
+  overflow-y: auto;
+
+  /* smoother rendering */
+  will-change: transform;
+  contain: layout size;
+}
+
+/* Specific adjustments */
+.fostmp3s {
+  margin-top: -10px;
+  height: calc(100svh - 80px);
+
+  /* avoids horizontal resize jumps */
+  width: 100%;
+}
 </style>
 <body>
 <!----Header---->

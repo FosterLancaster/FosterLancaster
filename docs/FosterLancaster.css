@@ -75,8 +75,8 @@ header {
   border: solid 1px transparent;
   transition-duration: .2s;
   cursor: pointer;
-  background-size: auto 10vh, cover;
-  background-position: center bottom, center center;
+  background-size: auto 7vh, cover;
+  background-position: center center, center center;
   background-repeat: no-repeat, no-repeat;
   background-color: rgb(0, 0, 0, .2);
   border-radius: 5px;
@@ -129,9 +129,9 @@ footer {
   color: #000000;
 }
 .icon {
-  height: 40px;
-  width: 40px;
-  margin: 10px;
+  height: 55px;
+  width: 55px;
+  margin: 2.5px;
 }
 .iconlink {
   height: 30px;

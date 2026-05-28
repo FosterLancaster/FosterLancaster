@@ -77,7 +77,7 @@ header {
   transition-duration: .2s;
   cursor: pointer;
   background-size: auto 7vh, cover;
-  background-position: center bottom, center center;
+  background-position: center center, center center;
   background-repeat: no-repeat, no-repeat;
   background-color: rgb(0, 0, 0, .2);
   border-radius: 5px;

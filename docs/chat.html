@@ -11,22 +11,39 @@
 <link rel="stylesheet" href="fostchatandtv.css">
 </head>
 <style>
+
+  html,
   body {
     height: 100%;
-    max-height: 100%;
+    margin: 0;
     overflow: hidden;
-    }
-    .fostmp3s, .FchatContent, .FtvContent {
-      min-height: auto;
-      max-height: 81vh;
-      height: 81vh; 
-      overflow-y: scroll;
-    }
-    .fostmp3s {
-      margin-top: -10px;
-      width: 100vw;
-    }
-</style>
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Shared panels */
+  .fostmp3s,
+  .FchatContent,
+  .FtvContent {
+    height: calc(100dvh - 150px);
+    overflow-y: auto;
+  
+    /* Helps Chrome optimize repainting */
+    contain: layout size style;
+    will-change: transform;
+    transform: translateZ(0);
+  }
+  
+  /* Specific */
+  .fostmp3s {
+    margin-top: -10px;
+    width: 100%;
+  }
+  
+  </style>
 <body>
 <!----Header---->
 <header>

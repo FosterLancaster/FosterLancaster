@@ -1,37 +1,30 @@
 html {
-  -webkit-text-size-adjust: 100%;
-  scrollbar-width: none;
-  height: 100%;
+  -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
 }
-
-html::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  display: none;
+/* Hide scrollbar for WebKit-based browsers (Chrome, Safari, Edge) */
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none; /* Completely hides the scrollbar */
 }
-
-* {
-  box-sizing: border-box;
+/* Hide scrollbar for Firefox */
+html, body {
+  scrollbar-width: none; /* Firefox-specific property to hide scrollbar */
 }
-
-html,
-body {
-  margin: 0;
+/* ----Main---- */
+html {
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  margin: 0;
 }
-
 body {
-  color: #000;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  min-height: 100dvh;
+  color: #000000;
   font-family: 'FL';
   font-size: 22px;
+  z-index: 0;
   background-color: #995931;
-
-  /* Stable Chrome rendering */
-  min-height: 100dvh;
-
-  /* Prevent relayout flashes */
-  contain: layout style;
 }
 @font-face {
   font-family: 'FL';
@@ -82,8 +75,8 @@ header {
   border: solid 1px transparent;
   transition-duration: .2s;
   cursor: pointer;
-  background-size: auto 7vh, cover;
-  background-position: center center, center center;
+  background-size: auto 10vh, cover;
+  background-position: center bottom, center center;
   background-repeat: no-repeat, no-repeat;
   background-color: rgb(0, 0, 0, .2);
   border-radius: 5px;
@@ -99,7 +92,7 @@ font-size: 25px;
 line-height: auto;
 }
 section {
-  width: 100%; 
+  width: 100%;
 }
 article {
 /*-----------No Relative Within Relative------*/
@@ -136,9 +129,9 @@ footer {
   color: #000000;
 }
 .icon {
-  height: 55px;
-  width: 55px;
-  margin: 2.5px;
+  height: 40px;
+  width: 40px;
+  margin: 10px;
 }
 .iconlink {
   height: 30px;

@@ -1,30 +1,37 @@
 html {
-  -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
-}
-/* Hide scrollbar for WebKit-based browsers (Chrome, Safari, Edge) */
-html::-webkit-scrollbar, body::-webkit-scrollbar {
-  display: none; /* Completely hides the scrollbar */
-}
-/* Hide scrollbar for Firefox */
-html, body {
-  scrollbar-width: none; /* Firefox-specific property to hide scrollbar */
-}
-/* ----Main---- */
-html {
-  width: 100%;
+  -webkit-text-size-adjust: 100%;
+  scrollbar-width: none;
   height: 100%;
-  margin: 0;
 }
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
 body {
+  margin: 0;
   width: 100%;
   height: 100%;
-  margin: 0;
-  min-height: 100dvh;
-  color: #000000;
+  overflow: hidden;
+}
+
+body {
+  color: #000;
   font-family: 'FL';
   font-size: 22px;
-  z-index: 0;
   background-color: #995931;
+
+  /* Stable Chrome rendering */
+  min-height: 100dvh;
+
+  /* Prevent relayout flashes */
+  contain: layout style;
 }
 @font-face {
   font-family: 'FL';

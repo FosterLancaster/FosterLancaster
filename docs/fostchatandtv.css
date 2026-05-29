@@ -94,6 +94,7 @@ li img {
 }
 /*------------fostTV--------------- */
 .FtvContent {
+  height: auto;
   margin: 0px 10px 0px 10px;
   width: calc(100vw - 21px); 
   bottom: 0px;
@@ -110,9 +111,26 @@ li img {
   border-bottom-right-radius: 20px;
   overflow: hidden;
 }
+.MusicVideoContainer {
+  height: auto;
+  margin: 10px;
+  width: calc(100% - 20px);
+  border: solid .5px #ffffff;
+  display: block;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-image: linear-gradient(
+    to top,
+    rgb(255,255,255,.3),
+    transparent,
+    rgb(255,255,255,.3)
+  );
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
 .MusicVideo {
   width: calc(100% - 1px);
-  height: 100%;
+  height: 50vw;
   display: block;
   border: 0;
   border-top-left-radius: 20px;

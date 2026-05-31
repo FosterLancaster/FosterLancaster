@@ -76,7 +76,7 @@ header {
   border: solid 1px transparent;
   transition-duration: .2s;
   cursor: pointer;
-  background-size: auto 7vh, cover;
+  background-size: auto 10vh, cover;
   background-position: center center, center center;
   background-repeat: no-repeat, no-repeat;
   background-color: rgb(0, 0, 0, .2);
@@ -114,13 +114,13 @@ footer {
 .Title {
   font-family: 'FL';
   width: auto;
-  min-width: 30vw; 
+  min-width: auto; 
   font-size: 30px;
   height: 60px;
   line-height: 60px;
   margin: 10px 10px 5px 10px;
-  padding: 0px 10px 0px 10px;
-  border-radius: 10px;
+  border-radius: 90px;
+  padding: 10px;
   overflow: hidden;
   position: relative;
   width: fit-content;

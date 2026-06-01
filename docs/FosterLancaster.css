@@ -113,7 +113,7 @@ footer {
 }
 .Title {
   font-family: 'FL';
-  width: 90vw; 
+  width: calc(100% - 42px); 
   font-size: 30px;
   height: 60px;
   line-height: 60px;

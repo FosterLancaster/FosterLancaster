@@ -113,21 +113,20 @@ footer {
 }
 .Title {
   font-family: 'FL';
-  width: auto;
-  min-width: auto; 
+  width: 90vw; 
   font-size: 30px;
   height: 60px;
   line-height: 60px;
-  margin: 10px 10px 5px 10px;
+  margin: 20px 10px 15px 10px;
   border-radius: 90px;
   padding: 10px;
   overflow: hidden;
   position: relative;
-  width: fit-content;
   display: inline-block;
-  background-image: linear-gradient(to top, #ffffff, #ffff00);
-  background-color: transparent;
   color: #000000;
+  background-color: rgb(255, 255, 255, .4);
+  backdrop-filter: blur(5px);
+  border: solid 1px #ffffff;
 }
 .icon {
   height: 40px;
@@ -137,8 +136,11 @@ footer {
 .iconlink {
   height: 20px;
   width: 20px;
-  padding: 5px;
+  padding: 10px;
   background-color: #ffffff;
+  background-image: linear-gradient(to top, #ffffff, #ffff00);
+  background-size: cover;
+  background-position: center center;
   border-radius: 5px;
   margin: 3vw;
   border: solid 1px #000000;
@@ -206,13 +208,13 @@ select {
 
 @media screen and (orientation: portrait) {
   .FirstScreen {
-    background-size: 90% auto;
+    background-size: 100% auto;
   }
 }
 
 @media screen and (orientation: landscape) {
   .FirstScreen {
-    background-size: auto 65%;
+    background-size: auto 80%;
   }
   .FirstVideoScreen {
     position: absolute;      

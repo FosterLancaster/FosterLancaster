@@ -113,7 +113,7 @@ footer {
 }
 .Title {
   font-family: 'FL';
-  width: calc(100% - 42px); 
+  width: calc(50% - 42px); 
   font-size: 30px;
   height: 60px;
   line-height: 60px;
@@ -124,9 +124,8 @@ footer {
   position: relative;
   display: inline-block;
   color: #000000;
-  background-color: rgb(255, 255, 255, .4);
+  background-color: rgb(255, 255, 255, .05);
   backdrop-filter: blur(5px);
-  border: solid 1px #ffffff;
 }
 .YoutubeContainer {
   height: 24px;

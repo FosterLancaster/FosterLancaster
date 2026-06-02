@@ -129,11 +129,8 @@ footer {
   border: solid 1px #ffffff;
 }
 .YoutubeContainer {
-  min-height: 24px;
   height: 24px;
-  max-height: 24px;
   margin: 18px;
-  overflow-y: hidden;
   line-height: 60px;
   background-color: transparent;
 }

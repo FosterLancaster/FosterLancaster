@@ -134,7 +134,7 @@ footer {
   margin: 18px;
   overflow-y: hidden;
   line-height: 60px;
-  background-color: #000000;
+  background-color: transparent;
 }
 .icon {
   height: 40px;

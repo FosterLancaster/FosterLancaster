@@ -130,7 +130,7 @@ footer {
 }
 .YoutubeContainer {
   height: 24px;
-  margin: 18px;
+  max-height: 24px;
   background-color: transparent;
 }
 .icon {

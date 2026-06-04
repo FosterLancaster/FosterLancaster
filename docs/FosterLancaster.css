@@ -50,8 +50,8 @@ header {
   left: 0;
   right: 0;
   width: 100%;
-  height: 10vh;
-  line-height: 10vh;
+  height: 5vh;
+  line-height: 5vh;
   display: inline-flex;
   justify-content: center;  /* horizontal */
   align-items: center;      /* vertical */
@@ -68,7 +68,7 @@ header {
   background-image: url('images/BuyPassword.png'), linear-gradient(to top, rgb(0, 0, 0, .2), rgb(255, 255, 255, .5));
 }
 .FLNameButton {
-  font-size: 20vw;
+  font-size: 15vw;
   font-family: 'FL2';
   width: 100%;
   position: relative;
@@ -84,12 +84,12 @@ header {
   filter: drop-shadow(0px 5px 5px #000000);
 }
 .FLBuyButton {
-  height: calc(10vh - 2px);
+  height: calc(5vh - 2px);
   width: calc(50vw - 2px);
   border: solid 1px transparent;
   transition-duration: .2s;
   cursor: pointer;
-  background-size: auto 10vh, cover;
+  background-size: auto 5vh, cover;
   background-position: center center, center center;
   background-repeat: no-repeat, no-repeat;
   background-color: rgba(19, 200, 113, 0.6);
@@ -117,7 +117,7 @@ footer {
   height: auto;
   font-family: 'FL';
   position: relative;
-  padding: 2em 1em calc(2em + 10dvh) 1em;
+  padding: 2em 1em calc(2em + 5dvh) 1em;
   font-size: 18px;
   line-height: 2em;
   border-top: solid .5px transparent;
@@ -128,11 +128,11 @@ footer {
   font-family: 'FL';
   width: calc(50% - 42px); 
   font-size: 30px;
-  height: 60px;
-  line-height: 60px;
-  margin: 20px 10px 15px 10px;
+  height: 30px;
+  line-height: 30px;
+  margin: 0px 10px 0px 10px;
+  padding: 5px;
   border-radius: 90px;
-  padding: 10px;
   overflow: hidden;
   position: relative;
   display: inline-block;
@@ -148,9 +148,8 @@ footer {
   background-color: transparent;
 }
 .icon {
-  height: 40px;
-  width: 40px;
-  margin: 10px;
+  height: 30px;
+  width: auto;
 }
 .iconlink {
   height: 20px;

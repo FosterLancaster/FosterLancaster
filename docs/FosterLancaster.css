@@ -70,9 +70,9 @@ header {
 .FLNameButton {
   font-size: 15vw;
   font-family: 'FL2';
-  width: 100%;
+  width: fit-content;
+  display: inline-block;
   position: relative;
-  left: 0px;
   text-align: center;
   color: transparent;
   background-clip: text;

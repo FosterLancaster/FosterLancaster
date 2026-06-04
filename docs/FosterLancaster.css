@@ -76,7 +76,7 @@ header {
   text-align: center;
   color: transparent;
   background-clip: text;
-  background-image: linear-gradient(to right, #383838, #fafafa, #383838);
+  background-image: linear-gradient(to right, #fafafa, #383838, #fafafa);
   background-repeat: repeat;
   background-size: 100vw 200px;
   box-sizing: 200vw 200px;
@@ -152,21 +152,39 @@ footer {
   height: 30px;
   width: auto;
 }
-.iconlink {
+.iconlinkpic {
   height: 20px;
   width: 20px;
-  padding: 10px;
+}
+.iconlink,
+.MoreInfo {
+  margin: 1vw;
+  height: 20px;
+  padding: 15px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+
   background-color: #ffffff;
   background-image: linear-gradient(to top, #ffffff, #ffff00);
   background-size: cover;
   background-position: center center;
+
   border-radius: 5px;
-  margin: 3vw;
   border: solid 1px #000000;
   transition-duration: .5s;
+  position: relative;
+
+  color: #000000;
+  box-sizing: content-box;
 }
-.iconlink:hover {
-  transform: scale(1.2);
+.MoreInfo:hover {
+  text-decoration: underline;
+}
+.iconlink:hover, .MoreInfo:hover {
+  transform: scale(1.1);
 }
 select { 
   outline: none; 
@@ -204,24 +222,6 @@ select {
   font-family: Futura;
 }
 .Socials:hover {
-  text-decoration: underline;
-}
-.MoreInfo {
-  margin: 20px;
-  padding: 10px 10px 5px 10px;
-  height: auto;
-  width: auto; 
-  box-sizing: border-box;
-  border-radius: 10px;
-  position: relative;
-  display: inline-block;               
-  justify-content: center;     
-  align-items: center;   
-  background-color: rgba(0, 0, 0, .5);
-  border: solid 2px #ffff00;
-  color: #ffff00;
-}
-.MoreInfo:hover {
   text-decoration: underline;
 }
 

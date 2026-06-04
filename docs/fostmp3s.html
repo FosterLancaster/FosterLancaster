@@ -271,15 +271,15 @@ table {
   position: absolute;
   opacity: 1;
   z-index: 2;
-  max-height: 100%;
+  height: auto;
   width: 70px;
-  height: 40%;
-  max-height: 120px;
+  max-height: 100%;
   overflow: hidden;
   color: #000000;
   display: block;
   left: calc(50% - 35px);
   top: 50%;
+  animation: Sevenblink 2s ease infinite;
 }
 .OffMusicHeader {
   height: calc(100vh - 202px);
@@ -775,6 +775,12 @@ li img {
 @keyframes rise {
   0% { background-position: center 0px; }
   100% { background-position: center -700px; }
+}
+
+@keyframes Sevenblink {
+  0% { opacity: 1;}
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }
 </style>
 </head>

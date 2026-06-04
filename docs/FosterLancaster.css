@@ -23,7 +23,7 @@ body {
   font-family: 'FL';
   font-size: 22px;
   z-index: 0;
-  background-color: #995931;
+  background-color: #000000;
 }
 @font-face {
   font-family: 'FL';
@@ -64,13 +64,26 @@ header {
   color: #000000;
 }
 /*-------------------FLName---------------------*/
-.FLHeaderButton1 {
+.FLBuyButton {
   background-image: url('images/BuyPassword.png'), linear-gradient(to top, rgb(0, 0, 0, .2), rgb(255, 255, 255, .5));
 }
-.FLHeaderButton2 {
-  background-image: url('images/SayName.png'), linear-gradient(to top, rgb(0, 0, 0, .2), rgb(255, 255, 255, .5));
+.FLNameButton {
+  font-size: 20vw;
+  font-family: 'FL2';
+  width: 100%;
+  position: relative;
+  left: 0px;
+  text-align: center;
+  color: transparent;
+  background-clip: text;
+  background-image: linear-gradient(to right, #5e5e5e, #e3e3e3, #5e5e5e);
+  background-repeat: repeat;
+  box-sizing: 200vw 200px;
+  animation: shine linear 2s infinite;
+  cursor: pointer;
+  filter: drop-shadow(0px 5px 5px #000000);
 }
-.FLHeaderButton1, .FLHeaderButton2 {
+.FLBuyButton {
   height: calc(10vh - 2px);
   width: calc(50vw - 2px);
   border: solid 1px transparent;
@@ -79,12 +92,12 @@ header {
   background-size: auto 10vh, cover;
   background-position: center center, center center;
   background-repeat: no-repeat, no-repeat;
-  background-color: rgb(255, 255, 0, .6);
+  background-color: rgba(19, 200, 113, 0.6);
   border-radius: 5px;
   backdrop-filter: blur(5px);
 }
-.FLHeaderButton1:hover, .FLHeaderButton2:hover {
-  filter: brightness(.5);
+.FLBuyButton:hover, .FLNameButton:hover {
+  opacity: .5;
 } 
 
 /*-------------------FLName---------------------*/
@@ -125,7 +138,7 @@ footer {
   display: inline-block;
   color: #000000;
   background-color: transparent;
-  background-image: radial-gradient(rgba(255, 255, 255, .5), transparent);
+  background-image: radial-gradient(rgba(255, 255, 255, .7), transparent);
   backdrop-filter: blur(5px);
 }
 .YoutubeContainer {
@@ -230,4 +243,9 @@ select {
     /*-----------For ipad----------*/
     height: 90vh; 
   }
+}
+
+@keyframes shine {
+  0% { background-position: 0px center;}
+  100% { background-position: 100vw center; }
 }

@@ -38,6 +38,8 @@ audio {
   position: relative;
  }
  #PayOn {
+  width: 70%;
+  margin: 0% 15% 0% 15%;
   display: block;
   position: relative;
  }
@@ -256,11 +258,9 @@ table {
   /*----Music----*/
   height: calc(100vh - 219px);
   min-height: calc(100vh - 219px);
-  padding: 5px;
-  margin: 4px;
   border-radius: 0px;
   border: solid .5px #ffffff;
-  width: calc(100% - 20px);
+  width: 100%;
   overflow-y: scroll;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -271,16 +271,15 @@ table {
   position: absolute;
   opacity: 1;
   z-index: 2;
-  top: 0px;
-  right: 0px;
   max-height: 100%;
-  width: auto;
+  width: 70px;
   height: 40%;
   max-height: 120px;
-  margin: 10px;
   overflow: hidden;
   color: #000000;
   display: block;
+  left: calc(50% - 35px);
+  top: 50%;
 }
 .OffMusicHeader {
   height: calc(100vh - 202px);
@@ -958,6 +957,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const nextBtn       = document.getElementById('nextBtn');
   const prevBtn       = document.getElementById('prevBtn');
   const Password      = document.getElementById('passwordInput');
+  // Pick ONE play image when the page loads
+const playImages = [
+  'fmp3simages/PLAY1.png',
+  'fmp3simages/PLAY2.png',
+  'fmp3simages/PLAY3.png',
+  'fmp3simages/PLAY4.png'
+];
+const selectedPlayImage =
+  playImages[Math.floor(Math.random() * playImages.length)];
+
+// Set initial image
+if (playLogo) {
+  playLogo.src = selectedPlayImage;
+}
+
+
   document.getElementById("embedBtn");
   document.getElementById("embedOverlay");
   document.getElementById("closeEmbed");
@@ -1185,13 +1200,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (p && typeof p.then === "function") {
       p.catch(() => {
         // 🔹 Revert UI if play fails
-        if (playLogo) playLogo.src = 'fmp3simages/PLAY.png';
+        if (playLogo) playLogo.src = selectedPlayImage;
         defaultImage && defaultImage.classList.remove('playing');
       });
     }
   } else {
     // 🔹 Update UI FIRST
-    if (playLogo) playLogo.src = 'fmp3simages/PLAY.png';
+    if (playLogo) playLogo.src = selectedPlayImage;
     defaultImage && defaultImage.classList.remove('playing');
 
     audio.pause();

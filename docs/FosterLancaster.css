@@ -76,8 +76,9 @@ header {
   text-align: center;
   color: transparent;
   background-clip: text;
-  background-image: linear-gradient(to right, #5e5e5e, #e3e3e3, #5e5e5e);
+  background-image: linear-gradient(to right, #383838, #fafafa, #383838);
   background-repeat: repeat;
+  background-size: 100vw 200px;
   box-sizing: 200vw 200px;
   animation: shine linear 2s infinite;
   cursor: pointer;

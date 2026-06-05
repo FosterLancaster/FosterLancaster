@@ -17,7 +17,10 @@ a {
 button {
   outline: none;
 }
+html,
 body {
+  margin: 0;
+  padding: 0;
   font-family: 'futura';
 }
 /* Hide default audio controls */
@@ -38,8 +41,7 @@ audio {
   position: relative;
  }
  #PayOn {
-  width: 70%;
-  margin: 0% 15% 0% 15%;
+  width: calc(100% - 1px);
   display: block;
   position: relative;
  }
@@ -62,8 +64,8 @@ table {
 }
  .LancasterFrame {
   font-size: 18px;
-  width: calc(100% - 1px);
-  height: calc(100% - 1px);
+  width: calc(100vw - 1px);
+  height: calc(100vh - 1px);
   overflow: hidden;
   position: relative;
   opacity: 1;
@@ -240,7 +242,7 @@ table {
   z-index: 3;
 }
 
-/*------100vh Controls Sum Landscape = (218px - 202px (16px))-------*/
+/*------100vh Controls Sum Landscape = (195px)-------*/
 /*----Bars----*/
 
 #PayOn:hover .songSelection{
@@ -256,18 +258,30 @@ table {
   position: relative;
   opacity: 0;
   z-index: 1;
-  display: block;
-  /*----Music----*/
-  height: calc(100vh - 219px);
-  min-height: calc(100vh - 219px);
-  border-radius: 0px;
-  border: solid .5px #ffffff;
+
+  height: calc(100vh - 185px);
   width: 100%;
-  overflow-y: scroll;
+
+  border: solid .5px #ffffff;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
+
   background-color: rgba(0, 0, 0, .1);
-  transition: opacity .4s ease;
+  overflow: hidden; /* contains the inner scroll area */
+}
+.songSelectionInner {
+  position: absolute;
+  background-color: #ff0000;
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  bottom: 10%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+
 }
 .songSelectionOption {
   position: absolute;
@@ -284,8 +298,8 @@ table {
   animation: Sevenblink 2s ease infinite;
 }
 .OffMusicHeader {
-  height: calc(100vh - 202px);
-  min-height: calc(100vh - 202px);
+  height: calc(100vh - 185px);
+  min-height: calc(100vh - 185px);
   width: 100%;
   display: flex; 
   align-items: center; 
@@ -301,11 +315,11 @@ table {
   color: #ffffff;
   -webkit-text-stroke: .05em #000000;
   position: relative;
-  width: calc(100% - 10px);
+  width: calc(80% - 10px);
   overflow: hidden;
   height: 38px;
   line-height: 18px;
-  margin: 1px 5px 1px 5px;
+  margin: 1px 10% 1px 10%;
   border: solid .5px #ffffff;
   background-color: transparent;
   background-image: linear-gradient(to top, rgba(0, 0, 0, .5), transparent, rgba(255, 255, 255, .5));
@@ -704,18 +718,18 @@ li img {
 }
 /*----Music----*/
 .songSelection {
-  height: calc(100vh - 229px);
-  min-height: calc(100vh - 229px);
+  height: calc(100vh - 195px);
+  min-height: calc(100vh - 195px);
   overflow-y: scroll;
 }
 .OffMusicHeader {
-  height: calc(100vh - 213px);
-  min-height: calc(100vh - 213px);
+  height: calc(100vh - 195px);
+  min-height: calc(100vh - 195px);
 }
 }
 
 /* ------------ Miniature Adjustments ----------*/
-@media screen and (max-width: 325px) {
+@media screen and (max-height: 300px) {
 .song-button:hover {
   height: 42px;
   padding-left: 48px;
@@ -794,8 +808,9 @@ li img {
   <!----PayOn---->
         <div id="PayOn">
           <img class="songSelectionOption" src='fmp3simages/SongSelect.png'>
+
           <div class="songSelection" id="songSelection"  alt="Song Selector" title="Song Selector">
-          
+
           <div align='center'>
             <audio id="introAudio" preload="auto" src="fmp3smusic/Sale.mp3"></audio>
             <button preload="auto" class ="song-button GoodForYou" data-song="fmp3smusic/GoodForYou.mp3"><img src="fmp3simages/GoodForYou.jpg" class="AlbumThumbnail">"Good For You"</button>
@@ -810,7 +825,7 @@ li img {
             <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL8.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Reality"</button>
           </div>
         </div>
-        </div>
+      </div>
 
             <!----PayOff---->
         <div id="PayOff">

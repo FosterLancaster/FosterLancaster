@@ -242,14 +242,20 @@ table {
   z-index: 3;
 }
 
-/*------100vh Controls Sum Landscape = (195px)-------*/
+/*------100vh Controls Sum Landscape = (285px)-------*/
 /*----Bars----*/
-
-#PayOn:hover .songSelection{
+.Seven {
+  width: 70%;
+  margin: 0px 15% 0px 15%;
+  padding: 45px 0% 45px 0%;
+  height: calc(100vh - 275px);
+  overflow-y: scroll;
+}
+.Seven:hover .songSelection {
   opacity: 1;
   pointer-events: all;
 }
-#PayOn:hover .songSelectionOption {
+.Seven:hover .songSelectionOption {
   opacity: 0;
   animation: none;
   display: none;
@@ -258,8 +264,6 @@ table {
   position: relative;
   opacity: 0;
   z-index: 1;
-  height: calc(100vh - 185px);
-  width: 100%;
   border: solid .5px #ffffff;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -666,8 +670,11 @@ li img {
   margin: 0 auto;
 }
 
-/*------100vh Controls Sum Portrait = (228px - 212 (added 10px for mobile))-------*/
+/*------100vh Controls Sum Portrait = (270px)-------*/
 @media screen and (max-width: 500px) {
+.Seven {
+  height: calc(100vh - 285px);
+}
 .LancasterFrame {
   max-width: calc(100% - 1px);
   width: calc(100% - 1px);
@@ -701,13 +708,13 @@ li img {
 }
 /*----Music----*/
 .songSelection {
-  height: calc(100vh - 195px);
-  min-height: calc(100vh - 195px);
+  height: calc(100vh - 295px);
+  min-height: calc(100vh - 295px);
   overflow-y: scroll;
 }
 .OffMusicHeader {
-  height: calc(100vh - 195px);
-  min-height: calc(100vh - 195px);
+  height: calc(100vh - 295px);
+  min-height: calc(100vh - 295px);
 }
 }
 
@@ -789,11 +796,10 @@ li img {
 <div class="LancasterMusicPlayer">
   
   <!----PayOn---->
-        <div id="PayOn">
-          <img class="songSelectionOption" src='fmp3simages/SongSelect.png'>
-
+        <div id="PayOn" >
+          <div class="Seven">
+            <img class="songSelectionOption" src='fmp3simages/SongSelect.png'>
           <div class="songSelection" id="songSelection"  alt="Song Selector" title="Song Selector">
-
           <div align='center'>
             <audio id="introAudio" preload="auto" src="fmp3smusic/Sale.mp3"></audio>
             <button preload="auto" class ="song-button GoodForYou" data-song="fmp3smusic/GoodForYou.mp3"><img src="fmp3simages/GoodForYou.jpg" class="AlbumThumbnail">"Good For You"</button>
@@ -808,6 +814,8 @@ li img {
             <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL8.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Reality"</button>
           </div>
         </div>
+      </div>
+
       </div>
 
             <!----PayOff---->

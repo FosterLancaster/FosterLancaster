@@ -64,7 +64,7 @@ header {
 /*-------------------FLName---------------------*/
 .FLNameButton {
   margin-top: 50px;
-  font-size: 15vw;
+  font-size: 12vw;
   font-family: 'FL2';
   width: fit-content;
   display: inline-block;
@@ -86,7 +86,7 @@ header {
   font-family: 'futura';
   font-size: 15px;
   width: auto;
-  padding: 5px;
+  padding: 10px;
   transition-duration: .2s;
   cursor: pointer;
   background-size: cover;

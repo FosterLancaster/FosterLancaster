@@ -227,7 +227,6 @@ table {
   outline: none;
   box-shadow: none;
 }
-
 .ControlBar {
   max-height: 40px;
   line-height: 40px;
@@ -241,6 +240,8 @@ table {
   border-top: none;
   position: relative;
   z-index: 3;
+  max-width: 70%;
+  margin: 0px 15% 0px 15%;
 }
 
 /*------100vh Controls Sum Landscape = (285px)-------*/
@@ -250,6 +251,10 @@ table {
   margin: 0px 15% 0px 15%;
   height: calc(100vh - 185px);
   overflow-y: scroll;
+  border: solid 1px #ffffff;
+  border-radius: 30px;
+  position: relative;
+  background-color: rgba(0, 0, 0, .1);
 }
 .Seven:hover .songSelection {
   opacity: 1;
@@ -266,7 +271,6 @@ table {
   z-index: 1;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  background-color: rgba(0, 0, 0, .2);
   overflow-y: scroll; /* contains the inner scroll area */
 }
 .songSelectionOption {
@@ -279,8 +283,9 @@ table {
   overflow: hidden;
   color: #000000;
   display: block;
-  left: calc(50% - 35px);
-  top: 30%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   animation: Sevenblink 2s ease infinite;
 }
 .OffMusicHeader {
@@ -477,7 +482,7 @@ table {
   height: 10px;
   max-width: 100%;
   background-color: rgba(0, 0, 0, .5);
-  border: solid .5px #ffffff;
+  border: solid 1px #ffffff;
   cursor: pointer;
   overflow: hidden;
   margin: 0px 5px 0px 5px;
@@ -797,7 +802,7 @@ li img {
   <!----PayOn---->
         <div id="PayOn" >
           <div class="Seven">
-            <img class="songSelectionOption" src='fmp3simages/SongSelect.png'>
+          <img class="songSelectionOption" src='fmp3simages/SongSelect.png'>
           <div class="songSelection" id="songSelection"  alt="Song Selector" title="Song Selector">
           <div align='center'>
             <audio id="introAudio" preload="auto" src="fmp3smusic/Sale.mp3"></audio>

@@ -46,14 +46,12 @@ a:hover {
 }
 header {              
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 5vh;
-  line-height: 5vh;
+  bottom: 0px;
+  right: 0px;
+  width: auto;
+  height: 10vh;
+  line-height: 10vh;
   display: inline-flex;
-  justify-content: center;  /* horizontal */
   align-items: center;      /* vertical */
   padding: 0px;
   overflow: hidden;
@@ -86,15 +84,15 @@ header {
   filter: drop-shadow(0px 5px 5px #000000);
 }
 .FLBuyButton {
-  height: calc(5vh - 2px);
-  width: calc(50vw - 2px);
+  height: 10vh;
+  width: 10vh;
   border: solid 1px transparent;
   transition-duration: .2s;
   cursor: pointer;
-  background-size: auto 5vh, cover;
-  background-position: center center, center center;
+  background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat, no-repeat;
-  background-color: rgba(19, 200, 113, 0.6);
+  background-color: rgba(255, 128, 0, 0.6);
   border-radius: 5px;
   backdrop-filter: blur(5px);
 }
@@ -207,6 +205,7 @@ select {
   background-image: url('fmp3simages/GoodForYou.jpg');
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: cover;
 }
 .Socials {
   line-height: auto;
@@ -217,26 +216,6 @@ select {
 }
 .Socials:hover {
   text-decoration: underline;
-}
-
-@media screen and (orientation: portrait) {
-  .FirstScreen {
-    background-size: 100% auto;
-  }
-}
-
-@media screen and (orientation: landscape) {
-  .FirstScreen {
-    background-size: auto 80%;
-  }
-  .FirstVideoScreen {
-    position: absolute;      
-    left: 0;
-    width: 100%;
-    max-width: 100%;
-    /*-----------For ipad----------*/
-    height: 90vh; 
-  }
 }
 
 @keyframes shine {

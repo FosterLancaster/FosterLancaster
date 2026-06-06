@@ -74,15 +74,16 @@ header {
   background-clip: text;
   background-image: linear-gradient(to right, #fafafa, #383838, #fafafa);
   background-repeat: repeat;
-  background-size: 100vw 200px;
+  background-size: 50vw 100%;
   box-sizing: 200vw 200px;
-  animation: shine linear 2s infinite;
+  animation: shine linear 4s infinite;
   cursor: pointer;
   filter: drop-shadow(0px 5px 5px #000000);
+  -webkit-text-stroke: .015em #ff0000;
 }
 .FLBuyButton {
-  height: 35px;
-  line-height: 35px;
+  height: 33px;
+  line-height: 33px;
   font-family: 'futura';
   font-size: 15px;
   width: auto;
@@ -92,10 +93,11 @@ header {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat, no-repeat;
-  background-color: rgba(255, 128, 0, 0.9);
+  background-color: #ffffff;
   border-radius: 10px;
-  backdrop-filter: blur(5px);
   color: #000000;
+  border: solid 1px #000000;
+  filter: invert(1);
 }
 .FLBuyButton:hover, .FLNameButton:hover {
   opacity: .5;
@@ -123,6 +125,8 @@ footer {
   line-height: 2em;
   border-top: solid .5px transparent;
   background-color: #696900;
+  background-image: url('images/TrashTexture.jpg');
+  background-size: cover;
   text-align: center;
 }
 .Title {
@@ -139,7 +143,7 @@ footer {
   display: inline-block;
   color: #000000;
   background-color: transparent;
-  background-image: radial-gradient(rgba(0, 0, 0, .7), transparent);
+  background-image: radial-gradient(rgba(125, 125, 125, .7), transparent);
   backdrop-filter: blur(5px);
 }
 .YoutubeContainer {

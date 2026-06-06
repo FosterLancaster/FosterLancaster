@@ -23,7 +23,7 @@ body {
   font-family: 'FL';
   font-size: 22px;
   z-index: 0;
-  background-color: #000000;
+  background-color: #ffff00;
 }
 @font-face {
   font-family: 'FL';
@@ -207,6 +207,7 @@ select {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  opacity: .7;
 }
 .Socials {
   line-height: auto;

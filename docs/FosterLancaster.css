@@ -82,8 +82,8 @@ header {
   -webkit-text-stroke: .015em #ff0000;
 }
 .FLBuyButton {
-  height: 33px;
-  line-height: 33px;
+  height: 31px;
+  line-height: 31px;
   font-family: 'futura';
   font-size: 15px;
   width: auto;
@@ -93,11 +93,10 @@ header {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat, no-repeat;
-  background-color: #ffffff;
+  background-color: #ff851a;
   border-radius: 10px;
-  color: #000000;
-  border: solid 1px #000000;
-  filter: invert(1);
+  color: #54d1ff;
+  border: solid 2px #54d1ff;
 }
 .FLBuyButton:hover, .FLNameButton:hover {
   opacity: .5;

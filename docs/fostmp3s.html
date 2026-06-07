@@ -304,7 +304,7 @@ table {
   -webkit-text-stroke: .05em #000000;
   position: relative;
   width: calc(100% - 1px);
-  margin: 1px 15% 1px 15%;
+  margin: 1px 0px 1px 0px;
   overflow: hidden;
   height: 38px;
   line-height: 18px;
@@ -664,8 +664,11 @@ li img {
   margin: 0 auto;
 }
 
-/*------100vh Controls Sum Landscape = 206px (with frame) + 187px (without frame)-------*/
+/*------100vh Controls Sum Landscape = 216px (with frame) + 197px (without frame)-------*/
 @media screen and (max-width: 500px) {
+.Seven {
+  height: calc(100vh - 216px);
+  }
 .LancasterFrame {
   max-width: calc(100% - 1px);
   width: calc(100% - 1px);
@@ -699,8 +702,8 @@ li img {
 }
 /*----Music----*/
 .OffMusicHeader {
-  height: calc(100vh - 187px);
-  min-height: calc(100vh - 187px);
+  height: calc(100vh - 197px);
+  min-height: calc(100vh - 197px);
 }
 }
 

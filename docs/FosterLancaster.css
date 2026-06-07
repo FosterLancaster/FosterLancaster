@@ -93,13 +93,13 @@ header {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat, no-repeat;
-  background-color: #ff851a;
+  background-color: #cd6000;
   border-radius: 10px;
-  color: #54d1ff;
-  border: solid 2px #54d1ff;
+  color: #b8ecff;
+  border: solid 2px #b8ecff;
 }
 .FLBuyButton:hover, .FLNameButton:hover {
-  opacity: .5;
+  padding: 7.5px 10px 7.5px 10px;
 } 
 
 /*-------------------FLName---------------------*/

@@ -126,6 +126,7 @@ footer {
   background-color: #696900;
   background-image: url('images/TrashTexture.jpg');
   background-size: cover;
+  background-position: center center;
   text-align: center;
 }
 .Title {

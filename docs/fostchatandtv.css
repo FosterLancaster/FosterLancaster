@@ -103,7 +103,11 @@ li img {
   width: calc(100vw - 21px); 
   bottom: 0px;
   right: 0px;  
-  background: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, .05);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, .3), transparent, rgba(0, 0, 0, .3));
+  background-size: 100% 700px;
+  background-position: center center;
+  animation: rise 2s linear infinite;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -123,12 +127,6 @@ li img {
   display: block;
   box-sizing: border-box;
   overflow: hidden;
-  background-image: linear-gradient(
-    to top,
-    rgb(255,255,255,.3),
-    transparent,
-    rgb(255,255,255,.3)
-  );
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }

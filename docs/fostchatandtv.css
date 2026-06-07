@@ -6,7 +6,7 @@
   bottom: 0px;
   right: 0px;  
   background-color: rgba(0, 0, 0, .05);
-  background-image: linear-gradient(to top, rgba(0, 0, 0, .2), transparent, rgba(0, 0, 0, .2));
+  background-image: linear-gradient(to top, rgba(0, 0, 0, .3), transparent, rgba(0, 0, 0, .3));
   background-size: 100% 700px;
   background-position: center center;
   animation: rise 2s linear infinite;

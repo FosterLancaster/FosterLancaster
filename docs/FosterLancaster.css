@@ -98,7 +98,7 @@ header {
   color: #b8ecff;
   border: solid 2px #b8ecff;
 }
-.FLBuyButton:hover, .FLNameButton:hover {
+.FLBuyButton:hover {
   padding: 7.5px 10px 7.5px 10px;
 } 
 

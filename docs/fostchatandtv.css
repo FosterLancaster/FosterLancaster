@@ -2,7 +2,7 @@
 .FchatContent {
   color: #ffffff;
   margin: 0px 10px 0px 10px;
-  width: calc(100vw - 20px); 
+  width: calc(100vw - 21px); 
   bottom: 0px;
   right: 0px;  
   background-color: transparent;
@@ -16,7 +16,7 @@
   z-index: 6;
   font-family: 'futura';
   font-size: 18px;
-  border: solid .5px #ffffff;
+  border: solid 1px #ffffff;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
   filter: drop-shadow(0px 0px 2px #000000);

@@ -122,8 +122,8 @@ li img {
 .MusicVideoContainer {
   height: auto;
   margin: 10px;
-  width: calc(100% - 20px);
-  border: solid .5px #ffffff;
+  width: calc(100% - 22px);
+  border: solid 1px #ffffff;
   display: block;
   box-sizing: border-box;
   overflow: hidden;

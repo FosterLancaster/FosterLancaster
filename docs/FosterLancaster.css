@@ -63,7 +63,7 @@ header {
 }
 /*-------------------FLName---------------------*/
 .FLNameButton {
-  margin: 70px auto 20px auto;
+  margin: 50px auto 10px auto;
   font-size: 12vw;
   font-family: 'FL2';
   width: fit-content;
@@ -164,7 +164,7 @@ footer {
   position: fixed; 
   top: 0px; 
   right: 0px; 
-  margin: 10px;
+  margin: 5px;
   z-index: 6;
 }
 .iconlinkpic {

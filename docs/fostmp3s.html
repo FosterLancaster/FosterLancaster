@@ -251,7 +251,7 @@ table {
   margin-right: auto;
   height: calc(100vh - 206px);
   overflow-y: scroll;
-  border: solid 11px rgba(255, 255, 255, .2);
+  border: solid 11px rgba(255, 255, 255, .3);
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
   position: relative;
@@ -260,15 +260,34 @@ table {
   opacity: 1;
   pointer-events: all;
 }
+.Seven:hover .shuffleBtn {
+  opacity: 1;
+  pointer-events: all;
+}
 .Seven:hover .songSelectionOption {
   opacity: 0;
   animation: none;
   display: none;
 }
+.shuffleBtn {
+  opacity: 0;
+  position: sticky;
+  cursor: pointer;
+  border: inline-block;
+  height: 40px;
+  width: 40px;
+  margin-top: -40px;
+  float: right;
+  z-index: 4;
+  background-color: rgba(255, 255, 255, .5);
+}
 .songSelection {
+  height: calc(100vh - 206px);
+  overflow-y: scroll;
   position: relative;
   opacity: 0;
   z-index: 1;
+  display: block;
 }
 .songSelectionOption {
   position: sticky;
@@ -368,14 +387,6 @@ table {
   width: auto;
 }
 .chatBtn {
-  cursor: pointer;
-  margin-bottom: -13px;
-  border: inline-block;
-  cursor: pointer;
-  height: 40px;
-  width: auto;
-}
-.shuffleBtn {
   cursor: pointer;
   margin-bottom: -13px;
   border: inline-block;
@@ -780,6 +791,7 @@ li img {
           <div class="Seven">
           <img class="songSelectionOption" src='fmp3simages/SongSelect.png'>
           <div class="songSelection" id="songSelection"  alt="Song Selector" title="Song Selector">
+
           <div align='center'>
             <audio id="introAudio" preload="auto" src="fmp3smusic/Sale.mp3"></audio>
             <button preload="auto" class ="song-button GoodForYou" data-song="fmp3smusic/GoodForYou.mp3"><img src="fmp3simages/GoodForYou.jpg" class="AlbumThumbnail">"Good For You"</button>
@@ -794,8 +806,9 @@ li img {
             <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL8.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Reality"</button>
           </div>
         </div>
-      </div>
+        <img src="fmp3simages/Shuffle.png" class="shuffleBtn" onclick="shuffle()" alt="Shuffle" title="Shuffle">
 
+      </div>
       </div>
 
             <!----PayOff---->
@@ -849,9 +862,6 @@ li img {
   </td>
   <td>
   <img src="fmp3simages/Next.png" id="nextBtn" class="nextprev-btn" alt="Next" title="Next">
-  </td>
-  <td>
-  <img src="fmp3simages/Shuffle.png" class="shuffleBtn" onclick="shuffle()" alt="Shuffle" title="Shuffle">
   </td>
   <td>
     <div class="volumeContainer" alt="Volume" title="Volume">

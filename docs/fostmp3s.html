@@ -76,7 +76,6 @@ table {
   background-position: center center;
   animation: rise 2s linear infinite;
   border: solid .5px #ffffff;
-  filter: drop-shadow(0 2px 2px rgb(0, 0, 0, .5));
   background-color: rgba(255, 255, 255, .1);
 }
 .LancasterFrame:hover .LancasterMusicPlayer{
@@ -311,8 +310,9 @@ table {
   display: flex; 
   align-items: center; 
   justify-content: center; 
-  color: #ffffff;
+  color: #000000;
   font-size: 1em;
+  text-decoration: underline;
   max-width: 95%;
   overflow: hidden;
 }
@@ -814,9 +814,12 @@ li img {
             <!----PayOff---->
         <div id="PayOff">
           <div align="center">
-            <div class="OffMusicHeader">
-              Keep Listening For $2.25
+            <a href="https://fostmp3s.com/pw" target="_blank">
+            <div class="OffMusicHeader">     
+              Keep Listening For $2.25<br>
+              <img src="fmp3simages/PWBUY.png" id="buyLogo">            
             </div>
+          </a>
             </div>
         </div>
 

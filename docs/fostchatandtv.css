@@ -120,8 +120,8 @@ li img {
   overflow: hidden;
 }
 .MusicVideoContainer {
-  height: auto;
   margin: 10px;
+  height: 100%;
   width: calc(100% - 22px);
   border: solid 1px #ffffff;
   display: block;
@@ -131,8 +131,8 @@ li img {
   border-bottom-right-radius: 20px;
 }
 .MusicVideo {
+  height: 100%;
   width: calc(100% - 1px);
-  height: 50vw;
   display: block;
   border: 0;
   border-top-left-radius: 20px;

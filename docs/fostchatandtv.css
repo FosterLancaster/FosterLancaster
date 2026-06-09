@@ -100,7 +100,8 @@ li img {
 .FtvContent {
   height: auto;
   margin: 0px 10px 0px 10px;
-  width: calc(100vw - 22px); 
+  width: calc(100vw - 22px);
+  max-width: calc(100vw - 22px); 
   bottom: 0px;
   right: 0px;  
   background-color: rgba(0, 0, 0, .05);

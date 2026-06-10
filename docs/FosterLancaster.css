@@ -71,6 +71,7 @@ header {
   position: relative;
   text-align: center;
   color: transparent;
+  text-decoration: line-through;
   background-clip: text;
   background-image: linear-gradient(to right, #fafafa, #383838, #fafafa);
   background-repeat: repeat;
@@ -79,7 +80,7 @@ header {
   animation: shine linear 4s infinite;
   cursor: pointer;
   filter: drop-shadow(0px 5px 5px #000000);
-  -webkit-text-stroke: .015em #ff0000;
+  -webkit-text-stroke: .015em #cd6000;
   transition-duration: .5s;
 }
 .FLNameButton:hover {

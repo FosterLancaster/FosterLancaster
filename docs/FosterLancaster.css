@@ -228,8 +228,51 @@ select {
 .Socials:hover {
   text-decoration: underline;
 }
+.hearteffect {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  left: 50%;
+  transform: translatex(-50%);
+  width: 45px;
+  height: 45px;
+}
+.heart {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: url('fmp3simages/Heart.png') center/contain no-repeat;
+  opacity: 0;
+  animation: floatHeart 3s infinite linear;
+}
+/* 4 locations */
+.h1 { left: 5px;  bottom: 8px;  animation-delay: 0s; }
+.h2 { left: 30px; bottom: 8px;  animation-delay: .75s; }
+.h3 { left: 10px; bottom: 8px;  animation-delay: 1.5s; }
+.h4 { left: 20px; bottom: 8px;  animation-delay: 2.25s; }
 
 @keyframes shine {
   0% { background-position: 0px center;}
   100% { background-position: 100vw center; }
+}
+
+@keyframes floatHeart {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(.6);
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-35px) scale(1);
+  }
 }

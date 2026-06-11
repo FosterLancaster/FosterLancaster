@@ -389,11 +389,12 @@ table {
 }
 .chatBtn {
   cursor: pointer;
-  margin-bottom: -13px;
   border: inline-block;
   cursor: pointer;
   height: 40px;
   width: auto;
+  position: relative;
+  z-index: 0;
 }
 .nextprev-btn {
   cursor: pointer;
@@ -679,6 +680,31 @@ li img {
   display: block;
   margin: 0 auto;
 }
+.hearteffect {
+  z-index: 1;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  left: 50%;
+  transform: translatex(-50%);
+  width: 45px;
+  height: 45px;
+}
+.heart {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: url('fmp3simages/Heart.png') center/contain no-repeat;
+  opacity: 0;
+  animation: floatHeart 3s infinite linear;
+}
+/* 4 locations */
+.h1 { left: 5px;  bottom: 8px;  animation-delay: 0s; }
+.h2 { left: 30px; bottom: 8px;  animation-delay: .75s; }
+.h3 { left: 10px; bottom: 8px;  animation-delay: 1.5s; }
+.h4 { left: 20px; bottom: 8px;  animation-delay: 2.25s; }
+
 
 /*------100vh Controls Sum Landscape = 217px (with frame) + 195px (without frame)-------*/
 @media screen and (max-width: 500px) {
@@ -786,6 +812,26 @@ li img {
   50% { opacity: 0; }
   100% { opacity: 1; }
 }
+
+@keyframes floatHeart {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(.6);
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-35px) scale(1);
+  }
+}
 </style>
 </head>
 <body>
@@ -850,7 +896,7 @@ li img {
         <div class="embedContent">
         <button id="closeEmbed">X</button>
         <div class="MoreInner">
-          <div class="MoreHeader"><img src="fmp3simages/Embed.png" style="height: 2.5em; margin-bottom: -.2em;"></div>
+          <div class="MoreHeader"><img src="fmp3simages/Embed.png" style="height: 2.5em; margin-bottom: -.75em;"></div>
           <div class="MoreBody">
           <textarea readonly>
             <iframe src="https://fostmp3s.com/fostmp3s.html" style="width: 400px; height: 400px; min-height: 400px; min-width: 200px; max-height: 100%; display: block; border: none;" class="fostmp3s"></iframe>
@@ -884,14 +930,32 @@ li img {
   
   <td>
     <a href="#" id="chatBtn">
-    <img src="fmp3simages/Chat.png" class="chatBtn" alt="Chat" title="Chat">
+    <div class="chatBtn">
+    <div class="hearteffect">
+      <span class="heart h1"></span>
+      <span class="heart h2"></span>
+      <span class="heart h3"></span>
+      <span class="heart h4"></span>
+    </div>
+    <img src="images/Chat.png" class="chatBtn" alt="Chat" title="Chat">
+    </div>
     </a>
     
     <div id="chatOverlay">
       <div class="chatContent">
       <button id="closeChat">X</button>
       <div class="MoreInner">
-        <div class="MoreHeader"><img src="fmp3simages/Chat.png" style="height: 2.5em; margin-bottom: -.2em;"></div>
+        <div class="MoreHeader">
+          <div style="height: 2.5em; position: relative;">
+            <div class="hearteffect">
+              <span class="heart h1"></span>
+              <span class="heart h2"></span>
+              <span class="heart h3"></span>
+              <span class="heart h4"></span>
+            </div>
+            <img src="images/Chat.png" style="height: 2.5em;" alt="Chat" title="Chat">
+            </div>
+        </div>
         <div class="MoreBody">
   <ul class="chatPosts" id="feed">
   </ul>

@@ -228,6 +228,18 @@ select {
 .Socials:hover {
   text-decoration: underline;
 }
+.love {
+position: absolute; 
+width: 45px; 
+height: 45px; 
+right: 0px;
+bottom: 0px;
+cursor: pointer;
+transition-duration: .5s;
+}
+.love:hover {
+  transform: scale(1.1);
+}
 .hearteffect {
   position: absolute;
   inset: 0;
@@ -251,6 +263,7 @@ select {
 .h2 { left: 30px; bottom: 8px;  animation-delay: .75s; }
 .h3 { left: 10px; bottom: 8px;  animation-delay: 1.5s; }
 .h4 { left: 20px; bottom: 8px;  animation-delay: 2.25s; }
+
 
 @keyframes shine {
   0% { background-position: 0px center;}

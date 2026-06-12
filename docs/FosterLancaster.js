@@ -38,90 +38,100 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// Foster Chat From Tumblr
-
+// Foster Chat From RSS
 fetch("https://fostchat-rss.fostmp3s.workers.dev/")
-  .then(response => response.text())
-  .then(str => {
+.then(response => response.text())
+.then(str => {
 
-    const parser = new DOMParser();
-    const xml = parser.parseFromString(str, "application/xml");
-    const items = xml.querySelectorAll("item");
-    const feedList = document.getElementById("feed");
+  const parser = new DOMParser();
+  const xml = parser.parseFromString(str, "application/xml");
+  const items = xml.querySelectorAll("item");
+  const feedList = document.getElementById("feed");
 
-    items.forEach(item => {
+  items.forEach(item => {
 
-      const title =
-        item.querySelector("title")?.textContent?.trim() || "";
+    const title =
+      item.querySelector("title")?.textContent?.trim() || "";
 
-      const link =
-        item.querySelector("link")?.textContent?.trim() || "#";
+    const link =
+      item.querySelector("link")?.textContent?.trim() || "#";
 
-      // content:encoded support
-      const contentEncoded =
-        item.getElementsByTagName("content:encoded")[0]?.textContent || "";
+    // content:encoded support
+    const contentEncoded =
+      item.getElementsByTagName("content:encoded")[0]?.textContent || "";
 
-      // Raw description
-      const rawDescription =
-        item.querySelector("description")?.textContent || "";
+    // Raw description
+    const rawDescription =
+      item.querySelector("description")?.textContent || "";
 
-      // Convert HTML to text
-      const tempDiv = document.createElement("div");
-      tempDiv.innerHTML = rawDescription;
+    // Convert HTML to text
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = rawDescription;
 
-      let cleanDescription =
-        tempDiv.textContent || tempDiv.innerText || "";
+    let cleanDescription =
+      tempDiv.textContent || tempDiv.innerText || "";
 
-      cleanDescription = cleanDescription
-        .replace(/\s+/g, " ")
-        .replace(/^undefined$/i, "")
-        .trim();
+    cleanDescription = cleanDescription
+      .replace(/\s+/g, " ")
+      .replace(/^undefined$/i, "")
+      .trim();
 
-      // FINAL protection against undefined/null
-      if (
-        !cleanDescription ||
-        cleanDescription === "undefined" ||
-        cleanDescription === "null"
-      ) {
-        cleanDescription = "";
-      }
+    // FINAL protection against undefined/null
+    if (
+      !cleanDescription ||
+      cleanDescription === "undefined" ||
+      cleanDescription === "null"
+    ) {
+      cleanDescription = "";
+    }
 
-      // Try multiple image sources
-      const image =
-        item.querySelector("enclosure")?.getAttribute("url") ||
-        item.querySelector("media\\:content")?.getAttribute("url") ||
-        contentEncoded.match(/<img.*?src="(.*?)"/)?.[1] ||
-        rawDescription.match(/<img.*?src="(.*?)"/)?.[1] ||
-        "";
+    // Try multiple image sources
+    const image =
+      item.querySelector("enclosure")?.getAttribute("url") ||
+      item.querySelector("media\\:content")?.getAttribute("url") ||
+      contentEncoded.match(/<img.*?src="(.*?)"/)?.[1] ||
+      rawDescription.match(/<img.*?src="(.*?)"/)?.[1] ||
+      "";
 
-      const li = document.createElement("li");
+    const li = document.createElement("li");
 
-      li.innerHTML = `
-        <a href="${link}" target="_blank">
+    li.innerHTML = `
+      <a href="${link}" target="_blank">
 
-          ${
-            image
-              ? `<img src="${image}" style="max-width:100%; display:block;">`
-              : ""
-          }
+        ${
+          image
+            ? `<img src="${image}" style="max-width:100%; display:block;">`
+            : ""
+        }
 
-          <div class="feedTitle">${title}</div>
+        <div class="feedTitle">${title}</div>
 
-          ${
-            cleanDescription
-              ? `<div class="feedDescription">${cleanDescription}</div>`
-              : ""
-          }
+        ${
+          cleanDescription
+            ? `<div class="feedDescription">${cleanDescription}</div>`
+            : ""
+        }
 
-        </a>
-      `;
+      </a>
+      <a href="https://fostmp3s.com/pw" target="_blank">
+      <div class="love">
+      <div class="hearteffect">
+        <span class="heart h1"></span>
+        <span class="heart h2"></span>
+        <span class="heart h3"></span>
+        <span class="heart h4"></span>
+      </div>
+      +
+      </div>
+      </a>
+    `;
 
-      if (feedList) {
-        feedList.appendChild(li);
-      }
+    if (feedList) {
+      feedList.appendChild(li);
+    }
 
-    });
+  });
 
-  })
-  .catch(err => console.error("Error loading RSS feed:", err));
+})
+.catch(err => console.error("Error loading RSS feed:", err));
   

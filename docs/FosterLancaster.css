@@ -250,6 +250,7 @@ transition-duration: .5s;
   transform: translatex(-50%);
   width: 45px;
   height: 45px;
+  z-index: 1;
 }
 .heart {
   position: absolute;

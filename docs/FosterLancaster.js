@@ -121,7 +121,7 @@ fetch("https://fostchat-rss.fostmp3s.workers.dev/")
         <span class="heart h3"></span>
         <span class="heart h4"></span>
       </div>
-      +
+      $2.25<div class="pwheart"></div>
       </div>
       </a>
     `;

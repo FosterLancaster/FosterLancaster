@@ -229,6 +229,7 @@ select {
   text-decoration: underline;
 }
 .love {
+font-size: 12px;
 position: absolute; 
 width: 45px; 
 height: 45px; 
@@ -257,6 +258,17 @@ transition-duration: .5s;
   background: url('fmp3simages/Heart.png') center/contain no-repeat;
   opacity: 0;
   animation: floatHeart 3s infinite linear;
+  background-color: transparent;
+}
+.pwheart {
+  width: 45px;
+  height: 45px;
+  margin-top: -20px;
+  background-image: url('fmp3simages/PWBUY.png');
+  background-size: 25px auto;
+  background-position: center center;
+  background-color: transparent;
+  background-repeat: no-repeat;
 }
 /* 4 locations */
 .h1 { left: 5px;  bottom: 8px;  animation-delay: 0s; }

@@ -229,15 +229,16 @@ select {
   text-decoration: underline;
 }
 .love {
-font-size: 12px;
-position: absolute; 
-width: 45px; 
-height: 45px; 
-right: 0px;
-bottom: 0px;
-cursor: pointer;
-transition-duration: .5s;
-}
+  font-size: 12px;
+  position: absolute; 
+  width: 45px; 
+  height: 45px; 
+  right: 0px;
+  bottom: 0px;
+  cursor: pointer;
+  transition-duration: .5s;
+  pointer-events: auto;
+  }
 .love:hover {
   transform: scale(1.1);
 }

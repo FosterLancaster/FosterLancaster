@@ -670,7 +670,7 @@ li {
   border-radius: 8px;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
   margin: 10px auto;
-  padding: 10px 10px 50px 10px;
+  padding: 10px 10px 45px 10px;
   width: calc(100% - 40px);
   max-width: 1000px;
   text-align: center;
@@ -678,18 +678,24 @@ li {
   pointer-events: none; /* disable clicks on the li */
 }
 .love {
-font-size: 12px;
-position: absolute; 
-width: 45px; 
-height: 45px; 
-right: 0px;
-bottom: 0px;
-cursor: pointer;
-transition-duration: .5s;
-pointer-events: auto;
-}
+  font-size: 10px;
+  position: absolute; 
+  width: 80px; 
+  height: 45px; 
+  right: 5px;
+  bottom: 5px;
+  cursor: pointer;
+  transition-duration: .5s;
+  pointer-events: auto;
+  border: solid 2px #616161;
+  border-radius: 5px;
+  background-color: #ffffff;
+  }
 .love:hover {
   transform: scale(1.1);
+}
+.love:hover .hearteffect {
+  opacity: .5
 }
 .hearteffect {
   position: absolute;
@@ -708,26 +714,20 @@ pointer-events: auto;
   height: 15px;
   background: url('fmp3simages/Heart.png') center/contain no-repeat;
   opacity: 0;
-  animation: floatHeart 3s infinite linear;
+  animation: floatHeart 1s infinite linear;
   background-color: transparent;
 }
-.pwheart {
-  width: 45px;
-  height: 45px;
-  margin-top: -20px;
-  background-image: url('fmp3simages/PWBUY.png');
-  background-size: 25px auto;
-  background-position: center center;
-  background-color: transparent;
-  background-repeat: no-repeat;
+.postcart {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  margin-bottom: -7px;
 }
 /* 4 locations */
-.h1 { left: 5px;  bottom: 8px;  animation-delay: 0s; }
-.h2 { left: 30px; bottom: 8px;  animation-delay: .75s; }
-.h3 { left: 10px; bottom: 8px;  animation-delay: 1.5s; }
-.h4 { left: 20px; bottom: 8px;  animation-delay: 2.25s; }
-
-
+.h1 { left: 5px;  bottom: 8px;  animation-delay: .25s; }
+.h2 { left: 30px; bottom: 8px;  animation-delay: .50s; }
+.h3 { left: 10px; bottom: 8px;  animation-delay: .75s; }
+.h4 { left: 20px; bottom: 8px;  animation-delay: 1s; }
 
 /*------100vh Controls Sum Landscape = 217px (with frame) + 195px (without frame)-------*/
 @media screen and (max-width: 500px) {
@@ -1634,7 +1634,7 @@ document.getElementById("chatOverlay").style.display = "none";
         <span class="heart h3"></span>
         <span class="heart h4"></span>
       </div>
-      $2.25<div class="fmp3simages/PWBUY.png"></div>
+      $2.25<img class="postcart" src="fmp3simages/PWBUY.png">
       </div>
       </a>
       `;

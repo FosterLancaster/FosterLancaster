@@ -15,7 +15,8 @@
   height: 100%;
 }
 .fostmp3s, .FchatContent {
-  height: calc(100vh - 60px);
+  max-height: calc(100vh - 50px);
+  overflow-y: scroll;
   width: calc(100% - 20px);
 }
 </style>
@@ -27,7 +28,7 @@
 <section style="display: flex; flex-direction: column;">
 <div align="center">
 
-<div class="Title"><img class="icon" src="images/FMusic.png"></div>
+<div class="Title"><img class="icon" src="images/FostMp3sLogo.png"></div>
 <!----Fost Mp3's---->
 <iframe src="https://fostmp3s.com/fostmp3s.html" style="display: flex; border: none;" class="fostmp3s" loading="lazy" allow="autoplay; fullscreen">
 </iframe>

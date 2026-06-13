@@ -22,19 +22,6 @@
 .FchatContent a {
   color: #000000;
 }
-li {
-  list-style: none;
-  background-color: #ffff00;
-  border-radius: 8px;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
-  margin: 10px auto;
-  padding: 10px 10px 45px 10px;
-  width: calc(100% - 40px);
-  max-width: 1000px;
-  text-align: center;
-  position: relative;
-  pointer-events: none; /* disable clicks on the li */
-}
 .FchatPosts {
   padding: 0px;
   margin: 0px; 

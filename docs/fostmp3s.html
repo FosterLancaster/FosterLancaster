@@ -670,7 +670,7 @@ li {
   border-radius: 8px;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
   margin: 10px auto;
-  padding: 10px 10px 45px 10px;
+  padding: 10px 10px 55px 10px;
   width: calc(100% - 40px);
   max-width: 1000px;
   text-align: center;
@@ -678,25 +678,35 @@ li {
   pointer-events: none; /* disable clicks on the li */
 }
 .love {
-  font-size: 10px;
   position: absolute; 
-  width: 80px; 
-  height: 30px; 
+  width: auto; 
+  height: 45px; 
+  line-height: 30px;
   right: 5px;
   bottom: 5px;
   cursor: pointer;
   transition-duration: .5s;
   pointer-events: auto;
-  border: solid 2px #616161;
   border-radius: 5px;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, .5);
   }
-.love:hover {
-  transform: scale(1.1);
+.love table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0;
+    padding: 0;
+  }
+.love td,
+.love th {
+  padding: 0;
+  margin: 0;
 }
-.love:hover .hearteffect {
-  opacity: .5
-}
+  .love:hover {
+    transform: scale(1.05);
+  }
+  .love:hover .hearteffect {
+    opacity: .5
+  }
 .hearteffect {
   position: absolute;
   inset: 0;
@@ -704,6 +714,30 @@ li {
   overflow: hidden;
   left: 50%;
   transform: translatex(-50%);
+  width: 45px;
+  height: 45px;
+  z-index: 1;
+}
+.postcart {
+  width: 30px;
+  height: 30px;
+  display: block;
+  margin: 0 auto;
+}
+.postprice {
+  border: solid 2px #616161;
+  background-color: #ffffff;
+  font-size: 10px;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+}
+.hearteffect2 {
+  position: relative;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
   width: 45px;
   height: 45px;
   z-index: 1;
@@ -717,17 +751,12 @@ li {
   animation: floatHeart 1s infinite linear;
   background-color: transparent;
 }
-.postcart {
-  position: relative;
-  width: 25px;
-  height: 25px;
-  margin-bottom: -7px;
-}
 /* 4 locations */
-.h1 { left: 5px;  bottom: 8px;  animation-delay: .25s; }
-.h2 { left: 30px; bottom: 8px;  animation-delay: .50s; }
-.h3 { left: 10px; bottom: 8px;  animation-delay: .75s; }
-.h4 { left: 20px; bottom: 8px;  animation-delay: 1s; }
+.h1 { left: 5px;  bottom: 3px;  animation-delay: .25s; }
+.h2 { left: 30px; bottom: 3px;  animation-delay: .50s; }
+.h3 { left: 10px; bottom: 3px;  animation-delay: .75s; }
+.h4 { left: 20px; bottom: 3px;  animation-delay: 1s; }
+
 
 /*------100vh Controls Sum Landscape = 217px (with frame) + 195px (without frame)-------*/
 @media screen and (max-width: 500px) {
@@ -1628,13 +1657,16 @@ document.getElementById("chatOverlay").style.display = "none";
         </a>
       <a href="https://fostmp3s.com/pw" target="_blank">
       <div class="love">
-      <div class="hearteffect">
+      <table><td><div class="postprice">$2.25</div></td><td><img class="postcart" src="fmp3simages/PWBUY.png"></td>
+      <td>
+      <div class="hearteffect2">
         <span class="heart h1"></span>
         <span class="heart h2"></span>
         <span class="heart h3"></span>
         <span class="heart h4"></span>
       </div>
-      $2.25<img class="postcart" src="fmp3simages/PWBUY.png">
+      </td>
+      </table>
       </div>
       </a>
       `;

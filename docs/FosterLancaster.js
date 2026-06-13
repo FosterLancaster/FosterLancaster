@@ -115,13 +115,16 @@ fetch("https://fostchat-rss.fostmp3s.workers.dev/")
       </a>
       <a href="https://fostmp3s.com/pw" target="_blank">
       <div class="love">
-      <div class="hearteffect">
+      <table><td><div class="postprice">$2.25</div></td><td><img class="postcart" src="fmp3simages/PWBUY.png"></td>
+      <td>
+      <div class="hearteffect2">
         <span class="heart h1"></span>
         <span class="heart h2"></span>
         <span class="heart h3"></span>
         <span class="heart h4"></span>
       </div>
-      $2.25<img class="postcart" src="fmp3simages/PWBUY.png">
+      </td>
+      </table>
       </div>
       </a>
     `;

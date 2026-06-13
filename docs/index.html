@@ -38,18 +38,20 @@
   width: calc(100% - 22px);
 }
 .FtvContent {
-  height: 500px;
+  height: auto; 
   width: calc(100% - 22px);
 }
 @media only screen and (orientation: portrait) {
 .fostmp3s,
 .FchatContent {
-  height: 400px;
   width: 280px;
 }
 .FtvContent {
-  height: 200px;
+  height: auto;
   width: 400px;
+}
+.MusicVideoContainer, .MusicVideo {
+  height: 200px;
 }
 }
 </style>
@@ -95,9 +97,19 @@
   </div>
 <!--TV-->
 <div class="FtvContent">
+
 <div class="MusicVideoContainer">
 <iframe class="MusicVideo" src="https://www.youtube.com/embed/hYUEe0EJqTA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
+
+<div class="MusicVideoContainer">
+  <iframe class="MusicVideo" src="https://www.youtube.com/embed/PRT82_MWUhw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+
+  <div class="MusicVideoContainer">
+    <iframe class="MusicVideo" src="https://www.youtube.com/embed/EH2MdaHAvOs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
 </div>
 
 <div class="LinkMenu">

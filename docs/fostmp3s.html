@@ -398,8 +398,8 @@ table {
   display: flex; 
   align-items: center; 
   justify-content: center; 
-  color: #ffffff;
-  font-size: 1em;
+  color: #ffff00;
+  font-size: 7vw;
   text-decoration: underline;
   max-width: 95%;
   overflow: hidden;
@@ -845,6 +845,8 @@ li {
 .h4 { left: 20px; bottom: 3px;  animation-delay: 1s; }
 
 .playcount {
+  min-width: 100px;
+  text-align: center;
   font-size: 12px;
   line-height: 10px;
   z-index: 3;
@@ -853,11 +855,12 @@ li {
   top: 0;
   bottom: 0;
   padding: 0px 5px 0px 5px;
-  background-color: rgb(0, 0, 0, .7);
+  background-color: rgb(0, 0, 0, .5);
   color: #ffff00;
   -webkit-text-stroke: transparent;
   display: flex;
   align-items: center;   /* vertical centering */
+  justify-content: center;
 }
 /*------100vh Controls Sum Landscape = 217px (with frame) + 195px (without frame)-------*/
 @media screen and (max-width: 500px) {
@@ -911,9 +914,6 @@ li {
 
 /* ------------ Miniature Adjustments ----------*/
 @media screen and (max-height: 300px) {
-.OffMusicHeader {
-  font-size: 15px;
-}
 .embedBtn {
   display: none;
 }
@@ -1023,8 +1023,7 @@ li {
           <div align="center">
             <a href="https://fostmp3s.com/pw" target="_blank">
             <div class="OffMusicHeader">     
-              Keep Listening For $2.25<br>
-              <img src="fmp3simages/PWBUY.png" id="buyLogo">            
+              Keep Listening For $2.25          
             </div>
           </a>
             </div>

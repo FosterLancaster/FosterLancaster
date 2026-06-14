@@ -30,17 +30,30 @@
   const analytics = getAnalytics(app);
   const database = getDatabase(app);
   
-  window.database = database;
-  window.ref = ref;
-  window.update = update;
-  window.increment = increment;
-  window.onValue = onValue;
+  function randomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
   
-  onValue(ref(database, 'songs/song1'), (snapshot) => {
-    const data = snapshot.val();
-    document.getElementById("playcount").textContent =
-      data?.plays || 0;
-  });
+  function simulateGrowth(songData) {
+    const now = Date.now();
+  
+    const lastUpdated = songData.lastUpdated || now;
+    const minutesPassed = Math.floor((now - lastUpdated) / 60000);
+  
+    let plays = songData.plays || 0;
+  
+    const minGain = songData.growthMin ?? 1;
+    const maxGain = songData.growthMax ?? 5;
+  
+    for (let i = 0; i < minutesPassed; i++) {
+      plays += randomInt(minGain, maxGain);
+    }
+  
+    return {
+      plays,
+      lastUpdated: now
+    };
+  }
   
   function getSongId(songPath) {
     return songPath.replace(/[^a-zA-Z0-9]/g, "_");
@@ -49,47 +62,43 @@
   document.querySelectorAll('.song-button').forEach(button => {
   
     const songId = getSongId(button.dataset.song);
+    const songRef = ref(database, `songs/${songId}`);
   
     button.addEventListener('click', () => {
-      update(
-        ref(database, `songs/${songId}`),
-        { plays: increment(1) }
-      );
+      update(songRef, { plays: increment(1) });
     });
   
-    onValue(ref(database, `songs/${songId}`), snapshot => {
-      const plays = snapshot.val()?.plays || 0;
-      const el = button.querySelector('.playcount');
+    onValue(songRef, snapshot => {
   
-      if (el) {
-        el.textContent = `${plays.toLocaleString()} listens`;
+      const data = snapshot.val() || {};
+  
+      // initialize once
+      if (!data.lastUpdated) {
+        update(songRef, {
+          plays: data.plays || 0,
+          lastUpdated: Date.now(),
+          growthMin: 1,
+          growthMax: 5
+        });
+        return;
       }
+  
+      const updated = simulateGrowth(data);
+  
+      // IMPORTANT: prevent constant rewrite loops
+      if (updated.plays > data.plays) {
+        update(songRef, updated);
+      }
+  
+      const el = button.querySelector('.playcount');
+      if (el) {
+        el.textContent = `${updated.plays.toLocaleString()} listens`;
+      }
+  
     });
   
   });
   
-  // -------------------------------
-  // AUTO RANDOM PLAY INCREMENTER
-  // -------------------------------
-  
-  const songs = ["song1", "song2", "song3", "song4", "song5"];
-  
-  function randomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-  
-  setInterval(() => {
-  
-  songs.forEach(songId => {
-  
-    update(
-      ref(database, `songs/${songId}`),
-      { plays: increment(randomInt(1, 5)) }
-    );
-  
-  });
-  
-  }, 6000);
   </script>
 <!----Style Sheets---->
 

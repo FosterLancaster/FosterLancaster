@@ -37,6 +37,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+function getSongId(songPath) {
+  return songPath
+    .replace(/[^a-zA-Z0-9]/g, "_");
+}
+
+const songPath = button.dataset.song;
+
+const songId = getSongId(songPath);
+
+update(
+  ref(database, `songs/${songId}`),
+  { plays: increment(1) }
+);
+
+document.querySelectorAll('.song-button').forEach(button => {
+
+  const songId = getSongId(button.dataset.song);
+
+  onValue(
+    ref(database, `songs/${songId}`),
+    snapshot => {
+
+      const plays = snapshot.val()?.plays || 0;
+
+      button.querySelector('.playcount').textContent =
+        `(${plays.toLocaleString()} plays)`;
+
+    }
+  );
+
+});
 
 // Foster Chat From RSS
 fetch("https://fostchat-rss.fostmp3s.workers.dev/")

@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <!----Foster Lancaster---->
-<title>FOSTMp3's version 2.0</title>
+<title>FOSTMp3's version 3.0</title>
+<script src="plays.js"></script>
 <!----Style Sheets---->
 
 <!----Fost Mp3's----
@@ -245,8 +246,7 @@ table {
 /*------100vh Controls Sum Landscape = 207px (with frame) + 185px (without frame)-------*/
 /*----Bars----*/
 .Seven {
-  max-width: 350px;
-  width: calc(100% - 22px);
+  max-width: 80%;
   margin-left: auto;
   margin-right: auto;
   height: calc(100vh - 207px);
@@ -757,7 +757,7 @@ li {
 .h3 { left: 10px; bottom: 3px;  animation-delay: .75s; }
 .h4 { left: 20px; bottom: 3px;  animation-delay: 1s; }
 
-.stat {
+.playcount {
   font-size: 15px;
   line-height: 10px;
   z-index: 3;
@@ -765,14 +765,11 @@ li {
   right: 0px;
   top: 0;
   bottom: 0;
-  padding-right: 10px;
-  background-color: #000000;
+  padding: 0px 5px 0px 5px;
+  background-color: rgb(0, 0, 0, .7);
   color: #ffff00;
   display: flex;
   align-items: center;   /* vertical centering */
-}
-.playcount {
-  margin: 0px 5px 0px 5px;
 }
 /*------100vh Controls Sum Landscape = 217px (with frame) + 195px (without frame)-------*/
 @media screen and (max-width: 500px) {
@@ -915,16 +912,16 @@ li {
 
           <div align='center'>
             <audio id="introAudio" preload="auto" src="fmp3smusic/Sale.mp3"></audio>
-            <button preload="auto" class ="song-button GoodForYou" data-song="fmp3smusic/GoodForYou.mp3"><img src="fmp3simages/GoodForYou.jpg" class="AlbumThumbnail">"Good For You"<span class="stat"><span class="playcount">0</span> plays</span></button>
-            <button preload="auto" class ="song-button MoreThanJustAFan" data-song="fmp3smusic/MoreThanJustAFan.mp3"><img src="fmp3simages/MoreThanJustAFan.jpg" class="AlbumThumbnail">"More Than Just A Fan"<span class="stat"><span class="playcount">0</span> plays</span></button>
-            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL1.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Black Jeans"<span class="stat"><span class="playcount">0</span> plays</span></button>
-            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL2.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Ah, Ah, Ah"<span class="stat"><span class="playcount">0</span> plays</span></button>
-            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL3.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Looks"<span class="stat"><span class="playcount">0</span> plays</span></button>
-            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL4.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Became So Real"<span class="stat"><span class="playcount">0</span> plays</span></button>
-            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL5.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Dry"<span class="stat"><span class="playcount">0</span> plays</span></button>
-            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL6.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Black Panther"<span class="stat"><span class="playcount">0</span> plays</span></button>
-            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL7.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Everything I Claim To Be"<span class="stat"><span class="playcount">0</span> plays</span></button>
-            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL8.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Reality"<span class="stat"><span class="playcount">0</span> plays</span></button>
+            <button preload="auto" class ="song-button GoodForYou" data-song="fmp3smusic/GoodForYou.mp3"><img src="fmp3simages/GoodForYou.jpg" class="AlbumThumbnail">"Good For You"<span class="playcount">0</span></button>
+            <button preload="auto" class ="song-button MoreThanJustAFan" data-song="fmp3smusic/MoreThanJustAFan.mp3"><img src="fmp3simages/MoreThanJustAFan.jpg" class="AlbumThumbnail">"More Than Just A Fan"<span class="playcount">0</span></button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL1.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Black Jeans"<span class="playcount">0</span></button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL2.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Ah, Ah, Ah"<span class="playcount">0</span></button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL3.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Looks"<span class="playcount">0</span></button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL4.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Became So Real"<span class="playcount">0</span></button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL5.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Dry"<span class="playcount">0</span></button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL6.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Black Panther"<span class="playcount">0</span></button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL7.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Everything I Claim To Be"<span class="playcount">0</span></button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL8.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Reality"<span class="playcount">0</span></button>
           </div>
         </div>
         <img src="fmp3simages/Shuffle.png" class="shuffleBtn" onclick="shuffle()" alt="Shuffle" title="Shuffle">
@@ -1697,84 +1694,6 @@ document.getElementById("chatOverlay").style.display = "none";
   .catch(err => console.error("Error loading RSS feed:", err));
   
 </script>
-
-<script type="module">
-
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-analytics.js";
-  import {
-  getDatabase,
-  ref,
-  update,
-  increment,
-  onValue
-} from "https://www.gstatic.com/firebasejs/12.14.0/firebase-database.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyCL3vdL5EUd4zYW7AcWlykym0MFIBe33y4",
-    authDomain: "fostmp3s-3fc35.firebaseapp.com",
-    databaseURL: "https://fostmp3s-3fc35-default-rtdb.firebaseio.com",
-    projectId: "fostmp3s-3fc35",
-    storageBucket: "fostmp3s-3fc35.firebasestorage.app",
-    messagingSenderId: "792229622105",
-    appId: "1:792229622105:web:a644d281c868293b131c48",
-    measurementId: "G-RJWTKMEWV3"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-  const database = getDatabase(app);
-  
-  window.database = database;
-  window.ref = ref;
-  window.update = update;
-  window.increment = increment;
-  window.onValue = onValue;
-  
-  onValue(ref(database, 'songs/song1'), (snapshot) => {
-  const data = snapshot.val();
-  document.getElementById("playcount").textContent =
-    data?.plays || 0;
-});
-
-function getSongId(songPath) {
-  return songPath.replace(/[^a-zA-Z0-9]/g, "_");
-}
-
-document.querySelectorAll('.song-button').forEach(button => {
-
-  const songId = getSongId(button.dataset.song);
-
-  // increment plays on click
-  button.addEventListener('click', () => {
-    update(
-      ref(database, `songs/${songId}`),
-      { plays: increment(1) }
-    );
-  });
-
-  // live display updates
-  onValue(ref(database, `songs/${songId}`), snapshot => {
-
-    const plays = snapshot.val()?.plays || 0;
-
-    const el = button.querySelector('.playcount');
-
-    if (el) {
-      el.textContent = `(${plays.toLocaleString()} plays)`;
-    }
-
-  });
-
-});
-</script>
-
 <!-----Fetcher
 export default {
   async fetch(request) {

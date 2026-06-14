@@ -83,7 +83,7 @@
   
       const el = button.querySelector('.playcount');
       if (el) {
-        el.textContent = `${(data.plays || 0).toLocaleString()} listens`;
+        el.textContent = `${(data.plays || 0).toLocaleString()} listen(s)`;
       }
     });
   
@@ -162,8 +162,7 @@ table {
 .volumeContainer:hover, 
 .nextprev-btn:hover, 
 .embedBtn:hover, 
-.chatBtn:hover, 
-.shuffleBtn:hover {
+.chatBtn:hover {
   background-color: #000000;
 }
 .EngageBar td:hover {
@@ -348,7 +347,29 @@ table {
   position: relative;
   z-index: 3;
 }
-
+.songSelection {
+  height: 100%;
+  overflow-y: scroll;
+  position: relative;
+  opacity: 0;
+  z-index: 1;
+  display: block;
+}
+.songSelectionOption {
+  position: absolute;
+  opacity: 1;
+  z-index: 2;
+  height: 50%;
+  max-height: 120px;
+  width: auto;
+  overflow: hidden;
+  color: #000000;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: Sevenblink 2s ease infinite;
+}
 /*------100vh Controls Sum Landscape = 207px (with frame) + 185px (without frame)-------*/
 /*----Bars----*/
 .Seven {
@@ -356,7 +377,6 @@ table {
   margin-left: auto;
   margin-right: auto;
   height: calc(100vh - 207px);
-  overflow-y: scroll;
   border: solid 11px rgba(200, 200, 200, .3);
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -376,39 +396,21 @@ table {
   display: none;
 }
 .shuffleBtn {
-  opacity: 0;
-  position: sticky;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  opacity: .5 !important;
   cursor: pointer;
-  border: inline-block;
-  height: 40px;
-  width: 40px;
-  margin-top: -40px;
-  float: right;
-  z-index: 4;
-  background-color: rgba(255, 255, 255, .5);
-}
-.songSelection {
-  height: 100%;
-  overflow-y: scroll;
-  position: relative;
-  opacity: 0;
-  z-index: 1;
-  display: block;
-}
-.songSelectionOption {
-  position: sticky;
-  opacity: 1;
+  display: inline-block;
+  height: 38px;
+  width: 38px;
+  border-radius: 10px;
   z-index: 2;
-  height: 50%;
-  max-height: 120px;
-  width: auto;
-  overflow: hidden;
-  color: #000000;
-  display: block;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: Sevenblink 2s ease infinite;
+  background-color: rgba(0,0,0,.3);
+  border: solid 1px #fff;
+}
+.shuffleBtn:hover {
+  opacity: 1 !important;
 }
 .OffMusicHeader {
   height: calc(100vh - 185px);
@@ -874,9 +876,11 @@ li {
   top: 0;
   bottom: 0;
   padding: 0px 5px 0px 5px;
-  background-color: rgb(0, 0, 0, .5);
+  background-color: rgb(100, 100, 100, .6);
+  backdrop-filter: blur(5px);
+  border-bottom-right-radius: 20px; /* Needed for backdrop filter */
   color: #ffff00;
-  -webkit-text-stroke: transparent;
+  -webkit-text-stroke: .02em #000000;
   display: flex;
   align-items: center;   /* vertical centering */
   justify-content: center;
@@ -936,9 +940,6 @@ li {
 .embedBtn {
   display: none;
 }
-.shuffleBtn {
-  display: none;
-}
 .XBtn {
   display: inline-block;
 }
@@ -946,6 +947,9 @@ li {
   display: inline-block;
 }
 .volumeContainer {
+  display: none;
+}
+.shuffleBtn {
   display: none;
 }
 .progressBar {
@@ -1020,20 +1024,20 @@ li {
 
           <div align='center'>
             <audio id="introAudio" preload="auto" src="fmp3smusic/Sale.mp3"></audio>
-            <button preload="auto" class ="song-button GoodForYou" data-song="fmp3smusic/GoodForYou.mp3"><img src="fmp3simages/GoodForYou.jpg" class="AlbumThumbnail">"Good For You"<span class="playcount">0</span></button>
-            <button preload="auto" class ="song-button MoreThanJustAFan" data-song="fmp3smusic/MoreThanJustAFan.mp3"><img src="fmp3simages/MoreThanJustAFan.jpg" class="AlbumThumbnail">"More Than Just A Fan"<span class="playcount">0</span></button>
-            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL1.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Black Jeans"<span class="playcount">0</span></button>
-            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL2.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Ah, Ah, Ah"<span class="playcount">0</span></button>
-            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL3.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Looks"<span class="playcount">0</span></button>
-            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL4.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Became So Real"<span class="playcount">0</span></button>
-            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL5.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Dry"<span class="playcount">0</span></button>
-            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL6.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Black Panther"<span class="playcount">0</span></button>
-            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL7.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Everything I Claim To Be"<span class="playcount">0</span></button>
-            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL8.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Reality"<span class="playcount">0</span></button>
+            <button preload="auto" class ="song-button GoodForYou" data-song="fmp3smusic/GoodForYou.mp3"><img src="fmp3simages/GoodForYou.jpg" class="AlbumThumbnail">"Good For You"<span class="playcount">Loading</span></button>
+            <button preload="auto" class ="song-button MoreThanJustAFan" data-song="fmp3smusic/MoreThanJustAFan.mp3"><img src="fmp3simages/MoreThanJustAFan.jpg" class="AlbumThumbnail">"More Than Just A Fan"<span class="playcount">Loading</span></button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL1.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Black Jeans"<span class="playcount">Loading</span></button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL2.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Ah, Ah, Ah"<span class="playcount">Loading</span></button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL3.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Looks"<span class="playcount">Loading</span></button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL4.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Became So Real"<span class="playcount">Loading</span></button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL5.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Dry"<span class="playcount">Loading</span></button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL6.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Black Panther"<span class="playcount">Loading</span></button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL7.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Everything I Claim To Be"<span class="playcount">Loading</span></button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL8.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Reality"<span class="playcount">Loading</span></button>
           </div>
         </div>
-        <img src="fmp3simages/Shuffle.png" class="shuffleBtn" onclick="shuffle()" alt="Shuffle" title="Shuffle">
-
+        <img class="shuffleBtn" src="fmp3simages/Shuffle.png" onclick="shuffle()" alt="Shuffle" title="Shuffle">
+      
       </div>
       </div>
 
@@ -1839,5 +1843,6 @@ export default {
   ----->
 </body>
 </html>
+
 
 

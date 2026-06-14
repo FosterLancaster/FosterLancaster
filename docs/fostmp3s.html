@@ -14,7 +14,7 @@
     increment,
     onValue
   } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-database.js";
-  
+
   const firebaseConfig = {
     apiKey: "AIzaSyCL3vdL5EUd4zYW7AcWlykym0MFIBe33y4",
     authDomain: "fostmp3s-3fc35.firebaseapp.com",
@@ -25,81 +25,107 @@
     appId: "1:792229622105:web:a644d281c868293b131c48",
     measurementId: "G-RJWTKMEWV3"
   };
-  
+
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
   const database = getDatabase(app);
-  
-  function randomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+
+  // ---------------------------
+  // 🍪 COOKIE HELPERS
+  // ---------------------------
+  function setCookie(name, value, hours) {
+    const d = new Date();
+    d.setTime(d.getTime() + hours * 60 * 60 * 1000);
+    document.cookie = `${name}=${value}; expires=${d.toUTCString()}; path=/`;
   }
-  
-  function simulateGrowth(songData) {
-    const now = Date.now();
-  
-    const lastUpdated = songData.lastUpdated || now;
-    const minutesPassed = Math.floor((now - lastUpdated) / 60000);
-  
-    let plays = songData.plays || 0;
-  
-    const minGain = songData.growthMin ?? 1;
-    const maxGain = songData.growthMax ?? 5;
-  
-    for (let i = 0; i < minutesPassed; i++) {
-      plays += randomInt(minGain, maxGain);
-    }
-  
-    return {
-      plays,
-      lastUpdated: now
-    };
+
+  function getCookie(name) {
+    const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    return match ? match[2] : null;
   }
-  
+
   function getSongId(songPath) {
     return songPath.replace(/[^a-zA-Z0-9]/g, "_");
   }
-  
+
+  function simulateGrowth(songData) {
+    const now = Date.now();
+
+    const lastUpdated = songData.lastUpdated || now;
+    const minutesPassed = (now - lastUpdated) / 60000;
+
+    let plays = songData.plays || 0;
+
+    const ratePerMinute = 0.03;
+
+    const expectedPlays = ratePerMinute * minutesPassed;
+    const wholePlays = Math.floor(expectedPlays);
+    const fractionalChance = expectedPlays - wholePlays;
+
+    plays += wholePlays;
+
+    if (Math.random() < fractionalChance) {
+      plays += 1;
+    }
+
+    return {
+      plays: Math.floor(plays),
+      lastUpdated: now
+    };
+  }
+
   document.querySelectorAll('.song-button').forEach(button => {
-  
+
     const songId = getSongId(button.dataset.song);
     const songRef = ref(database, `songs/${songId}`);
-  
+
+    const cookieKey = `song_update_${songId}`;
+
+    // ---------------------------
+    // CLICK = REAL PLAY COUNT
+    // ---------------------------
     button.addEventListener('click', () => {
       update(songRef, { plays: increment(1) });
     });
-  
+
+    // ---------------------------
+    // LIVE LISTENER
+    // ---------------------------
     onValue(songRef, snapshot => {
-  
+
       const data = snapshot.val() || {};
-  
-      // initialize once
+
       if (!data.lastUpdated) {
         update(songRef, {
           plays: data.plays || 0,
           lastUpdated: Date.now(),
-          growthMin: 1,
-          growthMax: 5
         });
         return;
       }
-  
+
       const updated = simulateGrowth(data);
-  
-      // IMPORTANT: prevent constant rewrite loops
-      if (updated.plays > data.plays) {
+
+      // 🍪 ONLY UPDATE FIREBASE ONCE PER HOUR PER USER
+      const cookie = getCookie(cookieKey);
+
+      const shouldUpdate = !cookie;
+
+      if (shouldUpdate) {
         update(songRef, updated);
+        setCookie(cookieKey, "1", 1); // 1 hour lock
       }
-  
+
+      // UI ALWAYS UPDATES (no restriction)
       const el = button.querySelector('.playcount');
       if (el) {
         el.textContent = `${updated.plays.toLocaleString()} listens`;
       }
-  
+
     });
-  
+
   });
-  
-  </script>
+
+</script>
 <!----Style Sheets---->
 
 <!----Fost Mp3's----

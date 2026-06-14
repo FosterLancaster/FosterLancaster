@@ -14,7 +14,7 @@
     increment,
     onValue
   } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-database.js";
-
+  
   const firebaseConfig = {
     apiKey: "AIzaSyCL3vdL5EUd4zYW7AcWlykym0MFIBe33y4",
     authDomain: "fostmp3s-3fc35.firebaseapp.com",
@@ -25,107 +25,91 @@
     appId: "1:792229622105:web:a644d281c868293b131c48",
     measurementId: "G-RJWTKMEWV3"
   };
-
+  
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
   const database = getDatabase(app);
-
-  // ---------------------------
-  // 🍪 COOKIE HELPERS
-  // ---------------------------
-  function setCookie(name, value, hours) {
-    const d = new Date();
-    d.setTime(d.getTime() + hours * 60 * 60 * 1000);
-    document.cookie = `${name}=${value}; expires=${d.toUTCString()}; path=/`;
-  }
-
-  function getCookie(name) {
-    const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-    return match ? match[2] : null;
-  }
-
+  
+  const audio = document.getElementById('audio');
+  
+  let lastPlayedSongId = null;
+  
+  const PLAYS_PER_12H = 50;
+  const RATE_PER_MS = PLAYS_PER_12H / (12 * 60 * 60 * 1000);
+  
   function getSongId(songPath) {
     return songPath.replace(/[^a-zA-Z0-9]/g, "_");
   }
-
-  function simulateGrowth(songData) {
+  
+  function computeGrowth(data) {
     const now = Date.now();
-
-    const lastUpdated = songData.lastUpdated || now;
-    const minutesPassed = (now - lastUpdated) / 60000;
-
-    let plays = songData.plays || 0;
-
-    const ratePerMinute = 0.03;
-
-    const expectedPlays = ratePerMinute * minutesPassed;
-    const wholePlays = Math.floor(expectedPlays);
-    const fractionalChance = expectedPlays - wholePlays;
-
-    plays += wholePlays;
-
-    if (Math.random() < fractionalChance) {
-      plays += 1;
-    }
-
+    const last = data.lastUpdated || now;
+    const elapsed = now - last;
+  
+    const expected = elapsed * RATE_PER_MS;
+    const whole = Math.floor(expected);
+  
     return {
-      plays: Math.floor(plays),
+      newPlays: whole,
       lastUpdated: now
     };
   }
-
+  
   document.querySelectorAll('.song-button').forEach(button => {
-
+  
     const songId = getSongId(button.dataset.song);
     const songRef = ref(database, `songs/${songId}`);
-
-    const cookieKey = `song_update_${songId}`;
-
-    // ---------------------------
-    // CLICK = REAL PLAY COUNT
-    // ---------------------------
-    button.addEventListener('click', () => {
-      update(songRef, { plays: increment(1) });
-    });
-
-    // ---------------------------
-    // LIVE LISTENER
-    // ---------------------------
+  
+    // display count
     onValue(songRef, snapshot => {
-
       const data = snapshot.val() || {};
-
+  
       if (!data.lastUpdated) {
         update(songRef, {
           plays: data.plays || 0,
-          lastUpdated: Date.now(),
+          lastUpdated: Date.now()
         });
         return;
       }
-
-      const updated = simulateGrowth(data);
-
-      // 🍪 ONLY UPDATE FIREBASE ONCE PER HOUR PER USER
-      const cookie = getCookie(cookieKey);
-
-      const shouldUpdate = !cookie;
-
-      if (shouldUpdate) {
-        update(songRef, updated);
-        setCookie(cookieKey, "1", 1); // 1 hour lock
+  
+      const growth = computeGrowth(data);
+  
+      if (growth.newPlays > 0) {
+        update(songRef, {
+          plays: increment(growth.newPlays),
+          lastUpdated: growth.lastUpdated
+        });
       }
-
-      // UI ALWAYS UPDATES (no restriction)
+  
       const el = button.querySelector('.playcount');
       if (el) {
-        el.textContent = `${updated.plays.toLocaleString()} listens`;
+        el.textContent = `${(data.plays || 0).toLocaleString()} listens`;
       }
-
     });
-
+  
   });
-
-</script>
+  
+  // ONLY ONE GLOBAL LISTENER (correct)
+  audio.addEventListener('play', () => {
+  
+    const index = window.currentsongindex;
+    if (index === -1 || index === undefined) return;
+  
+    const button = document.querySelectorAll('.song-button')[index];
+    if (!button) return;
+  
+    const songId = getSongId(button.dataset.song);
+  
+    if (lastPlayedSongId !== songId || audio.currentTime === 0) {
+      lastPlayedSongId = songId;
+  
+      update(ref(database, `songs/${songId}`), {
+        plays: increment(1)
+      });
+    }
+  });
+  
+  </script>
 <!----Style Sheets---->
 
 <!----Fost Mp3's----
@@ -1204,619 +1188,620 @@ li {
               </div>
 
 
-<script>
-// Foster Lancaster Music Player
-document.addEventListener("DOMContentLoaded", () => {
-
-  // Call ID's
-  const volumeControl = document.getElementById('volumeControl');
-  const playBtn       = document.getElementById('playBtn');
-  const buyBtn        = document.getElementById('buyBtn');
-  const playLogo      = document.getElementById('playLogo');
-  const audio         = document.getElementById('audio');
-  const introAudio    = document.getElementById('introAudio'); // NEW (now used ONLY when you run out of plays)
-  const progressBar   = document.getElementById('progressBar');
-  const progress      = document.getElementById('progress');
-  const counterDiv    = document.getElementById('listenCounter');
-  const payOff        = document.getElementById('PayOff');
-  const payOn         = document.getElementById('PayOn');
-  const nextBtn       = document.getElementById('nextBtn');
-  const prevBtn       = document.getElementById('prevBtn');
-  const Password      = document.getElementById('passwordInput');
-  // Pick ONE play image when the page loads
-const playImages = [
-  'fmp3simages/PLAY1.png',
-  'fmp3simages/PLAY2.png',
-  'fmp3simages/PLAY3.png',
-  'fmp3simages/PLAY4.png'
-];
-const selectedPlayImage =
-  playImages[Math.floor(Math.random() * playImages.length)];
-
-// Set initial image
-if (playLogo) {
-  playLogo.src = selectedPlayImage;
-}
-
-
-  document.getElementById("embedBtn");
-  document.getElementById("embedOverlay");
-  document.getElementById("closeEmbed");
-  document.getElementById("xBtn");
-  document.getElementById("xOverlay");
-  document.getElementById("closeX");
-
-
-  // Call Classes
-  const passwordBar         = document.querySelector('.PasswordBar');
-  const defaultImage        = document.querySelector('.default-image');
-  const LancasterMusicPlayer= document.querySelector('.LancasterMusicPlayer');
-
-  // Set Order of Songs
-  let songButtons = Array.from(document.querySelectorAll('.song-button'));
-  const audioPreload = {};
-
-  // ---- Safety guards (a missing element can stop the whole script and make the play button "not work") ----
-  if (!audio) console.warn('[FOSTMp3s] Missing #audio element');
-  if (!playBtn) console.warn('[FOSTMp3s] Missing #playBtn element');
-  if (!playLogo) console.warn('[FOSTMp3s] Missing #playLogo element');
-
-  // Load Songs
-  songButtons.forEach((btn) => {
-    const song = btn.dataset.song;
-    if (!song) return;
-    const audioObj = new Audio(song);
-    audioObj.preload = 'auto';
-    audioPreload[song] = audioObj;
-  });
-
-  // Set Password
-  const PASSWORD = "FastLane";
-  let currentSongIndex = -1;
-
-  // Hide Volume
-  if (/iPhone|iPad|iPod/.test(navigator.userAgent) && volumeControl) {
-    volumeControl.style.display = 'none';
-  }
-
-  // Set Listen Count
-  const MAX_LISTENS = 20;
-  const LISTENS_KEY = 'listensLeft';
-
-  // Check If Paid For Infinite
-  const isInfiniteListen = () => {
-    // Check for infinite and infinite image
-    if (localStorage.getItem('infiniteListen') === 'true') return true;
-    if (!counterDiv) return false;
-
-    // Create Image Variable
-    const img = counterDiv.querySelector('img');
-    if (!img) return false;
-
-    // Swap Variable With Image
-    return img.src.includes('Infinity.png');
-  };
-
-  // Load Listen Count
-  let listensLeft = loadLocalListens();
-  function loadLocalListens() {
-    const v = parseInt(localStorage.getItem(LISTENS_KEY), 10);
-    return Number.isFinite(v) ? v : MAX_LISTENS;
-  }
-
-  // Save Local Listen Count Variable
-  function saveLocalListens() {
-    localStorage.setItem(LISTENS_KEY, String(listensLeft));
-  }
-
-  // If Not An Image, Gather The Listen Count
-  const updateListenUI = () => {
-    if (!counterDiv) return;
-
-    if (isInfiniteListen()) {
-      counterDiv.innerHTML = '<img src="fmp3simages/Infinity.png" style="width: 1.2em; padding: 10px; margin: -10px;" alt="∞">';
-    } else {
-      counterDiv.textContent = String(listensLeft);
-    }
-  };
-
-  // Load Listens from API
-  async function fetchListenCountFromServer() {
-    try {
-      const res = await fetch('/api/listens', { method: 'GET', credentials: 'include' });
-      if (!res.ok) throw new Error('Network error');
-      const data = await res.json();
-
-      if (typeof data.listensLeft === 'number') {
-        listensLeft = data.listensLeft;
-        saveLocalListens();
-      } else {
-        listensLeft = loadLocalListens();
-      }
-
-      if (data.infinite) localStorage.setItem('infiniteListen', 'true');
-    } catch (e) {
-      listensLeft = loadLocalListens();
-    }
-    updateListenUI();
-  }
-
-  async function saveListenCountToServer() {
-    saveLocalListens();
-    try {
-      await fetch('/api/listens', {
-        method: 'POST',
-        credentials: 'include',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ listensLeft, infinite: isInfiniteListen() })
-      });
-    } catch (e) {
-      // ignore; local already saved
-    }
-  }
-
-  updateListenUI();
-
-  // ---- Run-out-of-plays event (intro moved here) ----
-  function onRunOutOfPlays() {
-    // Change to Payment Screen
-    if (payOff) payOff.style.display = 'block';
-    if (payOn)  payOn.style.display  = 'none';
-    if (playBtn) playBtn.style.display = 'none';
-
-    // Play Intro (AUDIO) when you run out
-    if (introAudio) {
-      try { introAudio.pause(); } catch {}
-      try { introAudio.currentTime = 0; } catch {}
-      const p = introAudio.play();
-      if (p && typeof p.catch === "function") p.catch(() => {});
-    }
-
-    // Play Intro Video (if you have it) when you run out
-    document.getElementById("TheIntroPlayer")?.play().catch(()=>{});
-  }
-
-  // Decrement Listen Count
-  const decrementListenCount = () => {
-    if (isInfiniteListen()) return true;
-
-    if (listensLeft > 0) {
-      listensLeft--;
-      updateListenUI();
-      saveListenCountToServer();
-      return true;
-    }
-
-    // If you hit 0, trigger the run-out event (intro moved here)
-    onRunOutOfPlays();
-    return false;
-  };
-
-
-//-------------While Loading Fix-----------
-
-  const playSong = (index) => {
-  if (!audio) return;
-
-  // Update if Haven't Updated
-  if (!decrementListenCount()) return;
-
-  // 🔹 CHANGE UI IMMEDIATELY (while loading)
-  if (playLogo) playLogo.src = 'fmp3simages/PAUSE.png';
-  defaultImage && defaultImage.classList.add('playing');
-
-  // Stop intro audio if it was playing
-  if (introAudio) {
-    try { introAudio.pause(); } catch {}
-    try { introAudio.currentTime = 0; } catch {}
-  }
-
-  const btn = songButtons[index];
-  if (!btn) return;
-
-  const songPath = btn.dataset.song;
-  if (!songPath) return;
-
-  const preloadedAudio = audioPreload[songPath];
-
-  if (preloadedAudio) {
-    audio.src = preloadedAudio.src;
-  } else {
-    audio.src = songPath;
-  }
-
-  audio.load();
-  audio.currentTime = 0;
-
-  const p = audio.play();
-  if (p && typeof p.then === "function") {
-    p.catch(() => {
-      // 🔹 Revert if play fails
-      if (playLogo) playLogo.src = 'fmp3simages/PLAY.png';
-      defaultImage && defaultImage.classList.remove('playing');
-    });
-  }
-};
-
-  const selectSong = (index) => {
-    // Reset Current Song
-    if (currentSongIndex !== -1 && songButtons[currentSongIndex]) {
-      songButtons[currentSongIndex].style.backgroundColor = '';
-      songButtons[currentSongIndex].style.color = '';
-    }
-
-    currentSongIndex = index;
-
-    if (songButtons[index]) {
-      // Set Current Song
-      songButtons[index].style.backgroundColor = 'rgba(0, 0, 0, .8)';
-      songButtons[index].style.color = '#ffff00';
-    }
-  };
-
-  const togglePlayPause = () => {
-  if (!audio) return;
-
-  if (audio.paused) {
-    // 🔹 Update UI FIRST
-    if (playLogo) playLogo.src = 'fmp3simages/PAUSE.png';
-    defaultImage && defaultImage.classList.add('playing');
-
-    const p = audio.play();
-    if (p && typeof p.then === "function") {
-      p.catch(() => {
-        // 🔹 Revert UI if play fails
-        if (playLogo) playLogo.src = selectedPlayImage;
-        defaultImage && defaultImage.classList.remove('playing');
-      });
-    }
-  } else {
-    // 🔹 Update UI FIRST
-    if (playLogo) playLogo.src = selectedPlayImage;
-    defaultImage && defaultImage.classList.remove('playing');
-
-    audio.pause();
-  }
-};
-
-  const handleSongButtonClick = (index) => {
-    // When Clicking A Song
-    if (currentSongIndex !== index) {
-      selectSong(index);
-      // (Common expectation) clicking a different song starts it
-      playSong(index);
-      return;
-    }
-    // Same song clicked: toggle play/pause
-    togglePlayPause();
-  };
-
-  // Event Listeners - compute index at click time so it matches shuffled order
-  songButtons.forEach((btn) => {
-    // When Any Button Clicked
-    btn.addEventListener('click', () => {
-      const index = songButtons.indexOf(btn);
-      if (index !== -1) {
-        // Order Assigned
-        handleSongButtonClick(index);
-      }
-    });
-  });
-
-  if (playBtn) {
-    playBtn.addEventListener('click', () => {
-      // Play First Song  (FIX: it used to select(0) and return without playing)
-      if (currentSongIndex === -1) {
-        selectSong(0);
-        playSong(0);
-        return;
-      }
-
-      // Playing The Song
-      togglePlayPause();
-    });
-
-//Play on first touch (touch screens)
-    playBtn.addEventListener('touchstart', (e) => {
-  if (!audio) return;
-
-  e.preventDefault(); // stop ghost click / double trigger
-
-  if (currentSongIndex === -1) {
-    selectSong(0);
-    playSong(0);
-  } else {
-    togglePlayPause(); // 🔑 this now pauses too
-  }
-}, { passive: false });
-
-  }
-  // Progress Bar
-  if (progressBar) {
-    progressBar.addEventListener('click', (e) => {
-      if (!audio) return;
-      if (!isNaN(audio.duration)) {
-        audio.currentTime = (e.offsetX / progressBar.clientWidth) * audio.duration;
-      }
-    });
-  }
-
-  // Time Update
-  function updateProgressFor(active) {
-    if (!progress) return;
-    if (!isNaN(active.duration) && active.duration > 0) {
-      progress.style.width = `${(active.currentTime / active.duration) * 100}%`;
-    } else {
-      progress.style.width = '0%';
-    }
-  }
-
-  if (audio) {
-    audio.addEventListener('timeupdate', () => updateProgressFor(audio));
-
-    // When Song Ends
-    audio.addEventListener('ended', () => {
-      let nextIndex = currentSongIndex + 1;
-      if (nextIndex >= songButtons.length) nextIndex = 0;
-      selectSong(nextIndex);
-      playSong(nextIndex);
-    });
-  }
-
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      // Next
-      let nextIndex = currentSongIndex + 1;
-      if (nextIndex >= songButtons.length) nextIndex = 0;
-      selectSong(nextIndex);
-      playSong(nextIndex);
-    });
-  }
-
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      // Previous
-      let prevIndex = currentSongIndex - 1;
-      if (prevIndex < 0) prevIndex = songButtons.length - 1;
-      selectSong(prevIndex);
-      playSong(prevIndex);
-    });
-  }
-
-  if (volumeControl) {
-    // Volume Listener
-    volumeControl.addEventListener('input', e => {
-      if (audio) audio.volume = e.target.value;
-      if (introAudio) introAudio.volume = e.target.value; // mirror volume on intro
-    });
-  }
-
-  // Input Password
-  const passwordInput = document.getElementById('passwordInput');
-  if (passwordInput) {
-    // Enter Submit
-    passwordInput.addEventListener('keydown', function (event) {
-      if (event.key === 'Enter') {
-        event.preventDefault();
-        submitPassword();
-      }
-    });
-  }
-
-  window.submitPassword = () => {
-    if (document.getElementById('passwordInput')?.value === PASSWORD) {
-      localStorage.setItem('infiniteListen', 'true');
-      listensLeft = MAX_LISTENS; // or 0, doesn't matter since infinite overrides UI
-      updateListenUI();
-
-      // Update to Infinite
-      saveListenCountToServer();  // let server know this IP is infinite
-
-      // Set to Normal UI
-      if (payOff) payOff.style.display = 'none';
-      if (payOn)  payOn.style.display  = 'block';
-      if (playBtn) playBtn.style.display = 'block';
-
-      // Reset
-      if (Password) {
-        Password.value = '';                    // clear the text
-        Password.placeholder = '✓Right';    // new placeholder
-      }
-
-      // Red (your note said Red but this is green; leaving your note)
-      if (passwordBar) passwordBar.style.backgroundColor = 'rgba(18, 177, 0, .7)';
-
-      // Play First Song (optional)
-      selectSong(0);
-      playSong(0);
-
-    } else {
-
-      if (Password) {
-        Password.value = '';                    // clear the text
-        Password.placeholder = '✗Wrong';   // new placeholder
-      }
-
-      // Green (your note said Green but this is red; leaving your note)
-      if (passwordBar) passwordBar.style.backgroundColor = 'rgba(255, 0, 1, .7)';
-    }
-  };
-
-  window.shuffle = () => {
-    const container = document.getElementById("songSelection");
-    if (!container || songButtons.length === 0) return;
-
-    // Order of Songs
-    let newOrder = [...songButtons];
-
-    // Set Current Song Apart
-    if (currentSongIndex !== -1 && songButtons[currentSongIndex]) {
-
-      // There is a "current" song – keep it at the top
-      const currentBtn = songButtons[currentSongIndex];
-
-      // Remove Current Song
-      newOrder = newOrder.filter(btn => btn !== currentBtn);
-
-      // Shuffle Songs
-      for (let i = newOrder.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [newOrder[i], newOrder[j]] = [newOrder[j], newOrder[i]];
-      }
-
-      // Put Current Up
-      newOrder.unshift(currentBtn);
-
-      // Set New Order
-      newOrder.forEach(btn => container.appendChild(btn));
-      songButtons = newOrder;
-      currentSongIndex = 0; // current song is now at top, but playback state is unchanged
-
-    } else {
-
-      // No current song selected: just shuffle and start the first one
-      for (let i = newOrder.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [newOrder[i], newOrder[j]] = [newOrder[j], newOrder[i]];
-      }
-
-      newOrder.forEach(btn => container.appendChild(btn));
-      songButtons = newOrder;
-
-    }
-  }
-  fetchListenCountFromServer();
-
-    // Launch Shuffle On Load
-  if (songButtons.length > 0) {
-    window.shuffle();
-  }
-
-});
-
-//Open and close overlays
-document.getElementById("embedBtn").onclick = function(e) {
-   e.preventDefault();
-   document.getElementById("embedOverlay").style.display = "flex";
-   };
+              <script>
+                // Foster Lancaster Music Player
+                document.addEventListener("DOMContentLoaded", () => {
                 
-   document.getElementById("closeEmbed").onclick = function() {
-   document.getElementById("embedOverlay").style.display = "none";
-   };
-
-//Show Chat
-document.getElementById("chatBtn").onclick = function(e) {
-  e.preventDefault();
-  const overlay = document.getElementById("chatOverlay");
-  overlay.style.display = "flex";
-};
+                  // Call ID's
+                  const volumeControl = document.getElementById('volumeControl');
+                  const playBtn       = document.getElementById('playBtn');
+                  const buyBtn        = document.getElementById('buyBtn');
+                  const playLogo      = document.getElementById('playLogo');
+                  const audio         = document.getElementById('audio');
+                  const introAudio    = document.getElementById('introAudio'); // NEW (now used ONLY when you run out of plays)
+                  const progressBar   = document.getElementById('progressBar');
+                  const progress      = document.getElementById('progress');
+                  const counterDiv    = document.getElementById('listenCounter');
+                  const payOff        = document.getElementById('PayOff');
+                  const payOn         = document.getElementById('PayOn');
+                  const nextBtn       = document.getElementById('nextBtn');
+                  const prevBtn       = document.getElementById('prevBtn');
+                  const Password      = document.getElementById('passwordInput');
+                  // Pick ONE play image when the page loads
+                const playImages = [
+                  'fmp3simages/PLAY1.png',
+                  'fmp3simages/PLAY2.png',
+                  'fmp3simages/PLAY3.png',
+                  'fmp3simages/PLAY4.png'
+                ];
+                const selectedPlayImage =
+                  playImages[Math.floor(Math.random() * playImages.length)];
                 
-document.getElementById("closeChat").onclick = function() {
-document.getElementById("chatOverlay").style.display = "none";
-};
-
-              
-// Foster Chat From RSS
-  fetch("https://fostchat-rss.fostmp3s.workers.dev/")
-  .then(response => response.text())
-  .then(str => {
-
-    const parser = new DOMParser();
-    const xml = parser.parseFromString(str, "application/xml");
-    const items = xml.querySelectorAll("item");
-    const feedList = document.getElementById("feed");
-
-    items.forEach(item => {
-
-      const title =
-        item.querySelector("title")?.textContent?.trim() || "";
-
-      const link =
-        item.querySelector("link")?.textContent?.trim() || "#";
-
-      // content:encoded support
-      const contentEncoded =
-        item.getElementsByTagName("content:encoded")[0]?.textContent || "";
-
-      // Raw description
-      const rawDescription =
-        item.querySelector("description")?.textContent || "";
-
-      // Convert HTML to text
-      const tempDiv = document.createElement("div");
-      tempDiv.innerHTML = rawDescription;
-
-      let cleanDescription =
-        tempDiv.textContent || tempDiv.innerText || "";
-
-      cleanDescription = cleanDescription
-        .replace(/\s+/g, " ")
-        .replace(/^undefined$/i, "")
-        .trim();
-
-      // FINAL protection against undefined/null
-      if (
-        !cleanDescription ||
-        cleanDescription === "undefined" ||
-        cleanDescription === "null"
-      ) {
-        cleanDescription = "";
-      }
-
-      // Try multiple image sources
-      const image =
-        item.querySelector("enclosure")?.getAttribute("url") ||
-        item.querySelector("media\\:content")?.getAttribute("url") ||
-        contentEncoded.match(/<img.*?src="(.*?)"/)?.[1] ||
-        rawDescription.match(/<img.*?src="(.*?)"/)?.[1] ||
-        "";
-
-      const li = document.createElement("li");
-
-      li.innerHTML = `
-        <a href="${link}" target="_blank">
-
-          ${
-            image
-              ? `<img src="${image}" style="max-width:100%; display:block;">`
-              : ""
-          }
-
-          <div class="feedTitle">${title}</div>
-
-          ${
-            cleanDescription
-              ? `<div class="feedDescription">${cleanDescription}</div>`
-              : ""
-          }
-
-        </a>
-      <a href="https://fostmp3s.com/pw" target="_blank">
-      <div class="love">
-      <table><td><div class="postprice">$2.25</div></td><td><img class="postcart" src="fmp3simages/PWBUY.png"></td>
-      <td>
-      <div class="hearteffect2">
-        <span class="heart h1"></span>
-        <span class="heart h2"></span>
-        <span class="heart h3"></span>
-        <span class="heart h4"></span>
-      </div>
-      </td>
-      </table>
-      </div>
-      </a>
-      `;
-
-      if (feedList) {
-        feedList.appendChild(li);
-      }
-
-    });
-
-  })
-  .catch(err => console.error("Error loading RSS feed:", err));
-  
-</script>
+                // Set initial image
+                if (playLogo) {
+                  playLogo.src = selectedPlayImage;
+                }
+                
+                
+                  document.getElementById("embedBtn");
+                  document.getElementById("embedOverlay");
+                  document.getElementById("closeEmbed");
+                  document.getElementById("xBtn");
+                  document.getElementById("xOverlay");
+                  document.getElementById("closeX");
+                
+                
+                  // Call Classes
+                  const passwordBar         = document.querySelector('.PasswordBar');
+                  const defaultImage        = document.querySelector('.default-image');
+                  const LancasterMusicPlayer= document.querySelector('.LancasterMusicPlayer');
+                
+                  // Set Order of Songs
+                  let songButtons = Array.from(document.querySelectorAll('.song-button'));
+                  const audioPreload = {};
+                
+                  // ---- Safety guards (a missing element can stop the whole script and make the play button "not work") ----
+                  if (!audio) console.warn('[FOSTMp3s] Missing #audio element');
+                  if (!playBtn) console.warn('[FOSTMp3s] Missing #playBtn element');
+                  if (!playLogo) console.warn('[FOSTMp3s] Missing #playLogo element');
+                
+                  // Load Songs
+                  songButtons.forEach((btn) => {
+                    const song = btn.dataset.song;
+                    if (!song) return;
+                    const audioObj = new Audio(song);
+                    audioObj.preload = 'auto';
+                    audioPreload[song] = audioObj;
+                  });
+                
+                  // Set Password
+                  const PASSWORD = "FastLane";
+                  window.currentsongindex = -1;
+                
+                  // Hide Volume
+                  if (/iPhone|iPad|iPod/.test(navigator.userAgent) && volumeControl) {
+                    volumeControl.style.display = 'none';
+                  }
+                
+                  // Set Listen Count
+                  const MAX_LISTENS = 20;
+                  const LISTENS_KEY = 'listensLeft';
+                
+                  // Check If Paid For Infinite
+                  const isInfiniteListen = () => {
+                    // Check for infinite and infinite image
+                    if (localStorage.getItem('infiniteListen') === 'true') return true;
+                    if (!counterDiv) return false;
+                
+                    // Create Image Variable
+                    const img = counterDiv.querySelector('img');
+                    if (!img) return false;
+                
+                    // Swap Variable With Image
+                    return img.src.includes('Infinity.png');
+                  };
+                
+                  // Load Listen Count
+                  let listensLeft = loadLocalListens();
+                  function loadLocalListens() {
+                    const v = parseInt(localStorage.getItem(LISTENS_KEY), 10);
+                    return Number.isFinite(v) ? v : MAX_LISTENS;
+                  }
+                
+                  // Save Local Listen Count Variable
+                  function saveLocalListens() {
+                    localStorage.setItem(LISTENS_KEY, String(listensLeft));
+                  }
+                
+                  // If Not An Image, Gather The Listen Count
+                  const updateListenUI = () => {
+                    if (!counterDiv) return;
+                
+                    if (isInfiniteListen()) {
+                      counterDiv.innerHTML = '<img src="fmp3simages/Infinity.png" style="width: 1.2em; padding: 10px; margin: -10px;" alt="∞">';
+                    } else {
+                      counterDiv.textContent = String(listensLeft);
+                    }
+                  };
+                
+                  // Load Listens from API
+                  async function fetchListenCountFromServer() {
+                    try {
+                      const res = await fetch('/api/listens', { method: 'GET', credentials: 'include' });
+                      if (!res.ok) throw new Error('Network error');
+                      const data = await res.json();
+                
+                      if (typeof data.listensLeft === 'number') {
+                        listensLeft = data.listensLeft;
+                        saveLocalListens();
+                      } else {
+                        listensLeft = loadLocalListens();
+                      }
+                
+                      if (data.infinite) localStorage.setItem('infiniteListen', 'true');
+                    } catch (e) {
+                      listensLeft = loadLocalListens();
+                    }
+                    updateListenUI();
+                  }
+                
+                  async function saveListenCountToServer() {
+                    saveLocalListens();
+                    try {
+                      await fetch('/api/listens', {
+                        method: 'POST',
+                        credentials: 'include',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ listensLeft, infinite: isInfiniteListen() })
+                      });
+                    } catch (e) {
+                      // ignore; local already saved
+                    }
+                  }
+                
+                  updateListenUI();
+                
+                  // ---- Run-out-of-plays event (intro moved here) ----
+                  function onRunOutOfPlays() {
+                    // Change to Payment Screen
+                    if (payOff) payOff.style.display = 'block';
+                    if (payOn)  payOn.style.display  = 'none';
+                    if (playBtn) playBtn.style.display = 'none';
+                
+                    // Play Intro (AUDIO) when you run out
+                    if (introAudio) {
+                      try { introAudio.pause(); } catch {}
+                      try { introAudio.currentTime = 0; } catch {}
+                      const p = introAudio.play();
+                      if (p && typeof p.catch === "function") p.catch(() => {});
+                    }
+                
+                    // Play Intro Video (if you have it) when you run out
+                    document.getElementById("TheIntroPlayer")?.play().catch(()=>{});
+                  }
+                
+                  // Decrement Listen Count
+                  const decrementListenCount = () => {
+                    if (isInfiniteListen()) return true;
+                
+                    if (listensLeft > 0) {
+                      listensLeft--;
+                      updateListenUI();
+                      saveListenCountToServer();
+                      return true;
+                    }
+                
+                    // If you hit 0, trigger the run-out event (intro moved here)
+                    onRunOutOfPlays();
+                    return false;
+                  };
+                
+                
+                //-------------While Loading Fix-----------
+                
+                  const playSong = (index) => {
+                  if (!audio) return;
+                
+                  // Update if Haven't Updated
+                  if (!decrementListenCount()) return;
+                
+                  // 🔹 CHANGE UI IMMEDIATELY (while loading)
+                  if (playLogo) playLogo.src = 'fmp3simages/PAUSE.png';
+                  defaultImage && defaultImage.classList.add('playing');
+                
+                  // Stop intro audio if it was playing
+                  if (introAudio) {
+                    try { introAudio.pause(); } catch {}
+                    try { introAudio.currentTime = 0; } catch {}
+                  }
+                
+                  const btn = songButtons[index];
+                  if (!btn) return;
+                
+                  const songPath = btn.dataset.song;
+                  if (!songPath) return;
+                
+                  const preloadedAudio = audioPreload[songPath];
+                
+                  if (preloadedAudio) {
+                    audio.src = preloadedAudio.src;
+                  } else {
+                    audio.src = songPath;
+                  }
+                
+                  audio.load();
+                  audio.currentTime = 0;
+                
+                  const p = audio.play();
+                  if (p && typeof p.then === "function") {
+                    p.catch(() => {
+                      // 🔹 Revert if play fails
+                      if (playLogo) playLogo.src = 'fmp3simages/PLAY.png';
+                      defaultImage && defaultImage.classList.remove('playing');
+                    });
+                  }
+                };
+                
+                  const selectSong = (index) => {
+                    // Reset Current Song
+                    if (window.currentsongindex !== -1 && songButtons[window.currentsongindex]) {
+                      songButtons[window.currentsongindex].style.backgroundColor = '';
+                      songButtons[window.currentsongindex].style.color = '';
+                    }
+                
+                    window.currentsongindex = index;
+                
+                    if (songButtons[index]) {
+                      // Set Current Song
+                      songButtons[index].style.backgroundColor = 'rgba(0, 0, 0, .8)';
+                      songButtons[index].style.color = '#ffff00';
+                    }
+                  };
+                
+                  const togglePlayPause = () => {
+                  if (!audio) return;
+                
+                  if (audio.paused) {
+                    // 🔹 Update UI FIRST
+                    if (playLogo) playLogo.src = 'fmp3simages/PAUSE.png';
+                    defaultImage && defaultImage.classList.add('playing');
+                
+                    const p = audio.play();
+                    if (p && typeof p.then === "function") {
+                      p.catch(() => {
+                        // 🔹 Revert UI if play fails
+                        if (playLogo) playLogo.src = selectedPlayImage;
+                        defaultImage && defaultImage.classList.remove('playing');
+                      });
+                    }
+                  } else {
+                    // 🔹 Update UI FIRST
+                    if (playLogo) playLogo.src = selectedPlayImage;
+                    defaultImage && defaultImage.classList.remove('playing');
+                
+                    audio.pause();
+                  }
+                };
+                
+                  const handleSongButtonClick = (index) => {
+                    // When Clicking A Song
+                    if (window.currentsongindex !== index) {
+                      selectSong(index);
+                      // (Common expectation) clicking a different song starts it
+                      playSong(index);
+                      return;
+                    }
+                    // Same song clicked: toggle play/pause
+                    togglePlayPause();
+                  };
+                
+                  // Event Listeners - compute index at click time so it matches shuffled order
+                  songButtons.forEach((btn) => {
+                    // When Any Button Clicked
+                    btn.addEventListener('click', () => {
+                      const index = songButtons.indexOf(btn);
+                      if (index !== -1) {
+                        // Order Assigned
+                        handleSongButtonClick(index);
+                      }
+                    });
+                  });
+                
+                  if (playBtn) {
+                    playBtn.addEventListener('click', () => {
+                      // Play First Song  (FIX: it used to select(0) and return without playing)
+                      if (window.currentsongindex === -1) {
+                        selectSong(0);
+                        playSong(0);
+                        return;
+                      }
+                
+                      // Playing The Song
+                      togglePlayPause();
+                    });
+                
+                //Play on first touch (touch screens)
+                    playBtn.addEventListener('touchstart', (e) => {
+                  if (!audio) return;
+                
+                  e.preventDefault(); // stop ghost click / double trigger
+                
+                  if (window.currentsongindex === -1) {
+                    selectSong(0);
+                    playSong(0);
+                  } else {
+                    togglePlayPause(); // 🔑 this now pauses too
+                  }
+                }, { passive: false });
+                
+                  }
+                  // Progress Bar
+                  if (progressBar) {
+                    progressBar.addEventListener('click', (e) => {
+                      if (!audio) return;
+                      if (!isNaN(audio.duration)) {
+                        audio.currentTime = (e.offsetX / progressBar.clientWidth) * audio.duration;
+                      }
+                    });
+                  }
+                
+                  // Time Update
+                  function updateProgressFor(active) {
+                    if (!progress) return;
+                    if (!isNaN(active.duration) && active.duration > 0) {
+                      progress.style.width = `${(active.currentTime / active.duration) * 100}%`;
+                    } else {
+                      progress.style.width = '0%';
+                    }
+                  }
+                
+                  if (audio) {
+                    audio.addEventListener('timeupdate', () => updateProgressFor(audio));
+                
+                    // When Song Ends
+                    audio.addEventListener('ended', () => {
+                      let nextIndex = window.currentsongindex + 1;
+                      if (nextIndex >= songButtons.length) nextIndex = 0;
+                      selectSong(nextIndex);
+                      playSong(nextIndex);
+                    });
+                  }
+                
+                  if (nextBtn) {
+                    nextBtn.addEventListener('click', () => {
+                      // Next
+                      let nextIndex = window.currentsongindex + 1;
+                      if (nextIndex >= songButtons.length) nextIndex = 0;
+                      selectSong(nextIndex);
+                      playSong(nextIndex);
+                    });
+                  }
+                
+                  if (prevBtn) {
+                    prevBtn.addEventListener('click', () => {
+                      // Previous
+                      let prevIndex = window.currentsongindex - 1;
+                      if (prevIndex < 0) prevIndex = songButtons.length - 1;
+                      selectSong(prevIndex);
+                      playSong(prevIndex);
+                    });
+                  }
+                
+                  if (volumeControl) {
+                    // Volume Listener
+                    volumeControl.addEventListener('input', e => {
+                      if (audio) audio.volume = e.target.value;
+                      if (introAudio) introAudio.volume = e.target.value; // mirror volume on intro
+                    });
+                  }
+                
+                  // Input Password
+                  const passwordInput = document.getElementById('passwordInput');
+                  if (passwordInput) {
+                    // Enter Submit
+                    passwordInput.addEventListener('keydown', function (event) {
+                      if (event.key === 'Enter') {
+                        event.preventDefault();
+                        submitPassword();
+                      }
+                    });
+                  }
+                
+                  window.submitPassword = () => {
+                    if (document.getElementById('passwordInput')?.value === PASSWORD) {
+                      localStorage.setItem('infiniteListen', 'true');
+                      listensLeft = MAX_LISTENS; // or 0, doesn't matter since infinite overrides UI
+                      updateListenUI();
+                
+                      // Update to Infinite
+                      saveListenCountToServer();  // let server know this IP is infinite
+                
+                      // Set to Normal UI
+                      if (payOff) payOff.style.display = 'none';
+                      if (payOn)  payOn.style.display  = 'block';
+                      if (playBtn) playBtn.style.display = 'block';
+                
+                      // Reset
+                      if (Password) {
+                        Password.value = '';                    // clear the text
+                        Password.placeholder = '✓Right';    // new placeholder
+                      }
+                
+                      // Red (your note said Red but this is green; leaving your note)
+                      if (passwordBar) passwordBar.style.backgroundColor = 'rgba(18, 177, 0, .7)';
+                
+                      // Play First Song (optional)
+                      selectSong(0);
+                      playSong(0);
+                
+                    } else {
+                
+                      if (Password) {
+                        Password.value = '';                    // clear the text
+                        Password.placeholder = '✗Wrong';   // new placeholder
+                      }
+                
+                      // Green (your note said Green but this is red; leaving your note)
+                      if (passwordBar) passwordBar.style.backgroundColor = 'rgba(255, 0, 1, .7)';
+                    }
+                  };
+                
+                  window.shuffle = () => {
+                    const container = document.getElementById("songSelection");
+                    if (!container || songButtons.length === 0) return;
+                
+                    // Order of Songs
+                    let newOrder = [...songButtons];
+                
+                    // Set Current Song Apart
+                    if (window.currentsongindex !== -1 && songButtons[window.currentsongindex]) {
+                
+                      // There is a "current" song – keep it at the top
+                      const currentBtn = songButtons[window.currentsongindex];
+                
+                      // Remove Current Song
+                      newOrder = newOrder.filter(btn => btn !== currentBtn);
+                
+                      // Shuffle Songs
+                      for (let i = newOrder.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [newOrder[i], newOrder[j]] = [newOrder[j], newOrder[i]];
+                      }
+                
+                      // Put Current Up
+                      newOrder.unshift(currentBtn);
+                
+                      // Set New Order
+                      newOrder.forEach(btn => container.appendChild(btn));
+                      songButtons = newOrder;
+                      window.currentsongindex = 0; // current song is now at top, but playback state is unchanged
+                
+                    } else {
+                
+                      // No current song selected: just shuffle and start the first one
+                      for (let i = newOrder.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [newOrder[i], newOrder[j]] = [newOrder[j], newOrder[i]];
+                      }
+                
+                      newOrder.forEach(btn => container.appendChild(btn));
+                      songButtons = newOrder;
+                
+                    }
+                  }
+                  fetchListenCountFromServer();
+                
+                    // Launch Shuffle On Load
+                  if (songButtons.length > 0) {
+                    window.shuffle();
+                  }
+                
+                });
+                
+                //Open and close overlays
+                document.getElementById("embedBtn").onclick = function(e) {
+                   e.preventDefault();
+                   document.getElementById("embedOverlay").style.display = "flex";
+                   };
+                                
+                   document.getElementById("closeEmbed").onclick = function() {
+                   document.getElementById("embedOverlay").style.display = "none";
+                   };
+                
+                //Show Chat
+                document.getElementById("chatBtn").onclick = function(e) {
+                  e.preventDefault();
+                  const overlay = document.getElementById("chatOverlay");
+                  overlay.style.display = "flex";
+                };
+                                
+                document.getElementById("closeChat").onclick = function() {
+                document.getElementById("chatOverlay").style.display = "none";
+                };
+                
+                              
+                // Foster Chat From RSS
+                  fetch("https://fostchat-rss.fostmp3s.workers.dev/")
+                  .then(response => response.text())
+                  .then(str => {
+                
+                    const parser = new DOMParser();
+                    const xml = parser.parseFromString(str, "application/xml");
+                    const items = xml.querySelectorAll("item");
+                    const feedList = document.getElementById("feed");
+                
+                    items.forEach(item => {
+                
+                      const title =
+                        item.querySelector("title")?.textContent?.trim() || "";
+                
+                      const link =
+                        item.querySelector("link")?.textContent?.trim() || "#";
+                
+                      // content:encoded support
+                      const contentEncoded =
+                        item.getElementsByTagName("content:encoded")[0]?.textContent || "";
+                
+                      // Raw description
+                      const rawDescription =
+                        item.querySelector("description")?.textContent || "";
+                
+                      // Convert HTML to text
+                      const tempDiv = document.createElement("div");
+                      tempDiv.innerHTML = rawDescription;
+                
+                      let cleanDescription =
+                        tempDiv.textContent || tempDiv.innerText || "";
+                
+                      cleanDescription = cleanDescription
+                        .replace(/\s+/g, " ")
+                        .replace(/^undefined$/i, "")
+                        .trim();
+                
+                      // FINAL protection against undefined/null
+                      if (
+                        !cleanDescription ||
+                        cleanDescription === "undefined" ||
+                        cleanDescription === "null"
+                      ) {
+                        cleanDescription = "";
+                      }
+                
+                      // Try multiple image sources
+                      const image =
+                        item.querySelector("enclosure")?.getAttribute("url") ||
+                        item.querySelector("media\\:content")?.getAttribute("url") ||
+                        contentEncoded.match(/<img.*?src="(.*?)"/)?.[1] ||
+                        rawDescription.match(/<img.*?src="(.*?)"/)?.[1] ||
+                        "";
+                
+                      const li = document.createElement("li");
+                
+                      li.innerHTML = `
+                        <a href="${link}" target="_blank">
+                
+                          ${
+                            image
+                              ? `<img src="${image}" style="max-width:100%; display:block;">`
+                              : ""
+                          }
+                
+                          <div class="feedTitle">${title}</div>
+                
+                          ${
+                            cleanDescription
+                              ? `<div class="feedDescription">${cleanDescription}</div>`
+                              : ""
+                          }
+                
+                        </a>
+                      <a href="https://fostmp3s.com/pw" target="_blank">
+                      <div class="love">
+                      <table><td><div class="postprice">$2.25</div></td><td><img class="postcart" src="fmp3simages/PWBUY.png"></td>
+                      <td>
+                      <div class="hearteffect2">
+                        <span class="heart h1"></span>
+                        <span class="heart h2"></span>
+                        <span class="heart h3"></span>
+                        <span class="heart h4"></span>
+                      </div>
+                      </td>
+                      </table>
+                      </div>
+                      </a>
+                      `;
+                
+                      if (feedList) {
+                        feedList.appendChild(li);
+                      }
+                
+                    });
+                
+                  })
+                  .catch(err => console.error("Error loading RSS feed:", err));
+                  
+                </script>
+                
 
 <!-----Fetcher
 export default {

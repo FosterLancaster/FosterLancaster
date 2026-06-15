@@ -99,7 +99,7 @@ footer {
   height: auto;
   font-family: 'FL';
   position: relative;
-  padding: 2em 1em calc(2em + 50px) 1em;
+  padding: 2em 1em 2em 1em;
   font-size: 18px;
   line-height: 2em;
   border-top: solid .5px transparent;

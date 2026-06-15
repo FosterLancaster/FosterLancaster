@@ -104,9 +104,9 @@
   overflow: hidden;
 }
 .MusicVideoContainer {
-  margin: 10px;
   height: 500px;
   width: calc(100% - 22px);
+  margin: 10px;
   border: solid 1px #ffffff;
   display: block;
   box-sizing: border-box;

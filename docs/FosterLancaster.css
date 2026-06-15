@@ -63,7 +63,7 @@ header {
 }
 /*-------------------FLName---------------------*/
 .FLNameButton {
-  margin: 50px auto 10px auto;
+  margin: 70px auto 10px auto;
   font-size: 30px;
   font-family: 'FL2';
   width: fit-content;
@@ -144,25 +144,19 @@ footer {
 }
 .iconlinkpic {
   display: block;
-  height: 15px;
-  width: 15px;
+  height: 30px;
+  width: 30px;
 }
 .iconlink,
 .MoreInfo {
-  font-size: 13px;
-  height: 15px;
+  font-size: 15px;
+  height: 30px;
   width: auto;
   padding: 5px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   vertical-align: middle;
-  background-color: #ffffff;
-  background-image: linear-gradient(to top, #ffffff, #ffff00);
-  background-size: cover;
-  background-position: center center;
-  border-radius: 5px;
-  border: solid 1px #000000;
   transition-duration: .5s;
   position: relative;
   color: #000000;
@@ -191,16 +185,6 @@ select {
   background-position: center center;
   background-size: cover;
   opacity: 1;
-}
-.Socials {
-  line-height: auto;
-  width: auto;
-  display: inline-block;
-  font-size: 13px;
-  font-family: Futura;
-}
-.Socials:hover {
-  text-decoration: underline;
 }
 li {
   list-style: none;

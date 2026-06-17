@@ -40,12 +40,16 @@
 .FtvContent {
   height: 520px; 
   width: 520px;
-  max-width: calc(100% - 22px);
+  max-width: 520px;
 }
-.MusicVideoContainer, .MusicVideo {
+.MusicVideoContainer {
   height: 500px;
   width: 500px;
   max-width: calc(100% - 22px);
+}
+.MusicVideo {
+  width: 100%;
+  height: 100%;
 }
 @media only screen and (orientation: portrait) {
 .fostmp3s,
@@ -56,13 +60,17 @@
 }
 .FtvContent {
   height: 420px;
-  width: 420px;
-  max-width: calc(100% - 22px);
+  width: 420;
+  max-width: 420px;
 }
-.MusicVideoContainer, .MusicVideo {
+.MusicVideoContainer{
   height: 400px;
   width: 400px;
-  max-width: 100%;
+  max-width: calc(100% - 22px);
+}
+.MusicVideo {
+  width: 100%;
+  height: 100%;
 }
 }
 </style>

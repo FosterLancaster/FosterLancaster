@@ -352,8 +352,11 @@ table {
   overflow-y: scroll;
   position: relative;
   opacity: 0;
-  z-index: 1;
   display: block;
+  z-index: 3;
+}
+.songSelection:hover {
+  opacity: 1;
 }
 .songSelectionOption {
   position: absolute;
@@ -372,6 +375,14 @@ table {
 }
 /*------100vh Controls Sum Landscape = 207px (with frame) + 185px (without frame)-------*/
 /*----Bars----*/
+.songSelection:hover .Seven{
+  opacity: 0;
+}
+.Seven:hover .songSelectionOption {
+  opacity: 0;
+  animation: none;
+  display: none;
+}
 .Seven {
   width: calc(100% - 22px);
   margin-left: auto;
@@ -380,38 +391,30 @@ table {
   border: solid 11px rgba(150, 150, 150, .3);
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  position: relative;
-}
-.Seven:hover .songSelection {
+  position: relative; /* important */
   opacity: 1;
-  pointer-events: all;
-  z-index: 3;
-}
-.Seven:hover .shuffleBtn {
-  opacity: 1;
-  pointer-events: all;
-}
-.Seven:hover .songSelectionOption {
-  opacity: 0;
-  animation: none;
-  display: none;
 }
 .shuffleBtn {
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-  opacity: .5 !important;
+  position: relative;
+  opacity: 1 !important;
   cursor: pointer;
-  display: inline-block;
   height: 38px;
-  width: 38px;
+  width: calc(100% - 2px);
   border-radius: 10px;
-  z-index: 3;
-  background-color: rgba(0, 0, 0,.3);
+  z-index: 999;
+  background-color: rgba(0,0,0,.3);
   border: solid 1px #fff;
+  text-align: center;
+  background-image: url('fmp3simages/Shuffle.png');
+  background-size: 38px 38px;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 .shuffleBtn:hover {
-  opacity: 1 !important;
+  opacity: .5 !important;
+}
+.shuffleBtn:hover .songSelection {
+  background-color: #b25900;
 }
 .OffMusicHeader {
   height: calc(100vh - 185px);
@@ -1016,11 +1019,11 @@ li {
 <div class="LancasterMusicPlayer">
   
   <!----PayOn---->
-        <div id="PayOn" >
+        <div id="PayOn">
           <div class="Seven">
           <img class="songSelectionOption" src='fmp3simages/SongSelect.png'>
           <div class="songSelection" id="songSelection"  alt="Song Selector" title="Song Selector">
-
+            <div class="shuffleBtn"  onclick="shuffle()" alt="Shuffle" title="Shuffle"></div>
           <div align='center'>
             <audio id="introAudio" preload="auto" src="fmp3smusic/Sale.mp3"></audio>
             <button preload="auto" class ="song-button GoodForYou" data-song="fmp3smusic/GoodForYou.mp3"><img src="fmp3simages/GoodForYou.jpg" class="AlbumThumbnail">"Good For You"<span class="playcount">Loading</span></button>
@@ -1035,7 +1038,6 @@ li {
             <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL8.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Reality"<span class="playcount">Loading</span></button>
           </div>
         </div>
-        <img class="shuffleBtn" src="fmp3simages/Shuffle.png" onclick="shuffle()" alt="Shuffle" title="Shuffle">
       
       </div>
       </div>

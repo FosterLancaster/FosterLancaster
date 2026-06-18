@@ -64,7 +64,7 @@ header {
 /*-------------------FLName---------------------*/
 .FLNameButton {
   margin: 70px auto 10px auto;
-  font-size: 30px;
+  font-size: 20vw;
   font-family: 'FL2';
   width: fit-content;
   display: inline-block;
@@ -72,8 +72,14 @@ header {
   text-align: center;
   background-clip: text;
   cursor: pointer;
-  color: #000000;
+  color: transparent;
   transition-duration: .5s;
+  background-color: rgba(255, 255, 255, .1);
+  background-image: linear-gradient(to top, rgba(255, 255, 255, .5), transparent, rgba(255, 255, 255, .5));
+  background-size: 100% 700px;
+  background-position: center center;
+  animation: rise 2s linear infinite;
+  -webkit-text-stroke: rgba(127.5, 127.5, 127.5, .3) .005em;
 }
 .FLNameButton:hover {
   transform: scale(1.05);

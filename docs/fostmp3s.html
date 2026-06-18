@@ -163,10 +163,10 @@ table {
 .nextprev-btn:hover, 
 .embedBtn:hover, 
 .chatBtn:hover {
-  background-color: #000000;
+  background-color: #7D7F7C;
 }
 .EngageBar td:hover {
-  background-color: #000000;
+  background-color: #7D7F7C;
 }
  .LancasterFrame {
   font-size: 18px;
@@ -373,11 +373,11 @@ table {
 /*------100vh Controls Sum Landscape = 207px (with frame) + 185px (without frame)-------*/
 /*----Bars----*/
 .Seven {
-  width: calc(80% - 22px);
+  width: calc(100% - 22px);
   margin-left: auto;
   margin-right: auto;
   height: calc(100vh - 207px);
-  border: solid 11px rgba(200, 200, 200, .3);
+  border: solid 11px rgba(150, 150, 150, .3);
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
   position: relative;
@@ -385,6 +385,7 @@ table {
 .Seven:hover .songSelection {
   opacity: 1;
   pointer-events: all;
+  z-index: 3;
 }
 .Seven:hover .shuffleBtn {
   opacity: 1;
@@ -405,7 +406,7 @@ table {
   height: 38px;
   width: 38px;
   border-radius: 10px;
-  z-index: 2;
+  z-index: 3;
   background-color: rgba(0, 0, 0,.3);
   border: solid 1px #fff;
 }
@@ -593,7 +594,7 @@ table {
   display: block;
 }
 .progressBar {
-  width: 60px;
+  width: 80px;
   height: 10px;
   max-width: 100%;
   background-color: rgba(0, 0, 0, .5);
@@ -876,10 +877,10 @@ li {
   top: 0;
   bottom: 0;
   padding: 0px 2.5px 0px 2.5px;
-  background-color: rgb(0, 0, 0, .35);
+  background-color: rgb(255, 255, 255, .5);
   backdrop-filter: blur(5px);
   border-bottom-right-radius: 20px; /* Needed for backdrop filter */
-  color: #ffff00;
+  color: #c46d08;
   -webkit-text-stroke: .02em #000000;
   display: flex;
   align-items: center;   /* vertical centering */
@@ -891,10 +892,6 @@ li {
   max-width: 100%;
   margin: 0px;
 }
-.Seven {
-  width: calc(100% - 22px);
-  height: calc(100vh - 217px);
-  }
 .Password {
   line-height: 50px;
   height: 50px; 

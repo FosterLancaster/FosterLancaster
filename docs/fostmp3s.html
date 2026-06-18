@@ -163,10 +163,10 @@ table {
 .nextprev-btn:hover, 
 .embedBtn:hover, 
 .chatBtn:hover {
-  background-color: #7D7F7C;
+  background-color: #b25900;
 }
 .EngageBar td:hover {
-  background-color: #7D7F7C;
+  background-color: #b25900;
 }
  .LancasterFrame {
   font-size: 18px;
@@ -420,7 +420,7 @@ table {
   display: flex; 
   align-items: center; 
   justify-content: center; 
-  color: #ffff00;
+  color: #b25900;
   font-size: 7vw;
   text-decoration: underline;
   max-width: 95%;
@@ -597,7 +597,7 @@ table {
   width: 80px;
   height: 10px;
   max-width: 100%;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, .8);
   border: solid 1px #ffffff;
   cursor: pointer;
   overflow: hidden;
@@ -611,7 +611,7 @@ table {
   width: 0;
 }
 input::placeholder {
-  color: #ffff00;
+  color: #b25900;
 }
 input:focus {
   animation: none;
@@ -877,10 +877,9 @@ li {
   top: 0;
   bottom: 0;
   padding: 0px 2.5px 0px 2.5px;
-  background-color: rgb(255, 255, 255, .5);
-  backdrop-filter: blur(5px);
+  background-image: linear-gradient(to right, transparent, #000000);
   border-bottom-right-radius: 20px; /* Needed for backdrop filter */
-  color: #c46d08;
+  color: #ffffff;
   -webkit-text-stroke: .02em #000000;
   display: flex;
   align-items: center;   /* vertical centering */
@@ -888,6 +887,9 @@ li {
 }
 /*------100vh Controls Sum Landscape = 217px (with frame) + 195px (without frame)-------*/
 @media screen and (max-width: 500px) {
+  .Seven {
+  height: calc(100vh - 217px);
+  }
 .MusicHeader {
   max-width: 100%;
   margin: 0px;
@@ -1435,7 +1437,7 @@ li {
                     if (songButtons[index]) {
                       // Set Current Song
                       songButtons[index].style.backgroundColor = 'rgba(0, 0, 0, .8)';
-                      songButtons[index].style.color = '#ffff00';
+                      songButtons[index].style.color = '#b25900';
                     }
                   };
                 

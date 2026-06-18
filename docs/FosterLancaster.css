@@ -63,7 +63,7 @@ header {
 }
 /*-------------------FLName---------------------*/
 .FLNameButton {
-  margin: 70px auto 10px auto;
+  margin: 10vh 0px 10vh 0px;
   font-size: 20vw;
   font-family: 'FL2';
   width: fit-content;
@@ -79,7 +79,7 @@ header {
   background-size: 100% 700px;
   background-position: center center;
   animation: rise 2s linear infinite;
-  -webkit-text-stroke: rgba(127.5, 127.5, 127.5, .3) .005em;
+  -webkit-text-stroke: rgba(127.5, 127.5, 127.5, .6) .005em;
 }
 .FLNameButton:hover {
   transform: scale(1.05);
@@ -142,16 +142,22 @@ footer {
   width: auto;
 }
 .LinkMenu {
-  position: fixed; 
-  top: 0px; 
-  right: 0px; 
-  margin: 5px;
+  height: auto;
+  position: relative; 
+  margin: 10vw;
   z-index: 6;
 }
 .iconlinkpic {
-  display: block;
-  height: 30px;
-  width: 30px;
+  height: 8vw;
+  padding: 2vw;
+  width: auto;
+  background-color: #ffff00;
+  border-radius: 50%;
+  overflow: visible;
+  border: solid 1px #000000;
+}
+.iconlinkpic:hover {
+background-color: #ffffff;
 }
 .iconlink,
 .MoreInfo {

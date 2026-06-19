@@ -110,7 +110,7 @@ footer {
   line-height: 2em;
   border-top: solid .5px transparent;
   background-color: #696900;
-  background-image: url('images/TrashTexture.jpg');
+  background-image: url('images/FosterGlasses.jpg');
   background-size: cover;
   background-position: center center;
   text-align: center;
@@ -148,37 +148,40 @@ footer {
   z-index: 6;
 }
 .iconlinkpic {
-  height: 8vw;
-  padding: 2vw;
-  width: auto;
+  width: 10vw;
+  height: 10vw;
+  object-fit: contain;
+  display: block;
+}
+
+.wordlink {
+  width: 10vw;
+  height: 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5vw;
+  line-height: 1;
+  text-align: center;
+}
+.iconlinkcontainer {
+  color: #000000;
+  width: 14vw;
+  height: 14vw;
   background-color: #ffff00;
-  border-radius: 50%;
-  overflow: visible;
   border: solid 1px #000000;
-}
-.iconlinkpic:hover {
-background-color: #ffffff;
-}
-.iconlink,
-.MoreInfo {
-  font-size: 15px;
-  height: 30px;
-  width: auto;
-  padding: 5px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  vertical-align: middle;
+  vertical-align: top;
+  box-sizing: border-box;
+  border-radius: 50%;
   transition-duration: .5s;
-  position: relative;
-  color: #000000;
-  box-sizing: content-box;
 }
-.MoreInfo:hover {
-  text-decoration: underline;
-}
-.iconlink:hover, .MoreInfo:hover {
-  transform: scale(1.1);
+.iconlinkcontainer:hover {
+background-color: #ffffff;
+transform: scale(1.1);
+text-decoration: underline;
 }
 select { 
   outline: none; 

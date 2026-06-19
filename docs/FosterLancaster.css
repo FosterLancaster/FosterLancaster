@@ -143,9 +143,12 @@ footer {
 }
 .LinkMenu {
   height: auto;
+  width: 100%;
   position: relative; 
-  margin: 10vw;
   z-index: 6;
+  display: flex;
+  gap: 0;
+  justify-content: center;
 }
 .iconlinkpic {
   width: 7vw;
@@ -154,8 +157,8 @@ footer {
   display: block;
 }
 .wordlink {
-  width: 7vw;
-  height: 7vw;
+  width: 10vw;
+  height: 10vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -165,9 +168,10 @@ footer {
 }
 .iconlinkcontainer {
   color: #000000;
-  width: 10vw;
-  height: 10vw;
-  padding: 2vw;;
+  width: 14vw;
+  height: 14vw;
+  padding: 2vw;
+  margin: 2vw;
   background-color: #ffff00;
   border: solid 1px #000000;
   display: inline-flex;

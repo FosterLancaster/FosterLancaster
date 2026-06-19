@@ -795,13 +795,15 @@ li {
   width: auto; 
   height: 45px; 
   line-height: 30px;
-  right: 5px;
+  left: 50%;
   bottom: 5px;
   cursor: pointer;
   transition-duration: .5s;
   pointer-events: auto;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, .5);
+  transform: translateX(-50%);
+  border: solid 1px #ffffff;
   }
 .love table {
     border-collapse: collapse;
@@ -815,7 +817,7 @@ li {
   margin: 0;
 }
   .love:hover {
-    transform: scale(1.05);
+    border: solid 1px #000000;
   }
   .love:hover .hearteffect {
     opacity: .5
@@ -825,8 +827,9 @@ li {
   inset: 0;
   pointer-events: none;
   overflow: hidden;
+  top: 50%;
   left: 50%;
-  transform: translatex(-50%);
+  transform: translate(-50%, -50%);
   width: 45px;
   height: 45px;
   z-index: 1;
@@ -835,7 +838,7 @@ li {
   width: 30px;
   height: 30px;
   display: block;
-  margin: 0 auto;
+  margin: 0px 5px 0px 5px;
 }
 .postprice {
   border: solid 2px #616161;
@@ -891,12 +894,6 @@ li {
 }
 /*------100vh Controls Sum Landscape = 217px (with frame) + 195px (without frame)-------*/
 @media screen and (max-width: 500px) {
-.songSelection:hover {
-  opacity: auto;
-}
-.songSelection:focus {
-  opacity: 1;
-}
   .Seven {
   height: calc(100vh - 217px);
   }
@@ -1789,7 +1786,7 @@ li {
                         </a>
                       <a href="https://fostmp3s.com/pw" target="_blank">
                       <div class="love">
-                      <table><td><div class="postprice">$2.25</div></td><td><img class="postcart" src="fmp3simages/PWBUY.png"></td>
+                      <table><td><img class="postcart" src="fmp3simages/PWBUY.png"><td><div class="postprice">$2.25</div></td></td>
                       <td>
                       <div class="hearteffect2">
                         <span class="heart h1"></span>

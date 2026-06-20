@@ -34,8 +34,8 @@
   
   let lastPlayedSongId = null;
   
-  const PLAYS_PER_12H = 100;
-const RATE_PER_MS = PLAYS_PER_12H / (12 * 60 * 60 * 1000);
+  const PLAYS_PER_12H = Math.floor(Math.random() * 41) + 80; // Random number + 80 (80 - 120)
+  const RATE_PER_MS = PLAYS_PER_12H / (12 * 60 * 60 * 1000);
   
   function getSongId(songPath) {
     return songPath.replace(/[^a-zA-Z0-9]/g, "_");

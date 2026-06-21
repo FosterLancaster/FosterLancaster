@@ -34,7 +34,7 @@
   
   let lastPlayedSongId = null;
   
-  const PLAYS_PER_12H = Math.floor(Math.random() * 200) + 500;
+  const PLAYS_PER_12H = Math.floor(Math.random() * 3000) + 11000;
   const RATE_PER_MS = PLAYS_PER_12H / (12 * 60 * 60 * 1000);
   
   function getSongId(songPath) {
@@ -884,7 +884,7 @@ li {
   top: 0;
   bottom: 0;
   padding: 0px 5px 0px 55px;
-  background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, .6) 50%, rgba(0, 0, 0, .8));
+  background-image: linear-gradient(to right, transparent, rgba(50, 50, 50, 0.7) 50%, rgba(50, 50, 50, .9));
   border-bottom-right-radius: 20px; /* Needed for backdrop filter */
   color: #ffffff;
   -webkit-text-stroke: .02em #000000;
@@ -1441,8 +1441,8 @@ li {
                 
                     if (songButtons[index]) {
                       // Set Current Song
-                      songButtons[index].style.backgroundColor = 'rgba(0, 0, 0, .8)';
-                      songButtons[index].style.color = '#ff7700';
+                      songButtons[index].style.backgroundColor = 'rgba(255, 255, 255, .8)';
+                      songButtons[index].style.color = '#000000';
                     }
                   };
                 

@@ -109,6 +109,13 @@ onValue(songRef, snapshot => {
     let displayPlays =
   basePlays + estimatedGrowth + dailyBoost;
 
+// never allow it to go backwards
+if (highestDisplayed[songId] !== undefined) {
+  displayPlays = Math.max(displayPlays, highestDisplayed[songId]);
+}
+
+highestDisplayed[songId] = displayPlays;
+
 if (!highestDisplayed[songId] || displayPlays > highestDisplayed[songId]) {
   highestDisplayed[songId] = displayPlays;
 }
@@ -158,8 +165,7 @@ if (el.matches(':hover')) {
       lastPlayedSongId = songId;
   
 update(ref(database, `songs/${songId}`), {
-  plays: increment(1),
-  lastUpdated: Date.now()
+  plays: increment(1)
 });
 
     }

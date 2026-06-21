@@ -34,7 +34,7 @@
   
   let lastPlayedSongId = null;
   
-  const PLAYS_PER_12H = Math.floor(Math.random() * 200) + 500; // Random number + 500 (500 - 700)
+  const PLAYS_PER_12H = Math.floor(Math.random() * 200) + 500;
   const RATE_PER_MS = PLAYS_PER_12H / (12 * 60 * 60 * 1000);
   
   function getSongId(songPath) {
@@ -60,7 +60,6 @@
     const songId = getSongId(button.dataset.song);
     const songRef = ref(database, `songs/${songId}`);
   
-
     function formatPlays(num) {
   if (num >= 1_000_000_000) {
     return (num / 1_000_000_000).toFixed(2) + "B";
@@ -74,34 +73,34 @@
   return num.toLocaleString();
 }
 
+    // display count per second
+onValue(songRef, snapshot => {
+  const data = snapshot.val() || {};
 
-    // display count
-    onValue(songRef, snapshot => {
-      const data = snapshot.val() || {};
-  
-      if (!data.lastUpdated) {
-        update(songRef, {
-          plays: data.plays || 0,
-          lastUpdated: Date.now()
-        });
-        return;
-      }
-  
-      const growth = computeGrowth(data);
-  
-      if (growth.newPlays > 0) {
-        update(songRef, {
-          plays: increment(growth.newPlays),
-          lastUpdated: growth.lastUpdated
-        });
-      }
-  
-      const el = button.querySelector('.playcount');
-      if (el) {
-        el.textContent = `${formatPlays(data.plays || 0)} listen(s)`;
-      }
-    });
-  
+  const el = button.querySelector('.playcount');
+  if (!el) return;
+
+  const basePlays = data.plays || 0;
+  const lastUpdated = data.lastUpdated || Date.now();
+
+  function updateDisplay() {
+    const elapsed = Date.now() - lastUpdated;
+
+    const estimatedGrowth = Math.floor(elapsed * RATE_PER_MS);
+
+    const displayPlays = basePlays + estimatedGrowth;
+
+    el.textContent = `${formatPlays(displayPlays)} listen(s)`;
+    el.title = `${displayPlays.toLocaleString()} listen(s)`;
+  }
+
+  updateDisplay();
+
+  if (el._interval) clearInterval(el._interval);
+
+  el._interval = setInterval(updateDisplay, 1000);
+});
+
   });
   
   // ONLY ONE GLOBAL LISTENER (correct)
@@ -118,9 +117,11 @@
     if (lastPlayedSongId !== songId || audio.currentTime === 0) {
       lastPlayedSongId = songId;
   
-      update(ref(database, `songs/${songId}`), {
-        plays: increment(1)
-      });
+update(ref(database, `songs/${songId}`), {
+  plays: increment(1),
+  lastUpdated: Date.now()
+});
+
     }
   });
   
@@ -396,17 +397,17 @@ table {
   background-size: auto 40%;
   background-position: center center;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 .shuffleBtn {
   position: relative;
-  opacity: 1 !important;
+  opacity: .5 !important;
   cursor: pointer;
   height: 38px;
-  width: calc(100% - 2px);
-  border-radius: 10px;
+  width: 100%;
+  border-radius: 0px;
   z-index: 999;
-  background-color: rgba(0,0,0,.3);
-  border: solid 1px #fff;
+  background-color: transparent;
   text-align: center;
   background-image: url('fmp3simages/Shuffle.png');
   background-size: 38px 38px;
@@ -414,7 +415,8 @@ table {
   background-repeat: no-repeat;
 }
 .shuffleBtn:hover {
-  opacity: .5 !important;
+  opacity: 1 !important;
+  background-color: #ff7700;
 }
 .OffMusicHeader {
   height: calc(100vh - 185px);
@@ -883,7 +885,7 @@ li {
   top: 0;
   bottom: 0;
   padding: 0px 5px 0px 55px;
-  background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, .8) 50%, #000000);
+  background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, .5) 50%, rgba(0, 0, 0, .7));
   border-bottom-right-radius: 20px; /* Needed for backdrop filter */
   color: #ffffff;
   -webkit-text-stroke: .02em #000000;
@@ -1175,7 +1177,7 @@ li {
 <div align="center">
   <div class="PasswordUnlockBar">
     <div id="passwordUnlock" class="PasswordBar">
-      <input id="passwordInput" class="Password" type="password" placeholder="* * * * *" alt="Password" title="Password"/>
+      <input id="passwordInput" class="Password" type="password" placeholder="* * * *" alt="Password" title="Password"/>
       <div class="PasswordSubmit" id="passwordSubmit" onclick="submitPassword()" alt="Submit" title="Submit"><img style="height: 100%; width: auto;" src="fmp3simages/Unlock.png"></div>
     </div>
     </div>

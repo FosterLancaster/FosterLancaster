@@ -13,11 +13,13 @@ html, body {
 html {
   height: 100%;
   margin: 0;
+  min-height: 100vh;
 }
 body {
   width: 100%;
   height: 100%;
   margin: 0;
+  padding: 0;
   min-height: 100dvh;
   color: #ffffff;
   font-family: 'FL';
@@ -109,11 +111,11 @@ footer {
   padding: 2em 1em 2em 1em;
   font-size: 18px;
   line-height: 2em;
-  border-top: solid .5px transparent;
   background-color: #000000;
   background-size: cover;
   background-position: center center;
   text-align: center;
+  display: block;
 }
 .Title {
   font-family: 'FL';

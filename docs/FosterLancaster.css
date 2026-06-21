@@ -74,13 +74,13 @@ header {
   cursor: pointer;
   color: transparent;
   transition-duration: .5s;
-  background-color: rgba(255, 255, 255, .05);
-  background-image: linear-gradient(to top, rgba(255, 255, 255, .5), transparent, rgba(255, 255, 255, .5));
+  background-color: rgba(255, 255, 255, .1);
+  background-image: linear-gradient(to top, rgba(255, 255, 255, .7), transparent, rgba(255, 255, 255, .7));
   background-size: 100% 400px;
   background-repeat: repeat;
   background-position: center center;
-  animation: who 5s linear infinite;
-  -webkit-text-stroke: rgba(127.5, 127.5, 127.5, .3) .005em;
+  animation: who 3s linear infinite;
+  -webkit-text-stroke: rgba(127.5, 127.5, 127.5, .3) .01em;
 }
 .FLNameButton:hover {
   transform: scale(1.05);

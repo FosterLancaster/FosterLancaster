@@ -34,7 +34,7 @@
   
   let lastPlayedSongId = null;
   
-  const PLAYS_PER_12H = Math.floor(Math.random() * 3000) + 11000;
+  const PLAYS_PER_12H = 11000;
   const RATE_PER_MS = PLAYS_PER_12H / (12 * 60 * 60 * 1000);
   
   function getSongId(songPath) {
@@ -75,6 +75,7 @@
 
     // display count per second
 onValue(songRef, snapshot => {
+
   const data = snapshot.val() || {};
 
   const el = button.querySelector('.playcount');
@@ -83,23 +84,66 @@ onValue(songRef, snapshot => {
   const basePlays = data.plays || 0;
   const lastUpdated = data.lastUpdated || Date.now();
 
+  const today = getToday();
+
+  // create today's boost if missing
+  if (data.boostDate !== today) {
+    update(songRef, {
+      dailyBoost: getDailyBoost(songId),
+      boostDate: today
+    });
+  }
+
+
   function updateDisplay() {
+
     const elapsed = Date.now() - lastUpdated;
 
-    const estimatedGrowth = Math.floor(elapsed * RATE_PER_MS);
+    const estimatedGrowth = Math.floor(
+      elapsed * RATE_PER_MS
+    );
 
-    const displayPlays = basePlays + estimatedGrowth;
+    const dailyBoost = 
+      data.boostDate === today ? (data.dailyBoost || 0) : 0;
 
-    el.textContent = `${formatPlays(displayPlays)} listen(s)`;
-    el.title = `${displayPlays.toLocaleString()} listen(s)`;
+    const displayPlays =
+      basePlays + estimatedGrowth + dailyBoost;
+
+
+    el.textContent =
+      `${formatPlays(displayPlays)} listen(s)`;
+
+    el.title =
+      `${displayPlays.toLocaleString()} listen(s)`;
   }
+
 
   updateDisplay();
 
-  if (el._interval) clearInterval(el._interval);
+
+  if (el._interval) {
+    clearInterval(el._interval);
+  }
 
   el._interval = setInterval(updateDisplay, 1000);
+
 });
+
+function updateDisplay() {
+  const elapsed = Date.now() - lastUpdated;
+
+  const estimatedGrowth = Math.floor(
+    elapsed * RATE_PER_MS
+  );
+
+  const dailyBoost = data.dailyBoost || 0;
+
+  const displayPlays =
+    basePlays + estimatedGrowth + dailyBoost;
+
+  el.textContent = `${formatPlays(displayPlays)} listen(s)`;
+  el.title = `${displayPlays.toLocaleString()} listen(s)`;
+}
 
   });
   
@@ -124,6 +168,25 @@ update(ref(database, `songs/${songId}`), {
 
     }
   });
+
+  function getToday() {
+  return new Date().toISOString().split("T")[0];
+}
+
+function getDailyBoost(songId) {
+
+  const today = getToday();
+
+  let hash = 0;
+
+  const key = songId + today;
+
+  for (let i = 0; i < key.length; i++) {
+    hash += key.charCodeAt(i);
+  }
+
+  return hash % 2 === 0 ? 3000 : 0;
+}
   
   </script>
 <!----Style Sheets---->

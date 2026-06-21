@@ -248,7 +248,7 @@ li {
   margin: 0;
 }
   .love:hover {
-    border: solid 1px #000000;
+    background-color: rgba(0, 0, 0, .1);
   }
   .love:hover .hearteffect {
     opacity: .5

@@ -74,12 +74,13 @@ header {
   cursor: pointer;
   color: transparent;
   transition-duration: .5s;
-  background-color: rgba(255, 255, 255, .1);
+  background-color: rgba(255, 255, 255, .05);
   background-image: linear-gradient(to top, rgba(255, 255, 255, .5), transparent, rgba(255, 255, 255, .5));
-  background-size: 100% 700px;
+  background-size: 100% 400px;
+  background-repeat: repeat;
   background-position: center center;
-  animation: rise 2s linear infinite;
-  -webkit-text-stroke: rgba(127.5, 127.5, 127.5, .6) .005em;
+  animation: who 5s linear infinite;
+  -webkit-text-stroke: rgba(127.5, 127.5, 127.5, .3) .005em;
 }
 .FLNameButton:hover {
   transform: scale(1.05);
@@ -109,8 +110,7 @@ footer {
   font-size: 18px;
   line-height: 2em;
   border-top: solid .5px transparent;
-  background-color: #696900;
-  background-image: url('images/FosterGlasses.jpg');
+  background-color: #000000;
   background-size: cover;
   background-position: center center;
   text-align: center;
@@ -179,8 +179,9 @@ footer {
   justify-content: center;
   vertical-align: top;
   box-sizing: border-box;
-  border-radius: 50%;
   transition-duration: .5s;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 .iconlinkcontainer:hover {
 background-color: #ffffff;
@@ -319,4 +320,9 @@ li {
     opacity: 0;
     transform: translateY(-35px) scale(1);
   }
+}
+
+@keyframes who {
+  0% { background-position: center 0px; }
+  100% { background-position: center -800px; }
 }

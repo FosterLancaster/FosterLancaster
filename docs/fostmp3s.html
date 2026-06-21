@@ -29,8 +29,7 @@
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
   const database = getDatabase(app);
-  
-  const audio = document.getElementById('audio');
+
   
   let lastPlayedSongId = null;
   const highestDisplayed = {};
@@ -114,13 +113,20 @@ if (!highestDisplayed[songId] || displayPlays > highestDisplayed[songId]) {
   highestDisplayed[songId] = displayPlays;
 }
 
-displayPlays = highestDisplayed[songId];
 
-    el.textContent =
-      `${formatPlays(displayPlays)} listen(s)`;
 
-    el.title =
-      `${displayPlays.toLocaleString()} listen(s)`;
+const el = button.querySelector('.playcount');
+
+if (!el) return;
+
+const shortText = `${formatPlays(displayPlays)} listen(s)`;
+const fullText  = `${displayPlays.toLocaleString()} listen(s)`;
+
+if (el.matches(':hover')) {
+  el.textContent = fullText;
+} else {
+  el.textContent = shortText;
+}
   }
 
 
@@ -1268,6 +1274,7 @@ li {
                   const nextBtn       = document.getElementById('nextBtn');
                   const prevBtn       = document.getElementById('prevBtn');
                   const Password      = document.getElementById('passwordInput');
+
                   // Pick ONE play image when the page loads
                 const playImages = [
                   'fmp3simages/PLAY1.png',
@@ -1487,15 +1494,13 @@ li {
                     // Reset Current Song
                     if (window.currentsongindex !== -1 && songButtons[window.currentsongindex]) {
                       songButtons[window.currentsongindex].style.backgroundColor = '';
-                      songButtons[window.currentsongindex].style.color = '';
                     }
                 
                     window.currentsongindex = index;
                 
                     if (songButtons[index]) {
                       // Set Current Song
-                      songButtons[index].style.backgroundColor = 'rgba(255, 255, 255, .8)';
-                      songButtons[index].style.color = '#000000';
+                      songButtons[index].style.backgroundColor = 'rgba(0, 0, 0, .8)';
                     }
                   };
                 
@@ -1597,6 +1602,25 @@ li {
                   }
                 
                   if (audio) {
+
+                    
+                     audio.addEventListener('play', () => {
+    console.log('PLAY FIRED');
+
+    const index = window.currentsongindex;
+    if (index === -1) return;
+
+    const button = songButtons[index];
+    if (!button) return;
+
+    const songId = getSongId(button.dataset.song);
+
+    update(ref(database, `songs/${songId}`), {
+      plays: increment(1),
+      lastUpdated: Date.now()
+    });
+  });
+
                     audio.addEventListener('timeupdate', () => updateProgressFor(audio));
                 
                     // When Song Ends

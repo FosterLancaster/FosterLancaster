@@ -33,6 +33,7 @@
   const audio = document.getElementById('audio');
   
   let lastPlayedSongId = null;
+  const highestDisplayed = {};
   
   const PLAYS_PER_12H = 11000;
   const RATE_PER_MS = PLAYS_PER_12H / (12 * 60 * 60 * 1000);
@@ -106,9 +107,14 @@ onValue(songRef, snapshot => {
     const dailyBoost =
       data.boostDate === today ? (data.dailyBoost || 0) : 0;
 
-    const displayPlays =
-      basePlays + estimatedGrowth + dailyBoost;
+    let displayPlays =
+  basePlays + estimatedGrowth + dailyBoost;
 
+if (!highestDisplayed[songId] || displayPlays > highestDisplayed[songId]) {
+  highestDisplayed[songId] = displayPlays;
+}
+
+displayPlays = highestDisplayed[songId];
 
     el.textContent =
       `${formatPlays(displayPlays)} listen(s)`;

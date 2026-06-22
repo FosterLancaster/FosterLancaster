@@ -238,7 +238,6 @@ td {
 table {
   border-spacing: 0;
 }
-.progressBar:hover, 
 .volumeContainer:hover, 
 .nextprev-btn:hover, 
 .embedBtn:hover, 
@@ -247,6 +246,9 @@ table {
 }
 .EngageBar td:hover {
   background-color: #ffffff;
+}
+.progressBar:hover {
+  background-color: #7D7F7C;
 }
  .LancasterFrame {
   font-size: 18px;
@@ -458,7 +460,7 @@ table {
   position: relative; /* important */
   opacity: 1;
   background-image: url('fmp3simages/SongSelect.png');
-  background-size: auto 40%;
+  background-size: auto 30%;
   background-position: center center;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -788,6 +790,8 @@ input[type="range"]::-webkit-slider-thumb {
   background-color: rgba(0, 0, 0, .1);
 }
 .MoreInner textarea {
+  font-size: .8em;
+  line-height: 1.6em;
   flex: 1;
   padding: 5px;
   width: calc(100% - 10px);
@@ -1225,7 +1229,7 @@ li {
 <img src="fmp3simages/PWBUY.png" id="buyLogo">
 </div>
 </a>
-<div class="moreInfo">Buy for $2.25</div>
+<div class="moreInfo">Fan Password</div>
 </td>
 <td id="playBtn" alt="Play/Pause Music" title="Play/Pause Music">
 <div class="MusicButton">

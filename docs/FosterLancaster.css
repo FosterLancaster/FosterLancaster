@@ -231,10 +231,10 @@ li {
   cursor: pointer;
   transition-duration: .5s;
   pointer-events: auto;
-  border-radius: 5px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
   background-color: rgba(0, 0, 0, .3);
   transform: translateX(-50%);
-  border: solid 1px #ffffff;
   }
 .love table {
     border-collapse: collapse;

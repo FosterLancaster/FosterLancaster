@@ -103,8 +103,7 @@ onValue(songRef, snapshot => {
       Math.max(0, elapsed) * RATE_PER_MS
     );
 
-    const dailyBoost =
-      data.boostDate === today ? (data.dailyBoost || 0) : 0;
+    const dailyBoost = getDailyBoost(songId);
 
     let displayPlays =
   basePlays + estimatedGrowth + dailyBoost;
@@ -119,7 +118,6 @@ highestDisplayed[songId] = displayPlays;
 if (!highestDisplayed[songId] || displayPlays > highestDisplayed[songId]) {
   highestDisplayed[songId] = displayPlays;
 }
-
 
 
 const el = button.querySelector('.playcount');
@@ -177,17 +175,23 @@ function getToday() {
 
 function getDailyBoost(songId) {
 
-  const today = getToday();
+  const now = new Date();
+
+  // changes every 4 hours
+  const block = Math.floor(now.getHours() / 6);
 
   let hash = 0;
 
-  const key = songId + today;
+  const key =
+    songId +
+    now.toISOString().split("T")[0] +
+    block;
 
   for (let i = 0; i < key.length; i++) {
     hash += key.charCodeAt(i);
   }
 
-return hash % 2 === 0 ? 3000 : 0;
+  return hash % 2 === 0 ? 1500 : 0;
 }
 </script>
 <!-- Style Sheets -->
@@ -460,7 +464,7 @@ table {
   position: relative; /* important */
   opacity: 1;
   background-image: url('fmp3simages/SongSelect.png');
-  background-size: auto 30%;
+  background-size: auto 150px;
   background-position: center center;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -868,10 +872,10 @@ li {
   cursor: pointer;
   transition-duration: .5s;
   pointer-events: auto;
-  border-radius: 5px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
   background-color: rgba(0, 0, 0, .3);
   transform: translateX(-50%);
-  border: solid 1px #ffffff;
   }
 .love table {
     border-collapse: collapse;

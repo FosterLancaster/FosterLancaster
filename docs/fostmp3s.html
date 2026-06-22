@@ -246,10 +246,10 @@ table {
 .nextprev-btn:hover, 
 .embedBtn:hover, 
 .chatBtn:hover {
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, .8);
 }
 .EngageBar td:hover {
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, .8);
 }
 .progressBar:hover {
   background-color: #7D7F7C;
@@ -264,7 +264,7 @@ table {
   opacity: 1;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  background-color: rgba(255, 255, 255, .1);
+  background-color: rgba(255, 255, 255, .2);
   background-image: linear-gradient(to top, rgba(0, 0, 0, .3), transparent, rgba(0, 0, 0, .3));
   background-size: 100% 400px;
   background-position: center center;
@@ -304,16 +304,16 @@ table {
   overflow: hidden;
   max-width: 80%;
   margin: 0px 10% 0px 10%;
+  background-image: url('fmp3simages/FostBranding.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: auto 100%;
 }
  .LancasterMusicPlayer {
   width: 100%;
   height: 100%; /* Important */
   text-align: center;
   color: #d3d3d3;
-  background-image: url('fmp3simages/FostMp3sLogo.png');
-  background-size: 200px auto;
-  background-position: center bottom;
-  background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
 }
@@ -464,7 +464,7 @@ table {
   position: relative; /* important */
   opacity: 1;
   background-image: url('fmp3simages/SongSelect.png');
-  background-size: auto 150px;
+  background-size: auto 50%;
   background-position: center center;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -597,7 +597,8 @@ table {
 /* Play button */
 #playLogo {
   height: auto;
-  width: 90px;
+  width: 70px;
+  margin: 10px;
   position: relative;
   z-index: 2;
   cursor: pointer;
@@ -611,7 +612,8 @@ table {
 }
 #buyLogo {
   height: auto;
-  width: 90px;
+  width: 70px;
+  margin: 10px;
   max-width: 80%;
 }
 .MusicButton {
@@ -955,8 +957,8 @@ li {
   right: 0px;
   top: 0;
   bottom: 0;
-  padding: 0px 5px 0px 55px;
-  background-image: linear-gradient(to right, transparent, rgba(20, 20, 20, 0.7) 50%, rgba(20, 20, 20, .9));
+  padding: 0px 5px 0px 60px;
+  background-image: linear-gradient(to right, transparent, rgba(20, 20, 20, 0.6) 40%, rgba(20, 20, 20, .9));
   border-bottom-right-radius: 20px; /* Needed for backdrop filter */
   color: #ffffff;
   -webkit-text-stroke: .02em #000000;

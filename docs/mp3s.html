@@ -16,6 +16,8 @@ body {
   padding: 0;
   height: 100dvh;
   overflow: hidden;
+  position: fixed;
+  bottom: 0px;
 }
 .fostmp3s,
 .FchatContent {
@@ -41,14 +43,6 @@ body {
 
 </section>
 </article>
-
-<script>
-  window.addEventListener('load', () => {
-  setTimeout(() => {
-    window.dispatchEvent(new Event('resize'));
-  }, 100);
-});
-</script>
 
 </body>
 </html>

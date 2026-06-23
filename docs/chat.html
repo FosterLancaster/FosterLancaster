@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Foster Lancaster | fostchat</title>
+<title>Foster Lancaster | Chat</title>
 <script src="FosterLancaster.js"></script>
 <link rel="shortcut icon" href="images/FLFavicon.ico" type="image/x-icon">
 <!----Lock View Port when necessary---->
@@ -10,16 +10,19 @@
 <link rel="stylesheet" href="FosterLancaster.css">
 <link rel="stylesheet" href="fostchatandtv.css">
 <style>
-  html, body {
+html,
+body {
   margin: 0;
+  padding: 0;
   height: 100dvh;
+  overflow: hidden;
 }
 .fostmp3s, .FchatContent {
-  height: calc(100dvh - 85px);
-  max-height: calc(100dvh - 85px);
+  height: 100dvh;
+  max-height: 100dvh;
   overflow-y: scroll;
-  width: calc(100% - 20px);
-  margin-bottom: 10px;
+  width: 100%;
+  margin: 0px;
 }
 </style>
 </head>
@@ -28,7 +31,6 @@
 <section style="display: flex; flex-direction: column;">
   <div align="center">
 
-<div class="Title"><img class="icon" src="images/Chat.png"></div>
 <!------Chat------->
   <div class="FchatContent">
     <div class="FMoreInner">

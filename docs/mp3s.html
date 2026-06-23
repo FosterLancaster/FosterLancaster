@@ -42,6 +42,14 @@ body {
 </section>
 </article>
 
+<script>
+  window.addEventListener('load', () => {
+  setTimeout(() => {
+    window.dispatchEvent(new Event('resize'));
+  }, 100);
+});
+</script>
+
 </body>
 </html>
 

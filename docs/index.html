@@ -35,39 +35,35 @@
 .FchatContent {
   min-height: 200px;
   height: 65lvh; /*------Stay Long On Scroll------*/
-  width: 100%;
-  max-width: calc(90% - 22px);
+  width: 90%;
+  max-width: 90%;
 }
 .FtvContent {
   height: 520px; 
-  width: 100%;
-  max-width: calc(90% - 22px);
+  width: 90%;
+  max-width: 90%;
 }
 .MusicVideoContainer {
   height: 500px;
-  width: 100%;
+  width: calc(100% - 22px);
   max-width: calc(100% - 22px);
 }
 .MusicVideo {
   width: 100%;
   height: 100%;
 }
-@media only screen and (orientation: portrait) {
+@media only screen and (max-width: 600px) {
 .fostmp3s,
 .FchatContent {
   max-height: 500px;
-  width: 90%;
-  max-width: calc(100% - 22px);
 }
 .FtvContent {
   height: 270px;
-  width: 420px;
+  width: calc(100% - 22px);
   max-width: calc(100% - 22px);
 }
 .MusicVideoContainer {
   height: 250px;
-  width: 400px;
-  max-width: calc(100% - 22px);
 }
 .MusicVideo {
   width: 100%;

@@ -3,6 +3,18 @@
 <head>
 <title>Foster Lancaster | Chat</title>
 <script src="FosterLancaster.js"></script>
+<script>
+function setAppHeight() {
+  document.documentElement.style.setProperty(
+    '--app-height',
+    `${window.innerHeight}px`
+  );
+}
+
+window.addEventListener('resize', setAppHeight);
+window.addEventListener('orientationchange', setAppHeight);
+setAppHeight();
+</script>
 <link rel="shortcut icon" href="images/FLFavicon.ico" type="image/x-icon">
 <!----Lock View Port when necessary---->
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -17,12 +29,13 @@ body {
   height: 100dvh;
   overflow: hidden;
 }
-.fostmp3s, .FchatContent {
-  height: 100dvh;
-  max-height: 100dvh;
-  overflow-y: scroll;
+.fostmp3s,
+.FchatContent {
+  height: calc(var(--app-height));
+  max-height: calc(var(--app-height));
   width: 100%;
-  margin: 0px;
+  overflow-y: auto;
+  margin: 0;
 }
 </style>
 </head>

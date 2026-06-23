@@ -106,10 +106,10 @@ article {
 footer {
   width: calc(100% - 2em); /* Full width */
   height: auto;
-  font-family: 'FL';
+  font-family: 'Times New Roman';
   position: relative;
   padding: 2em 1em 2em 1em;
-  font-size: 18px;
+  font-size: 12px;
   line-height: 2em;
   background-color: #000000;
   background-size: cover;

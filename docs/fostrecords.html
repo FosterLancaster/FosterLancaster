@@ -25,7 +25,17 @@
     text-decoration: underline;
   }
   article {
-    min-height: 100vh;
+    min-height: 100dvh;
+  }
+  .Rosterphoto {
+    width: 300px;
+    height: auto;
+    filter: grayscale(1);
+    transition-duration: .5s;
+    cursor: pointer;
+  }
+  .Rosterphoto:hover {
+    filter: grayscale(0);
   }
 </style>
 </head>
@@ -34,9 +44,17 @@
 <article>
 <section>
 <div align="center">
-<div style="position: absolute; width: auto; left: 50%; top: 50%; transform: translate(-50%, -50%);">
 <img style="width: 100vw;" src="images/FostRecords.png"><br>
-More info coming soon...
+<h1>Artist Roster</h1><br>
+<a href="https://fostmp3s.com" target="_blank">
+Foster Lancaster<br>
+<img class="Rosterphoto" src="images/SquareFace.JPG">
+</a>
+
+<br>
+<a href="mailto:foster@fostmp3s.com" target="_blank">
+<div style="font-size: 15px;">contact email: foster@fostmp3s.com</div>
+</a>
 </div>
 </div>
 </section>

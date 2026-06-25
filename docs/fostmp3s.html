@@ -271,10 +271,6 @@ table {
   animation: rise 4s linear infinite;
   border: solid 1px #ffffff;
 }
-.LancasterFrame:hover .LancasterMusicPlayer{
-  background-image: none;
-  opacity: 1;
-}
 .LancasterFrame:hover .ControlBar {
   height: 40px;
 }
@@ -303,10 +299,6 @@ table {
   max-height: 250px;
   overflow: hidden;
   max-width: 100%;
-  background-image: url('fmp3simages/FostBranding.png');
-  background-repeat: no-repeat;
-  background-position: bottom center;
-  background-size: auto 100%;
 }
  .LancasterMusicPlayer {
   width: 100%;
@@ -315,6 +307,10 @@ table {
   color: #d3d3d3;
   position: relative;
   overflow: hidden;
+  background-image: url('fmp3simages/FostBranding.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
 }
 /*----Bars----*/
 .Password {
@@ -463,7 +459,7 @@ table {
   position: relative; /* important */
   opacity: 1;
   background-image: url('fmp3simages/SongSelect.png');
-  background-size: auto 50%;
+  background-size: auto 40%;
   background-position: center center;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -596,13 +592,12 @@ table {
 /* Play button */
 #playLogo {
   height: auto;
-  width: 70px;
-  margin: 10px;
+  width: 100px;
   position: relative;
   z-index: 2;
   cursor: pointer;
   transition-duration: .3s;
-  max-width: 80%;
+  max-width: 100%;
   animation: bounce .5s ease infinite;
 }
 #buyBtn {
@@ -611,9 +606,8 @@ table {
 }
 #buyLogo {
   height: auto;
-  width: 70px;
-  margin: 10px;
-  max-width: 80%;
+  width: 100px;
+  max-width: 100%;
 }
 .MusicButton {
   height: auto;
@@ -624,19 +618,16 @@ table {
 .moreInfo {
   color: #ffffff;
   font-family: 'futura';
-  position: relative;
-  height: 0px;
+  position: absolute;
+  left: 0;
+  bottom: 12.5px;
   width: 100%;
-  max-height: 20px;
-  line-height: 15px;
-  margin-top: -20px;
-  top: 0px;
+  height: 20px;
+  line-height: 20px;
   z-index: 3;
-  font-size: 13px;
+  font-size: 12px;
   opacity: 0;
   display: block;
-  align-items: center;
-  justify-content: center;
   pointer-events: none;
   background-color: rgba(0, 0, 0, .9);
   transition-duration: .8s;
@@ -1238,15 +1229,15 @@ li {
 <a href="https://fostmp3s.com/pw" target="_blank" style="display: block; text-decoration: none; color: inherit;">
 <div class="MusicButton">
 <img src="fmp3simages/PWBUY.png" id="buyLogo">
+<div class="moreInfo">Fan Password</div>
 </div>
 </a>
-<div class="moreInfo">Fan Password</div>
 </td>
 <td id="playBtn" alt="Play/Pause Music" title="Play/Pause Music">
 <div class="MusicButton">
 <img src="fmp3simages/PLAY.png" id="playLogo">
-</div>
 <div class="moreInfo"><span id="listenCounter"></span>&nbsp;Listens&nbsp;Left</div>
+</div>
 </td>  
 </table>
 </div>

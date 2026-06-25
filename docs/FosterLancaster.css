@@ -13,6 +13,7 @@ html, body {
 html {
   height: 100%;
   margin: 0;
+  padding: 0;
   min-height: 100dvh;
 }
 body {
@@ -106,10 +107,10 @@ article {
 }
 footer {
   width: calc(100% - 2em); /* Full width */
-  height: auto;
+  height: 100px;
   font-family: 'Times New Roman';
   position: relative;
-  padding: 2em 1em 2em 1em;
+  padding: 0em 1em 0em 1em;
   font-size: 12px;
   line-height: 2em;
   background-color: #000000;

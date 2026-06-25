@@ -106,18 +106,18 @@ article {
   height: auto;
 }
 footer {
-  width: calc(100% - 2em); /* Full width */
-  height: 100px;
+  width: calc(100% - 4em); /* Full width */
+  height: auto;
   font-family: 'Times New Roman';
   position: relative;
-  padding: 0em 1em 0em 1em;
+  padding: 2em;
   font-size: 12px;
-  line-height: 2em;
+  line-height: 20px;
   background-color: #000000;
   background-size: cover;
   background-position: center center;
   text-align: center;
-  display: block;
+  margin-bottom: -.5px;
 }
 .Title {
   font-family: 'FL';

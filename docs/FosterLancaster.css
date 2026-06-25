@@ -82,9 +82,11 @@ header {
   background-repeat: no-repeat;
   background-position: center center;
   -webkit-text-stroke: #ffffff .01em;
+  opacity: .5;
 }
 .FLNameButton:hover {
   transform: scale(1.05);
+  opacity: 1;
 } 
 .FLBuyButton:hover {
   padding: 7.5px 10px 7.5px 10px;

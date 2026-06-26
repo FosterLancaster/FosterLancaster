@@ -111,7 +111,8 @@ footer {
   font-family: Arial, sans-serif;
   font-size: 12px;
   line-height: 20px;
-  background: #000 center / cover no-repeat;
+  background: #000000;
+  margin-bottom:-2px;
 }
 .Title {
   font-family: 'FL';
@@ -151,7 +152,9 @@ footer {
 .iconlinkpic {
   width: 3.5vw;
   height: 3.5vw;
+  min-width: 17.5px;
   max-width: 35px;
+  min-height: 17.5px;
   max-height: 35px;
   object-fit: contain;
   display: block;
@@ -170,7 +173,9 @@ footer {
   color: #000000;
   width: 7vw;
   height: 7vw;
+  min-width: 35px;
   max-width: 70px;
+  min-height: 35px;
   max-height: 70px;
   padding: 1vw;
   margin: 1vw;

@@ -131,7 +131,7 @@ fetch("https://fostchat-rss.fostmp3s.workers.dev/")
                       </td>
                       <td class="postbutton">
                       <a href="https://fostmp3s.com" target="_blank">
-                      <div class="postprice">Written by Foster Lancaster<img style="width: 12px; height: 12px; margin: 0px 0px -4px 4px;" src="fmp3simages/Verified.png"></div>
+                      <div class="postprice">Written by Foster Lancaster<img style="width: 12px; height: 12px; margin: 0px 0px -3px 4px;" src="fmp3simages/Verified.png"></div>
                       </a>
                       </td>
                       </table>

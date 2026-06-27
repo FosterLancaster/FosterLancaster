@@ -235,7 +235,7 @@ li {
 }
 .love table {
   border-collapse: separate;
-  border-spacing: 25px 0;
+  border-spacing: 20px 0;
   margin: 0;
   padding: 0;
 }
@@ -256,7 +256,7 @@ li {
   z-index: 1;
 }
 .postbutton {
-  font-size: 12px;
+  font-size: 10px;
   position: relative;
   width: auto;
   height: auto;

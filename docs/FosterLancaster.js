@@ -112,21 +112,31 @@ fetch("https://fostchat-rss.fostmp3s.workers.dev/")
         }
 
       </a>
-      <a href="https://fostmp3s.com/pw" target="_blank">
-      <div class="love">
-      <table><td><img class="postcart" src="fmp3simages/PWBUY.png"><td><div class="postprice">$2.25</div></td></td>
-      <td>
-      <div class="hearteffect2">
-        <span class="heart h1"></span>
-        <span class="heart h2"></span>
-        <span class="heart h3"></span>
-        <span class="heart h4"></span>
-      </div>
-      </td>
-      </table>
-      </div>
-      </a>
-    `;
+                      <div class="love">
+                      <table>
+                      <td class="postbutton">
+                      <a href="mailto:foster@fostmp3s.com" target="_blank">
+                      <div class="postreact"></div>
+                      </a>
+                      </td>
+                      <td class="postbutton">
+                      <a href="https://fostmp3s.com/pw" target="_blank">
+                      <div class="hearteffect2">
+                        <span class="heart h1"></span>
+                        <span class="heart h2"></span>
+                        <span class="heart h3"></span>
+                        <span class="heart h4"></span>
+                      </div>
+                      </a>
+                      </td>
+                      <td class="postbutton">
+                      <a href="https://fostmp3s.com" target="_blank">
+                      <div class="postprice">Written by Foster Lancaster</div>
+                      </a>
+                      </td>
+                      </table>
+                      </div>
+                      `;
 
     if (feedList) {
       feedList.appendChild(li);

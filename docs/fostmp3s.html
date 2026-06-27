@@ -857,18 +857,23 @@ li {
 .love {
   height: 45px;
   overflow: hidden;
-  position: absolute; 
-  width: auto; 
+  position: absolute;
+  width: 100%;
   left: 50%;
   bottom: 5px;
   cursor: pointer;
   transition-duration: .5s;
   pointer-events: auto;
   transform: translateX(-50%);
-  }
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .love table {
   border-collapse: separate;
-  border-spacing: 25px 0; /* 8px horizontal, 0 vertical */
+  border-spacing: 25px 0;
   margin: 0;
   padding: 0;
 }
@@ -1872,7 +1877,7 @@ li {
                               : ""
                           }
                 
-                        </a>
+                      </a>
                       <div class="love">
                       <table>
                       <td class="postbutton">
@@ -1892,8 +1897,8 @@ li {
                       </td>
                       <td class="postbutton">
                       <a href="https://fostmp3s.com" target="_blank">
-                      <div class="postprice">Written by Foster Lancaster</div>
-                      <
+                      <div class="postprice">Written by Foster Lancaster<img style="width: 15px; height: 15px; margin: 0px 0px -4px 4px;" src="fmp3simages/Verified.png"></div>
+                      </a>
                       </td>
                       </table>
                       </div>

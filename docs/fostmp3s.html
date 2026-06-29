@@ -8,12 +8,13 @@
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-analytics.js";
   import {
-    getDatabase,
-    ref,
-    update,
-    increment,
-    onValue
-  } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-database.js";
+  getDatabase,
+  ref,
+  update,
+  increment,
+  onValue,
+  runTransaction
+} from "https://www.gstatic.com/firebasejs/12.14.0/firebase-database.js";
   
   const firebaseConfig = {
     apiKey: "AIzaSyCL3vdL5EUd4zYW7AcWlykym0MFIBe33y4",
@@ -40,20 +41,41 @@
   function getSongId(songPath) {
     return songPath.replace(/[^a-zA-Z0-9]/g, "_");
   }
-  
-  function computeGrowth(data) {
+
+
+  const DAY = 24 * 60 * 60 * 1000;
+
+async function commitDailyGrowth(songRef) {
+
+  await runTransaction(songRef, (data) => {
+
+    if (!data) {
+      return {
+        plays: 0,
+        lastUpdated: Date.now()
+      };
+    }
+
     const now = Date.now();
-    const last = data.lastUpdated || now;
-    const elapsed = now - last;
-  
-    const expected = elapsed * RATE_PER_MS;
-    const whole = Math.floor(expected);
-  
+    const lastUpdated = data.lastUpdated || now;
+    const elapsed = now - lastUpdated;
+
+    // Not yet 24 hours
+    if (elapsed < DAY) {
+      return;
+    }
+
+    const growth = Math.floor(elapsed * RATE_PER_MS);
+
     return {
-      newPlays: whole,
+      ...data,
+      plays: (data.plays || 0) + growth,
       lastUpdated: now
     };
-  }
+
+  });
+
+}
   
   document.querySelectorAll('.song-button').forEach(button => {
   
@@ -75,9 +97,16 @@
 
     // display count per second
 // display count per second
+const dailyChecked = {};
+
 onValue(songRef, snapshot => {
 
   const data = snapshot.val() || {};
+
+  if (!dailyChecked[songId]) {
+      dailyChecked[songId] = true;
+      commitDailyGrowth(songRef);
+  }
 
   const el = button.querySelector('.playcount');
   if (!el) return;
@@ -163,7 +192,8 @@ if (el.matches(':hover')) {
       lastPlayedSongId = songId;
   
 update(ref(database, `songs/${songId}`), {
-  plays: increment(1)
+  plays: increment(1),
+  lastUpdated: Date.now()
 });
 
     }

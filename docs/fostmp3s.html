@@ -34,7 +34,7 @@
   let lastPlayedSongId = null;
   const highestDisplayed = {};
   
-  const PLAYS_PER_12H = 11000;
+  const PLAYS_PER_12H = 1000;
   const RATE_PER_MS = PLAYS_PER_12H / (12 * 60 * 60 * 1000);
   
   function getSongId(songPath) {
@@ -191,7 +191,7 @@ function getDailyBoost(songId) {
     hash += key.charCodeAt(i);
   }
 
-  return hash % 2 === 0 ? 1500 : 0;
+  return hash % 2 === 0 ? 350 : 0;
 }
 </script>
 <!-- Style Sheets -->

@@ -142,12 +142,15 @@ footer {
 }
 .LinkMenu {
   height: auto;
-  width: 100%;
-  position: relative; 
+  width: auto;
+  position: fixed; 
+  top: 0px;
+  right: 0px;
   z-index: 6;
   display: flex;
   gap: 0;
   justify-content: center;
+  margin: 10px;
 }
 .iconlinkpic {
   width: 30px;
@@ -170,9 +173,7 @@ footer {
   width: 50px;
   height: 50px;
   padding: 1vw;
-  margin: 1vw;
-  background-color: #ffff00;
-  border: solid 1px #000000;
+  background-color: transparent;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -204,6 +205,32 @@ select {
   background-position: center center;
   background-size: cover;
   opacity: 1;
+}
+.Warning {
+  font-family: Arial; 
+  text-align: center; 
+  font-size: 15px; 
+  line-height: 25px; 
+  position: fixed; 
+  z-index: 3; 
+  bottom: 0px; 
+  left: 0px; 
+  color: #000000; 
+  background-color: #ffffff; 
+  width: calc(100% - 80px); 
+  height: auto; 
+  padding: 20px; 
+  margin: 20px;
+  animation: warning 1s ease 10s forwards;
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, .5));
+}
+.WarningButton {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 10px;
+  cursor: pointer;
+  width: calc(100% - 20px);
+  margin-top: 10px;
 }
 li {
   list-style: none;

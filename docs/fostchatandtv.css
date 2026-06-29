@@ -1,9 +1,7 @@
 /*------------fostChat--------------- */
 .FchatContent {
   color: #000000;
-  width: calc(100vw - 2px); 
-  bottom: 0px;
-  right: 0px;  
+  width: calc(100vw - 2px);
   background-color: rgba(255, 255, 255, .1);
   background-image: linear-gradient(to top, rgba(0, 0, 0, .3), transparent, rgba(0, 0, 0, .3));
   background-size: 100% 700px;
@@ -24,9 +22,10 @@
 }
 .FchatPosts {
   padding: 0px;
-  margin: 0px; 
+  margin-left: auto; 
+  margin-right: auto;
   width: calc(100% - 10px);
-  max-width: 100%;
+  max-width: 400px;
   flex: 1;
   font-size: .9em;
   line-height: 1.7em;
@@ -60,11 +59,12 @@
 .FMoreBody {
   flex: 1;
   overflow-y: auto;
-  width: calc(100% - 1px);
-  max-width: 1000px;
+  height: 100%;
+  max-height: 100%;
+  width: calc(100% - 22px);
+  max-width: 420px;
   margin-left: auto;
   margin-right: auto;
-  border: solid .5px transparent;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, .1);
 }

@@ -115,7 +115,7 @@ footer {
   margin-bottom: -2px;
 }
 .Title {
-  font-family: 'FL';
+  font-family: 'FL2';
   min-width: calc(30% - 42px); 
   font-size: 45px;
   height: 45px;
@@ -139,6 +139,7 @@ footer {
 .icon {
   height: 45px;
   width: auto;
+  margin: 0px 10px -10px 0px;
 }
 .LinkMenu {
   height: auto;
@@ -209,7 +210,7 @@ select {
 .Warning {
   font-family: Arial; 
   text-align: center; 
-  font-size: 15px; 
+  font-size: 13px; 
   line-height: 25px; 
   position: fixed; 
   z-index: 3; 
@@ -225,12 +226,17 @@ select {
   filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, .5));
 }
 .WarningButton {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #ffff00;
+  color: #000000;
   padding: 10px;
   cursor: pointer;
-  width: calc(100% - 20px);
+  width: calc(100% - 22px);
   margin-top: 10px;
+  border: solid 1px #000000;
+  transition-duration: .5s;
+}
+.WarningButton:hover {
+  background-color: #ffffff;
 }
 li {
   list-style: none;

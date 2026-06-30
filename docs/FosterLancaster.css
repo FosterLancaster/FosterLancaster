@@ -86,7 +86,7 @@ header {
   background-repeat: repeat;
   background-position: center center;
   animation: Faster 5s linear infinite;
-  -webkit-text-stroke: #b4b4b4 .01em;
+  -webkit-text-stroke: #000000 .01em;
   opacity: 1;
 }
 .FLNameButton:hover {

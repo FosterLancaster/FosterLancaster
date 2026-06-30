@@ -110,16 +110,15 @@ fetch("https://fostchat-rss.fostmp3s.workers.dev/")
             ? `<div class="feedDescription">${cleanDescription}</div>`
             : ""
         }
-
                       </a>
                       <div class="love">
                       <table>
-                      <td class="postbutton">
+                      <td class="postbutton" title="Send Message">
                       <a href="mailto:foster@fostmp3s.com" target="_blank">
                       <div class="postreact"></div>
                       </a>
                       </td>
-                      <td class="postbutton">
+                      <td class="postbutton" title="Buy Password">
                       <a href="https://fostmp3s.com/pw" target="_blank">
                       <div class="hearteffect2">
                         <span class="heart h1"></span>
@@ -129,7 +128,7 @@ fetch("https://fostchat-rss.fostmp3s.workers.dev/")
                       </div>
                       </a>
                       </td>
-                      <td class="postbutton">
+                      <td class="postbutton" title="Visit Site">
                       <a href="https://fostmp3s.com" target="_blank">
                       <div class="postprice">Written by Foster Lancaster<img style="width: 12px; height: 12px; margin: 0px 0px -3px 4px;" src="fmp3simages/Verified.png"></div>
                       </a>

@@ -153,8 +153,9 @@ const el = button.querySelector('.playcount');
 
 if (!el) return;
 
-const shortText = `${formatPlays(displayPlays)} listen(s)`;
-const fullText  = `${displayPlays.toLocaleString()} listen(s)`;
+//------------------Listens
+const shortText = `${formatPlays(displayPlays)} Listens`;
+const fullText  = `${displayPlays.toLocaleString()} Listens`;
 
 if (el.matches(':hover')) {
   el.textContent = fullText;
@@ -1134,16 +1135,16 @@ li {
             <div class="shuffleBtn"  onclick="shuffle()" alt="Shuffle" title="Shuffle"></div>
           <div align='center'>
             <audio id="introAudio" preload="auto" src="fmp3smusic/Sale.mp3"></audio>
-            <button preload="auto" class ="song-button GoodForYou" data-song="fmp3smusic/GoodForYou.mp3"><img src="fmp3simages/GoodForYou.jpg" class="AlbumThumbnail">"Good For You"<span class="playcount">Loading</span></button>
-            <button preload="auto" class ="song-button MoreThanJustAFan" data-song="fmp3smusic/MoreThanJustAFan.mp3"><img src="fmp3simages/MoreThanJustAFan.jpg" class="AlbumThumbnail">"More Than Just A Fan"<span class="playcount">Loading</span></button>
-            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL1.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Black Jeans"<span class="playcount">Loading</span></button>
-            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL2.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Ah, Ah, Ah"<span class="playcount">Loading</span></button>
-            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL3.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Looks"<span class="playcount">Loading</span></button>
-            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL4.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Became So Real"<span class="playcount">Loading</span></button>
-            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL5.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Dry"<span class="playcount">Loading</span></button>
-            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL6.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Black Panther"<span class="playcount">Loading</span></button>
-            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL7.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Everything I Claim To Be"<span class="playcount">Loading</span></button>
-            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL8.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Reality"<span class="playcount">Loading</span></button>
+            <button preload="auto" class ="song-button GoodForYou" data-song="fmp3smusic/GoodForYou.mp3"><img src="fmp3simages/GoodForYou.jpg" class="AlbumThumbnail">"Good For You"<span class="playcount">...</span></button>
+            <button preload="auto" class ="song-button MoreThanJustAFan" data-song="fmp3smusic/MoreThanJustAFan.mp3"><img src="fmp3simages/MoreThanJustAFan.jpg" class="AlbumThumbnail">"More Than Just A Fan"<span class="playcount">...</span></button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL1.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Black Jeans"<span class="playcount">...</span></button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL2.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Ah, Ah, Ah"<span class="playcount">...</span></button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL3.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Looks"<span class="playcount">...</span></button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL4.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Became So Real"<span class="playcount">...</span></button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL5.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Dry"<span class="playcount">...</span></button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL6.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Black Panther"<span class="playcount">...</span></button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL7.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Everything I Claim To Be"<span class="playcount">...</span></button>
+            <button preload="auto" class ="song-button TheGoodLink" data-song="fmp3smusic/TheGoodLink/TGL8.mp3"><img src="fmp3simages/TheGoodLink.png" class="AlbumThumbnail">"Reality"<span class="playcount">...</span></button>
           </div>
         </div>
       
@@ -1908,12 +1909,12 @@ li {
                       </a>
                       <div class="love">
                       <table>
-                      <td class="postbutton">
+                      <td class="postbutton" title="Send Message">
                       <a href="mailto:foster@fostmp3s.com" target="_blank">
                       <div class="postreact"></div>
                       </a>
                       </td>
-                      <td class="postbutton">
+                      <td class="postbutton" title="Buy Password">
                       <a href="https://fostmp3s.com/pw" target="_blank">
                       <div class="hearteffect2">
                         <span class="heart h1"></span>
@@ -1923,7 +1924,7 @@ li {
                       </div>
                       </a>
                       </td>
-                      <td class="postbutton">
+                      <td class="postbutton" title="Visit Site">
                       <a href="https://fostmp3s.com" target="_blank">
                       <div class="postprice">Written by Foster Lancaster<img style="width: 12px; height: 12px; margin: 0px 0px -3px 4px;" src="fmp3simages/Verified.png"></div>
                       </a>

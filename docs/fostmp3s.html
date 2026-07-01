@@ -419,7 +419,6 @@ table {
   height: 93px;
   display: block;
   overflow: hidden;
-  position: relative;
 }
 .EngageBar table {
   height: 93px;
@@ -614,12 +613,8 @@ table {
 }
 #playBtn {
   cursor: pointer;
-  box-shadow: none;
   border: none;
-}
-#playBtn:focus {
-  outline: none;
-  box-shadow: none;
+  display: block;
 }
 /* Play button */
 #playLogo {
@@ -635,6 +630,7 @@ table {
 #buyBtn {
   cursor: pointer;
   border: none;
+  display: block;
 }
 #buyLogo {
   height: auto;
@@ -642,27 +638,31 @@ table {
   max-width: 100%;
 }
 .MusicButton {
-  height: auto;
+  height: 93px;
   width: auto;
   position: relative;
+  display: block; 
+  text-decoration: none; 
+  color: inherit;
 }
 /* Listen counter badge */
 .moreInfo {
+  color: #ffffff;
+  font-family: 'futura';
   position: absolute;
-  inset: auto 0 0 0; /* left:0; right:0; bottom:0 */
+  left: 0;
+  bottom: 12px;
+  width: 100%;
   height: 20px;
   line-height: 20px;
-  color: #fff;
-  font-family: futura;
-  font-size: 12px;
-  background: rgba(0,0,0,.9);
   z-index: 3;
+  font-size: 12px;
   opacity: 0;
   display: block;
   pointer-events: none;
-  transition: opacity .8s;
+  background-color: rgba(0, 0, 0, .9);
+  transition-duration: .8s;
   overflow: hidden;
-  bottom: 12px;
 }
 /*----Bars----*/
 .SongProgressBar {
@@ -1260,20 +1260,20 @@ li {
 <!-----Engage Bar---->
 <div class="EngageBar">
 <table>
-<td id="buyBtn" alt="Buy Password" title="Buy Password">
-<a href="https://fostmp3s.com/pw" target="_blank" style="display: block; text-decoration: none; color: inherit;">
-<div class="MusicButton">
+<a href="https://fostmp3s.com/pw" target="_blank">
+<td>
+<div class="MusicButton" id="buyBtn" alt="Buy Password" title="Buy Password">
 <img src="fmp3simages/PWBUY.png" id="buyLogo">
 <span class="moreInfo">Fan Password</span>
 </div>
-</a>
 </td>
-<td id="playBtn" alt="Play/Pause Music" title="Play/Pause Music">
-<div class="MusicButton">
+</a>
+<td>
+<div class="MusicButton" id="playBtn" alt="Play/Pause Music" title="Play/Pause Music">
 <img src="fmp3simages/PLAY.png" id="playLogo">
-<span class="moreInfo"><span id="listenCounter"></span>&nbsp;Listens&nbsp;Left</span><div>
+<span class="moreInfo"><span id="listenCounter"></span>&nbsp;Listens&nbsp;Left</span>
 </div>
-</td>  
+</td>
 </table>
 </div>
 
@@ -1413,7 +1413,7 @@ li {
                     if (!counterDiv) return;
                 
                     if (isInfiniteListen()) {
-                      counterDiv.innerHTML = '<img src="fmp3simages/Infinity.png" style="width: 1.2em; padding: 10px; margin: -10px;" alt="∞">';
+                      counterDiv.innerHTML = '<img src="fmp3simages/Infinity.png" style="width: 1.2em;" alt="∞">';
                     } else {
                       counterDiv.textContent = String(listensLeft);
                     }
@@ -1736,7 +1736,7 @@ li {
                       // Reset
                       if (Password) {
                         Password.value = '';                    // clear the text
-                        Password.placeholder = '✓Right';    // new placeholder
+                        Password.placeholder = 'Correct';    // new placeholder
                       }
                 
                       // Red (your note said Red but this is green; leaving your note)
@@ -1750,7 +1750,7 @@ li {
                 
                       if (Password) {
                         Password.value = '';                    // clear the text
-                        Password.placeholder = '✗Wrong';   // new placeholder
+                        Password.placeholder = 'Incorrect';   // new placeholder
                       }
                 
                       // Green (your note said Green but this is red; leaving your note)

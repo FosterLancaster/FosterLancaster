@@ -35,19 +35,47 @@
   let lastPlayedSongId = null;
   const highestDisplayed = {};
   
-  const PLAYS_PER_12H = 50000;
+
+//Play Rate
+  const PLAYS_PER_12H = 5000;
+
+
   const RATE_PER_MS = PLAYS_PER_12H / (12 * 60 * 60 * 1000);
   
   function getSongId(songPath) {
     return songPath.replace(/[^a-zA-Z0-9]/g, "_");
   }
 
-
   const DAY = 24 * 60 * 60 * 1000;
+
+function getDailyBoost(songId) {
+
+  const now = new Date();
+
+  // changes every 4 hours
+  const block = Math.floor(now.getHours() / 6);
+
+  let hash = 0;
+
+  const key =
+    songId +
+    now.toISOString().split("T")[0] +
+    block;
+
+  for (let i = 0; i < key.length; i++) {
+    hash += key.charCodeAt(i);
+  }
+
+
+//Play Rate Extra
+  return hash % 2 === 0 ? 555 : 0;
+
+
+}
 
 async function commitDailyGrowth(songRef) {
 
-  await runTransaction(songRef, (data) => {
+await runTransaction(songRef, (data) => {
 
     if (!data) {
       return {
@@ -95,8 +123,8 @@ async function commitDailyGrowth(songRef) {
   return num.toLocaleString();
 }
 
-    // display count per second
-// display count per second
+
+//Update number
 const dailyChecked = {};
 
 onValue(songRef, snapshot => {
@@ -204,26 +232,6 @@ function getToday() {
   return new Date().toISOString().split("T")[0];
 }
 
-function getDailyBoost(songId) {
-
-  const now = new Date();
-
-  // changes every 4 hours
-  const block = Math.floor(now.getHours() / 6);
-
-  let hash = 0;
-
-  const key =
-    songId +
-    now.toISOString().split("T")[0] +
-    block;
-
-  for (let i = 0; i < key.length; i++) {
-    hash += key.charCodeAt(i);
-  }
-
-  return hash % 2 === 0 ? 5555 : 0;
-}
 </script>
 <!-- Style Sheets -->
 
@@ -1506,7 +1514,7 @@ li {
                   if (!decrementListenCount()) return;
                 
                   // 🔹 CHANGE UI IMMEDIATELY (while loading)
-                  if (playLogo) playLogo.src = 'fmp3simages/PAUSE.png';
+                  if (playLogo && listensLeft > 0) playLogo.src = 'fmp3simages/PAUSE.png';
                   defaultImage && defaultImage.classList.add('playing');
                 
                   // Stop intro audio if it was playing
@@ -1559,7 +1567,7 @@ li {
                   const togglePlayPause = () => {
                   if (!audio) return;
                 
-                  if (audio.paused) {
+                  if (audio.paused && listensLeft > 0) {
                     // 🔹 Update UI FIRST
                     if (playLogo) playLogo.src = 'fmp3simages/PAUSE.png';
                     defaultImage && defaultImage.classList.add('playing');

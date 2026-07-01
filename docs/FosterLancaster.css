@@ -82,17 +82,17 @@ header {
   transition-duration: .5s;
   background-color: rgba(255, 255, 255, .1);
   background-image: url('images/Faster.png');
-  background-size: 20vw;
+  background-size: 25vw;
   background-repeat: repeat;
   background-position: center center;
-  animation: Faster 2.5s linear infinite;
-  -webkit-text-stroke: #000000 .011em;
-  opacity: 1;
+  animation: Faster 3s linear infinite;
+  -webkit-text-stroke: #a9602b .01em;
+  opacity: .8;
 }
 .FLNameButton:hover {
   transform: scale(1.05);
-  opacity: .5;
-  animation: Faster 1.2s linear infinite;
+  opacity: 1;
+  animation: Faster 1.5s linear infinite;
 } 
 .FLBuyButton:hover {
   padding: 7.5px 10px 7.5px 10px;

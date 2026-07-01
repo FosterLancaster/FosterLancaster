@@ -419,6 +419,7 @@ table {
   height: 93px;
   display: block;
   overflow: hidden;
+  position: relative;
 }
 .EngageBar table {
   height: 93px;
@@ -647,22 +648,21 @@ table {
 }
 /* Listen counter badge */
 .moreInfo {
-  color: #ffffff;
-  font-family: 'futura';
   position: absolute;
-  left: 0;
-  bottom: 12.5px;
-  width: 100%;
+  inset: auto 0 0 0; /* left:0; right:0; bottom:0 */
   height: 20px;
   line-height: 20px;
-  z-index: 3;
+  color: #fff;
+  font-family: futura;
   font-size: 12px;
+  background: rgba(0,0,0,.9);
+  z-index: 3;
   opacity: 0;
   display: block;
   pointer-events: none;
-  background-color: rgba(0, 0, 0, .9);
-  transition-duration: .8s;
+  transition: opacity .8s;
   overflow: hidden;
+  bottom: 12px;
 }
 /*----Bars----*/
 .SongProgressBar {
@@ -1264,14 +1264,14 @@ li {
 <a href="https://fostmp3s.com/pw" target="_blank" style="display: block; text-decoration: none; color: inherit;">
 <div class="MusicButton">
 <img src="fmp3simages/PWBUY.png" id="buyLogo">
-<div class="moreInfo">Fan Password</div>
+<span class="moreInfo">Fan Password</span>
 </div>
 </a>
 </td>
 <td id="playBtn" alt="Play/Pause Music" title="Play/Pause Music">
 <div class="MusicButton">
 <img src="fmp3simages/PLAY.png" id="playLogo">
-<div class="moreInfo"><span id="listenCounter"></span>&nbsp;Listens&nbsp;Left</div>
+<span class="moreInfo"><span id="listenCounter"></span>&nbsp;Listens&nbsp;Left</span><div>
 </div>
 </td>  
 </table>

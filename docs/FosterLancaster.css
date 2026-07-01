@@ -82,7 +82,7 @@ header {
   transition-duration: .5s;
   background-color: rgba(255, 255, 255, .1);
   background-image: url('images/Faster.png');
-  background-size: 200px;
+  background-size: 1.5em;
   background-repeat: repeat;
   background-position: center center;
   animation: Faster 3s linear infinite;
@@ -186,11 +186,8 @@ footer {
   vertical-align: top;
   box-sizing: border-box;
   transition-duration: .5s;
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
 }
 .iconlinkcontainer:hover {
-background-color: #ffffff;
 transform: scale(1.1);
 text-decoration: underline;
 }
@@ -246,10 +243,10 @@ select {
 
 @keyframes Faster {
   0% {
-    background-position: 0px center;
+    background-position: 0em center;
   }
   100% {
-    background-position: 1000px center;
+    background-position: 6em center;
   }
 }
 

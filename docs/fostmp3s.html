@@ -1096,7 +1096,7 @@ li {
               </div>
 
 
-              <script type="module">
+  <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-analytics.js";
   import {
@@ -1142,13 +1142,13 @@ li {
 
   function formatPlays(num) {
     if (num >= 1_000_000_000) {
-      return (num / 1_000_000_000).toFixed(2) + "B";
+      return (num / 1_000_000_000).toFixed(1) + "B";
     }
     if (num >= 1_000_000) {
-      return (num / 1_000_000).toFixed(2) + "M";
+      return (num / 1_000_000).toFixed(1) + "M";
     }
     if (num >= 1_000) {
-      return (num / 1_000).toFixed(2) + "K";
+      return (num / 1_000).toFixed(1) + "K";
     }
     return num.toLocaleString();
   }
@@ -1176,41 +1176,38 @@ li {
 
   }
 
-  async function commitDailyGrowth(songRef) {
+async function commitDailyGrowth(songRef, songId) {
+  await runTransaction(songRef, (data) => {
+    const now = Date.now();
+    const COMMIT_INTERVAL = 6 * 60 * 60 * 1000;
 
-    await runTransaction(songRef, (data) => {
-
-      if (!data) {
-        return {
-          plays: 0,
-          lastUpdated: Date.now()
-        };
-      }
-
-      const now = Date.now();
-      const lastUpdated = data.lastUpdated || now;
-      const elapsed = now - lastUpdated;
-
-
-
-// Update Every 6 Hours
-const COMMIT_INTERVAL = 6 * 60 * 60 * 1000;
-
-if (elapsed < COMMIT_INTERVAL) {
-  return;
-}
-
-      const growth = Math.floor(elapsed * RATE_PER_MS);
-
+    if (!data) {
       return {
-        ...data,
-        plays: (data.plays || 0) + growth,
-        lastUpdated: now
+        plays: 0,
+        lastUpdated: now,
+        dailyBoost: getDailyBoost(songId),
+        boostDate: getToday()
       };
+    }
 
-    });
+    const lastUpdated = data.lastUpdated || now;
+    const elapsed = now - lastUpdated;
 
-  }
+    if (elapsed < COMMIT_INTERVAL) {
+      return data;
+    }
+
+    const growth = Math.floor(elapsed * RATE_PER_MS);
+
+    return {
+      ...data,
+      plays: (data.plays || 0) + growth,
+      lastUpdated: now,
+      dailyBoost: getDailyBoost(songId),
+      boostDate: getToday()
+    };
+  });
+}
 
   function setupFirebasePlayCounts(songButtons) {
 
@@ -1226,7 +1223,7 @@ if (elapsed < COMMIT_INTERVAL) {
 
         if (!dailyChecked[songId]) {
           dailyChecked[songId] = true;
-          commitDailyGrowth(songRef);
+          commitDailyGrowth(songRef, songId);
         }
 
         const el = button.querySelector('.playcount');
@@ -1314,27 +1311,24 @@ if (elapsed < COMMIT_INTERVAL) {
     }
   }
 
-  async function commitSongPlay(songPath, button) {
-    if (!songPath) return;
+async function commitSongPlay(songPath, button) {
+  if (!songPath) return;
 
-    const songId = getSongId(songPath);
-    lastPlayedSongId = songId;
+  const songId = getSongId(songPath);
+  lastPlayedSongId = songId;
 
-    // Update the visible number immediately while Firebase commits.
-    highestDisplayed[songId] = (highestDisplayed[songId] || 0) + 1;
-    updatePlaycountText(button, songId);
+  highestDisplayed[songId] = (highestDisplayed[songId] || 0) + 1;
+  updatePlaycountText(button, songId);
 
-    try {
-      await update(ref(database, `songs/${songId}`), {
-        plays: increment(1),
-        lastUpdated: Date.now()
-      });
-    } catch (err) {
-      // If Firebase rejects the write, keep the visible count from going backward,
-      // but show the actual error in the console for rules/debugging.
-      console.error("Firebase play increment failed:", err);
-    }
+  try {
+    await update(ref(database, `songs/${songId}`), {
+      plays: increment(1)
+      // DO NOT update lastUpdated here
+    });
+  } catch (err) {
+    console.error("Firebase play increment failed:", err);
   }
+}
 
 
 

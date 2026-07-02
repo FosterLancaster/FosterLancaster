@@ -752,9 +752,10 @@ li {
 .h4 { left: 20px; bottom: 3px;  animation-delay: 1s; }
 
 .playcount {
+  width: auto;
   min-width: 90px;
   text-align: center;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: bold;
   line-height: 10px;
   z-index: 3;
@@ -762,8 +763,10 @@ li {
   right: 0px;
   top: 0;
   bottom: 0;
-  padding: 0px 5px 0px 60px;
-  background-image: linear-gradient(to right, transparent, rgba(20, 20, 20, 0.7) 40%, rgba(20, 20, 20, .9));
+  padding: 0px 10px 0px 100px;
+  background-size: auto 100px;
+  background-position: left center;
+  background-image: linear-gradient(to right, transparent, rgba(20, 20, 20, .9) 100px, rgba(20, 20, 20, .9));
   border-bottom-right-radius: 20px; /* Needed for backdrop filter */
   color: #f0e2ff;
   -webkit-text-stroke: .02em #000000;

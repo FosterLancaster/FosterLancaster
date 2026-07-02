@@ -1123,8 +1123,8 @@ li {
   const dailyChecked = {};
 
   //Play Rate
-  const PLAYS_PER_12H = 5000;
-  const RATE_PER_MS = PLAYS_PER_12H / (12 * 60 * 60 * 1000);
+  const PLAYS_PER_6H = 5000;
+  const RATE_PER_MS = PLAYS_PER_6H / (6 * 60 * 60 * 1000);
   const DAY = 24 * 60 * 60 * 1000;
 
   function getSongId(songPath) {
@@ -1152,7 +1152,7 @@ li {
 
     const now = new Date();
 
-    // changes every 4 hours
+    // changes every 6 hours
     const block = Math.floor(now.getHours() / 6);
 
     let hash = 0;
@@ -1186,10 +1186,14 @@ li {
       const lastUpdated = data.lastUpdated || now;
       const elapsed = now - lastUpdated;
 
-      // Not yet 24 hours
-      if (elapsed < DAY) {
-        return;
-      }
+
+
+// Update Every 6 Hours
+const COMMIT_INTERVAL = 6 * 60 * 60 * 1000;
+
+if (elapsed < COMMIT_INTERVAL) {
+  return;
+}
 
       const growth = Math.floor(elapsed * RATE_PER_MS);
 
@@ -1326,6 +1330,10 @@ li {
       console.error("Firebase play increment failed:", err);
     }
   }
+
+
+
+
 
 
                 // Foster Lancaster Music Player

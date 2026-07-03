@@ -83,7 +83,7 @@ header {
   background-color: #000000;
   -webkit-text-stroke: #b2764b .02em;
   filter: drop-shadow(0px 0px 5px #000000);
-  opacity: .7;
+  opacity: .8;
 }
 .FLNameButton:hover {
   transform: scale(1.05);

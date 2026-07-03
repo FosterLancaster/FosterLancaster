@@ -80,13 +80,8 @@ header {
   cursor: pointer;
   color: transparent;
   transition-duration: .5s;
-  background-color: rgba(255, 255, 255, .1);
-  background-image: url('images/Faster.png');
-  background-size: 1.5em;
-  background-repeat: repeat;
-  background-position: center center;
-  animation: Faster 3s linear infinite;
-  -webkit-text-stroke: #ffffff .02em;
+  background-color: #000000;
+  -webkit-text-stroke: #b2764b .02em;
   filter: drop-shadow(0px 0px 5px #000000);
   opacity: .7;
 }
@@ -120,12 +115,12 @@ footer {
 }
 .Title {
   font-family: 'FL2';
-  min-width: calc(30% - 42px); 
-  font-size: 60px;
+  font-size: 45px;
+  width: 300px;
+  max-width: calc(100% - 20px);
   height: 60px;
   line-height: 60px;
   margin: 10px 10px 5px 10px;
-  padding: 5px;
   border-radius: 90px;
   overflow: hidden;
   position: relative;
@@ -134,6 +129,10 @@ footer {
   background-color: transparent;
   background-image: radial-gradient(rgba(125, 125, 125, .7), transparent);
   backdrop-filter: blur(5px);
+  transition-duration: .5s;
+}
+.Title:hover {
+  color: #d1d1d1;
 }
 .YoutubeContainer {
   height: 24px;
@@ -187,7 +186,7 @@ footer {
   transition-duration: .5s;
 }
 .iconlinkcontainer:hover {
-transform: scale(1.1);
+filter: invert(.8);
 text-decoration: underline;
 }
 select { 
@@ -238,15 +237,6 @@ select {
 }
 .WarningButton:hover {
   background-color: #ffffff;
-}
-
-@keyframes Faster {
-  0% {
-    background-position: 0em center;
-  }
-  100% {
-    background-position: 6em center;
-  }
 }
 
 @keyframes floatHeart {

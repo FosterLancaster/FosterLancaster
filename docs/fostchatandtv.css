@@ -174,18 +174,18 @@ li {
 }
 .heart {
   position: absolute;
-  width: 50%;
-  height: 50%;
+  width: 45%;
+  height: 45%;
   background: url('fmp3simages/Heart.png') center/contain no-repeat;
   opacity: 0;
   animation: floatHeart 1s infinite linear;
   background-color: transparent;
 }
 /* 4 locations */
-.h1 { left: 0%;  bottom: 3px;  animation-delay: .25s; }
-.h2 { left: 65%; bottom: 3px;  animation-delay: .50s; }
-.h3 { left: 22%; bottom: 3px;  animation-delay: .75s; }
-.h4 { left: 44%; bottom: 3px;  animation-delay: 1s; }
+.h1 { left: 0%;  bottom: 5%;  animation-delay: .25s; }
+.h2 { left: 40%; bottom: 5%;  animation-delay: .50s; }
+.h3 { left: 20%; bottom: 5%;  animation-delay: .75s; }
+.h4 { left: 60%; bottom: 5%;  animation-delay: 1s; }
 
 /*------------fostTV--------------- */
 .FtvContent {

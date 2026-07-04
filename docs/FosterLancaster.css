@@ -197,7 +197,7 @@ select {
   display: flex;
   overflow: hidden;
   z-index: -1;
-  background-image: url('fmp3simages/GoodForYouUnder.jpg');
+  background-image: url('images/GoodForYouUnder.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;

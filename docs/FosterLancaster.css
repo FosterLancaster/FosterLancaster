@@ -80,7 +80,7 @@ header {
   color: transparent;
   transition-duration: .5s;
   background-color: transparent;
-  background-image: linear-gradient(to left, transparent, #000000);
+  background-image: linear-gradient(to left, transparent 2%, #000000);
   opacity: 1;
   position: fixed;
   display: inline-block;

@@ -66,9 +66,8 @@ header {
 }
 /*-------------------FLName---------------------*/
 .FLNameButton {
-  right: 0px;
-  top: 0px;
-  margin: 10px;
+  right: 2vw;
+  top: 0px;;
   font-size: 5vw;
   font-family: 'FL2';
   width: fit-content;
@@ -90,9 +89,9 @@ header {
   color: transparent;
   transition-duration: .5s;
   background-color: transparent;
-  background-image: linear-gradient(to left, transparent, #000000);
+  background-image: linear-gradient(to left, rgba(0, 0, 0, .05), #000000);
   background-size: cover;
-  padding: 1% 5% 1% 5%;
+  padding: 2%;
 }
 
 /*-------------------FLName---------------------*/

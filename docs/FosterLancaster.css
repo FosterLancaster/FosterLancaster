@@ -68,27 +68,33 @@ header {
 .FLNameButton {
   right: 0px;
   top: 0px;
-  padding: 0px 2% 0px 2%;
   max-width: 50vw;
   overflow: hidden;
   font-size: 5vw;
   font-family: 'FL2';
   width: fit-content;
   text-align: center;
-  background-clip: text;
   cursor: pointer;
-  color: transparent;
-  transition-duration: .5s;
-  background-color: transparent;
-  background-image: linear-gradient(to left, rgba(0, 0, 0, .1) 40%, rgba(0, 0, 0, .5) 80%, rgba(0, 0, 0, 1));
   opacity: 1;
   position: fixed;
   display: inline-block;
   z-index: 0;
+  line-height: 5vw;
+  transition-duration: .5s
 }
 .FLNameButton:hover {
-  transform: scale(1.05);
+  filter: invert(.8);
 } 
+.name {
+  height: auto;
+  background-clip: text;
+  color: transparent;
+  transition-duration: .5s;
+  background-color: transparent;
+  background-image: linear-gradient(to left, transparent, #000000);
+  background-size: cover;
+  padding: 5%;
+}
 
 /*-------------------FLName---------------------*/
 h1 {

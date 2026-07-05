@@ -68,6 +68,7 @@ header {
 .FLNameButton {
   right: 0px;
   top: 0px;
+  margin: 10px;
   max-width: 50vw;
   overflow: hidden;
   font-size: 5vw;
@@ -79,7 +80,6 @@ header {
   position: fixed;
   display: inline-block;
   z-index: 0;
-  line-height: 5vw;
   transition-duration: .5s
 }
 .FLNameButton:hover {
@@ -93,7 +93,7 @@ header {
   background-color: transparent;
   background-image: linear-gradient(to left, transparent, #000000);
   background-size: cover;
-  padding: 5%;
+  padding: 1% 5% 1% 5%;
 }
 
 /*-------------------FLName---------------------*/

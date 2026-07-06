@@ -148,8 +148,6 @@ footer {
   height: auto;
   width: auto;
   position: fixed; 
-  top: 10px;
-  left: 10px;
   z-index: 6;
   display: flex;
   gap: 0;
@@ -157,8 +155,6 @@ footer {
   margin: 10px;
 }
 .iconlinkpic {
-  width: 35px;
-  height: 35px;
   object-fit: contain;
   display: block;
 }
@@ -174,8 +170,6 @@ footer {
 }
 .iconlinkcontainer {
   color: #000000;
-  width: 40px;
-  height: 40px;
   padding: 0px;
   background-color: transparent;
   display: inline-flex;
@@ -243,10 +237,34 @@ select {
 .FLNameButton {
   font-size: 9vw;
 }
+.LinkMenu {
+  top: 2px;
+  left: 2px;
+}
+.iconlinkpic {
+  width: 30px;
+  height: 30px;
+}
+.iconlinkcontainer {
+  width: 35px;
+  height: 35px;
+}
 }
 @media only screen and (orientation: landscape) {
 .FLNameButton {
   font-size: 9vh;
+}
+.LinkMenu {
+  top: 10px;
+  left: 10px;
+}
+.iconlinkpic {
+  width: 35px;
+  height: 35px;
+}
+.iconlinkcontainer {
+  width: 40px;
+  height: 40px;
 }
 }
 

@@ -66,7 +66,7 @@ header {
 }
 /*-------------------FLName---------------------*/
 .FLNameButton {
-  right: .2em;
+  right: 10px;
   top: 0px;;
   font-size: 5vw;
   font-family: 'FL2';
@@ -110,7 +110,7 @@ footer {
   font-family: Arial, sans-serif;
   font-size: 13px;
   line-height: 22px;
-  background: #000000;
+  background: #afac00;
   margin-bottom: -2px;
 }
 .Title {

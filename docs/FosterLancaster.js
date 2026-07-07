@@ -110,32 +110,33 @@ fetch("https://fostchat-rss.fostmp3s.workers.dev/")
             ? `<div class="feedDescription">${cleanDescription}</div>`
             : ""
         }
-                      </a>
-                      <div class="love">
-                      <table>
-                      <td class="postbutton" title="Send Message">
-                      <a href="mailto:foster@fostmp3s.com" target="_blank">
-                      <div class="postreact"></div>
-                      </a>
-                      </td>
-                      <td class="postbutton" title="Buy Password">
-                      <a href="https://fostmp3s.com/pw" target="_blank">
-                      <div class="hearteffect2">
-                        <span class="heart h1"></span>
-                        <span class="heart h2"></span>
-                        <span class="heart h3"></span>
-                        <span class="heart h4"></span>
-                      </div>
-                      </a>
-                      </td>
-                      <td class="postbutton" title="Visit Site">
-                      <a href="https://fostmp3s.com" target="_blank">
-                      <div class="postname">Human Post<img style="width: 1em; height: 1em; margin-left: .5em;" src="images/Verified.png"></div>
-                      </a>
-                      </td>
-                      </table>
-                      </div>
-                      `;
+</a>
+<div class="love">
+<table>
+<td class="postbutton" title="Send Message">
+<a href="mailto:foster@fostmp3s.com" target="_blank">
+<div class="postreact"></div>
+</a>
+</td>
+<td class="postbutton" title="Buy Password">
+<a href="https://fostmp3s.com/pw" target="_blank">
+<div class="hearteffect2">
+  <span class="heart h1"></span>
+  <span class="heart h2"></span>
+  <span class="heart h3"></span>
+  <span class="heart h4"></span>
+</div>
+</a>
+</td>
+<td class="postbutton" title="Visit Site">
+<a href="https://fostmp3s.com" target="_blank">
+<div class="postname">Human Post<img style="width: 1em; height: 1em; margin-left: .5em;" src="images/Verified.png"></div>
+</a>
+</td>
+</table>
+</div>
+`;
+
 
     if (feedList) {
       feedList.appendChild(li);

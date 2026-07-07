@@ -130,7 +130,7 @@ fetch("https://fostchat-rss.fostmp3s.workers.dev/")
 </td>
 <td class="postbutton" title="Visit Site">
 <a href="https://fostmp3s.com" target="_blank">
-<div class="postname">Human Post<img style="width: 1em; height: 1em; margin-left: .5em;" src="images/Verified.png"></div>
+<div class="postname">Human Post<img style="width: 1em; height: 1em; margin-left: .5em;" src="fmp3simages/Verified.png"></div>
 </a>
 </td>
 </table>

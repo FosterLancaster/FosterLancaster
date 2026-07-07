@@ -91,7 +91,7 @@ header {
   background-color: transparent;
   background-image: linear-gradient(to left, rgba(0, 0, 0, .05), #000000);
   background-size: cover;
-  padding: 1vw;
+  padding: 0px 1vw 0px 1vw;
 }
 
 /*-------------------FLName---------------------*/

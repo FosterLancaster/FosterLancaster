@@ -198,6 +198,7 @@ li {
   border: solid 1px #ffffff;
   padding: 10px;
   height: 200px;
+  max-height: 80dvh;
   width: 200px;
   display: block;
   border-top-left-radius: 20px;

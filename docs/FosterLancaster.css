@@ -100,18 +100,19 @@ font-size: 25px;
 line-height: auto;
 }
 footer {
-  width: 100%;
+  width: calc(100% - 4em);
   height: 100px;
   box-sizing: border-box;
   padding: 2em;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   font-family: Arial, sans-serif;
   font-size: 13px;
   line-height: 22px;
   background: #afac00;
-  margin-bottom: -2px;
+  margin: 0 0 -2px 0;
 }
 .Title {
   font-family: 'FL2';

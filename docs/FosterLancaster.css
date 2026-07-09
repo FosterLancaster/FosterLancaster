@@ -100,7 +100,7 @@ font-size: 25px;
 line-height: auto;
 }
 footer {
-  width: calc(100% - 4em);
+  width: 100%;
   height: 100px;
   box-sizing: border-box;
   padding: 2em;

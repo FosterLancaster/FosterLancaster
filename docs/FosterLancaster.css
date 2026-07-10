@@ -71,27 +71,33 @@ header {
   font-size: 4vw;
   font-family: 'FL2';
   width: fit-content;
-  text-align: center;
+  justify-content: center;
   cursor: pointer;
   opacity: 1;
   position: fixed;
   display: inline-block;
   z-index: 0;
-  transition-duration: .5s
+  transition-duration: 1s
 }
 .FLNameButton:hover {
-  filter: invert(.8);
-} 
+  transform: scale(1.1);
+}
+.FLNameButton:hover .name {
+  background-size: 100% 100%, 100% 100%;
+}
 .name {
   height: auto;
-  width: auto;
+  width: fit-content;
   background-clip: text;
+  -webkit-background-clip: text;
   color: transparent;
-  transition-duration: .5s;
-  background-color: transparent;
-  background-image: linear-gradient(to left, rgba(0, 0, 0, .05), #000000);
-  background-size: cover;
-  padding: 0px 1vw 0px 1vw;
+  -webkit-text-stroke: #000000 .02em;
+  padding: 0 2vw;
+  background-image: linear-gradient(to right, #000000, #000000 3vw, transparent 6.75vw, transparent), linear-gradient(to right, #000000);
+  background-repeat: no-repeat, no-repeat;
+  background-position: left center, left center;
+  background-size: 100% 100%, 0% 100%;
+  transition: background-size 1s ease;
 }
 
 /*-------------------FLName---------------------*/
@@ -252,8 +258,12 @@ select {
 }
 }
 @media only screen and (orientation: landscape) {
+.name {
+  padding: 0px 2vh 0px 2vh;
+  background-image: linear-gradient(to right, #000000, #000000 3vh, transparent 6.75vh, transparent), linear-gradient(to right, #000000);
+}
 .FLNameButton {
-  font-size: 9vh;
+  font-size: 8vh;
 }
 .LinkMenu {
   top: 10px;

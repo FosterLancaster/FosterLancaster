@@ -93,7 +93,7 @@ header {
   color: transparent;
   -webkit-text-stroke: #000000 .02em;
   padding: 0 2vw;
-  background-image: linear-gradient(to right, #000000, #000000 3vw, transparent 6.75vw, transparent), linear-gradient(to right, #000000);
+  background-image: linear-gradient(to right, #000000, #000000 3vw, transparent 8vw, transparent), linear-gradient(to right, #000000, #000000 50%, transparent 100%);
   background-repeat: no-repeat, no-repeat;
   background-position: left center, left center;
   background-size: 100% 100%, 0% 100%;
@@ -260,7 +260,7 @@ select {
 @media only screen and (orientation: landscape) {
 .name {
   padding: 0px 2vh 0px 2vh;
-  background-image: linear-gradient(to right, #000000, #000000 3vh, transparent 6.75vh, transparent), linear-gradient(to right, #000000);
+  background-image: linear-gradient(to right, #000000, #000000 3vh, transparent 8vh, transparent), linear-gradient(to right, #000000, #000000 50%, transparent 100%);
 }
 .FLNameButton {
   font-size: 8vh;

@@ -77,7 +77,7 @@ header {
   position: fixed;
   display: inline-block;
   z-index: 0;
-  transition-duration: 1s
+  transition-duration: .5s;
 }
 .FLNameButton:hover {
   transform: scale(1.1);
@@ -97,7 +97,7 @@ header {
   background-repeat: no-repeat, no-repeat;
   background-position: left center, left center;
   background-size: 100% 100%, 0% 100%;
-  transition: background-size 1s ease;
+  transition: background-size .2s ease;
 }
 
 /*-------------------FLName---------------------*/
@@ -198,7 +198,7 @@ select {
   top: 0px;     
   left: 0;
   width: 100%;
-  height: 100%; 
+  height: 100dvh; 
   display: flex;
   overflow: hidden;
   z-index: -1;
@@ -207,6 +207,16 @@ select {
   background-position: center center;
   background-size: cover;
   opacity: 1;
+}
+.iconlinkpic {
+  width: 1em;
+  height: 1em;
+}
+.iconlinkcontainer {
+  border: solid .25em #000000;
+  border-top-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  margin: .2em;
 }
 .Warning {
   font-family: Arial; 
@@ -248,14 +258,6 @@ select {
   top: 2px;
   left: 2px;
 }
-.iconlinkpic {
-  width: 30px;
-  height: 30px;
-}
-.iconlinkcontainer {
-  width: 35px;
-  height: 35px;
-}
 }
 @media only screen and (orientation: landscape) {
 .name {
@@ -268,14 +270,6 @@ select {
 .LinkMenu {
   top: 10px;
   left: 10px;
-}
-.iconlinkpic {
-  width: 35px;
-  height: 35px;
-}
-.iconlinkcontainer {
-  width: 40px;
-  height: 40px;
 }
 }
 

@@ -79,7 +79,7 @@
 }
 li {
   list-style: none;
-  background-color: #ffff00;
+  background-color: rgba(255, 255, 0, .8);
   border-radius: 8px;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
   margin: 0px auto 15px auto;

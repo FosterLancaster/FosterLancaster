@@ -24,7 +24,7 @@
 <style>
 body {
   font-family: 'Futura';
-  background-color: #000000;
+  background-color: #505050;
   }
 .Password {
   pointer-events: none;
@@ -51,12 +51,11 @@ body {
   background-repeat: no-repeat;
   background-color: transparent;
   border: none;
-  animation: clickhere 2s linear infinite;
+  animation: clickhere 1s linear infinite;
 }
 /*----Bars----*/
 .PasswordBar {
   height: 40px;
-  filter: drop-shadow(0 0 5px #ffffff);
 /*----Bars----*/
   max-height: 40px;
   line-height: 40px;
@@ -76,10 +75,10 @@ body {
   background-repeat: no-repeat;
   border: double 5px #ffffff;
   background-color: #000000;
-  background-image: url('fmp3simages/FostMp3sLogoBW.png');
+  background-image: url('images/FostMp3sLogoBW.png');
 }
 a {
-  color: #939393;
+  color: #ffff00;
   text-decoration: none;
 }
 a:hover {
@@ -94,7 +93,7 @@ a:hover {
     font-size: 20px;
     position: absolute;
     text-align: center;
-    width: 80%; 
+    width: 90%; 
     overflow: scroll;
     max-height: 100%;
   }
@@ -110,7 +109,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 248px;
+  width: calc(100% - 42px);
   overflow: hidden;
   border-radius: 10px;
   padding: 20px;
@@ -120,9 +119,9 @@ a:hover {
     background-color: #a7a7a7;
   }
   @keyframes clickhere2 {
-  0% { transform: scale(1); }
-  50% { transform: scale(.95); }
-  100% { transform: scale(1);}
+  0% { opacity: .3; }
+  50% { opacity: 1; }
+  100% { opacity: .3;}
 }
 </style>
 </head>
@@ -132,7 +131,7 @@ a:hover {
 <div class="PW" align="center">
 
 <blockquote class="PWText">
-Thank you for your purchase! The FOSTMp3's password is:<br>
+Thank you for your purchase! The official "fostmp3s" password is:<br>
 </blockquote>
 
   <div align="center">
@@ -155,6 +154,12 @@ customer support</a>
 <a href="http://fostmp3s.com" target="_self">
 <div class="Return">Back To Site (fostmp3s.com)</div>
 </a>
+
+<br>
+
+<div class="Return"><span style="width: 90%;">Try The Password" (fostmp3s.com)</span>
+<iframe src="https://fosterlancaster.github.io/fostmp3s" style="width: 400px; height: 400px; min-height: 400px; min-width: 200px; max-height: 100%; display: block; border: none;" class="fostmp3s"></iframe>       
+</div>
 
 </div>
 </div>

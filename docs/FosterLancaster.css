@@ -67,7 +67,7 @@ header {
 /*-------------------FLName---------------------*/
 .FLNameButton {
   right: 10px;
-  top: 0px;
+  top: 10px;
   font-size: 4vw;
   font-family: 'FL2';
   width: fit-content;
@@ -95,9 +95,9 @@ header {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  -webkit-text-stroke: #000000 .02em;
+  -webkit-text-stroke: rgba(0, 0, 0, .7) .02em;
   padding: 0 2vw;
-  background-image: linear-gradient(to right, #000000, #000000 2vw, transparent 10vw, transparent), linear-gradient(to right, #000000, #ff0000 50%, #ff0000 100%);
+  background-image: linear-gradient(to right, #ffffff, #ffffff 2vw, transparent 10vw, transparent), linear-gradient(to right, #ffffff, #001575 50%, #001575 100%);
   background-repeat: no-repeat, no-repeat;
   background-position: left center, left center;
   background-size: 100% 100%, 0% 100%;
@@ -266,7 +266,7 @@ select {
 @media only screen and (orientation: landscape) {
 .name {
   padding: 0px 2vh 0px 2vh;
-  background-image: linear-gradient(to right, #000000, #000000 2vh, transparent 10vh, transparent), linear-gradient(to right, #000000, #ff0000 50%, #ff0000 100%);
+  background-image: linear-gradient(to right, #ffffff, #ffffff 2vh, transparent 10vh, transparent), linear-gradient(to right, #ffffff, #001575 50%, #001575 100%);
 }
 .FLNameButton {
   font-size: 8vh;

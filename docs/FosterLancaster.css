@@ -65,43 +65,34 @@ header {
   color: #000000;
 }
 /*-------------------FLName---------------------*/
-.FLNameButton {
+#FLName {
   right: 10px;
   top: 10px;
-  font-size: 4vw;
-  font-family: 'FL2';
-  width: fit-content;
+  position: fixed;
+  width: auto;
+  height: auto;
   justify-content: center;
   cursor: pointer;
   opacity: 1;
   position: fixed;
   display: inline-block;
-  z-index: 0;
-  transition-duration: .5s;
-  background-image: url('images/HearName.png');
-  background-size: .7em;
-  background-position: center center;
-  background-repeat: no-repeat;
+  transition-duration: .7s;
 }
-.FLNameButton:hover {
-  transform: scale(1.1);
+#FLName:hover {
+  transform: scale(1.05);
 }
-.FLNameButton:hover .name {
-  background-size: 100% 100%, 100% 100%;
+.FLNameButton {
+  height: 20vw;
 }
-.name {
-  height: auto;
-  width: fit-content;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-stroke: rgba(0, 0, 0, .7) .02em;
-  padding: 0 2vw;
-  background-image: linear-gradient(to right, #ffffff, #ffffff 2vw, transparent 10vw, transparent), linear-gradient(to right, #ffffff, #f5c3db 50%, #f5c3db 100%);
-  background-repeat: no-repeat, no-repeat;
-  background-position: left center, left center;
-  background-size: 100% 100%, 0% 100%;
-  transition: background-size .2s ease;
+.Hear {
+  width: 20vw;
+  height: 20vw;
+  position: absolute;
+  z-index: 2;
+  opacity: .5;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /*-------------------FLName---------------------*/
@@ -125,7 +116,7 @@ footer {
   margin: 0 0 -2px 0;
 }
 .Title {
-  font-family: 'FL2';
+  font-family: 'FL';
   font-size: 45px;
   width: 300px;
   max-width: calc(100% - 20px);
@@ -255,21 +246,21 @@ select {
 }
 
 @media only screen and (orientation: portrait) {
-.FLNameButton {
-  font-size: 9vw;
-}
 .LinkMenu {
   top: 2px;
   left: 2px;
 }
 }
 @media only screen and (orientation: landscape) {
-.name {
-  padding: 0px 2vh 0px 2vh;
-  background-image: linear-gradient(to right, #ffffff, #ffffff 2vh, transparent 10vh, transparent), linear-gradient(to right, #ffffff, #f5c3db 50%, #f5c3db 100%);
+#FLName {
+  height: 20vh;
 }
 .FLNameButton {
-  font-size: 8vh;
+  height: 20vh;
+}
+.Hear {
+  width: 20vh;
+  height: 20vh;
 }
 .LinkMenu {
   top: 10px;

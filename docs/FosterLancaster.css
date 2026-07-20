@@ -78,12 +78,6 @@ header {
   display: inline-block;
   transition-duration: .7s;
 }
-#FLName:hover {
-  transform: scale(1.05);
-}
-.FLNameButton {
-  height: 20vw;
-}
 .Hear {
   width: 20vw;
   height: 20vw;
@@ -92,9 +86,18 @@ header {
   opacity: .5;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(.8);
+  transition-duration: .7s;
 }
-
+#FLName:hover {
+  filter: invert(.8);
+}
+#FLName:hover .Hear {
+  transform: translate(-50%, -50%) scale(1);
+}
+.FLNameImage {
+  height: 20vw;
+}
 /*-------------------FLName---------------------*/
 h1 {
 font-size: 25px;
@@ -147,6 +150,8 @@ footer {
   margin: 0px 10px -10px 0px;
 }
 .LinkMenu {
+  top: 0px;
+  left: 0px;
   height: auto;
   width: auto;
   position: fixed; 
@@ -154,7 +159,7 @@ footer {
   display: flex;
   gap: 0;
   justify-content: center;
-  margin: 10px;
+  margin: 2vh;
 }
 .iconlinkpic {
   object-fit: contain;
@@ -247,15 +252,14 @@ select {
 
 @media only screen and (orientation: portrait) {
 .LinkMenu {
-  top: 2px;
-  left: 2px;
+  margin: 1vh;
 }
 }
 @media only screen and (orientation: landscape) {
 #FLName {
   height: 20vh;
 }
-.FLNameButton {
+.FLNameImage {
   height: 20vh;
 }
 .Hear {

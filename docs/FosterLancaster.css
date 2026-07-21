@@ -209,14 +209,14 @@ select {
   opacity: 1;
 }
 .iconlinkpic {
-  width: .9em;
-  height: .9em;
+  width: 1em;
+  height: 1em;
 }
 .iconlinkcontainer {
-  border: solid .25em #000000;
+  border: solid .2em #000000;
   border-top-left-radius: 7px;
   border-bottom-right-radius: 7px;
-  margin: .1em;
+  margin: .05em;
 }
 .Warning {
   font-family: Arial; 

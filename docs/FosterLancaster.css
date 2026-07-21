@@ -215,10 +215,10 @@ select {
   max-height: 25px;
 }
 .iconlinkcontainer {
-  border: solid .5vw #000000;
+  border: solid .4vw #000000;
   border-top-left-radius: 7px;
   border-bottom-right-radius: 7px;
-  margin: .25vw;
+  margin: .2vw;
 }
 .Warning {
   font-family: Arial; 

@@ -211,11 +211,9 @@ select {
 .iconlinkpic {
   width: 11vw;
   height: 11vw;
-  max-width: 23px;
-  max-height: 23px;
-}
-.iconlinkcontainer {
-  border: solid .75vw #000000;
+  max-width: 20px;
+  max-height: 20px;
+  border: solid 5px #000000;
   border-top-left-radius: 1vw;
   border-bottom-right-radius: 1vw;
   margin: .25vw;

@@ -209,14 +209,16 @@ select {
   opacity: 1;
 }
 .iconlinkpic {
-  width: 1em;
-  height: 1em;
+  width: 10vw;
+  height: 10vw;
+  max-width: 22px;
+  max-height: 22px;
 }
 .iconlinkcontainer {
-  border: solid .2em #000000;
+  border: solid .5vw #000000;
   border-top-left-radius: 7px;
   border-bottom-right-radius: 7px;
-  margin: .05em;
+  margin: .25vw;
 }
 .Warning {
   font-family: Arial; 

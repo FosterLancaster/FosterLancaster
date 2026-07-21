@@ -161,7 +161,7 @@ footer {
   justify-content: center;
   margin: 2vh;
 }
-.iconlinkpic {
+.iconlink {
   width: 10vw;
   height: 10vw;
   max-width: 18px;
@@ -170,9 +170,10 @@ footer {
   margin: .2vw;
   object-fit: contain;
   display: block;
-  border-radius: 20px;
+  border-radius: 50%;
+  transition-duration: .7s;
 }
-.iconlinkpic:hover {
+.iconlink:hover {
 filter: invert(.8);
 }
 select { 

@@ -1,7 +1,7 @@
 /*------------fostChat--------------- */
 .FchatContent {
   color: #000000;
-  width: calc(100vw - 2px);
+  width: 100vw;
   background-color: rgba(255, 255, 255, .1);
   background-image: linear-gradient(to top, rgba(0, 0, 0, .3), transparent, rgba(0, 0, 0, .3));
   background-size: 100% 700px;
@@ -13,7 +13,6 @@
   z-index: 2;
   font-family: 'futura';
   font-size: 18px;
-  border: solid 1px #ffffff;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
@@ -187,7 +186,6 @@ li {
 
 /*------------fostTV--------------- */
 .MusicVideo {
-  border: solid 1px #ffffff;
   padding: 10px;
   height: 200px;
   max-height: 80dvh;

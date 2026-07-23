@@ -162,15 +162,13 @@ footer {
   margin: 2vh;
 }
 .iconlink {
-  width: 10vw;
-  height: 10vw;
-  max-width: 18px;
-  max-height: 18px;
-  border: solid 5px #000000;
+  width: 13.8vw;
+  height: 13.8vw;
+  max-width: 28px;
+  max-height: 28px;
   margin: .2vw;
   object-fit: contain;
   display: block;
-  border-radius: 50%;
   transition-duration: .7s;
 }
 .iconlink:hover {

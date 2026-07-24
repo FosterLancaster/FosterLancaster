@@ -118,9 +118,9 @@ fetch("https://fostsup.fostmp3s.workers.dev/")
 <div class="postreact"></div>
 </a>
 </td>
-<td class="postbutton" title="Buy Password">
+<td class="postbutton postbuy" title="Buy Password">
 <a href="https://fostmp3s.com/pw" target="_blank">
-<div class="hearteffect2">
+<div class="hearteffect">
   <span class="heart h1"></span>
   <span class="heart h2"></span>
   <span class="heart h3"></span>

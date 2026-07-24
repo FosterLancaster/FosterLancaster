@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Foster Chat From RSS
-fetch("https://fostchat-rss.fostmp3s.workers.dev/")
+fetch("https://fostsup.fostmp3s.workers.dev/")
 .then(response => response.text())
 .then(str => {
 

@@ -29,10 +29,10 @@
 <meta name="twitter:image:alt" content="Foster Lancaster official website and the fostmp3s individual media platform.">
 
 <link rel="stylesheet" href="FosterLancaster.css">
-<link rel="stylesheet" href="fostchatandtv.css">
+<link rel="stylesheet" href="Sup.css">
 <style>
 .fostmp3s,
-.FchatContent {
+.SupContent {
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
   min-height: 200px;
@@ -44,6 +44,16 @@
   height: 520px; 
   width: calc(100% - 40px);
   max-width: calc(100% - 40px);
+  padding: 10px;
+  max-height: 80dvh;
+  display: block;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: rgba(255, 255, 255, .1);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, .3), transparent, rgba(0, 0, 0, .3));
+  background-size: 100% 700px;
+  background-position: center center;
+  animation: rise 2s linear infinite;
 }
 @media only screen and (max-width: 600px) {
 .MusicVideo {
@@ -68,7 +78,7 @@
 <img class="iconlink" title="Email" src="images/SocialMedia/Email.png"></a>
 <a href="http://fostmp3s.com/mp3s" target="_blank">
 <img class="iconlink" title="Music" src="images/SocialMedia/Mp3s.png"></a>
-<a href="http://fostmp3s.com/chat" target="_blank">
+<a href="http://fostmp3s.com/sup" target="_blank">
 <img title="Updates" class="iconlink" src="images/SocialMedia/Chat.png"></a>
 <a href="https://instagram.com/foster_lancaster/" target="_blank">
 <img title="Instagram" class="iconlink" src="images/SocialMedia/Instagram.png"></a>  
@@ -104,7 +114,7 @@ Please enjoy the website responsibly.<div class="WarningButton" onclick="Warning
 <div align='center' style="position: relative; z-index: 2;">
 
 <a href="https://fostmp3s.com/mp3s" target="_blank">
-<div class="Title">Listen</div>
+<div class="Title">fostmp3s</div>
 </a>
 
 <!----Fost Mp3's---->
@@ -115,12 +125,12 @@ Please enjoy the website responsibly.<div class="WarningButton" onclick="Warning
 
 
 <a href="https://fostmp3s.com/chat" target="_blank">
-<div class="Title">Chat</div>
+<div class="Title">Sup</div>
 </a>
 <!------Chat------->
-  <div class="FchatContent">
+  <div class="SupContent">
     <div class="FMoreInner">
-    <div class="FMoreBody"><ul class="FchatPosts" id="feed"></ul></div>
+    <div class="FMoreBody"><ul class="SupPosts" id="feed"></ul></div>
     </div>
     </div>
 <!------Chat------->
@@ -128,7 +138,7 @@ Please enjoy the website responsibly.<div class="WarningButton" onclick="Warning
 
 <!--TV-->
 <a href="https://www.youtube.com/c/FosterLancaster" target="_blank">
-<div class="Title">Watch</div>
+<div class="Title">Videos</div>
 </a>
 <!--TV-->
 <iframe class="MusicVideo" src="https://www.youtube.com/embed/ReP99vAiivQ?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

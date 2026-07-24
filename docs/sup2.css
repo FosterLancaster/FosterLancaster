@@ -138,6 +138,7 @@ li {
   max-height: 45px;
   border-radius: 5px;
   transition-duration: .5s;
+  pointer-events: auto;
 }
 .postbutton:hover {
   background-color: rgb(0, 0, 0, .5);

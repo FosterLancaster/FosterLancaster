@@ -1,5 +1,5 @@
 /*------------fostChat--------------- */
-.SupContent {
+.Sup2Content {
   color: #000000;
   width: 100vw;
   background-color: rgba(255, 255, 255, .1);
@@ -16,10 +16,10 @@
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
-.SupContent a {
+.Sup2Content a {
   color: #000000;
 }
-.SupPosts {
+.Sup2Posts {
   padding: 0px;
   margin-left: auto; 
   margin-right: auto;

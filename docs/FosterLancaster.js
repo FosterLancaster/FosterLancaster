@@ -103,13 +103,17 @@ fetch("https://fostsup.fostmp3s.workers.dev/")
             : ""
         }
 
-        <div class="feedTitle">${title}</div>
+<div class="feedTitle">
+  <span class="textHighlight">${title}</span>
+</div>
 
-        ${
-          cleanDescription
-            ? `<div class="feedDescription">${cleanDescription}</div>`
-            : ""
-        }
+${
+  cleanDescription
+    ? `<div class="feedDescription">
+         <span class="textHighlight">${cleanDescription}</span>
+       </div>`
+    : ""
+}
 </a>
 <div class="love">
 <table>

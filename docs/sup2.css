@@ -127,6 +127,7 @@ li {
   transition-duration: .5s;
   pointer-events: auto;
   cursor: pointer;
+  overflow: hidden;
 }
 .postbutton:hover {
   background-color: rgb(0, 0, 0, .5);
@@ -183,6 +184,15 @@ li {
 .h3 { left: 20%; bottom: 5%;  animation-delay: .75s; }
 .h4 { left: 60%; bottom: 5%;  animation-delay: 1s; }
 
+.textHighlight {
+  display: inline;
+  background: #b7ff3c;
+  color: #000000;
+  padding: 0 .15em;
+  line-height: 1.4;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
 @keyframes rise {
   0% { background-position: center 0px; }
   100% { background-position: center -700px; }

@@ -162,11 +162,11 @@ footer {
   margin: 2vh;
 }
 .iconlink {
-  width: 15vw;
-  height: 15vw;
-  max-width: 30px;
-  max-height: 30px;
-  margin: .2vw;
+  width: 14vw;
+  height: 14vw;
+  max-width: 28px;
+  max-height: 28px;
+  margin: .15vw;
   object-fit: contain;
   display: block;
   transition-duration: .7s;

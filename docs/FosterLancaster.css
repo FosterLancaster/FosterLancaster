@@ -135,10 +135,14 @@ footer {
   background-color: transparent;
   background-image: radial-gradient(rgba(125, 125, 125, .7), transparent);
   backdrop-filter: blur(5px);
+}
+.TitleIcon {
+  height: 60px;
+  width: auto;
   transition-duration: .5s;
 }
-.Title:hover {
-  color: #d1d1d1;
+.TitleIcon:hover {
+  filter: invert(.8);
 }
 .YoutubeContainer {
   height: 24px;

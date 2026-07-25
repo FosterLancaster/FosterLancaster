@@ -91,7 +91,7 @@ a:hover {
   .PWText {
     font-size: .8em;
   }
-  .Return {
+  .Try, .Return {
   width: auto;
   height: auto;
   color: #ffffff;
@@ -100,11 +100,14 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: calc(100% - 42px);
+  width: calc(100% - 2px);
   overflow: hidden;
   border-radius: 10px;
-  padding: 20px;
   transition-duration: .5s;
+  }
+  .Return {
+    width: calc(100% - 42px);
+    padding: 20px;
   }
   .Return:hover {
     background-color: #a7a7a7;
@@ -134,23 +137,24 @@ Thank you for your purchase! The official "fostmp3s" password is:<br>
                 <audio class="audio-player" id="audio" preload="auto">
                   <source src="" type="audio/mp3">
                   Your browser does not support the audio element.
-                </audio>  
-                   
+                </audio>                   
 
-<blockquote class="PWText">
-<a href="mailto:foster@fostmp3s.com" target="_blank">
-customer support</a>
-</blockquote>
+<br>
+
+<div class="Try"><div style="position: relative; bottom: -170px; width: 100%; max-width: 200px; font-size: 15px;">Try The Password &rarr;<br>(fostmp3s.com)</div>
+<iframe src="https://fosterlancaster.github.io/fostmp3s" style="max-width: 100%; width: 100%; height: 400px; min-height: 400px; min-width: 200px; max-height: 100%; display: block; border: none;" class="fostmp3s"></iframe>       
+</div>
+
+<br>
 
 <a href="http://fostmp3s.com" target="_self">
 <div class="Return">Back To Site (fostmp3s.com)</div>
 </a>
 
-<br>
-
-<div class="Return"><span style="width: 90%;">Try The Password" (fostmp3s.com)</span>
-<iframe src="https://fosterlancaster.github.io/fostmp3s" style="width: 400px; height: 400px; min-height: 400px; min-width: 200px; max-height: 100%; display: block; border: none;" class="fostmp3s"></iframe>       
-</div>
+<blockquote class="PWText">
+<a href="mailto:foster@fostmp3s.com" target="_blank">
+customer support</a>
+</blockquote>
 
 </div>
 </div>

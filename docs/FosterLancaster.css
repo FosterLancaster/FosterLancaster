@@ -121,7 +121,8 @@ footer {
 .Title {
   font-family: 'FL';
   font-size: 45px;
-  width: 300px;
+  width: auto;
+  padding: 0px 20px 0px 20px;
   max-width: calc(100% - 20px);
   height: 60px;
   line-height: 70px;

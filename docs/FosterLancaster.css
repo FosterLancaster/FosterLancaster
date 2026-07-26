@@ -91,7 +91,7 @@ header {
   transition-duration: .7s;
 }
 #FLName:hover {
-  filter: invert(.5);
+  filter: invert(0);
 }
 #FLName:hover .Hear {
   transform: translate(-50%, -50%) scale(1);
@@ -111,7 +111,7 @@ footer {
   padding: 2em;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: right;
   text-align: center;
   font-family: Arial, sans-serif;
   font-size: 13px;
@@ -145,7 +145,7 @@ footer {
   filter: invert(1);
 }
 .Title:hover .TitleIcon{
-  filter: invert(.5);
+  filter: invert(0);
 }
 .YoutubeContainer {
   height: 24px;
@@ -181,7 +181,7 @@ footer {
   filter: invert(1);
 }
 .iconlink:hover {
-filter: invert(.5);
+filter: invert(0);
 }
 select { 
   outline: none; 

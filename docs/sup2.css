@@ -154,36 +154,6 @@ li {
   background-repeat: no-repeat;
   flex-shrink: 0;
 }
-.hearteffect {
-  opacity: .7;
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 2em;
-  height: 2em;
-  z-index: 1;
-}
-.hearteffect:hover {
-  background-color: rgb(0, 0, 0, .5);
-}
-.heart {
-  position: absolute;
-  width: 45%;
-  height: 45%;
-  background: url('fmp3simages/Heart.png') center/contain no-repeat;
-  opacity: 0;
-  animation: floatHeart 1s infinite linear;
-  background-color: transparent;
-}
-/* 4 locations */
-.h1 { left: 0%;  bottom: 5%;  animation-delay: .25s; }
-.h2 { left: 40%; bottom: 5%;  animation-delay: .50s; }
-.h3 { left: 20%; bottom: 5%;  animation-delay: .75s; }
-.h4 { left: 60%; bottom: 5%;  animation-delay: 1s; }
-
 .textHighlight {
   display: inline;
   background: #b7ff3c;

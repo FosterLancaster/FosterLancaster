@@ -124,12 +124,6 @@ ${
 </td>
 <td class="postbutton postbuy" title="Buy Password">
 <a href="https://fostmp3s.com/pw" target="_blank">
-<div class="hearteffect">
-  <span class="heart h1"></span>
-  <span class="heart h2"></span>
-  <span class="heart h3"></span>
-  <span class="heart h4"></span>
-</div>
 </a>
 </td>
 </table>

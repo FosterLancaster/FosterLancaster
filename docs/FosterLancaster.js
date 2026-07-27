@@ -117,13 +117,14 @@ ${
 </a>
 <div class="love">
 <table>
-<td class="postbutton" title="Send Message">
+<td>
 <a href="mailto:foster@fostmp3s.com" target="_blank">
-<div class="postreact"></div>
+<div class="postbutton postreact" title="Send Message"></div>
 </a>
 </td>
-<td class="postbutton postbuy" title="Buy Password">
+<td>
 <a href="https://fostmp3s.com/pw" target="_blank">
+<div class="postbutton postbuy" title="Buy Password"></div>
 </a>
 </td>
 </table>

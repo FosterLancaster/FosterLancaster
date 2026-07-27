@@ -2,11 +2,9 @@
 .Sup2Content {
   color: #000000;
   width: 100vw;
-  background-color: rgba(0, 0, 0, .4);
-  background-image: linear-gradient(to top, rgba(255, 255, 255, .2), transparent, rgba(255, 255, 255, .2));
-  background-size: 100% 700px;
+  background-image: radial-gradient(transparent 50%, rgba(0, 0, 0, .7));
+  background-size: cover;
   background-position: center center;
-  animation: rise 2s linear infinite;
   display: flex;
   flex-direction: column;
   position: relative;

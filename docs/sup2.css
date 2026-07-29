@@ -154,7 +154,7 @@ li {
 }
 .textHighlight {
   display: inline;
-  background: #b7ff3c;
+  background: rgba(216, 60, 255, 0.4);
   color: #000000;
   padding: 0 .15em;
   line-height: 1.4;

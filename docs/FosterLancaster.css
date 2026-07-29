@@ -234,7 +234,9 @@ select {
 
 @media only screen and (orientation: landscape) {
 .LinkMenu {
-  top: 2vh;
+  margin: 2.5vh;
+  justify-content: left;
+  text-align: left;
 }
 #FLName {
   height: 40vh;

@@ -79,8 +79,8 @@ header {
   filter: invert(1);
 }
 .Hear {
-  width: 20vw;
-  height: 20vw;
+  width: 45vw;
+  height: 45vw;
   position: absolute;
   z-index: 2;
   opacity: .5;
@@ -245,8 +245,8 @@ select {
   height: 40vh;
 }
 .Hear {
-  width: 40vh;
-  height: 40vh;
+  width: 30vh;
+  height: 30vh;
 }
 }
 

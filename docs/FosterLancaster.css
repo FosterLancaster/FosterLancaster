@@ -75,6 +75,7 @@ header {
   display: inline-block;
   transition-duration: .5s;
   filter: invert(1);
+  margin: 12px 0px 12px 0px;
 }
 .Hear {
   width: 45vw;

@@ -37,53 +37,87 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-// Foster Chat From RSS
+  // Foster Sup From RSS
 fetch("https://fostsup.fostmp3s.workers.dev/")
 .then(response => response.text())
 .then(str => {
-
+                
   const parser = new DOMParser();
   const xml = parser.parseFromString(str, "application/xml");
   const items = xml.querySelectorAll("item");
   const feedList = document.getElementById("feed");
-
+                
   items.forEach(item => {
-
+                
     const title =
       item.querySelector("title")?.textContent?.trim() || "";
-
+                
     const link =
       item.querySelector("link")?.textContent?.trim() || "#";
-
+                
     // content:encoded support
     const contentEncoded =
       item.getElementsByTagName("content:encoded")[0]?.textContent || "";
-
+                
     // Raw description
     const rawDescription =
       item.querySelector("description")?.textContent || "";
+                
+// Convert the RSS description into plain text
+const tempDiv = document.createElement("div");
+tempDiv.innerHTML = rawDescription;
 
-    // Convert HTML to text
-    const tempDiv = document.createElement("div");
-    tempDiv.innerHTML = rawDescription;
+let cleanDescription =
+  tempDiv.textContent || tempDiv.innerText || "";
 
-    let cleanDescription =
-      tempDiv.textContent || tempDiv.innerText || "";
+cleanDescription = cleanDescription
+  .replace(/\s+/g, " ")
+  .replace(/^undefined$/i, "")
+  .trim();
 
-    cleanDescription = cleanDescription
-      .replace(/\s+/g, " ")
-      .replace(/^undefined$/i, "")
-      .trim();
+if (
+  !cleanDescription ||
+  cleanDescription === "undefined" ||
+  cleanDescription === "null"
+) {
+  cleanDescription = "";
+}
 
-    // FINAL protection against undefined/null
-    if (
-      !cleanDescription ||
-      cleanDescription === "undefined" ||
-      cleanDescription === "null"
-    ) {
-      cleanDescription = "";
-    }
+// Escape HTML before adding clickable URLs
+function escapeHTML(text) {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
 
+// Convert only URLs written in the post text into links
+function makeLinksClickable(text) {
+  const escapedText = escapeHTML(text);
+
+  const urlPattern =
+    /(?:https?:\/\/|www\.)[^\s<]+/gi;
+
+  return escapedText.replace(urlPattern, url => {
+    // Keep punctuation outside the link
+    const punctuationMatch = url.match(/[.,!?;:)\]]+$/);
+    const punctuation = punctuationMatch ? punctuationMatch[0] : "";
+    const cleanURL = punctuation
+      ? url.slice(0, -punctuation.length)
+      : url;
+
+    const href = cleanURL.startsWith("www.")
+      ? `https://${cleanURL}`
+      : cleanURL;
+
+    return `<a href="${href}" target="_blank" rel="noopener noreferrer">${cleanURL}</a>${punctuation}`;
+  });
+}
+
+const linkedDescription = makeLinksClickable(cleanDescription);
+                
     // Try multiple image sources
     const image =
       item.querySelector("enclosure")?.getAttribute("url") ||
@@ -91,30 +125,29 @@ fetch("https://fostsup.fostmp3s.workers.dev/")
       contentEncoded.match(/<img.*?src="(.*?)"/)?.[1] ||
       rawDescription.match(/<img.*?src="(.*?)"/)?.[1] ||
       "";
-
+                
     const li = document.createElement("li");
-
+                
     li.innerHTML = `
-      <a href="${link}" target="_blank">
-
-        ${
-          image
-            ? `<img src="${image}" style="max-width:100%; display:block;">`
-            : ""
-        }
-
+                
+${
+    image
+    ? `<img src="${image}" style="max-width:100%; display:block;">`
+         : ""
+ }
+${
+  linkedDescription
+    ? `<div class="feedDescription">
+         <span class="textHighlight">${linkedDescription}</span>
+       </div>`
+    : ""
+}
+                
 <div class="feedTitle">
   <span class="textHighlight">${title}</span>
 </div>
 
-${
-  cleanDescription
-    ? `<div class="feedDescription">
-         <span class="textHighlight">${cleanDescription}</span>
-       </div>`
-    : ""
-}
-</a>
+                
 <div class="love">
 <table>
 <td>
@@ -131,13 +164,13 @@ ${
 </div>
 `;
 
-
+                
     if (feedList) {
       feedList.appendChild(li);
     }
-
+                
   });
-
+                
 })
-.catch(err => console.error("Error loading RSS feed:", err));
+.catch(err => console.error("Error loading RSS feed:", err));  
   

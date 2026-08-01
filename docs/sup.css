@@ -1,23 +1,17 @@
 /*------------fostChat--------------- */
 .Sup2Content {
-  color: #000000;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
   width: 100vw;
-  background-color: rgba(255, 255, 255, .1);
-  background-image: linear-gradient(to top, rgba(0, 0, 0, .3), transparent, rgba(0, 0, 0, .3));
-  background-size: 100% 700px;
+  background-image: radial-gradient(transparent 50%, rgba(0, 0, 0, .7));
+  background-size: cover;
   background-position: center center;
-  animation: rise 2s linear infinite;
   display: flex;
   flex-direction: column;
   position: relative;
   z-index: 2;
   font-family: 'futura';
   font-size: 18px;
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-.Sup2Content a {
-  color: #000000;
 }
 .Sup2Posts {
   padding: 0px;
@@ -35,7 +29,7 @@
   overflow-wrap: anywhere;
   box-sizing: border-box;
 }
-.FMoreInner {
+.FMore2Inner {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -44,7 +38,7 @@
   overflow: hidden;
   min-width: 0;
 }
-.FMoreHeader {
+.FMore2Header {
   font-size: 1.15em;
   flex: 0 0 auto;
   text-align: center;
@@ -54,7 +48,7 @@
   overflow: hidden;
   color: #ffffff;
 }
-.FMoreBody {
+.FMore2Body {
   flex: 1;
   overflow-y: auto;
   height: 100%;
@@ -65,7 +59,7 @@
   margin-right: auto;
   border-radius: 5px;
 }
-.FMoreInner textarea {
+.FMore2Inner textarea {
   flex: 1;
   padding: 5px;
   width: calc(100% - 10px);
@@ -78,7 +72,8 @@
 }
 li {
   list-style: none;
-  background-color: rgba(255, 255, 0, .8);
+  background-color: #000000;
+  color: #000000;
   border-radius: 8px;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
   margin: 0px auto 15px auto;
@@ -89,6 +84,17 @@ li {
   position: relative;
   pointer-events: none; /* disable clicks on the li */
 }
+li a {
+  color: #ffffff;
+  pointer-events: auto;
+}
+.textHighlight {
+  display: inline;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 0 .15em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
 .love {
   height: 45px;
   overflow: hidden;
@@ -97,7 +103,6 @@ li {
   max-width: 250px;
   left: 50%;
   bottom: 5px;
-  cursor: pointer;
   transition-duration: .5s;
   pointer-events: auto;
   transform: translateX(-50%);
@@ -115,29 +120,21 @@ li {
 .love th {
   padding: 0px;
 }
-.hearteffect {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 2em;
-  height: 2em;
-  z-index: 1;
-}
 .postbutton {
   margin: 2px;
-  display: inline-flex;
+  display: inline-block;
   align-items: center;      /* vertical center */
   justify-content: center;  /* centers contents if there's extra space */
   position: relative;
-  width: auto;
+  width: 2em;
   height: 2em;
   max-height: 45px;
   border-radius: 5px;
   transition-duration: .5s;
+  pointer-events: auto;
+  cursor: pointer;
+  overflow: hidden;
+  filter: invert(1);
 }
 .postbutton:hover {
   background-color: rgb(0, 0, 0, .5);
@@ -153,37 +150,17 @@ li {
   background-repeat: no-repeat;
   flex-shrink: 0;
 }
-.hearteffect2 {
-  position: relative;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
+.postbuy {
   width: 2em;
   height: 2em;
-  z-index: 1;
+  max-width: 45px;
+  max-height: 45px;
   background-image: url('fmp3simages/PWBUY.png');
-  background-size: cover;
-  background-position: center center;
-  transition-duration: .5s;
+  background-size: 2em 2em;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
 }
-.hearteffect2:hover {
-  background-color: rgb(0, 0, 0, .5);
-}
-.heart {
-  position: absolute;
-  width: 45%;
-  height: 45%;
-  background: url('fmp3simages/Heart.png') center/contain no-repeat;
-  opacity: 0;
-  animation: floatHeart 1s infinite linear;
-  background-color: transparent;
-}
-/* 4 locations */
-.h1 { left: 0%;  bottom: 5%;  animation-delay: .25s; }
-.h2 { left: 40%; bottom: 5%;  animation-delay: .50s; }
-.h3 { left: 20%; bottom: 5%;  animation-delay: .75s; }
-.h4 { left: 60%; bottom: 5%;  animation-delay: 1s; }
-
 @keyframes rise {
   0% { background-position: center 0px; }
   100% { background-position: center -700px; }

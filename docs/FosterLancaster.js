@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-  // Foster Sup From RSS
+// Foster Sup From RSS
 fetch("https://fostsup.fostmp3s.workers.dev/")
 .then(response => response.text())
 .then(str => {
@@ -117,6 +117,7 @@ function makeLinksClickable(text) {
 }
 
 const linkedDescription = makeLinksClickable(cleanDescription);
+const linkedTitle = makeLinksClickable(title);
                 
     // Try multiple image sources
     const image =
@@ -132,7 +133,7 @@ const linkedDescription = makeLinksClickable(cleanDescription);
                 
 ${
     image
-    ? `<img src="${image}" style="max-width:100%; display:block;">`
+    ? `<img src="${image}" style="max-width:100%; display:block; margin:0;">`
          : ""
  }
 ${
@@ -144,7 +145,7 @@ ${
 }
                 
 <div class="feedTitle">
-  <span class="textHighlight">${title}</span>
+  <span class="textHighlight">${linkedTitle}</span>
 </div>
 
                 
@@ -172,5 +173,5 @@ ${
   });
                 
 })
-.catch(err => console.error("Error loading RSS feed:", err));  
+.catch(err => console.error("Error loading RSS feed:", err));
   

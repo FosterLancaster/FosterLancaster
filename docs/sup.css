@@ -83,6 +83,10 @@ li {
   text-align: center;
   position: relative;
   pointer-events: none; /* disable clicks on the li */
+  background-image: url('images/FostMp3sLogo.png');
+  background-size: 80px auto;
+  background-position: bottom right;
+  background-repeat: no-repeat;
 }
 li a {
   color: #ffffff;

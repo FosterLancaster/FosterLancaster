@@ -28,14 +28,6 @@ body {
   z-index: 0;
   background-color: #ffffff;
 }
-@font-face {
-  font-family: 'FL';
-  src: url('freshmarker.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'FL2';
-  src: url('MARSNEVENEKSK.otf') format('truetype');
-}
 :focus {
   outline: none;
 }

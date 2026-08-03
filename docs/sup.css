@@ -139,7 +139,6 @@ li a {
   pointer-events: auto;
   cursor: pointer;
   overflow: hidden;
-  filter: invert(1);
 }
 .postbutton:hover {
   background-color: rgb(255, 255, 255, .5);

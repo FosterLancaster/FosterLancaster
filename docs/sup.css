@@ -3,9 +3,10 @@
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
   width: 100vw;
-  background-image: radial-gradient(transparent 50%, rgba(0, 0, 0, .7));
-  background-size: cover;
-  background-position: center center;
+  background-image: radial-gradient(transparent 50%, rgba(0, 0, 0, .7)), url('images/SupBranding.png');
+  background-size: cover, contain;
+  background-position: center center, center center;
+  background-repeat: no-repeat, no-repeat;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -164,8 +165,4 @@ li a {
   background-position: center;
   background-repeat: no-repeat;
   flex-shrink: 0;
-}
-@keyframes rise {
-  0% { background-position: center 0px; }
-  100% { background-position: center -700px; }
 }

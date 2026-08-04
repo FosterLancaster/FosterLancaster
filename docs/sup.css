@@ -76,10 +76,9 @@ li {
   background-color: #000000;
   color: #000000;
   border-radius: 8px;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
   margin: 0px auto 15px auto;
   padding: 10px 10px 55px 10px;
-  width: calc(100% - 40px);
+  width: calc(100% - 42px);
   max-width: 400px;
   text-align: center;
   position: relative;
@@ -88,6 +87,7 @@ li {
   background-size: 80px auto;
   background-position: bottom right;
   background-repeat: no-repeat;
+  border: solid 1px #ffffff;
 }
 li a {
   color: #ffffff;
@@ -99,6 +99,9 @@ li a {
   padding: 0 .15em;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
+}
+.textHighlight:empty {
+  display: none;
 }
 .love {
   height: 45px;

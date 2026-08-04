@@ -83,19 +83,19 @@ li {
   text-align: center;
   position: relative;
   pointer-events: none; /* disable clicks on the li */
-  background-image: url('images/FostMp3sLogo.png');
-  background-size: 80px auto;
-  background-position: bottom right;
-  background-repeat: no-repeat;
   border: solid 1px #ffffff;
 }
 li a {
+  color: #ff0000;
+  pointer-events: auto;
+}
+li a:hover {
   color: #ffffff;
   pointer-events: auto;
 }
 .textHighlight {
   display: inline;
-  background: rgba(255, 255, 255, 0.5);
+  background: #a6ff20;
   padding: 0 .15em;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;

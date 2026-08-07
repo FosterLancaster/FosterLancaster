@@ -8,35 +8,72 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="stylesheet" href="FosterLancaster.css">
-<link rel="stylesheet" href="fostchatandtv.css">
+<link rel="stylesheet" href="sup.css">
 <style>
- .LancasterFrame, 
- .FchatContent,
- .fostmp3s {
-  background-image: none;
-  border: none;
-  background-color: transparent;
-  animation: none;
-  width: 100%;
-  height: 100dvh; /* small viewport height */
-  max-height: 100dvh;
-  overflow: hidden;
+.fostmp3s {
+  width: 100vw;
+  height: 100dvh;
   border-radius: 0px;
-  position: fixed;
- }
- .FMoreInner,
- .FchatPosts {
-  background-color: transparent;
-  width: 100%;
-  padding: 0px;
- }
+}
 </style>
 </head>
-
 <body>
+
+<div class="Warning">
+fostmp3s.com does not collect personal data and we do not share information with third parties, 
+but without a <u>vpn</u>, a <u>trusted browser</u>, or <u>incognito mode activated</u>, your activity may not be confidential.
+Please enjoy the website responsibly.<div class="WarningButton" onclick="Warning()">I Understand</div></div>
+
 <!----Fost Mp3's---->
-<iframe src="https://fosterlancaster.github.io/fostmp3s" style="width: 100%; height: 100%; border-top-left-radius: 0px; border-bottom-right-radius: 0px; min-height: 300px; min-width: 250px; border: none; display: block;" class="fostmp3s"></iframe>
+<iframe src="https://fosterlancaster.github.io/fostmp3s" style="border-top-left-radius: 20px; border-bottom-right-radius: 20px; min-height: 300px; min-width: 250px; border: none; display: block;" class="fostmp3s"></iframe>
 <!----Fost Mp3's---->
+
+<footer>
+<div class="LinkMenu">
+<a href="mailto:foster@fostmp3s.com" target="_blank">
+<img class="iconlink" title="Email" src="images/SocialMedia/Email.png"></a>
+<a href="http://fostmp3s.com/mp3s" target="_blank">
+<img class="iconlink" title="Music" src="images/SocialMedia/Mp3s.png"></a>
+<a href="http://fostmp3s.com/sup" target="_blank">
+<img title="Updates" class="iconlink" src="images/SocialMedia/Sup.png"></a>
+<a href="https://instagram.com/foster_lancaster" target="_blank">
+<img title="Instagram" class="iconlink" src="images/SocialMedia/Instagram.png"></a>   
+<a href="https://youtube.com/c/FosterLancaster" target="_blank">
+<img title="Youtube" class="iconlink" src="images/SocialMedia/Youtube.png"></a>  
+<a href="https://fostmp3s.com/info" target="_blank">
+<img title="Information" class="iconlink" src="images/SocialMedia/Info.png"></a>  
+</div>
+
+  <span>
+  <a href="http://fostmp3s.com/fostrecords" target="_blank">&#169;
+  <script>document.write( new Date().getFullYear() );</script> Foster Lancaster, Fost Records, and fostmp3s, All Rights Reserved.</a>
+  | <a href="http://fostmp3s.com/termsofusage" target="_blank">Terms of Usage</a>
+  | <a href="http://fostmp3s.com/publicitypolicy" target="_blank">Publicity Policy</a>
+  </span>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const warnings = document.querySelectorAll(".Warning");
+
+  // Hide if already dismissed
+  if (localStorage.getItem("warningDismissed") === "true") {
+    warnings.forEach(warning => {
+      warning.style.display = "none";
+    });
+  }
+
+  document.querySelectorAll(".WarningButton").forEach(button => {
+    button.addEventListener("click", function () {
+      const warning = this.closest(".Warning");
+      if (warning) {
+        warning.style.display = "none";
+        localStorage.setItem("warningDismissed", "true");
+      }
+    });
+  });
+});
+</script>
 </body>
 </html>
 

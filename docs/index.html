@@ -31,45 +31,26 @@
 <link rel="stylesheet" href="FosterLancaster.css">
 <link rel="stylesheet" href="sup.css">
 <style>
-.fostmp3s,
-.Sup2Content {
-  min-height: 200px;
-  height: 70lvh; /*------Stay Long On Scroll------*/
-  width: calc(100% - 40px);
-  max-width: calc(100% - 40px);
-}
-.MusicVideo {
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  height: 520px; 
-  width: calc(100% - 40px);
-  max-width: calc(100% - 40px);
-  padding: 10px;
-  max-height: 80dvh;
-  display: block;
-  background-image: radial-gradient(transparent 50%, rgba(0, 0, 0, .7)), url('images/YoutubeBranding.png');
-  background-size: cover, contain;
-  background-position: center center, center center;
-  background-repeat: no-repeat, no-repeat;
-}
-@media only screen and (max-width: 600px) {
-.MusicVideo {
-  height: 250px;
-}
-}
-@media only screen and (orientation: landscape) {
-.fostmp3s,
-.Sup2Content {
-  max-width: calc(85% - 20px);
-}
-.MusicVideo {
-  max-width: calc(85% - 40px);
-}
+.fostmp3s {
+  width: 100vw;
+  height: 100dvh;
+  border-radius: 0px;
 }
 </style>
 </head>
 <body>
 
+<div class="Warning">
+fostmp3s.com does not collect personal data and we do not share information with third parties, 
+but without a <u>vpn</u>, a <u>trusted browser</u>, or <u>incognito mode activated</u>, your activity may not be confidential.
+Please enjoy the website responsibly.<div class="WarningButton" onclick="Warning()">I Understand</div></div>
+
+
+<!----Fost Mp3's---->
+<iframe src="https://fosterlancaster.github.io/fostmp3s" style="border-top-left-radius: 20px; border-bottom-right-radius: 20px; min-height: 300px; min-width: 250px; border: none; display: block;" class="fostmp3s"></iframe>
+<!----Fost Mp3's---->
+
+<footer>
 <div class="LinkMenu">
 <a href="mailto:foster@fostmp3s.com" target="_blank">
 <img class="iconlink" title="Email" src="images/SocialMedia/Email.png"></a>
@@ -85,58 +66,6 @@
 <img title="Information" class="iconlink" src="images/SocialMedia/Info.png"></a>  
 </div>
 
-<div class="Warning">
-fostmp3s.com does not collect personal data and we do not share information with third parties, 
-but without a <u>vpn</u>, a <u>trusted browser</u>, or <u>incognito mode activated</u>, your activity may not be confidential.
-Please enjoy the website responsibly.<div class="WarningButton" onclick="Warning()">I Understand</div></div>
-
-<div class="FirstScreen"></div>
-
-<!----Name---->
-
-<div style="height: 70vh;"></div>
-
-<div align='center' style="position: relative; z-index: 2;">
-
-<a href="https://fostmp3s.com/mp3s" target="_blank">
-<div class="Title"><img class="TitleIcon" src="images/SocialMedia/Mp3s.png"></div>
-</a>
-
-<!----Fost Mp3's---->
-<iframe src="https://fosterlancaster.github.io/fostmp3s" style="border-top-left-radius: 20px; border-bottom-right-radius: 20px; min-height: 300px; min-width: 250px; border: none; display: block;" class="fostmp3s"></iframe>
-<!----Fost Mp3's---->
-
-
-<a href="https://fostmp3s.com/sup" target="_blank">
-<div class="Title"><img class="TitleIcon" src="images/SocialMedia/Sup.png"></div>
-</a>
-<!------Sup------->
-  <div class="Sup2Content">
-    <div class="FMore2Inner">
-    <div class="FMore2Body"><ul class="Sup2Posts" id="feed"></ul></div>
-    </div>
-    </div>
-<!------Sup------->
-
-
-<!--TV-->
-<a href="https://www.youtube.com/c/FosterLancaster" target="_blank">
-<div class="Title"><img class="TitleIcon" src="images/SocialMedia/Youtube.png"></div>
-</a>
-<!--TV-->
-<iframe class="MusicVideo" src="https://www.youtube.com/embed/ReP99vAiivQ?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-
-<!----Name---->
-<div id="FLName" title="Foster Lancaster">
-  <div class="Hear"><img class="Hear" src="images/HearName.png"></div>
-  <img class="FLNameImage" src="images/Name.png">
-  <audio id="FLNameAudio" src="SayName.mp3" playsinline>
-  </audio>
-</div>
-
-
-<footer>
   <span>
   <a href="http://fostmp3s.com/fostrecords" target="_blank">&#169;
   <script>document.write( new Date().getFullYear() );</script> Foster Lancaster, Fost Records, and fostmp3s, All Rights Reserved.</a>

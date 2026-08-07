@@ -3,7 +3,7 @@
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
   width: 100vw;
-  background-image: radial-gradient(transparent 50%, rgba(0, 0, 0, .7)), url('images/SupBranding.png');
+  background-image: radial-gradient(transparent 50%, rgba(0, 0, 0, .7)), url('fmp3simages/SupBranding.png');
   background-size: cover, contain;
   background-position: center center, center center;
   background-repeat: no-repeat, no-repeat;
@@ -84,6 +84,10 @@ li {
   position: relative;
   pointer-events: none; /* disable clicks on the li */
   border: solid 1px #ffffff;
+  background-image: url('images/SupBrandingMini.png');
+  background-size: 100px auto;
+  background-position: center center;
+  background-repeat: repeat;
 }
 li a {
   color: #ff0000;

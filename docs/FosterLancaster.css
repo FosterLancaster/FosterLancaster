@@ -30,7 +30,10 @@ body::before {
   width: 100vw;
   height: 100dvh;
   z-index: -1;
-  background: url("images/Lips.jpg") center center / cover no-repeat;
+  background-image: url("images/Lips.jpg"); 
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 :focus {
   outline: none;

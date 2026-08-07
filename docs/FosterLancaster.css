@@ -34,7 +34,7 @@ body {
   z-index: 3;
   opacity: 1;
   transition-duration: 2s;
-  animation: Teach .5s linear 1s forwards;
+  animation: Teach .5s linear 2.5s forwards;
 }
 .Name {
   top: 50%;

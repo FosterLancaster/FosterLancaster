@@ -32,9 +32,8 @@ body {
   left: 0px;
   background-color: rgba(0, 0, 0, .7);
   z-index: 3;
-  opacity: 1;
   transition-duration: 2s;
-  animation: Teach .5s linear 2.5s forwards;
+  animation: Teach .5s ease 2.5s forwards;
 }
 .Name {
   top: 50%;
@@ -220,6 +219,7 @@ select {
     display: block;
   }
   100% {
+    opacity: 0;
     display: none;
   }
 }

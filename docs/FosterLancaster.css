@@ -14,22 +14,24 @@ html {
   height: 100%;
 }
 body {
-  min-height: 100dvh;
-  margin: 0;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow-y: scroll;
   overflow-x: hidden;
-  position: relative;
-  color: #fff;
-  font-family: 'FL';
-  font-size: 22px;
 }
-body::before {
-  content: "";
-  position: fixed;
+.MyBackground {
   top: 0;
   left: 0;
+  position: fixed;
+  z-index: -1;
   width: 100vw;
   height: 100dvh;
-  z-index: -1;
   background-image: url("images/Lips.jpg"); 
   background-position: center center;
   background-size: cover;

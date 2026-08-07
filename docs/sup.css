@@ -84,7 +84,7 @@ li {
   position: relative;
   pointer-events: none; /* disable clicks on the li */
   border: solid 1px #ffffff;
-  background-image: url('images/SupBrandingMini.png');
+  background-image: url('fmp3simages/SupBrandingMini.png');
   background-size: 100px auto;
   background-position: center center;
   background-repeat: repeat;

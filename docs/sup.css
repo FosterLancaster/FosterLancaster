@@ -16,8 +16,10 @@
 }
 .Sup2Posts {
   padding: 0px;
-  width: 100%;
+  margin-top: 15px; 
+  width: calc(100% - 50px);
   max-width: 350px;
+  margin: 25px;
   flex: 1;
   font-size: 1em;
   line-height: 1.7em;
@@ -178,5 +180,5 @@ li a:hover {
   position: absolute; 
   color: #d6d6d6; 
   right: calc(50% - 272px); 
-  top: 170px;
+  top: 120px;
 }

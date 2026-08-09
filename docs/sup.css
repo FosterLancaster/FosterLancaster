@@ -17,9 +17,9 @@
 .Sup2Posts {
   padding: 0px;
   margin-top: 15px; 
-  width: calc(100% - 10px);
-  max-width: 350px;
-  margin: 5px;
+  width: calc(100% - 50px);
+  max-width: calc(100% - 50px);
+  margin: 25px;
   flex: 1;
   font-size: 1em;
   line-height: 1.7em;
@@ -84,7 +84,7 @@ li {
   border-radius: 8px;
   margin: 0px auto 15px auto;
   padding: 10px 10px 55px 10px;
-  width: 350px;
+  width: 100%;
   max-width: calc(100% - 50px);
   text-align: center;
   position: relative;

@@ -19,7 +19,7 @@
   margin-left: auto; 
   margin-right: auto;
   width: calc(100% - 10px);
-  max-width: 400px;
+  max-width: 600px;
   flex: 1;
   font-size: .9em;
   line-height: 1.7em;
@@ -41,7 +41,7 @@
   box-sizing: border-box;
   overflow: hidden;
   min-width: 0;
-  background-color: rgba(255, 255, 255, .1);
+  background-color: rgba(0, 0, 0, .3);
   border-bottom: solid 1px #ffffff;
   border-radius: 20px;
 }
@@ -61,7 +61,7 @@
   height: 100%;
   max-height: 100%;
   width: calc(100% - 22px);
-  max-width: 420px;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   border-radius: 5px;
@@ -177,4 +177,12 @@ li a:hover {
   background-position: center;
   background-repeat: no-repeat;
   flex-shrink: 0;
+}
+.Latest {
+  transform: rotate(90deg); 
+  position: absolute; 
+  color: #ffffff; 
+  -webkit-text-stroke: .05em #000000; 
+  right: calc(50% - 320px); 
+  top: 170px;
 }

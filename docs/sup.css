@@ -54,6 +54,7 @@
   white-space: nowrap;
   overflow: hidden;
   color: #ffffff;
+  border-bottom: solid .5px #ffffff;
 }
 .FMore2Body {
   flex: 1;

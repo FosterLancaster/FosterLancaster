@@ -186,7 +186,8 @@ li a:hover {
   transform: rotate(90deg); 
   position: absolute; 
   color: #d6d6d6; 
-  right: 8px; 
+  right: 0px; 
   top: calc(50% + 77.5px);
+  line-height: 38px;
   transform-origin: top right;
 }

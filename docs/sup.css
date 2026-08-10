@@ -187,9 +187,10 @@ li a:hover {
   position: absolute; 
   color: #d6d6d6; 
   right: 0px; 
-  top: calc(50% + 80px);
+  top: calc(50% + 100px);
   line-height: 47.5px;
   transform-origin: top right;
+  z-index: 3;
 }
 .LatestButton {
   display: inline-block; 

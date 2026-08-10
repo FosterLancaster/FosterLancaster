@@ -31,15 +31,27 @@
 
 <!------Chat------->
   <div class="Sup2Content">
-    <div class="FMore2Inner">
-        <div class="FMore2Header">
+    <div class="Sup2Inner">
+        <div class="Sup2Header">
           <div style="position: relative; z-index: 1;">
             <img src="fmp3simages/Sup.png" style="width: 45px; height: 45px; position: relative; z-index: 0;" alt="Sup" title="Sup">
             </div>
         </div>
-    <div class="Latest">&larr; Latest &emsp; &emsp; First &rarr;</div>
-  <div class="FMore2Body"><ul class="Sup2Posts" id="feed"></ul></div>
+  <div class="Sup2Body">
+  <div class="Latest">
+    <a onclick="this.closest('.Sup2Body').scrollTo({ top: 0, behavior: 'smooth' })">
+      <div class="LatestButton" style="color: #de1ce5; border: solid 1px #de1ce5;"/>&larr; Latest &emsp;</div>
+    </a>
+    <a onclick="this.closest('.Sup2Body').scrollTo({
+         top: this.closest('.Sup2Body').scrollHeight,
+         behavior: 'smooth'
+       })">
+      <div class="LatestButton" style="color: #ff3434; border: solid 1px #ff3434;"/>&emsp; First &rarr;</div>
+    </a>
 </div>
+
+  <ul class="Sup2Posts" id="feed">
+  </ul>
 </div>
 </div>
 

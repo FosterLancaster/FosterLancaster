@@ -54,7 +54,7 @@ body {
   transform: translate(-50%, -50%);
   position: absolute;
   font-size: 1.5em;
-  color: #ffff94;
+  color: #ffffff;
   font-family: 'futura';
   text-align: center;
 }
@@ -62,7 +62,6 @@ body {
   display: inline-block;
   position: relative;
   transform: translateY(10px);
-  color: #ffff00;
   opacity: 0;
   animation: fost 1s ease 1s forwards;
 }

@@ -32,31 +32,34 @@
 <link rel="stylesheet" href="sup.css">
 <style>
 .fostmp3s {
-  width: 100vw;
-  height: 100dvh;
-  border-radius: 0px;
-}
-@media screen and (min-width: 1000px)
-{
-.fostmp3s {
-  width: 250px;
-  height: 350px;
-  border-top-left-radius: 20px;
+  border-top-left-radius: 20px; 
   border-bottom-right-radius: 20px;
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-  margin: 10px;
 }
 footer {
   top: 100dvh;
   position: absolute;
 }
+@media screen and (orientation: portrait)
+{
+.fostmp3s {
+  width: 250px;
+  height: 350px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+}
+@media screen and (orientation: landscape)
+{
+.fostmp3s {
+  width: 100vw;
+  height: 100dvh;
+}
 }
 </style>
 </head>
 <body>
-<div class="TeachName"><div class="Name">Foster Lancaster</div></div>
+<div class="TeachName"><div class="Name"><span class="fost">Fost</span>er Lancaster</div></div>
 <div class="MyBackground"></div>
 
 <div class="Warning">

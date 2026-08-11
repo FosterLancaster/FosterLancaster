@@ -35,17 +35,6 @@ body {
   transition-duration: 2s;
   animation: Teach .5s ease 2s forwards;
 }
-.Name {
-  top: 50%;
-  left: 50%;
-  width: auto;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  font-size: 1.5em;
-  color: #ffff94;
-  font-family: 'futura';
-  text-align: center;
-}
 .MyBackground {
   top: 0px;
   left: 0px;
@@ -57,6 +46,25 @@ body {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+.Name {
+  top: 50%;
+  left: 50%;
+  width: auto;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  font-size: 1.5em;
+  color: #ffff94;
+  font-family: 'futura';
+  text-align: center;
+}
+.fost {
+  display: inline-block;
+  position: relative;
+  transform: translateY(10px);
+  color: #ffff00;
+  opacity: 0;
+  animation: fost 1s ease 1s forwards;
 }
 :focus {
   outline: none;
@@ -207,6 +215,16 @@ select {
 }
 .WarningButton:hover {
   background-color: #ffffff;
+}
+@keyframes fost {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 
 @keyframes Teach {

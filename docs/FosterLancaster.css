@@ -48,12 +48,12 @@ body {
   background-repeat: no-repeat;
 }
 .Name {
-  bottom: 20px;
+  bottom: 0px;
   left: 50%;
-  width: auto;
+  width: 100%;
   transform: translatex(-50%);
   position: absolute;
-  font-size: 1.5em;
+  font-size: 10vw;
   color: rgba(255, 255, 255, .5);
   font-family: 'futura';
   text-align: center;
@@ -61,9 +61,9 @@ body {
 .fost {
   display: inline-block;
   position: relative;
-  transform: translateY(10px);
+  transform: translateY(30px);
   opacity: 0;
-  animation: fost 1s ease 1s forwards;
+  animation: fost .5s ease .5s forwards;
   color: rgba(255, 255, 255, 1);
 }
 :focus {
@@ -219,7 +219,7 @@ select {
 @keyframes fost {
   0% {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(30px);
   }
   100% {
     opacity: 1;

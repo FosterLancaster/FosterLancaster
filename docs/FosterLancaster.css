@@ -42,8 +42,8 @@ body {
   z-index: -1;
   width: 100vw;
   height: 100dvh;
-  background-image: url("images/Sweater.jpg"); 
-  background-position: top center;
+  background-image: url("images/BlindLove.jpg"); 
+  background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }

@@ -178,10 +178,6 @@ select {
     opacity: 1;
     display: block;
   }
-  99% {
-    opacity: 0;
-    display: block;
-  }
   100% {
     opacity: 0;
     display: none;

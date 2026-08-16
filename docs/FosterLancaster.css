@@ -21,7 +21,7 @@ body {
   width: 100%;
   height: 100%;
   z-index: 0;
-  overflow-y: hidden;
+  overflow-y: scroll;
   overflow-x: hidden;
 }
 .TeachName {
@@ -32,8 +32,7 @@ body {
   left: 0px;
   background-color: rgba(255, 255, 255, .9);
   z-index: 3;
-  transition-duration: 2s;
-  animation: Teach .5s ease 2s forwards;
+  animation: Teach 4s ease .5s forwards;
 }
 .MyBackground {
   top: 0px;
@@ -57,7 +56,7 @@ body {
   color: #a95507;
   font-family: 'futura';
   text-align: center;
-  animation: Name .5s ease-in 0s forwards;
+  animation: Drop .75s ease-in 0s forwards;
 }
 :focus {
   outline: none;
@@ -210,12 +209,12 @@ select {
   background-color: #ffffff;
 }
 
-@keyframes Name {
+@keyframes Drop {
   0% {
     font-size: 5vw;
     top: 0px;
   }
-  50% {
+  75% {
     font-size: 5vw;
     top: calc(100% - 6vw);
   }
@@ -237,6 +236,15 @@ select {
   100% {
     opacity: 0;
     display: none;
+  }
+}
+
+@keyframes Lift {
+  0% {
+    overflow-y: hidden;
+  }
+  100% {
+    overflow-y: scroll;
   }
 }
 

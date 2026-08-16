@@ -10,6 +10,10 @@
 <link rel="stylesheet" href="FosterLancaster.css">
 <link rel="stylesheet" href="sup.css">
 <style>
+body {
+  overflow-y: hidden;
+  animation: Lift 4s ease .5s forwards;
+}
 footer {
   top: 100dvh;
   position: absolute;
@@ -52,14 +56,6 @@ footer {
   </span>
 </footer>
 
-<script>
-//Name
-const teachName = document.querySelector('.TeachName');
-
-teachName.addEventListener('animationend', () => {
-  document.body.style.overflowY = 'scroll';
-});
-</script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const warnings = document.querySelectorAll(".Warning");

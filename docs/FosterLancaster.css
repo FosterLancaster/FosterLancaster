@@ -40,7 +40,7 @@ body {
   left: 0px;
   background-color: rgba(255, 255, 255, .9);
   z-index: 3;
-  animation: Teach 4s ease .5s forwards;
+  animation: Teach 3s ease .25s forwards;
 }
 .MyBackground {
   top: 0px;

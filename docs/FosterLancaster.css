@@ -36,7 +36,7 @@ body {
   left: 0px;
   background-color: rgba(0, 0, 0, .7);
   z-index: 3;
-  animation: Teach 3s ease .5s forwards;
+  animation: Teach 1s ease .5s forwards;
 }
 .MyBackground {
   top: 0px;

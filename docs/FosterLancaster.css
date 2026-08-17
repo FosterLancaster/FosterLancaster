@@ -25,10 +25,6 @@ body {
   overflow-x: hidden;
 }
 @font-face {
-  font-family: 'FL';
-  src: url('heorot.ttf') format('truetype');
-}
-@font-face {
   font-family: 'FR';
   src: url('raidercrusader.ttf') format('truetype');
 }
@@ -61,11 +57,11 @@ body {
   transform: translateX(-50%);
   position: absolute;
   font-size: 10vw;
-  color: #a95507;
+  filter: invert();
   font-family: 'FL';
   text-align: center;
   font-weight: bold;
-  animation: Drop 1s ease-in 0s forwards;
+  animation: Drop .5s ease-in 0s forwards;
 }
 :focus {
   outline: none;
@@ -161,22 +157,16 @@ select {
 
 @keyframes Drop {
   0% {
-    font-size: 4vw;
+    width: 20vw;
     top: 0px;
-    color: #de1ce5;
-    opacity: .4;
   }
   75% {
-    font-size: 4vw;
-    top: calc(100% - 6vw);
-    color: #de1ce5;
-    opacity: .4;
+    width: 20vw;
+    top: calc(100% - 1.75vw);
   }
   100% {
-    font-size: 10vw;
-    top: calc(100% - 15vw);
-    color: #ff3434;
-    opacity: 1;
+    width: 90vw;
+    top: calc(100% - 8.25vw);
   }
 }
 

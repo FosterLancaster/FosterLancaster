@@ -64,7 +64,8 @@ body {
   color: #a95507;
   font-family: 'FL';
   text-align: center;
-  animation: Drop .75s ease-in 0s forwards;
+  font-weight: bold;
+  animation: Drop 1s ease-in 0s forwards;
 }
 :focus {
   outline: none;
@@ -160,19 +161,22 @@ select {
 
 @keyframes Drop {
   0% {
-    font-size: 5vw;
+    font-size: 4vw;
     top: 0px;
-    color: #ff0000;
+    color: #de1ce5;
+    opacity: .4;
   }
   75% {
-    font-size: 5vw;
+    font-size: 4vw;
     top: calc(100% - 6vw);
-    color: #ff0000;
+    color: #de1ce5;
+    opacity: .4;
   }
   100% {
     font-size: 10vw;
-    top: calc(100% - 12vw);
-    color: #00ff00;
+    top: calc(100% - 15vw);
+    color: #ff3434;
+    opacity: 1;
   }
 }
 

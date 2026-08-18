@@ -186,7 +186,6 @@ li a:hover {
 .Latest {
   transform: rotate(90deg); 
   position: absolute; 
-  color: #d6d6d6; 
   right: 0px; 
   top: calc(50% + 100px);
   line-height: 42px;
@@ -203,4 +202,5 @@ li a:hover {
   line-height: 20px;
   border-radius: 20px;
   cursor: pointer; 
+  color: #ffffff;
 }

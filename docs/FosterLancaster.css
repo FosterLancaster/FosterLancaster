@@ -49,6 +49,8 @@ body {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  filter: grayscale(1);
+  animation: Focus 3s ease 3s forwards;
 }
 .Name {
   top: 0px;
@@ -148,6 +150,15 @@ select {
   overflow: hidden;
   z-index: -1;
   opacity: 1;
+}
+
+@keyframes Focus {
+  0% {
+  filter: grayscale(1);
+  }
+  100% {
+  filter: grayscale(0);
+  }
 }
 
 @keyframes Drop {

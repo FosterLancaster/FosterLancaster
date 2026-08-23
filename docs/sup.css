@@ -195,8 +195,7 @@ li a:hover {
 .LatestButton {
   display: inline-block; 
   text-align: center; 
-  width: 100px; 
-  max-width: 30vh;
+  width: auto; 
   overflow: hidden;
   height: 20px;
   line-height: 20px;

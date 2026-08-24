@@ -53,17 +53,15 @@ body {
   animation: Focus 3s ease 3s forwards;
 }
 .Name {
-  top: 0px;
+  top: 50%;
   left: 50%;
-  width: 100%;
-  transform: translateX(-50%);
+  width: 50vw;
+  transform: translate(-50%, -50%);
   position: absolute;
-  font-size: 10vw;
-  filter: invert();
   font-family: 'FL';
   text-align: center;
   font-weight: bold;
-  animation: Drop .5s ease-in 0s forwards;
+  animation: Wide .5s ease-in 0s forwards;
 }
 :focus {
   outline: none;
@@ -158,21 +156,6 @@ select {
   }
   100% {
   filter: grayscale(0);
-  }
-}
-
-@keyframes Drop {
-  0% {
-    width: 20vw;
-    top: 0px;
-  }
-  75% {
-    width: 20vw;
-    top: calc(100% - 1.75vw);
-  }
-  100% {
-    width: 90vw;
-    top: calc(100% - 8.25vw);
   }
 }
 

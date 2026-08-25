@@ -187,7 +187,7 @@ li a:hover {
   transform: rotate(90deg); 
   position: absolute; 
   right: 0px; 
-  top: calc(50% + 85px);
+  top: calc(50% + 110px);
   line-height: 42px;
   transform-origin: top right;
   z-index: 3;
@@ -197,7 +197,7 @@ li a:hover {
   text-align: center; 
   width: auto;
   max-width: 20vh; 
-  font-size: .9em;
+  font-size: .8em;
   padding: 0px 10px 0px 10px;
   overflow: hidden;
   height: 17.5px;

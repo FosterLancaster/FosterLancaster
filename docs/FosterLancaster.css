@@ -137,7 +137,7 @@ footer {
   transition-duration: .5s;
 }
 .iconlink:hover {
-filter: invert(0);
+filter: invert(.5);
 }
 select { 
   outline: none; 

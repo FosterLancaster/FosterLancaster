@@ -35,8 +35,12 @@ body {
   top: 0px;
   left: 0px;
   background-color: rgba(0, 0, 0, .7);
+  background-image: url('images/NameSpread.png');
+  background-repeat: repeat;
+  background-size: 200px auto;
+  background-position: center 0px;
   z-index: 3;
-  animation: Teach 1s ease .5s forwards;
+  animation: Teach 1s linear .5s forwards;
 }
 .MyBackground {
   top: 0px;
@@ -163,10 +167,12 @@ select {
   0% {
     opacity: 1;
     display: block;
+    background-position: center 0px;
   }
   90% {
     opacity: 1;
     display: block;
+    background-position: center -100px;
   }
   100% {
     opacity: 0;

@@ -187,7 +187,8 @@ li a:hover {
   transform: rotate(90deg); 
   position: absolute; 
   right: 0px; 
-  top: calc(50% + 120px);
+  top: calc(50% + 100px);
+  width: 200px;
   line-height: 42px;
   transform-origin: top right;
   z-index: 3;
@@ -195,9 +196,9 @@ li a:hover {
 .LatestButton {
   display: inline-block; 
   text-align: center; 
-  width: auto;
-  max-width: 20vh; 
-  font-size: 1em;
+  width: auto; 
+  margin: 0px;
+  font-size: .7em;
   padding: 0px 10px 0px 10px;
   overflow: hidden;
   height: 17.5px;

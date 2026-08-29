@@ -36,8 +36,9 @@ body {
   animation: Lift 4.5s linear 0s forwards;
 }
  .Sup2Content {
+  height: 100dvh;
   border: none;
-  overflow: hidden;
+  overflow: scroll;
   border-radius: 0px;
  }
  .Sup2Posts {
@@ -51,28 +52,40 @@ body {
 <div class="MyBackground"></div>
 
 <!------Chat------->
-  <div class="Sup2Content">
-    <div class="Sup2Inner">
+      <div class="Sup2Content">
+      <button id="closeSup">X</button>
+      <div class="Sup2Inner">
         <div class="Sup2Header">
-<table style="margin: 0px 0px 0px 7.5px; height: 48px; border-collapse: collapse; max-width: calc(100% - 40px);">
-  
-    <td style="height: 48px; vertical-align: middle;">
-      <img src="fmp3simages/NameLogo.png"
-           style="display: block; max-height: 48px; max-width: 100%;"
+          <div style="position: relative; z-index: 1;">
+</div>
+
+<div align="center" style="margin: 0px 0px 0px 7.5px; height: 48px; border-collapse: collapse;">
+  <img src="fmp3simages/Sup.png"
+           style="display: block; max-height: 48px;"
            alt="Sup"
            title="Sup">
-    </td>
+</div>
 
-    <td style="height: 48px; vertical-align: middle;">
+</div>
+
+<div align="center" style="width: 100%;">
+<img style="height: 10vh; max-height: 50px; display: block; border-radius: 10px; margin: 2vh;" src="fmp3simages/BlindLove.jpg">
+<div style="height: 10vh; max-height: 30px; display: block; padding-bottom: 10px; border-bottom: solid 1px #ffffff;">
+<table>
+  <td>
+      <img src="fmp3simages/NameLogo.png" style="width: 200px; max-width: 30vw; display: inline-block;">
+    </div>
+  </td>
+  <td>
       <img src="fmp3simages/Verification.png"
-           style="display: block; width: 20px; height: 20px; margin: 0 5px;"
+           style="display: inline-block; height: 10px; max-height: 10px; margin: 0px 0px 0px 4px;"
            alt="Sup"
            title="Sup">
-    </td>
-
+  </td>
 </table>
+</div>
+</div>
 
-        </div>
 <div class="Sup2Body">
   <div class="Latest">
     <a onclick="this.closest('.Sup2Body').scrollTo({ top: 0, behavior: 'smooth' })">
@@ -82,14 +95,23 @@ body {
          top: this.closest('.Sup2Body').scrollHeight,
          behavior: 'smooth'
        })">
-      <div class="LatestButton" style="border: solid 1px #ffecf1;"/>&rarr; Least Recent </div>
+      <div class="LatestButton" style="border: solid 1px #ffecf1;"/>&rarr; Least Recent</div>
     </a>
 </div>
 
   <ul class="Sup2Posts" id="feed">
   </ul>
+
 </div>
-</div>
+  
+  </div>
+  </div>
+  </div>
+  
+  
+  </td>
+  </table>
+  </div>
 
 
 <footer>

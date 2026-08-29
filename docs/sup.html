@@ -3,6 +3,7 @@
 <head>
 <title>Foster Lancaster | Sup (powered by fostmp3s&#169;)</title>
 <script src="FosterLancaster.js"></script>
+<script type="module" src="sup.js"></script>
 <link rel="shortcut icon" href="images/supFavicon.ico" type="image/x-icon">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -66,19 +67,30 @@ body {
 </div>
 </div>
 
-<div class="SupProfile" align="center" style="width: auto; max-width: 100%;">
-<img style="height: 10vh; max-height: 50px; display: block; border-radius: 10px; margin: 2vh;" src="fmp3simages/BlindLove.jpg">
-<div style="height: 10vh; max-height: 30px; display: block; border-bottom: solid 1px #ffffff;">
-  <table style="border-collapse: collapse; border-spacing: 0;">
-    <tr>
-      <td style="padding: 0;">
-        <img src="fmp3simages/NameLogo.png" style="width: 150px; max-width: 50vw; margin: 0; display: block; filter: brightness(0);">
-      </td>
-      <td style="padding: 0;">
-        <img src="fmp3simages/Verification.png" style="cursor: pointer; height: 15px; width: 15px; margin: 0px 0px 0px 5px; display: block;" alt="Verified" title="Verified">
-      </td>
-    </tr>
-  </table>
+<div class="SupProfile" style="width: 100%;">
+  <img
+    style="height: 15vh; display: block; border-radius: 10px; margin: 2vh auto;"
+    src="fmp3simages/BlindLove.jpg"
+  >
+  <div style="height: auto; border-bottom: solid 1px #ffffff;">
+    <div style="display: flex; align-items: center; justify-content: center; gap: 3px;">
+      <span>Foster Lancaster</span>
+      <img
+        src="fmp3simages/Verification.png"
+        style="cursor: pointer; height: 15px; width: 15px; display: block;"
+        alt="Verified"
+        title="Verified"
+      >
+    </div>
+    <div align="center">
+    <div class="totallistens totalPlays">
+      <span
+        style="margin: 0px 5px -5px 0px;"
+        class="totallistensnumber2 totalPlayCount"
+      >?</span>
+      <span style="color: #4f4f4f;">Total Listens</span>
+    </div>
+    </div>
 </div>
 </div>
 

@@ -209,3 +209,33 @@ li a:hover {
   color: #ffecf1;
   background-color: #000000;
 }
+.totallistens {
+  min-height: 40px;
+  height: 40px;
+  max-height: 40px;
+  overflow: hidden;
+  position: relative;
+  color: #ffffff;
+  font-size: 12px;
+  width: fit-content;
+}
+.totallistensnumber, .totallistensnumber2 {
+  height: 13px;
+  max-height: 13px;
+  line-height: 13px;
+  font-size: 12px;
+  background-color: #ffffff;
+  border: solid 2px #484848;
+  color: #000000;
+  border-radius: 3px;
+  width: fit-content;
+  padding: 2px;
+  overflow: hidden;
+}
+.totallistensnumber2 {
+  display: inline-block;
+}
+.SupProfile {
+  line-height: 25px;
+  justify-content: center;
+}

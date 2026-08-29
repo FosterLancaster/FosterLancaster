@@ -42,7 +42,7 @@
   box-sizing: border-box;
   overflow: hidden;
   min-width: 0;
-  background-color: rgb(156, 156, 156, .75);
+  background-color: rgb(156, 156, 156, .9);
   border-bottom: solid 1px #ffffff;
   border-radius: 0px;
 }

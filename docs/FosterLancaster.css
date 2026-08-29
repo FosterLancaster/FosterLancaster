@@ -35,10 +35,6 @@ body {
   top: 0px;
   left: 0px;
   background-color: rgba(0, 0, 0, .7);
-  background-image: url('images/NameSpread.png');
-  background-repeat: repeat;
-  background-size: 200px auto;
-  background-position: center 0px;
   z-index: 3;
   animation: Teach 1s linear .5s forwards;
 }
@@ -65,7 +61,7 @@ body {
   font-family: 'FL';
   text-align: center;
   font-weight: bold;
-  animation: Wide .5s ease-in 0s forwards;
+  animation: Faster .4s ease-out 0s forwards;
 }
 :focus {
   outline: none;
@@ -163,16 +159,38 @@ select {
   }
 }
 
+@keyframes Faster {
+  0% {
+    left: 0%;
+    display: block;
+  }
+  90.997% {
+    left: 150%;
+    display: block;
+  }
+  90.998% {
+    display: none;
+  }
+  90.999% {
+    left: -10%;
+  }
+  91% {
+    left: - 10%;
+    display: block;
+  }
+  100% {
+    left: 50%;
+  }
+}
+
 @keyframes Teach {
   0% {
     opacity: 1;
     display: block;
-    background-position: center 0px;
   }
   90% {
     opacity: 1;
     display: block;
-    background-position: center -100px;
   }
   100% {
     opacity: 0;

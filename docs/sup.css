@@ -36,15 +36,15 @@
   flex-direction: column;
   height: 100%;
   width: 400px;
-  max-width: calc(100% - 20px);
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
   overflow: hidden;
   min-width: 0;
-  background-color: #9c9c9c;
+  background-color: rgb(156, 156, 156, .75);
   border-bottom: solid 1px #ffffff;
-  border-radius: 20px;
+  border-radius: 0px;
 }
 .Sup2Header {
   height: 48px;

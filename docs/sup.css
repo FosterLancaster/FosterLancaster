@@ -104,11 +104,11 @@ li {
   background-repeat: repeat;
 }
 li a {
-  color: #ff0000;
+  color: #a16100;
   pointer-events: auto;
 }
 li a:hover {
-  color: #ffffff;
+  color: #ff6a00;
   pointer-events: auto;
 }
 .textHighlight {

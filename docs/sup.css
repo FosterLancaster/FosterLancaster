@@ -43,9 +43,11 @@
   overflow: hidden;
   min-width: 0;
   background-color: rgba(255, 255, 255, .7);
-  background-image: radial-gradient(transparent 50%, rgba(0, 0, 0, .7));
+  background-image: url('fmp3simages/SupBrandingMini.png'), radial-gradient(transparent 50%, rgba(0, 0, 0, .7));
   border-bottom: solid 1px #ffffff;
-  border-radius: 0px;
+  background-size: 200px auto, 100% 100%;
+  background-position: center center, center center;
+  background-repeat: repeat, no-repeat;
 }
 .Sup2Header {
   height: 48px;
@@ -88,7 +90,7 @@
 }
 li {
   list-style: none;
-  background-color: #8a8a8a;
+  background-color: transparent;
   color: #000000;
   border-radius: 8px;
   margin: 0 0 15px 0;     /* left instead of centered */
@@ -98,10 +100,6 @@ li {
   position: relative;
   pointer-events: none;
   border: solid 1px #ffffff;
-  background-image: url('fmp3simages/SupBrandingMini.png');
-  background-size: 100px auto;
-  background-position: center center;
-  background-repeat: repeat;
 }
 li a {
   color: #a16100;

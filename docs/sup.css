@@ -100,6 +100,7 @@ li {
   position: relative;
   pointer-events: none;
   border: solid 1px #ffffff;
+  filter: drop-shadow(0px 1px 1px #000000);
 }
 li a {
   color: #a16100;
@@ -188,8 +189,8 @@ li a:hover {
   transform: rotate(90deg); 
   position: absolute; 
   right: 0px; 
-  top: calc(50% + 100px);
-  width: 200px;
+  bottom: -90px;
+  width: 250px;
   line-height: 42px;
   transform-origin: top right;
   z-index: 3;
@@ -237,5 +238,10 @@ li a:hover {
 }
 .SupProfile {
   line-height: 25px;
-  justify-content: center;
+  justify-content: right;
+  background-image: url('fmp3simages/ProfileGif.gif');
+  background-size: cover;
+  background-position: center center;
+  -webkit-text-stroke: .03em #000000;
+  color: #ffff00;
 }

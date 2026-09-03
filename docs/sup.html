@@ -38,6 +38,7 @@ body {
 }
  .Sup2Content {
   height: 100dvh;
+  min-height: 500px;
   border: none;
   overflow: scroll;
   border-radius: 0px;
@@ -67,12 +68,11 @@ body {
 </div>
 </div>
 
-<div class="SupProfile" style="width: 100%;">
+<div class="SupProfile" style="width: 100%; position: relative;">
   <img
-    style="height: 20vh; display: block; border-radius: 10px; margin: 2vh auto;"
-    src="fmp3simages/Profile.gif"
+    style="height: 40vh; min-height: 200px; display: block; border-radius: 10px;" src="fmp3simages/Profile.gif"
   >
-  <div style="height: auto;">
+  <div style="height: 50px; overflow: hidden; position: absolute; bottom: 0px; right: 0px; margin: 10px;">
     <div style="display: flex; align-items: center; justify-content: center; gap: 3px;">
       <span>Foster Lancaster</span>
       <img
@@ -88,9 +88,9 @@ body {
         style="margin: 0px 5px -5px 0px;"
         class="totallistensnumber2 totalPlayCount"
       >?</span>
-      <span style="color: #4f4f4f;">Total Listens</span>
+      <span>Total Listens</span>
     </div>
-    </div>
+  </div>
 </div>
 </div>
 

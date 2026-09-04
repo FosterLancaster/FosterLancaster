@@ -90,9 +90,9 @@
 }
 li {
   list-style: none;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, .1);
   color: #000000;
-  border-radius: 8px;
+  border-radius: 5px;
   margin: 0 0 15px 0;     /* left instead of centered */
   padding: 10px 10px 55px 10px;
   max-width: 100%;
@@ -100,7 +100,6 @@ li {
   position: relative;
   pointer-events: none;
   border: solid 1px #ffffff;
-  filter: drop-shadow(0px 1px 1px #000000);
 }
 li a {
   color: #a16100;
@@ -195,21 +194,6 @@ li a:hover {
   transform-origin: top right;
   z-index: 3;
 }
-.LatestButton {
-  display: inline-block; 
-  text-align: center; 
-  width: auto; 
-  margin: 0px;
-  font-size: 13px;
-  padding: 0px 3px 0px 3px;
-  overflow: hidden;
-  height: 17.5px;
-  line-height: 16.8px;
-  border-radius: 20px;
-  cursor: pointer; 
-  color: #ffecf1;
-  background-color: #000000;
-}
 .totallistens {
   min-height: 40px;
   height: 40px;
@@ -236,12 +220,25 @@ li a:hover {
 .totallistensnumber2 {
   display: inline-block;
 }
+.LatestButton {
+  display: inline-block; 
+  text-align: center; 
+  width: auto; 
+  margin: 0px;
+  font-size: 13px;
+  padding: 0px 3px 0px 3px;
+  overflow: hidden;
+  height: 17.5px;
+  line-height: 16.5px;
+  border-radius: 20px;
+  cursor: pointer; 
+  color: #ffecf1;
+  background-color: #000000;
+}
 .SupProfile {
   line-height: 25px;
   justify-content: right;
   background-image: url('fmp3simages/ProfileGif.gif');
   background-size: cover;
   background-position: center center;
-  -webkit-text-stroke: .03em #000000;
-  color: #ffff00;
 }

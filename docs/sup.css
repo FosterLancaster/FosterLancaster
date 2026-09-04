@@ -234,6 +234,10 @@ li a:hover {
   background-color: #000000;
 }
 .SupProfile {
+  height: 240px; 
+  width: 100%; 
+  position: relative;
+  max-height: 40vh;
   line-height: 25px;
   justify-content: right;
   background-image: url('fmp3simages/ProfileGif.gif');

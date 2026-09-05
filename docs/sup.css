@@ -29,7 +29,7 @@
   text-align: left;
 }
 .Sup2Inner {
-   position: relative;
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -182,16 +182,6 @@ li a:hover {
   background-repeat: no-repeat;
   flex-shrink: 0;
 }
-.Latest {
-  transform: rotate(90deg); 
-  position: absolute; 
-  right: 0px; 
-  bottom: -90px;
-  width: 250px;
-  line-height: 42px;
-  transform-origin: top right;
-  z-index: 3;
-}
 .totallistens {
   min-height: 40px;
   height: 40px;
@@ -218,6 +208,16 @@ li a:hover {
 .totallistensnumber2 {
   display: inline-block;
 }
+.Latest {
+  transform: rotate(90deg); 
+  position: absolute; 
+  right: 0px; 
+  bottom: -90px;
+  width: 250px;
+  line-height: 42px;
+  transform-origin: top right;
+  z-index: 3;
+}
 .LatestButton {
   display: inline-block; 
   text-align: center; 
@@ -226,11 +226,11 @@ li a:hover {
   font-size: 13px;
   padding: 0px 3px 0px 3px;
   overflow: hidden;
-  height: 17.5px;
-  line-height: 16.5px;
-  border-radius: 20px;
+  height: 19px;
+  line-height: 18.5px;
+  border-radius: 5px;
   cursor: pointer; 
-  color: #ffecf1;
+  color: #ffffff;
   background-color: #000000;
 }
 .SupProfile {

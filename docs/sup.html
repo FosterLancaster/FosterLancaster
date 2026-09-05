@@ -3,7 +3,6 @@
 <head>
 <title>Foster Lancaster | Sup (powered by fostmp3s&#169;)</title>
 <script src="FosterLancaster.js"></script>
-<script type="module" src="sup.js"></script>
 <link rel="shortcut icon" href="images/supFavicon.ico" type="image/x-icon">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -147,6 +146,103 @@ body {
   | <a href="http://fostmp3s.com/publicitypolicy" target="_blank">Publicity Policy</a>
   </span>
 </footer>
+
+<script type="module">
+
+import {
+  initializeApp
+} from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
+
+import {
+  getDatabase,
+  ref,
+  onValue
+} from "https://www.gstatic.com/firebasejs/12.14.0/firebase-database.js";
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDwdEA58IKndfdO1SvfD4pGerAbW3bRgWw",
+  authDomain: "fostmp3s-3fc35.firebaseapp.com",
+  databaseURL: "https://fostmp3s-3fc35-default-rtdb.firebaseio.com",
+  projectId: "fostmp3s-3fc35",
+  storageBucket: "fostmp3s-3fc35.firebasestorage.app",
+  messagingSenderId: "792229622105",
+  appId: "1:792229622105:web:a644d281c868293b131c48"
+};
+
+
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+
+
+function formatPlays(num) {
+
+  if (num >= 1_000_000_000) {
+    return (num / 1_000_000_000).toFixed(1) + "B";
+  }
+
+  if (num >= 1_000_000) {
+    return (num / 1_000_000).toFixed(1) + "M";
+  }
+
+  if (num >= 1_000) {
+    return (num / 1_000).toFixed(1) + "K";
+  }
+
+  return num.toLocaleString();
+}
+
+
+// Read every song
+const songsRef = ref(database, "songs");
+
+
+onValue(
+
+  songsRef,
+
+  snapshot => {
+
+    let total = 0;
+
+    snapshot.forEach(songSnapshot => {
+
+      const song = songSnapshot.val();
+
+      const plays = Number(song.plays) || 0;
+
+      total += plays;
+
+    });
+
+
+    console.log("Total plays:", total);
+
+
+    document
+      .querySelectorAll(".totalPlayCount")
+      .forEach(el => {
+
+        el.textContent = formatPlays(total);
+
+        el.title = total.toLocaleString();
+
+      });
+
+  },
+
+  error => {
+
+    console.error(
+      "Could not load songs:",
+      error
+    );
+
+  }
+
+);
+
+</script>
 
 </body>
 </html>

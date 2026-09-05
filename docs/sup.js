@@ -24,28 +24,9 @@ const database = getDatabase(app);
 
 // Same growth rate as FOSTMp3s
 const PLAYS_PER_6H = 1000;
+
 const RATE_PER_MS =
   PLAYS_PER_6H / (6 * 60 * 60 * 1000);
-
-
-// Songs
-const songs = [
-  "fmp3smusic/GoodForYou.mp3",
-  "fmp3smusic/MoreThanJustAFan.mp3",
-  "fmp3smusic/TheGoodLink/TGL1.mp3",
-  "fmp3smusic/TheGoodLink/TGL2.mp3",
-  "fmp3smusic/TheGoodLink/TGL3.mp3",
-  "fmp3smusic/TheGoodLink/TGL4.mp3",
-  "fmp3smusic/TheGoodLink/TGL5.mp3",
-  "fmp3smusic/TheGoodLink/TGL6.mp3",
-  "fmp3smusic/TheGoodLink/TGL7.mp3",
-  "fmp3smusic/TheGoodLink/TGL8.mp3"
-];
-
-
-function getSongId(songPath) {
-  return songPath.replace(/[^a-zA-Z0-9]/g, "_");
-}
 
 
 // Same boost calculation as the player
@@ -90,8 +71,8 @@ function formatPlays(num) {
 }
 
 
-// Store Firebase data for every song
-const songData = {};
+// Stores ALL songs currently in Firebase
+let songData = {};
 
 let highestTotalDisplayed = 0;
 
@@ -101,44 +82,44 @@ function updateTotalPlays() {
 
   let total = 0;
 
-  songs.forEach(songPath => {
+  Object.entries(songData).forEach(
+    ([songId, data]) => {
 
-    const songId = getSongId(songPath);
-
-    const data = songData[songId];
-
-    if (!data) return;
+      if (!data) return;
 
 
-    const basePlays =
-      Number(data.plays) || 0;
-
-    const lastUpdated =
-      Number(data.lastUpdated) || Date.now();
+      const basePlays =
+        Number(data.plays) || 0;
 
 
-    const elapsed =
-      Date.now() - lastUpdated;
+      const lastUpdated =
+        Number(data.lastUpdated) || Date.now();
 
 
-    const estimatedGrowth = Math.floor(
-      Math.max(0, elapsed) * RATE_PER_MS
-    );
+      const elapsed =
+        Date.now() - lastUpdated;
 
 
-    const dailyBoost =
-      getDailyBoost(songId);
+      const estimatedGrowth =
+        Math.floor(
+          Math.max(0, elapsed) * RATE_PER_MS
+        );
 
 
-    const displayPlays =
-      basePlays +
-      estimatedGrowth +
-      dailyBoost;
+      const dailyBoost =
+        getDailyBoost(songId);
 
 
-    total += displayPlays;
+      const displayPlays =
+        basePlays +
+        estimatedGrowth +
+        dailyBoost;
 
-  });
+
+      total += displayPlays;
+
+    }
+  );
 
 
   // Don't let displayed total decrease
@@ -146,6 +127,7 @@ function updateTotalPlays() {
     total,
     highestTotalDisplayed
   );
+
 
   highestTotalDisplayed = total;
 
@@ -161,43 +143,37 @@ function updateTotalPlays() {
         total.toLocaleString();
 
     });
+
 }
 
 
-// Load each song individually
-songs.forEach(songPath => {
-
-  const songId =
-    getSongId(songPath);
-
-  const songRef =
-    ref(database, `songs/${songId}`);
+// Listen to the entire songs database
+const songsRef =
+  ref(database, "songs");
 
 
-  onValue(
-    songRef,
+onValue(
+  songsRef,
 
-    snapshot => {
+  snapshot => {
 
-      songData[songId] =
-        snapshot.val() || {};
+    // Automatically collects every current song
+    songData =
+      snapshot.val() || {};
 
-      updateTotalPlays();
+    updateTotalPlays();
 
-    },
+  },
 
-    error => {
+  error => {
 
-      console.error(
-        "Could not load plays:",
-        songId,
-        error
-      );
+    console.error(
+      "Could not load songs:",
+      error
+    );
 
-    }
-  );
-
-});
+  }
+);
 
 
 // Update estimated growth every second

@@ -240,7 +240,4 @@ li a:hover {
   max-height: 40vh;
   line-height: 25px;
   justify-content: right;
-  background-image: url('fmp3simages/ProfileGif.gif');
-  background-size: cover;
-  background-position: center center;
 }

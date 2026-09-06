@@ -100,11 +100,11 @@ li {
   border: solid 1px #ffffff;
 }
 li a {
-  color: #a16100;
+  color: #d17233;
   pointer-events: auto;
 }
 li a:hover {
-  color: #ff6a00;
+  color: #ffa53d;
   pointer-events: auto;
 }
 .textHighlight {

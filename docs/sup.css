@@ -237,7 +237,12 @@ li a:hover {
   height: 240px; 
   width: 100%; 
   position: relative;
-  max-height: 40vh;
-  line-height: 25px;
+  line-height: 20px;
   justify-content: right;
+}
+
+@media screen and (max-height: 400px) {
+.SupProfile {
+  display: none;
+}
 }

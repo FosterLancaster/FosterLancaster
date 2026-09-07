@@ -234,7 +234,7 @@ li a:hover {
   background-color: #000000;
 }
 .SupProfile {
-  height: 227px; 
+  height: auto; 
   width: 100%; 
   position: relative;
   line-height: 20px;

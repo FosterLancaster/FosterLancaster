@@ -56,14 +56,14 @@ body {
 }
 .Name {
   top: 50%;
-  left: 50%;
+  left: calc(0% + 25vw);
   width: 50vw;
   transform: translate(-50%, -50%);
   position: absolute;
   font-family: 'FL';
   text-align: center;
   font-weight: bold;
-  animation: Faster .4s ease-out 0s forwards;
+  animation: Faster .3s ease-out .8s forwards;
 }
 :focus {
   outline: none;

@@ -105,11 +105,11 @@ li {
   animation: linear drown 3s infinite;
 }
 li a {
-  color: #d17233;
+  color: #0eec25;
   pointer-events: auto;
 }
 li a:hover {
-  color: #ffa53d;
+  color: #ffffff;
   pointer-events: auto;
 }
 .textHighlight {

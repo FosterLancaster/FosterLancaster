@@ -109,12 +109,12 @@ li a {
   pointer-events: auto;
 }
 li a:hover {
-  color: #ffffff;
+  color: #000000;
   pointer-events: auto;
 }
 .textHighlight {
   display: inline;
-  background: #d17233;
+  background: #ffffff;
   padding: 0 .15em;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;

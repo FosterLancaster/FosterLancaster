@@ -100,16 +100,16 @@ li {
   border: solid 1px #ffffff;
   background-image: url('fmp3simages/WaterChat.png');
   background-size: 20px 10px;
-  background-position: 0px bottom;
+  background-position: center bottom;
   background-repeat: repeat-x;
   animation: linear drown 3s infinite;
 }
 li a {
-  color: #0eec25;
+  color: #00a700;
   pointer-events: auto;
 }
 li a:hover {
-  color: #000000;
+  color: #ff0000;
   pointer-events: auto;
 }
 .textHighlight {
@@ -244,6 +244,7 @@ li a:hover {
   position: relative;
   line-height: 20px;
   justify-content: right;
+  display: block;
 }
 
 @media screen and (max-height: 400px) {
@@ -253,9 +254,19 @@ li a:hover {
 }
 
 @keyframes drown {
-  0% { background-position: 0px bottom; }
-  25% { background-position: 20px bottom; }
-  50% { background-position: 0px bottom; }
-  75% { background-position: -20px bottom; }
-  100% { background-position: 0px bottom; }
+  0% {
+    background-position: 50% bottom;
+  }
+  25% {
+    background-position: calc(50% + 10px) bottom;
+  }
+  50% {
+    background-position: 50% bottom;
+  }
+  75% {
+    background-position: calc(50% - 10px) bottom;
+  }
+  100% {
+    background-position: 50% bottom;
+  }
 }

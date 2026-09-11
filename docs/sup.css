@@ -240,7 +240,7 @@ li a:hover {
 }
 .SupProfile {
   height: auto; 
-  width: 100%; 
+  width: calc(100% - 20px); 
   position: relative;
   line-height: 20px;
   justify-content: right;

@@ -241,6 +241,7 @@ li a:hover {
 .SupProfile {
   height: auto; 
   width: calc(100% - 20px); 
+  margin: 0px 10px 0px 10px; 
   position: relative;
   line-height: 20px;
   justify-content: right;

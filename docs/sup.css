@@ -247,6 +247,15 @@ li a:hover {
   justify-content: right;
   display: block;
 }
+.ProfileImage {
+  display: block; 
+  margin: 10px; 
+  border: solid 1px #ffffff; 
+  height: auto; 
+  width: 30vh; 
+  max-width: 180px; 
+  border-radius: 20px;
+}
 
 @media screen and (max-height: 400px) {
 .SupProfile {

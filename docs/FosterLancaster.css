@@ -30,6 +30,23 @@ body {
   font-family: 'FR';
   src: url('raidercrusader.ttf') format('truetype');
 }
+header {
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  width: 100%;
+  height: 7vh;
+  background-color: #000000;
+  z-index: 3;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.headername {
+  width: auto;
+  height: 4vh;
+  max-width: 90%;
+}
 .TeachName {
   width: 100%;
   height: 100%;
@@ -75,23 +92,6 @@ a {
 }
 a:hover {
   color: #c3c301;
-}
-header {              
-  position: fixed;
-  bottom: 0px;
-  right: 0px;
-  width: auto;
-  height: auto;
-  line-height: auto;
-  display: inline-flex;
-  align-items: center;      /* vertical */
-  padding: 0px;
-  overflow: hidden;
-  opacity: 1;
-  outline: none;
-  z-index: 7;
-  background-color: transparent;
-  color: #000000;
 }
 h1 {
 font-size: 25px;

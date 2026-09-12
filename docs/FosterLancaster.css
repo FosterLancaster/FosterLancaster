@@ -69,12 +69,12 @@ body {
   outline: none;
 }
 a {
-  color: #ffffff;
+  color: #68837e;
   text-decoration: none;
   transition-duration: .5s;
 }
 a:hover {
-  color: #ffff00;
+  color: #c3c301;
 }
 header {              
   position: fixed;
@@ -101,7 +101,7 @@ footer {
   width: 100%;
   height: auto;
   color: #ffffff;
-  background-color: rgba(0, 0, 0, .35);
+  background-color: rgba(0, 0, 0, .7);
   box-sizing: border-box;
   padding: 2em;
   display: flex;

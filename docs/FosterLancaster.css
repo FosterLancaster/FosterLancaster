@@ -34,7 +34,8 @@ header {
   top: 0px;
   left: 0px;
   position: fixed;
-  width: 100%;
+  width: calc(100% - 20px);
+  padding: 0px 10px 0px 10px;
   height: 7vh;
   background-color: #000000;
   z-index: 3;

@@ -39,7 +39,7 @@ header {
   background-color: #000000;
   z-index: 3;
   display: inline-flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
 }
 .headername {
@@ -86,12 +86,12 @@ header {
   outline: none;
 }
 a {
-  color: #68837e;
+  color: #c2b022;
   text-decoration: none;
   transition-duration: .5s;
 }
 a:hover {
-  color: #c3c301;
+  color: #ffff00;
 }
 h1 {
 font-size: 25px;

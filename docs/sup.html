@@ -210,6 +210,28 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
 
+// SAME RATE AS MAIN PLAYER
+const PLAYS_PER_6H = 12300;
+
+const RATE_PER_MS =
+  PLAYS_PER_6H / (6 * 60 * 60 * 1000);
+
+
+function calculateCurrentPlays(basePlays, lastUpdated) {
+
+  if (!lastUpdated) {
+    return basePlays;
+  }
+
+  const elapsed =
+    Math.max(0, Date.now() - lastUpdated);
+
+  return basePlays + Math.floor(
+    elapsed * RATE_PER_MS
+  );
+}
+
+
 function formatPlays(num) {
 
   if (num >= 1_000_000_000) {
@@ -228,8 +250,63 @@ function formatPlays(num) {
 }
 
 
-// Read every song
 const songsRef = ref(database, "songs");
+
+let songsData = {};
+let highestTotalDisplayed = 0;
+
+
+function updateCalculatedTotal() {
+
+  let total = 0;
+
+  Object.values(songsData).forEach(song => {
+
+    if (!song) return;
+
+    const basePlays =
+      Number(song.plays) || 0;
+
+    const lastUpdated =
+      Number(song.lastUpdated) || 0;
+
+    const dailyBoost =
+      Number(song.dailyBoost) || 0;
+
+
+    const currentPlays =
+      calculateCurrentPlays(
+        basePlays,
+        lastUpdated
+      ) + dailyBoost;
+
+
+    total += currentPlays;
+
+  });
+
+
+  // Never visually decrease
+  highestTotalDisplayed =
+    Math.max(
+      highestTotalDisplayed,
+      total
+    );
+
+
+  document
+    .querySelectorAll(".totalPlayCount")
+    .forEach(el => {
+
+      el.textContent =
+        formatPlays(highestTotalDisplayed);
+
+      el.title =
+        highestTotalDisplayed.toLocaleString();
+
+    });
+
+}
 
 
 onValue(
@@ -238,31 +315,9 @@ onValue(
 
   snapshot => {
 
-    let total = 0;
+    songsData = snapshot.val() || {};
 
-    snapshot.forEach(songSnapshot => {
-
-      const song = songSnapshot.val();
-
-      const plays = Number(song.plays) || 0;
-
-      total += plays;
-
-    });
-
-
-    console.log("Total plays:", total);
-
-
-    document
-      .querySelectorAll(".totalPlayCount")
-      .forEach(el => {
-
-        el.textContent = formatPlays(total);
-
-        el.title = total.toLocaleString();
-
-      });
+    updateCalculatedTotal();
 
   },
 
@@ -275,6 +330,13 @@ onValue(
 
   }
 
+);
+
+
+// Keep calculated total moving
+setInterval(
+  updateCalculatedTotal,
+  1000
 );
 
 </script>

@@ -203,9 +203,10 @@ li {
   position: absolute; 
   right: 0px; 
   bottom: -29px;
-  width: 161.5px;
+  width: 164.5px;
   line-height: 42.5px;
   transform-origin: top right;
+  background-color: transparent;
   z-index: 3;
 }
 .LatestButton:hover {

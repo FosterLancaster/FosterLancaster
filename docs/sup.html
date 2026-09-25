@@ -76,7 +76,7 @@ body {
       <tr>
         <!-- Left: Profile Image -->
         <td>
-        <img class="ProfileImage" src="fmp3simages/ProfileGif.gif" alt="Sup Photo" title="Sup Photo">
+        <img class="ProfileImage" src="https://dl.dropbox.com/scl/fi/wzokjwbeo4902sew6lfxm/ProfileGif.gif?rlkey=u0qckfd21j9uffekrg4f52woz" alt="Sup Photo" title="Sup Photo">
         </td>
         <!-- Right: Profile Information -->
         <td style="text-align: center; vertical-align: middle;">
@@ -121,26 +121,37 @@ body {
         </td>
       </tr>
     </table>
+
+<a onclick="
+  const body = document.querySelector('.Sup2Body');
+  body.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+">
+  <div class="LatestButton" style="border: solid 1px #ffffff;">
+    First or... &uarr; 
+  </div>
+</a>
+
+<a onclick="
+  const body = document.querySelector('.Sup2Body');
+  body.scrollTo({
+    top: body.scrollHeight,
+    behavior: 'smooth'
+  });
+">
+  <div class="LatestButton" style="border: solid 1px #ffffff;">
+    Last/after&darr;
+  </div>
+</a>
+
   </div>
 </div>
 
-
 <div class="Sup2Body">
-  <div class="Latest">
-    <a onclick="this.closest('.Sup2Body').scrollTo({
-         top: this.closest('.Sup2Body').scrollHeight,
-         behavior: 'smooth'
-       })">
-      <div class="LatestButton" style="border: solid 1px #ffffff;"/>First or... &rarr;</div>
-    </a>
-    <a onclick="this.closest('.Sup2Body').scrollTo({ top: 0, behavior: 'smooth' })">
-      <div class="LatestButton" style="border: solid 1px #ffffff;"/>&larr; Last/after</div>
-    </a>
-</div>
-
-  <ul class="Sup2Posts" id="feed">
+<ul class="Sup2Posts" id="feed">
   </ul>
-
 </div>
   
   </div>

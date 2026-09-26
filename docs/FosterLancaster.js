@@ -206,10 +206,10 @@ if (cleanDescription) {
   description.className =
     "feedDescription";
 
-  // Keep existing HTML links
+  // Preserve the HTML from the RSS
   description.innerHTML = cleanDescription;
 
-  // Convert plain-text URLs into clickable links
+  // Find text nodes that are NOT already links
   const walker = document.createTreeWalker(
     description,
     NodeFilter.SHOW_TEXT
@@ -218,12 +218,16 @@ if (cleanDescription) {
   const textNodes = [];
 
   while (walker.nextNode()) {
-    // Don't alter text that's already inside an <a>
-    if (!walker.currentNode.parentElement.closest("a")) {
-      textNodes.push(walker.currentNode);
+
+    const node = walker.currentNode;
+
+    // Leave existing <a> tags completely alone
+    if (!node.parentElement.closest("a")) {
+      textNodes.push(node);
     }
   }
 
+  // Turn plain URLs into links
   textNodes.forEach(node => {
 
     const text = node.nodeValue;
@@ -235,7 +239,8 @@ if (cleanDescription) {
 
     urlPattern.lastIndex = 0;
 
-    const span = document.createElement("span");
+    const span =
+      document.createElement("span");
 
     span.innerHTML = text.replace(
       urlPattern,
@@ -251,10 +256,9 @@ if (cleanDescription) {
     );
 
     node.replaceWith(...span.childNodes);
-
   });
 
-  // Make ALL links clickable
+  // Configure existing AND newly-created anchors
   description.querySelectorAll("a").forEach(link => {
     link.target = "_blank";
     link.rel = "noopener noreferrer";
@@ -335,27 +339,6 @@ if (cleanDescription) {
         `;
 
         li.appendChild(tiktok);
-
-      }
-
-
-      // DESCRIPTION
-      if (cleanDescription) {
-
-        const description =
-          document.createElement("div");
-
-        description.className =
-          "feedDescription";
-
-description.innerHTML = cleanDescription;
-
-description.querySelectorAll("a").forEach(link => {
-  link.target = "_blank";
-  link.rel = "noopener noreferrer";
-});
-
-        li.appendChild(description);
 
       }
 

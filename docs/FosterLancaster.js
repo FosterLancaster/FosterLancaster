@@ -392,3 +392,20 @@ if (cleanDescription) {
 
   li.appendChild(description);
 }
+
+// Add completed post to the feed
+feedList.appendChild(li);
+
+}); // end items.forEach
+
+} catch (error) {
+  console.error("Sup feed failed:", error);
+
+  feedList.innerHTML = `
+    <li>
+      Sup feed could not load.
+    </li>
+  `;
+}
+
+} // end loadSup

@@ -98,13 +98,21 @@ li {
   max-width: 100%;
   text-align: center;
   position: relative;
-  pointer-events: auto;
   border: solid 1px #ffffff;
   background-image: url('fmp3simages/WaterChat.png');
   background-size: 20px 10px;
   background-position: center calc(100% - 10px);
   background-repeat: repeat-x;
   transition-duration: .5s;
+}
+li a {
+  color: #c2b022;
+  text-decoration: none;
+  transition-duration: .5s;
+  pointer-events: auto;
+}
+li a:hover {
+  color: #ffff00;
 }
 .love {
   height: 45px;

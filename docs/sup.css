@@ -252,8 +252,17 @@ li a:hover {
   display: block !important;
   margin: 0 !important;
   padding: 0 !important;
-  line-height: 0 !important;
-  font-size: 0 !important;
+  line-height: 1.7em !important;
+  font-size: 1em !important;
+  position: relative;
+  z-index: 10;
+  pointer-events: auto !important;
+}
+.feedDescription a {
+  position: relative;
+  z-index: 11;
+  pointer-events: auto !important;
+  cursor: pointer !important;
 }
 .youtubeEmbed {
   display: block !important;

@@ -1,6 +1,159 @@
-//Sup Embed
+// Show Sup
 
-document.addEventListener("DOMContentLoaded", loadSup);
+let supLoaded = false;
+let supLoading = false;
+
+
+// ------------------------------------
+// LOAD SUP ON PAGE LOAD
+// ------------------------------------
+
+window.addEventListener("load", function() {
+
+  if (!supLoaded && !supLoading) {
+    loadSup();
+  }
+
+});
+
+// ------------------------------------
+// ESCAPE HTML
+// ------------------------------------
+
+function escapeHTML(text) {
+
+  return String(text)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+
+}
+
+
+// ------------------------------------
+// MAKE LINKS + YOUTUBE CLICKABLE
+// ------------------------------------
+
+function makeLinksClickable(text) {
+
+  if (!text) return "";
+
+  // YouTube URLs
+  const youtubePattern =
+    /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/gi;
+
+
+  // Convert YouTube URLs into embeds FIRST
+  text = text.replace(
+    youtubePattern,
+    function(match, videoID) {
+
+      return `
+        <div class="youtubeEmbed">
+
+          <iframe
+            src="https://www.youtube.com/embed/${videoID}?rel=0"
+            title="YouTube video"
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share
+            "
+            allowfullscreen>
+          </iframe>
+
+        </div>
+      `;
+
+    }
+  );
+
+
+  // Separate YouTube embeds from normal text
+  const parts = text.split(
+    /(<div class="youtubeEmbed">[\s\S]*?<\/div>)/gi
+  );
+
+
+  return parts.map(function(part) {
+
+    // Don't escape the YouTube embed HTML
+    if (
+      part.toLowerCase().includes(
+        '<div class="youtubeembed">'
+      )
+    ) {
+
+      return part;
+
+    }
+
+
+    // Escape normal text
+    const escapedText = escapeHTML(part);
+
+
+    // Detect normal URLs
+    const urlPattern =
+      /(?:https?:\/\/|www\.)[^\s<]+/gi;
+
+
+    return escapedText.replace(
+      urlPattern,
+      function(url) {
+
+        // Remove punctuation from end of URL
+        const punctuationMatch =
+          url.match(/[.,!?;:)\]]+$/);
+
+
+        const punctuation =
+          punctuationMatch
+            ? punctuationMatch[0]
+            : "";
+
+
+        const cleanURL =
+          punctuation
+            ? url.slice(
+                0,
+                -punctuation.length
+              )
+            : url;
+
+
+        const href =
+          cleanURL.startsWith("www.")
+            ? `https://${cleanURL}`
+            : cleanURL;
+
+
+        return `
+          <a
+            href="${href}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >${cleanURL}</a>${punctuation}
+        `;
+
+      }
+    );
+
+  }).join("");
+
+}
+
+
+// ------------------------------------
+// LOAD SUP
+// ------------------------------------
 
 async function loadSup() {
 
@@ -27,20 +180,30 @@ async function loadSup() {
 
   }
 
+
   try {
+
+    // --------------------------------
+    // FETCH RSS
+    // --------------------------------
 
     const response = await fetch(
       "https://fostsup.fostmp3s.workers.dev/",
-      { cache: "no-store" }
+      {
+        cache: "no-store"
+      }
     );
 
-   if (!response.ok) {
+
+    if (!response.ok) {
 
       throw new Error(
         `Sup request failed: ${response.status}`
       );
 
     }
+
+
     // --------------------------------
     // GET RSS TEXT
     // --------------------------------

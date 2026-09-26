@@ -192,12 +192,10 @@ async function loadSup() {
 
       }
 
-
-      // --------------------------------
-      // CLEAN DESCRIPTION
-      // --------------------------------
-
+// --------------------------------
 // DESCRIPTION
+// --------------------------------
+
 if (cleanDescription) {
 
   const description =
@@ -206,10 +204,10 @@ if (cleanDescription) {
   description.className =
     "feedDescription";
 
-  // Preserve the HTML from the RSS
+  // Preserve existing HTML, including existing anchors
   description.innerHTML = cleanDescription;
 
-  // Find text nodes that are NOT already links
+  // Find text that isn't already inside an anchor
   const walker = document.createTreeWalker(
     description,
     NodeFilter.SHOW_TEXT
@@ -221,13 +219,12 @@ if (cleanDescription) {
 
     const node = walker.currentNode;
 
-    // Leave existing <a> tags completely alone
     if (!node.parentElement.closest("a")) {
       textNodes.push(node);
     }
   }
 
-  // Turn plain URLs into links
+  // Convert plain URLs to anchors
   textNodes.forEach(node => {
 
     const text = node.nodeValue;
@@ -258,7 +255,7 @@ if (cleanDescription) {
     node.replaceWith(...span.childNodes);
   });
 
-  // Configure existing AND newly-created anchors
+  // Existing anchors + newly created anchors
   description.querySelectorAll("a").forEach(link => {
     link.target = "_blank";
     link.rel = "noopener noreferrer";
@@ -268,6 +265,48 @@ if (cleanDescription) {
 
   li.appendChild(description);
 }
+
+
+// --------------------------------
+// CLEAN DESCRIPTION
+// --------------------------------
+
+const textDiv =
+  document.createElement("div");
+
+textDiv.innerHTML =
+  rawContent;
+
+// Remove media because it is displayed separately
+textDiv.querySelectorAll(
+  "img, iframe, video, script, style, blockquote.tiktok-embed"
+).forEach(el => el.remove());
+
+let cleanDescription =
+  textDiv.innerHTML || "";
+
+cleanDescription =
+  cleanDescription
+    .replace(/\s+/g, " ")
+    .replace(/^undefined$/i, "")
+    .trim();
+
+// Remove YouTube URLs
+cleanDescription =
+  cleanDescription.replace(
+    /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)[a-zA-Z0-9_-]{11}[^\s]*/gi,
+    ""
+  );
+
+// Remove TikTok URLs
+cleanDescription =
+  cleanDescription.replace(
+    /(?:https?:\/\/)?(?:www\.)?tiktok\.com\/@[^\s\/]+\/video\/\d+[^\s]*/gi,
+    ""
+  );
+
+cleanDescription =
+  cleanDescription.trim();
 
       // --------------------------------
       // CREATE POST

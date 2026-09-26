@@ -35,15 +35,16 @@ body {
   overflow-y: hidden;
   animation: Lift 4.5s linear 0s forwards;
 }
- .Sup2Content {
+.Sup2Content {
   position: relative;
-  top: 7dvh;
-  height: 93dvh;
-  min-height: 500px;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
   border: none;
-  overflow: scroll;
-  border-radius: 0px;
- }
+  border-radius: 0;
+  padding-top: 7dvh;
+  box-sizing: border-box;
+}
  .Sup2Posts {
   background-color: transparent;
 }
@@ -55,13 +56,11 @@ body {
 <div class="MyBackground"></div>
 
 <header><img src="images/NameLogo.png" class="headername" alt="Foster Lancaster" title="Foster Lancaster"></header>
+
 <!------Chat------->
-      <div class="Sup2Content">
+<div class="Sup2Content">
       <div class="Sup2Inner">
         <div class="Sup2Header">
-          <div style="position: relative; z-index: 1;">
-</div>
-
 
 <div align="center" style="margin: 0px 0px 0px 7.5px; height: 48px; border-collapse: collapse;">
   <img src="fmp3simages/Sup.png"
@@ -155,15 +154,14 @@ body {
   </ul>
 </div>
   
-  </div>
-  </div>
-  </div>
-  
-  
+
   </td>
   </table>
   </div>
-
+</div>
+</div>
+</div>
+</div>
 
 <footer>
 <div class="LinkMenu">

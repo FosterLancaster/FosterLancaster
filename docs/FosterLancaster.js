@@ -197,48 +197,73 @@ async function loadSup() {
       // CLEAN DESCRIPTION
       // --------------------------------
 
-      const textDiv =
-        document.createElement("div");
+// DESCRIPTION
+if (cleanDescription) {
 
-      textDiv.innerHTML =
-        rawContent;
+  const description =
+    document.createElement("div");
 
+  description.className =
+    "feedDescription";
 
-      // Remove media because we're
-      // displaying it separately
-      textDiv.querySelectorAll(
-        "img, iframe, video, script, style, blockquote.tiktok-embed"
-      ).forEach(el => el.remove());
+  // Keep existing HTML links
+  description.innerHTML = cleanDescription;
 
+  // Convert plain-text URLs into clickable links
+  const walker = document.createTreeWalker(
+    description,
+    NodeFilter.SHOW_TEXT
+  );
 
-      let cleanDescription = textDiv.innerHTML || "";
+  const textNodes = [];
 
-      cleanDescription =
-        cleanDescription
-          .replace(/\s+/g, " ")
-          .replace(/^undefined$/i, "")
-          .trim();
+  while (walker.nextNode()) {
+    // Don't alter text that's already inside an <a>
+    if (!walker.currentNode.parentElement.closest("a")) {
+      textNodes.push(walker.currentNode);
+    }
+  }
 
+  textNodes.forEach(node => {
 
-      // Remove YouTube URLs
-      cleanDescription =
-        cleanDescription.replace(
-          /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)[a-zA-Z0-9_-]{11}[^\s]*/gi,
-          ""
-        );
+    const text = node.nodeValue;
 
+    const urlPattern =
+      /(?:https?:\/\/|www\.)[^\s<]+/gi;
 
-      // Remove TikTok URLs
-      cleanDescription =
-        cleanDescription.replace(
-          /(?:https?:\/\/)?(?:www\.)?tiktok\.com\/@[^\/\s]+\/video\/\d+[^\s]*/gi,
-          ""
-        );
+    if (!urlPattern.test(text)) return;
 
+    urlPattern.lastIndex = 0;
 
-      cleanDescription =
-        cleanDescription.trim();
+    const span = document.createElement("span");
 
+    span.innerHTML = text.replace(
+      urlPattern,
+      url => {
+
+        const href =
+          url.startsWith("www.")
+            ? `https://${url}`
+            : url;
+
+        return `<a href="${href}" target="_blank" rel="noopener noreferrer">${url}</a>`;
+      }
+    );
+
+    node.replaceWith(...span.childNodes);
+
+  });
+
+  // Make ALL links clickable
+  description.querySelectorAll("a").forEach(link => {
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.style.pointerEvents = "auto";
+    link.style.cursor = "pointer";
+  });
+
+  li.appendChild(description);
+}
 
       // --------------------------------
       // CREATE POST

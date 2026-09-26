@@ -4,11 +4,27 @@ document.addEventListener("DOMContentLoaded", loadSup);
 
 async function loadSup() {
 
-  const feedList = document.getElementById("feed");
+  // Prevent two requests at the same time
+  if (supLoading) return;
+
+
+  supLoading = true;
+
+
+  const feedList =
+    document.getElementById("feed");
+
 
   if (!feedList) {
-    console.error("Sup feed #feed not found.");
+
+    console.error(
+      "Sup feed element #feed was not found."
+    );
+
+    supLoading = false;
+
     return;
+
   }
 
   try {
@@ -18,409 +34,446 @@ async function loadSup() {
       { cache: "no-store" }
     );
 
-    if (!response.ok) {
-      throw new Error(`Sup request failed: ${response.status}`);
+   if (!response.ok) {
+
+      throw new Error(
+        `Sup request failed: ${response.status}`
+      );
+
+    }
+    // --------------------------------
+    // GET RSS TEXT
+    // --------------------------------
+
+    const str =
+      await response.text();
+
+
+    // --------------------------------
+    // PARSE RSS XML
+    // --------------------------------
+
+    const parser =
+      new DOMParser();
+
+
+    const xml =
+      parser.parseFromString(
+        str,
+        "application/xml"
+      );
+
+
+    // Make sure XML parsed correctly
+    const parserError =
+      xml.querySelector("parsererror");
+
+
+    if (parserError) {
+
+      throw new Error(
+        "Invalid Sup RSS response"
+      );
+
     }
 
-    const rssText = await response.text();
 
-    const parser = new DOMParser();
+    // --------------------------------
+    // GET POSTS
+    // --------------------------------
 
-    const xml = parser.parseFromString(
-      rssText,
-      "application/xml"
-    );
+    const items =
+      xml.querySelectorAll("item");
 
-    if (xml.querySelector("parsererror")) {
-      throw new Error("Invalid RSS response");
+
+    if (!items.length) {
+
+      throw new Error(
+        "Sup feed contained no posts"
+      );
+
     }
 
-    const items = xml.querySelectorAll("item");
 
+    // Remove old posts before rebuilding
     feedList.innerHTML = "";
+
+
+    // --------------------------------
+    // BUILD EACH POST
+    // --------------------------------
 
     items.forEach(item => {
 
-      // --------------------------------
-      // TITLE
-      // --------------------------------
+  const title =
+    item.querySelector("title")?.textContent?.trim() || "";
 
-      const title =
-        item.querySelector("title")
-          ?.textContent
-          ?.trim() || "";
+  const contentEncoded =
+    item.getElementsByTagName("content:encoded")[0]?.textContent || "";
 
+  const rawDescription =
+    item.querySelector("description")?.textContent || "";
 
-      // --------------------------------
-      // RSS CONTENT
-      // --------------------------------
 
-      const contentEncoded =
-        item.getElementsByTagName(
-          "content:encoded"
-        )[0]?.textContent || "";
+  // ------------------------------------
+  // USE CONTENT:ENCODED WHEN AVAILABLE
+  // ------------------------------------
 
-      const rawDescription =
-        item.querySelector("description")
-          ?.textContent || "";
+  const rawContent =
+    contentEncoded || rawDescription;
 
-      const rawContent =
-        contentEncoded || rawDescription;
 
-
-      // --------------------------------
-      // PARSE POST HTML
-      // --------------------------------
-
-      const contentDiv =
-        document.createElement("div");
-
-      contentDiv.innerHTML =
-        contentEncoded;
-
-
-      const descriptionDiv =
-        document.createElement("div");
-
-      descriptionDiv.innerHTML =
-        rawDescription;
-
-
-      // --------------------------------
-      // ACTUAL POST IMAGE
-      // --------------------------------
-
-      const contentImage =
-        contentDiv.querySelector("img");
-
-      const descriptionImage =
-        descriptionDiv.querySelector("img");
-
-      const image =
-        contentImage?.getAttribute("src") ||
-        descriptionImage?.getAttribute("src") ||
-        "";
-
-
-      // --------------------------------
-      // YOUTUBE
-      // --------------------------------
-
-      let youtubeID = "";
-
-
-      // Embedded iframe
-      const youtubeIframe =
-        contentDiv.querySelector(
-          'iframe[src*="youtube.com"], iframe[src*="youtu.be"]'
-        ) ||
-        descriptionDiv.querySelector(
-          'iframe[src*="youtube.com"], iframe[src*="youtu.be"]'
-        );
-
-
-      if (youtubeIframe) {
-
-        const src =
-          youtubeIframe.getAttribute("src") || "";
-
-        const match =
-          src.match(
-            /youtube\.com\/embed\/([a-zA-Z0-9_-]{11})/
-          );
-
-        if (match) {
-          youtubeID = match[1];
-        }
-
-      }
-
-
-      // Normal YouTube link
-      if (!youtubeID) {
-
-        const match =
-          rawContent.match(
-            /(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/i
-          );
-
-        if (match) {
-          youtubeID = match[1];
-        }
-
-      }
-
-
-      // --------------------------------
-      // TIKTOK
-      // --------------------------------
-
-      let tiktokID = "";
-
-
-      const tiktokMatch =
-        rawContent.match(
-          /(?:https?:\/\/)?(?:www\.)?tiktok\.com\/@[^\/\s"'<>]+\/video\/(\d+)/i
-        );
-
-
-      if (tiktokMatch) {
-        tiktokID = tiktokMatch[1];
-      }
-
-
-      // TikTok blockquote embed
-      if (!tiktokID) {
-
-        const tiktokBlockquote =
-          contentDiv.querySelector(
-            "blockquote.tiktok-embed"
-          ) ||
-          descriptionDiv.querySelector(
-            "blockquote.tiktok-embed"
-          );
-
-
-        if (tiktokBlockquote) {
-
-          tiktokID =
-            tiktokBlockquote.getAttribute(
-              "data-video-id"
-            ) || "";
-
-        }
-
-      }
-
-// --------------------------------
-// CLEAN DESCRIPTION
-// --------------------------------
-
-const textDiv =
-  document.createElement("div");
-
-textDiv.innerHTML =
-  rawContent;
-
-// Remove media because it is displayed separately
-textDiv.querySelectorAll(
-  "img, iframe, video, script, style, blockquote.tiktok-embed"
-).forEach(el => el.remove());
-
-let cleanDescription =
-  textDiv.innerHTML || "";
-
-cleanDescription =
-  cleanDescription
-    .replace(/\s+/g, " ")
-    .replace(/^undefined$/i, "")
-    .trim();
-
-// Remove YouTube URLs
-cleanDescription =
-  cleanDescription.replace(
-    /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)[a-zA-Z0-9_-]{11}[^\s]*/gi,
-    ""
-  );
-
-// Remove TikTok URLs
-cleanDescription =
-  cleanDescription.replace(
-    /(?:https?:\/\/)?(?:www\.)?tiktok\.com\/@[^\s\/]+\/video\/\d+[^\s]*/gi,
-    ""
-  );
-
-cleanDescription =
-  cleanDescription.trim();
-
-      // --------------------------------
-      // CREATE POST
-      // --------------------------------
-
-      const li =
-        document.createElement("li");
-
-
-      // IMAGE
-      if (image) {
-
-        const img =
-          document.createElement("img");
-
-        img.src = image;
-        img.alt = "";
-        img.loading = "lazy";
-
-        img.style.width = "100%";
-        img.style.height = "auto";
-        img.style.display = "block";
-
-        li.appendChild(img);
-
-      }
-
-
-      // YOUTUBE
-      if (youtubeID) {
-
-        const youtube =
-          document.createElement("div");
-
-        youtube.className =
-          "youtubeEmbed";
-
-        youtube.innerHTML = `
-          <iframe
-            src="https://www.youtube.com/embed/${youtubeID}?rel=0"
-            title="YouTube video"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-        `;
-
-        li.appendChild(youtube);
-
-      }
-
-
-      // TIKTOK
-      if (tiktokID) {
-
-        const tiktok =
-          document.createElement("div");
-
-        tiktok.className =
-          "tiktokEmbed";
-
-        tiktok.innerHTML = `
-          <iframe
-            src="https://www.tiktok.com/player/v1/${tiktokID}"
-            title="TikTok video"
-            allow="fullscreen"
-            allowfullscreen>
-          </iframe>
-        `;
-
-        li.appendChild(tiktok);
-
-      }
-
-
-      // TITLE
-const titleDiv =
-  document.createElement("div");
-
-titleDiv.className =
-  "feedTitle";
-
-titleDiv.textContent =
-  title;
-
-li.appendChild(titleDiv);
-
-// --------------------------------
-// DESCRIPTION
-// --------------------------------
-
-if (cleanDescription) {
-
-  const description =
+  const tempDiv =
     document.createElement("div");
 
-  description.className =
-    "feedDescription";
+  tempDiv.innerHTML = rawContent;
 
-  // Keep HTML already supplied by the feed
-  description.innerHTML = cleanDescription;
 
-  // Find plain text that is not already inside a link
-  const walker = document.createTreeWalker(
-    description,
-    NodeFilter.SHOW_TEXT
+  // ------------------------------------
+  // FIND IMAGE
+  // ------------------------------------
+
+  const enclosure =
+    item.querySelector("enclosure");
+
+
+  const mediaContent =
+    item.getElementsByTagName(
+      "media:content"
+    )[0];
+
+
+  const htmlImage =
+    tempDiv.querySelector("img");
+
+
+const image =
+  htmlImage?.getAttribute("src") ||
+  "";
+
+
+  // ------------------------------------
+  // FIND YOUTUBE VIDEO
+  // ------------------------------------
+
+// ------------------------------------
+// FIND YOUTUBE VIDEO
+// ------------------------------------
+
+let youtubeID = "";
+
+
+// Check iframe first
+const youtubeIframe =
+  tempDiv.querySelector(
+    'iframe[src*="youtube.com"], iframe[src*="youtu.be"]'
   );
 
-  const textNodes = [];
+if (youtubeIframe) {
 
-  while (walker.nextNode()) {
+  const youtubeSrc =
+    youtubeIframe.getAttribute("src") || "";
 
-    const node = walker.currentNode;
-
-    if (!node.parentElement.closest("a")) {
-      textNodes.push(node);
-    }
-  }
-
-  // Turn plain URLs into clickable links
-  textNodes.forEach(node => {
-
-    const text = node.nodeValue;
-
-    const urlPattern =
-      /(?:https?:\/\/|www\.)[^\s<]+/gi;
-
-    if (!urlPattern.test(text)) return;
-
-    urlPattern.lastIndex = 0;
-
-    const span =
-      document.createElement("span");
-
-    span.innerHTML = text.replace(
-      urlPattern,
-      url => {
-
-        const href =
-          url.startsWith("www.")
-            ? `https://${url}`
-            : url;
-
-        return `<a href="${href}" target="_blank" rel="noopener noreferrer">${url}</a>`;
-      }
+  const embedMatch =
+    youtubeSrc.match(
+      /youtube\.com\/embed\/([a-zA-Z0-9_-]{11})/
     );
 
-    node.replaceWith(...span.childNodes);
-  });
-description.querySelectorAll("a").forEach(link => {
-
-  let href = link.getAttribute("href");
-
-  if (!href) return;
-
-  href = href.trim();
-
-  if (href.startsWith("www.")) {
-    href = "https://" + href;
+  if (embedMatch) {
+    youtubeID = embedMatch[1];
   }
-
-  link.href = href;
-  link.target = "_blank";
-  link.rel = "noopener noreferrer";
-
-  link.style.pointerEvents = "auto";
-  link.style.cursor = "pointer";
-
-});
-
-  li.appendChild(description);
-
-} // end if cleanDescription
-
-// finally add the whole post
-feedList.appendChild(li);
-
-}); // end items.forEach
-
-} catch (error) {
-
-  console.error("Sup feed failed:", error);
-
-  feedList.innerHTML = `
-    <li>
-      Sup feed could not load.
-    </li>
-  `;
 
 }
 
-} // end loadSup
+
+// Check normal YouTube URL
+if (!youtubeID) {
+
+  const youtubeMatch =
+    rawContent.match(
+      /(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/i
+    );
+
+  if (youtubeMatch) {
+    youtubeID = youtubeMatch[1];
+  }
+
+}
+
+
+// ------------------------------------
+// FIND TIKTOK VIDEO
+// ------------------------------------
+
+let tiktokID = "";
+
+
+// Look for a normal TikTok video URL
+const tiktokMatch =
+  rawContent.match(
+    /(?:https?:\/\/)?(?:www\.)?tiktok\.com\/@[^\/\s"'<>]+\/video\/(\d+)/i
+  );
+
+if (tiktokMatch) {
+  tiktokID = tiktokMatch[1];
+}
+
+
+// Also check TikTok blockquote embeds
+if (!tiktokID) {
+
+  const tiktokBlockquote =
+    tempDiv.querySelector(
+      'blockquote.tiktok-embed'
+    );
+
+  if (tiktokBlockquote) {
+
+    const videoID =
+      tiktokBlockquote.getAttribute(
+        "data-video-id"
+      );
+
+    if (videoID) {
+      tiktokID = videoID;
+    }
+
+  }
+
+}
+
+  // ------------------------------------
+  // ALSO LOOK FOR YOUTUBE URL
+  // ------------------------------------
+
+  if (!youtubeID) {
+
+    const youtubeMatch =
+      rawContent.match(
+        /(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/i
+      );
+
+
+    if (youtubeMatch) {
+      youtubeID = youtubeMatch[1];
+    }
+
+  }
+
+
+  // ------------------------------------
+  // CLEAN DESCRIPTION
+  // ------------------------------------
+
+  // Remove media because we're displaying it separately
+  tempDiv
+    .querySelectorAll(
+      "img, iframe, video, script, style"
+    )
+    .forEach(el => el.remove());
+
+
+  let cleanDescription =
+    tempDiv.textContent ||
+    tempDiv.innerText ||
+    "";
+
+
+  cleanDescription =
+    cleanDescription
+      .replace(/\s+/g, " ")
+      .replace(/^undefined$/i, "")
+      .trim();
+
+
+  if (
+    !cleanDescription ||
+    cleanDescription === "undefined" ||
+    cleanDescription === "null"
+  ) {
+    cleanDescription = "";
+  }
+
+
+  // ------------------------------------
+  // REMOVE YOUTUBE URL FROM TEXT
+  // ------------------------------------
+
+  cleanDescription =
+    cleanDescription.replace(
+      /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)[a-zA-Z0-9_-]{11}[^\s]*/gi,
+      ""
+    ).trim();
+
+
+  // ------------------------------------
+  // CLICKABLE LINKS
+  // ------------------------------------
+
+  const linkedDescription =
+    makeLinksClickable(cleanDescription);
+
+
+  const linkedTitle =
+    makeLinksClickable(title);
+
+
+  // ------------------------------------
+  // CREATE POST
+  // ------------------------------------
+
+  const li =
+    document.createElement("li");
+
+
+  li.innerHTML = `
+
+    ${
+      image
+        ? `
+          <img
+            src="${image}"
+            style="
+              width: 100%;
+              max-width: 100%;
+              height: auto;
+              display: block;
+              margin: 0;
+            "
+            alt=""
+          >
+        `
+        : ""
+    }
+
+
+    ${
+      youtubeID
+        ? `
+          <div class="youtubeEmbed">
+
+            <iframe
+              src="https://www.youtube.com/embed/${youtubeID}?rel=0"
+              title="YouTube video"
+              frameborder="0"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                web-share
+              "
+              allowfullscreen>
+            </iframe>
+
+          </div>
+        `
+        : ""
+    }
+
+
+    ${
+      cleanDescription.length > 0
+        ? `
+          <div class="feedDescription">
+            ${linkedDescription}
+          </div>
+        `
+        : ""
+    }
+
+
+    <div class="feedTitle">
+      ${linkedTitle}
+    </div>
+
+
+    <div class="love">
+
+      <table>
+        <tr>
+
+          <td>
+
+            <a
+              href="mailto:foster@fostmp3s.com"
+              target="_blank"
+            >
+
+              <div
+                class="postbutton postreact"
+                title="Send Message">
+              </div>
+
+            </a>
+
+          </td>
+
+
+          <td>
+
+            <a
+              href="https://fostmp3s.com/pw"
+              target="_blank"
+            >
+
+              <div
+                class="postbutton postbuy"
+                title="Buy Password">
+              </div>
+
+            </a>
+
+          </td>
+
+        </tr>
+      </table>
+
+    </div>
+
+  `;
+
+  feedList.appendChild(li);
+
+});
+
+
+    // --------------------------------
+    // SUCCESS
+    // --------------------------------
+
+    supLoaded = true;
+
+
+  } catch (err) {
+
+
+    // --------------------------------
+    // ERROR
+    // --------------------------------
+
+    console.error(
+      "Error loading Sup:",
+      err
+    );
+
+
+    supLoaded = false;
+
+
+  } finally {
+
+
+    // --------------------------------
+    // ALLOW ANOTHER ATTEMPT
+    // --------------------------------
+
+    supLoading = false;
+
+
+  }
+
+
+}

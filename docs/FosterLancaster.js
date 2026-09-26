@@ -211,11 +211,7 @@ async function loadSup() {
       ).forEach(el => el.remove());
 
 
-      let cleanDescription =
-        textDiv.textContent ||
-        textDiv.innerText ||
-        "";
-
+      let cleanDescription = textDiv.innerHTML || "";
 
       cleanDescription =
         cleanDescription
@@ -327,10 +323,12 @@ async function loadSup() {
         description.className =
           "feedDescription";
 
-        description.innerHTML =
-          makeLinksClickable(
-            cleanDescription
-          );
+description.innerHTML = cleanDescription;
+
+description.querySelectorAll("a").forEach(link => {
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+});
 
         li.appendChild(description);
 

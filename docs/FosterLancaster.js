@@ -403,12 +403,16 @@ description.querySelectorAll("a").forEach(link => {
 });
 
   li.appendChild(description);
-}
+
+} // end if cleanDescription
 
 // finally add the whole post
 feedList.appendChild(li);
 
+}); // end items.forEach
+
 } catch (error) {
+
   console.error("Sup feed failed:", error);
 
   feedList.innerHTML = `
@@ -416,6 +420,7 @@ feedList.appendChild(li);
       Sup feed could not load.
     </li>
   `;
+
 }
 
 } // end loadSup

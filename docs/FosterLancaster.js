@@ -381,43 +381,32 @@ if (cleanDescription) {
 
     node.replaceWith(...span.childNodes);
   });
-
-  // Make both original and generated links clickable
-// Make both original and generated links clickable
 description.querySelectorAll("a").forEach(link => {
 
   let href = link.getAttribute("href");
 
   if (!href) return;
 
-  // Fix www links
+  href = href.trim();
+
   if (href.startsWith("www.")) {
     href = "https://" + href;
   }
 
-  link.setAttribute("href", href);
-  link.setAttribute("target", "_blank");
-  link.setAttribute("rel", "noopener noreferrer");
+  link.href = href;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
 
   link.style.pointerEvents = "auto";
   link.style.cursor = "pointer";
 
-  // Force navigation instead of depending on normal anchor handling
-  link.addEventListener("click", function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-
-    window.open(this.href, "_blank", "noopener,noreferrer");
-  });
 });
 
   li.appendChild(description);
 }
 
-// Add completed post to the feed
+// finally add the whole post
 feedList.appendChild(li);
-
-}); // end items.forEach
 
 } catch (error) {
   console.error("Sup feed failed:", error);

@@ -193,81 +193,6 @@ async function loadSup() {
       }
 
 // --------------------------------
-// DESCRIPTION
-// --------------------------------
-
-if (cleanDescription) {
-
-  const description =
-    document.createElement("div");
-
-  description.className =
-    "feedDescription";
-
-  // Preserve existing HTML, including existing anchors
-  description.innerHTML = cleanDescription;
-
-  // Find text that isn't already inside an anchor
-  const walker = document.createTreeWalker(
-    description,
-    NodeFilter.SHOW_TEXT
-  );
-
-  const textNodes = [];
-
-  while (walker.nextNode()) {
-
-    const node = walker.currentNode;
-
-    if (!node.parentElement.closest("a")) {
-      textNodes.push(node);
-    }
-  }
-
-  // Convert plain URLs to anchors
-  textNodes.forEach(node => {
-
-    const text = node.nodeValue;
-
-    const urlPattern =
-      /(?:https?:\/\/|www\.)[^\s<]+/gi;
-
-    if (!urlPattern.test(text)) return;
-
-    urlPattern.lastIndex = 0;
-
-    const span =
-      document.createElement("span");
-
-    span.innerHTML = text.replace(
-      urlPattern,
-      url => {
-
-        const href =
-          url.startsWith("www.")
-            ? `https://${url}`
-            : url;
-
-        return `<a href="${href}" target="_blank" rel="noopener noreferrer">${url}</a>`;
-      }
-    );
-
-    node.replaceWith(...span.childNodes);
-  });
-
-  // Existing anchors + newly created anchors
-  description.querySelectorAll("a").forEach(link => {
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.style.pointerEvents = "auto";
-    link.style.cursor = "pointer";
-  });
-
-  li.appendChild(description);
-}
-
-
-// --------------------------------
 // CLEAN DESCRIPTION
 // --------------------------------
 
@@ -383,154 +308,87 @@ cleanDescription =
 
 
       // TITLE
-      const titleDiv =
-        document.createElement("div");
+const titleDiv =
+  document.createElement("div");
 
-      titleDiv.className =
-        "feedTitle";
+titleDiv.className =
+  "feedTitle";
 
-      titleDiv.textContent =
-        title;
+titleDiv.textContent =
+  title;
 
-      li.appendChild(titleDiv);
+li.appendChild(titleDiv);
 
+// --------------------------------
+// DESCRIPTION
+// --------------------------------
 
-      // --------------------------------
-      // BUTTONS
-      // --------------------------------
+if (cleanDescription) {
 
-      const love =
-        document.createElement("div");
+  const description =
+    document.createElement("div");
 
-      love.className = "love";
+  description.className =
+    "feedDescription";
 
-      love.innerHTML = `
-        <table>
-          <tr>
+  // Keep HTML already supplied by the feed
+  description.innerHTML = cleanDescription;
 
-            <td>
-              <a
-                href="mailto:foster@fostmp3s.com"
-                target="_blank">
-
-                <div
-                  class="postbutton postreact"
-                  title="Send Message">
-                </div>
-
-              </a>
-            </td>
-
-            <td>
-              <a
-                href="https://fostmp3s.com/pw"
-                target="_blank">
-
-                <div
-                  class="postbutton postbuy"
-                  title="Buy Password">
-                </div>
-
-              </a>
-            </td>
-
-          </tr>
-        </table>
-      `;
-
-      li.appendChild(love);
-
-
-      // --------------------------------
-      // ADD POST
-      // --------------------------------
-
-      feedList.appendChild(li);
-
-    });
-
-  }
-
-  catch (err) {
-
-    console.error(
-      "Error loading Sup:",
-      err
-    );
-
-  }
-
-}
-
-
-// ------------------------------------
-// CLICKABLE NORMAL LINKS
-// ------------------------------------
-
-function makeLinksClickable(text) {
-
-  const escaped =
-    escapeHTML(text);
-
-
-  const urlPattern =
-    /(?:https?:\/\/|www\.)[^\s<]+/gi;
-
-
-  return escaped.replace(
-    urlPattern,
-    function(url) {
-
-      const punctuationMatch =
-        url.match(/[.,!?;:)\]]+$/);
-
-
-      const punctuation =
-        punctuationMatch
-          ? punctuationMatch[0]
-          : "";
-
-
-      const cleanURL =
-        punctuation
-          ? url.slice(
-              0,
-              -punctuation.length
-            )
-          : url;
-
-
-      const href =
-        cleanURL.startsWith("www.")
-          ? `https://${cleanURL}`
-          : cleanURL;
-
-
-      return `
-        <a
-          href="${href}"
-          target="_blank"
-          rel="noopener noreferrer"
-        >${cleanURL}</a>${punctuation}
-      `;
-
-    }
+  // Find plain text that is not already inside a link
+  const walker = document.createTreeWalker(
+    description,
+    NodeFilter.SHOW_TEXT
   );
 
-}
+  const textNodes = [];
 
+  while (walker.nextNode()) {
 
-// ------------------------------------
-// ESCAPE HTML
-// ------------------------------------
+    const node = walker.currentNode;
 
-function escapeHTML(text) {
+    if (!node.parentElement.closest("a")) {
+      textNodes.push(node);
+    }
+  }
 
-  return String(text)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
+  // Turn plain URLs into clickable links
+  textNodes.forEach(node => {
 
+    const text = node.nodeValue;
+
+    const urlPattern =
+      /(?:https?:\/\/|www\.)[^\s<]+/gi;
+
+    if (!urlPattern.test(text)) return;
+
+    urlPattern.lastIndex = 0;
+
+    const span =
+      document.createElement("span");
+
+    span.innerHTML = text.replace(
+      urlPattern,
+      url => {
+
+        const href =
+          url.startsWith("www.")
+            ? `https://${url}`
+            : url;
+
+        return `<a href="${href}" target="_blank" rel="noopener noreferrer">${url}</a>`;
+      }
+    );
+
+    node.replaceWith(...span.childNodes);
+  });
+
+  // Make both original and generated links clickable
+  description.querySelectorAll("a").forEach(link => {
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.style.pointerEvents = "auto";
+    link.style.cursor = "pointer";
+  });
+
+  li.appendChild(description);
 }

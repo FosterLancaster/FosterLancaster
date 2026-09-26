@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>fostmp3s</title>
+<link rel="shortcut icon" href="images/FLFavicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="keywords" content="fostmp3s, Foster Record Company, foster lancaster">
+<meta name="author" content="Fost Records">
+<meta name="description" content="Official website of fostmp3s" />
+
+<meta property="og:type" content="website">
+<meta property="og:logo" content="http://fostmp3s.com/images/Mp3s.png">
+<meta property="og:url" content="http://fostmp3s.com/fostrecords">
+<meta property="og:title" content="fostmp3s | Official Website">
+<meta property="og:description" content="Official website of fostmp3s">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image" content="http://fostmp3s.com/images/fostrecordscard.jpg">
+<meta property="og:image:alt" content="Fost Records record company">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@LancasterFoster">
+<meta name="twitter:creator" content="@LancasterFoster">
+<meta name="twitter:title" content="fostmp3s | Official Website">
+<meta name="twitter:description" content="Official website of fostmp3s">
+<meta name="twitter:image" content="http://fostmp3s.com/images/fostrecordscard.jpg">
+<meta name="twitter:image:alt" content="Fost Records record company">
+<link rel="stylesheet" href="FosterLancaster.css">
+<link rel="stylesheet" href="sup2.css">
+<style>
+  body {
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+  background-color: #aeaeae;
+  background-size: 30px 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: radial-gradient(transparent, #525252);
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  color: #ffffff;
+  font-family: 'futura';
+  font-size: 1em;
+  }
+.Banner {
+  height: 100dvh;
+  width: 100vw;
+  background-image: url('images/FostRecordsBanner.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+  a, a:hover {
+    color: #000000;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  footer {
+    background-color: transparent;
+  }
+
+@media screen and (orientation: portrait)
+{
+.fostmp3slogo {
+  width: 400px;
+  max-width: 90%;
+}
+}
+@media screen and (orientation: landscape)
+{
+.fostmp3slogo {
+  width: 500px;
+  max-width: 90%;
+}
+}
+</style>
+</head>
+<body>
+<div align="center">
+<img class="fostmp3slogo" src="images/FostMp3sLogo.png">
+
+<br>
+<h1>What is fostmp3's?</h1>
+<br>
+<blockquote>
+Fostmp3s is a widget/media platform that is proprietary to Fost Records. There is a "Support Password" that increases the 18 daily listens to an infinite amount for a one time fee <a href="https://fostmp3s/pw" target="_blank">here</a>. It also has a feature called "Sup" that catalogs all of the artist's status updates.
+
+</blockquote>
+
+<iframe src="https://fosterlancaster.github.io/fostmp3s" style="width: 300px; height: 300px; border-top-left-radius: 20px; border-bottom-right-radius: 20px; min-width: 210px; min-height: 280px; max-width: 100%; max-height: 100%; border: none; display: block;" class="fostmp3s"></iframe>
+
+
+</div>
+
+<footer>
+<div class="LinkMenu">
+<a href="mailto:foster@fostmp3s.com" target="_blank">
+<img class="iconlink" title="Email" src="images/SocialMedia/Email.png"></a>
+<a href="http://fostmp3s.com/mp3s" target="_blank">
+<img class="iconlink" title="Music" src="images/SocialMedia/Mp3s.png"></a>
+<a href="http://fostmp3s.com/sup" target="_blank">
+<img title="Updates" class="iconlink" src="images/SocialMedia/Sup.png"></a>
+<a href="https://instagram.com/foster_lancaster" target="_blank">
+<img title="Instagram" class="iconlink" src="images/SocialMedia/Instagram.png"></a>   
+<a href="https://youtube.com/c/FosterLancaster" target="_blank">
+<img title="Youtube" class="iconlink" src="images/SocialMedia/Youtube.png"></a>  
+<a href="https://fosterlancaster.tumblr.com" target="_blank">
+<img title="Tumblr" class="iconlink" src="images/SocialMedia/Tumblr.png"></a> 
+<a href="https://x.com/lancasterfoster" target="_blank">
+<img title="X" class="iconlink" src="images/SocialMedia/X.png"></a>  
+<a href="https://music.apple.com/us/artist/foster-lancaster/715032739" target="_blank">
+<img title="Apple Music" class="iconlink" src="images/SocialMedia/Apple.png"></a>   
+<a href="https://fostmp3s.com/info" target="_blank">
+<img title="Information" class="iconlink" src="images/SocialMedia/Info.png"></a>  
+</div>
+  <span>
+  <a href="http://fostmp3s.com/fostrecords" target="_blank">&#169;
+  <script>document.write( new Date().getFullYear() );</script> Fost Records, All Rights Reserved.</a>
+  | <a href="http://fostmp3s.com/usage" target="_blank">Usage</a>
+  | <a href="http://fostmp3s.com/publicity" target="_blank">Publicity</a>
+  </span>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const warnings = document.querySelectorAll(".Warning");
+
+  // Hide if already dismissed
+  if (localStorage.getItem("warningDismissed") === "true") {
+    warnings.forEach(warning => {
+      warning.style.display = "none";
+    });
+  }
+
+  document.querySelectorAll(".WarningButton").forEach(button => {
+    button.addEventListener("click", function () {
+      const warning = this.closest(".Warning");
+      if (warning) {
+        warning.style.display = "none";
+        localStorage.setItem("warningDismissed", "true");
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>
+

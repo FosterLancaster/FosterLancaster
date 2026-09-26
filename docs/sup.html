@@ -85,7 +85,7 @@ body {
             <tr>
               <td>
                 <a href="https://fostmp3s.com/info" target="_blank">
-                  <div style="text-decoration: underline; color: #c2b022;" alt="Foster Lancaster" title="Foster Lancaster">
+                  <div style="text-decoration: underline; color: #ff85d6;" alt="Foster Lancaster" title="Foster Lancaster">
                     Foster Lancaster
                   </div>
                 </a>
@@ -109,7 +109,7 @@ body {
     <div
       class="totallistensnumber2 totalPlayCount"
     >?</div>
-    <div style="-webkit-text-stroke: .03em #000000; color: #d7d7d7;" alt="Total Listens" title="Total Listens">
+    <div style="margin-bottom: -2px; -webkit-text-stroke: .03em #000000; color: #d7d7d7;" alt="Total Listens" title="Total Listens">
       Total Listens
     </div>
   </div>
@@ -125,24 +125,24 @@ body {
 <a onclick="
   const body = document.querySelector('.Sup2Body');
   body.scrollTo({
-    top: 0,
+    top: body.scrollHeight,
     behavior: 'smooth'
   });
 ">
   <div class="LatestButton" style="border: solid 1px #ffffff;">
-    First or... &uarr; 
+    First or... &darr; 
   </div>
 </a>
 
 <a onclick="
   const body = document.querySelector('.Sup2Body');
   body.scrollTo({
-    top: body.scrollHeight,
+    top: 0,
     behavior: 'smooth'
   });
 ">
   <div class="LatestButton" style="border: solid 1px #ffffff;">
-    Last/after&darr;
+    Last/after &uarr;
   </div>
 </a>
 

@@ -36,7 +36,7 @@ header {
   position: fixed;
   width: calc(100% - 20px);
   padding: 0px 10px 0px 10px;
-  height: 7vh;
+  height: 7dvh;
   background-color: #813807;
   z-index: 3;
   display: inline-flex;

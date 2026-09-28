@@ -87,7 +87,7 @@ header {
   outline: none;
 }
 a {
-  color: #c2b022;
+  color: #ffffff;
   text-decoration: none;
   transition-duration: .5s;
 }
@@ -113,7 +113,7 @@ footer {
 .FooterLink {
   font-size: 3em;
   display: inline-block;
-  padding: .5em;
+  padding: .5em 0em .5em 1em;
   font-style: italic;
 }
 select { 

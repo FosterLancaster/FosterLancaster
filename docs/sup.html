@@ -209,32 +209,28 @@ const firebaseConfig = {
   appId: "1:792229622105:web:a644d281c868293b131c48"
 };
 
-
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
 
-// SAME RATE AS MAIN PLAYER
-const PLAYS_PER_6H = 12300;
 
-const RATE_PER_MS =
-  PLAYS_PER_6H / (6 * 60 * 60 * 1000);
+
+//---------------------------------------------------------------------------------------Play Rate
+const PLAYS_PER_6H = 400;
+const RATE_PER_MS = PLAYS_PER_6H / (6 * 60 * 60 * 1000);
 
 
 function calculateCurrentPlays(basePlays, lastUpdated) {
-
-  if (!lastUpdated) {
-    return basePlays;
-  }
-
-  const elapsed =
-    Math.max(0, Date.now() - lastUpdated);
+  const elapsed = Math.max(0, Date.now() - lastUpdated);
 
   return basePlays + Math.floor(
     elapsed * RATE_PER_MS
   );
 }
 
+function getToday() {
+    return new Date().toISOString().split("T")[0];
+  }
 
 function formatPlays(num) {
 
@@ -253,6 +249,28 @@ function formatPlays(num) {
   return num.toLocaleString();
 }
 
+  function getDailyBoost(songId) {
+
+    const now = new Date();
+
+    // changes every 6 hours
+    const block = Math.floor(now.getHours() / 6);
+
+    let hash = 0;
+
+    const key =
+      songId +
+      now.toISOString().split("T")[0] +
+      block;
+
+    for (let i = 0; i < key.length; i++) {
+      hash += key.charCodeAt(i);
+    }
+
+    //Play Rate Extra
+    return hash % 2 === 0 ? 120 : 0;
+
+  }
 
 const songsRef = ref(database, "songs");
 

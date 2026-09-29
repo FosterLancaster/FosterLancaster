@@ -317,26 +317,24 @@ async function getActiveSongIds() {
     );
 
 
-    const buttons =
-      doc.querySelectorAll(
-        ".songbutton[data-song-id]"
-      );
+const buttons = doc.querySelectorAll(".songbutton[data-song]");
 
+const ids = new Set();
 
-    const ids = new Set();
+buttons.forEach(button => {
 
+  const songPath = button.dataset.song;
 
-    buttons.forEach(button => {
+  if (!songPath) return;
 
-      const songId =
-        button.dataset.songId;
+  const songId = songPath
+    .replace(/^.*[\\/]/, "")   // remove folder
+    .replace(/\.[^.]+$/, "")   // remove .mp3
+    .replace(/[^a-zA-Z0-9_]/g, "_");
 
-      if (songId) {
-        ids.add(songId);
-      }
+  ids.add(songId);
 
-    });
-
+});
 
     console.log(
       "Active songs:",

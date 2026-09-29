@@ -24,7 +24,7 @@ body {
   z-index: 0;
   overflow-y: scroll;
   overflow-x: hidden;
-  background-color: #fff698;
+  background-color: #c2bfa7;
   color: #000000;
 }
 @font-face {
@@ -38,7 +38,7 @@ header {
   width: calc(100% - 20px);
   padding: 0px 10px 0px 10px;
   height: 7dvh;
-  background-color: #fff698;
+  background-color: #c2bfa7;
   z-index: 3;
   display: inline-flex;
   justify-content: right;
@@ -104,7 +104,7 @@ footer {
   padding: 10px;
   height: auto;
   position: relative;
-  background-color: #fff698;
+  background-color: #c2bfa7;
   font-family: Arial, sans-serif;
   font-size: 13px;
   line-height: 22px;

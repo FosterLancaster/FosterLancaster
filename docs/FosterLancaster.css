@@ -24,7 +24,8 @@ body {
   z-index: 0;
   overflow-y: scroll;
   overflow-x: hidden;
-  background-color: #a5846f;
+  background-color: #fff698;
+  color: #000000;
 }
 @font-face {
   font-family: 'FR';
@@ -37,7 +38,7 @@ header {
   width: calc(100% - 20px);
   padding: 0px 10px 0px 10px;
   height: 7dvh;
-  background-color: #a5846f;
+  background-color: #fff698;
   z-index: 3;
   display: inline-flex;
   justify-content: right;
@@ -54,7 +55,7 @@ header {
   position: fixed;
   top: 0px;
   left: 0px;
-  background-color: rgba(0, 0, 0, .7);
+  background-color: rgba(255, 255, 255, 0.7);
   z-index: 3;
   animation: Teach 1s linear .5s forwards;
 }
@@ -87,12 +88,12 @@ header {
   outline: none;
 }
 a {
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
   transition-duration: .5s;
 }
 a:hover {
-  color: #000000;
+  color: #057043;
 }
 h1 {
 font-size: 25px;
@@ -103,8 +104,7 @@ footer {
   padding: 10px;
   height: auto;
   position: relative;
-  color: #ffffff;
-  background-color: #a5846f;
+  background-color: #fff698;
   font-family: Arial, sans-serif;
   font-size: 13px;
   line-height: 22px;

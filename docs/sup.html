@@ -215,12 +215,19 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
 
+// --------------------------------------------------
 // SAME RATE AS MAIN PLAYER
+// --------------------------------------------------
+
 const PLAYS_PER_6H = 12300;
 
 const RATE_PER_MS =
   PLAYS_PER_6H / (6 * 60 * 60 * 1000);
 
+
+// --------------------------------------------------
+// CALCULATE CURRENT PLAYS
+// --------------------------------------------------
 
 function calculateCurrentPlays(basePlays, lastUpdated) {
 
@@ -234,8 +241,13 @@ function calculateCurrentPlays(basePlays, lastUpdated) {
   return basePlays + Math.floor(
     elapsed * RATE_PER_MS
   );
+
 }
 
+
+// --------------------------------------------------
+// FORMAT PLAY COUNT
+// --------------------------------------------------
 
 function formatPlays(num) {
 
@@ -252,28 +264,131 @@ function formatPlays(num) {
   }
 
   return num.toLocaleString();
+
 }
 
+
+// --------------------------------------------------
+// FIREBASE SONG DATA
+// --------------------------------------------------
 
 const songsRef = ref(database, "songs");
 
 let songsData = {};
-let highestTotalDisplayed = 0;
 
+
+// --------------------------------------------------
+// ACTIVE SONGS
+//
+// Reads the current song buttons directly from the
+// main fostmp3s page.
+//
+// If a song is removed from index.html, it will no
+// longer be included in Sup's total.
+//
+// If a new song is added to index.html, Sup will
+// automatically include it.
+// --------------------------------------------------
+
+let activeSongIds = new Set();
+
+
+async function getActiveSongIds() {
+
+  try {
+
+    const response = await fetch("/", {
+      cache: "no-store"
+    });
+
+    if (!response.ok) {
+      throw new Error(
+        "Main page returned " + response.status
+      );
+    }
+
+    const html = await response.text();
+
+    const parser = new DOMParser();
+
+    const doc = parser.parseFromString(
+      html,
+      "text/html"
+    );
+
+
+    const buttons =
+      doc.querySelectorAll(
+        ".songbutton[data-song-id]"
+      );
+
+
+    const ids = new Set();
+
+
+    buttons.forEach(button => {
+
+      const songId =
+        button.dataset.songId;
+
+      if (songId) {
+        ids.add(songId);
+      }
+
+    });
+
+
+    console.log(
+      "Active songs:",
+      [...ids]
+    );
+
+
+    return ids;
+
+
+  } catch (error) {
+
+    console.error(
+      "Could not load active songs:",
+      error
+    );
+
+    return new Set();
+
+  }
+
+}
+
+
+// --------------------------------------------------
+// CALCULATE TOTAL
+// --------------------------------------------------
 
 function updateCalculatedTotal() {
 
   let total = 0;
 
-  Object.values(songsData).forEach(song => {
 
-    if (!song) return;
+  activeSongIds.forEach(songId => {
+
+    const song =
+      songsData[songId];
+
+
+    // Ignore songs that aren't in Firebase
+    if (!song) {
+      return;
+    }
+
 
     const basePlays =
       Number(song.plays) || 0;
 
+
     const lastUpdated =
       Number(song.lastUpdated) || 0;
+
 
     const dailyBoost =
       Number(song.dailyBoost) || 0;
@@ -291,28 +406,38 @@ function updateCalculatedTotal() {
   });
 
 
-  // Never visually decrease
-  highestTotalDisplayed =
-    Math.max(
-      highestTotalDisplayed,
-      total
-    );
-
-
   document
     .querySelectorAll(".totalPlayCount")
     .forEach(el => {
 
       el.textContent =
-        formatPlays(highestTotalDisplayed);
+        formatPlays(total);
 
       el.title =
-        highestTotalDisplayed.toLocaleString();
+        total.toLocaleString();
 
     });
 
 }
 
+
+// --------------------------------------------------
+// LOAD ACTIVE SONG LIST
+// --------------------------------------------------
+
+async function loadActiveSongs() {
+
+  activeSongIds =
+    await getActiveSongIds();
+
+  updateCalculatedTotal();
+
+}
+
+
+// --------------------------------------------------
+// FIREBASE LISTENER
+// --------------------------------------------------
 
 onValue(
 
@@ -320,7 +445,8 @@ onValue(
 
   snapshot => {
 
-    songsData = snapshot.val() || {};
+    songsData =
+      snapshot.val() || {};
 
     updateCalculatedTotal();
 
@@ -338,10 +464,33 @@ onValue(
 );
 
 
-// Keep calculated total moving
+// --------------------------------------------------
+// START
+// --------------------------------------------------
+
+loadActiveSongs();
+
+
+// --------------------------------------------------
+// KEEP CALCULATED TOTAL MOVING
+// --------------------------------------------------
+
 setInterval(
   updateCalculatedTotal,
   1000
+);
+
+
+// --------------------------------------------------
+// PERIODICALLY RECHECK CURRENT SONGS
+//
+// This means Sup can pick up changes to index.html
+// without maintaining a manual song list.
+// --------------------------------------------------
+
+setInterval(
+  loadActiveSongs,
+  5 * 60 * 1000
 );
 
 </script>

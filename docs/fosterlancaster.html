@@ -58,9 +58,6 @@ body {
 <a href="https://youtube.com/c/FosterLancaster" target="_blank">
 <div class="FooterLink">Videos</div>
 </a>
-<a href="http://fostmp3s.com/sup" target="_blank">
-<div class="FooterLink">Sup</div>
-</a>
 <a href="http://fostmp3s.com/merch" target="_blank">
 <div class="FooterLink">Merch</div>
 </a>
@@ -79,29 +76,6 @@ body {
   | <a href="http://fostmp3s.com/publicity" target="_blank">Publicity Policy</a>
 </span>
 </footer>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const warnings = document.querySelectorAll(".Warning");
-
-  // Hide if already dismissed
-  if (localStorage.getItem("warningDismissed") === "true") {
-    warnings.forEach(warning => {
-      warning.style.display = "none";
-    });
-  }
-
-  document.querySelectorAll(".WarningButton").forEach(button => {
-    button.addEventListener("click", function () {
-      const warning = this.closest(".Warning");
-      if (warning) {
-        warning.style.display = "none";
-        localStorage.setItem("warningDismissed", "true");
-      }
-    });
-  });
-});
-</script>
 </body>
 </html>
 

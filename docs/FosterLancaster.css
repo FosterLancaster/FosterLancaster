@@ -24,7 +24,7 @@ body {
   z-index: 0;
   overflow-y: scroll;
   overflow-x: hidden;
-  background-color: #c2bfa7;
+  background-color: #FBF7DA;
   color: #000000;
 }
 @font-face {
@@ -38,7 +38,7 @@ header {
   width: calc(100% - 20px);
   padding: 0px 10px 0px 10px;
   height: 7dvh;
-  background-color: #c2bfa7;
+  background-color: #FBF7DA;
   z-index: 3;
   display: inline-flex;
   justify-content: right;
@@ -46,13 +46,13 @@ header {
 }
 .headername {
   width: auto;
-  height: 2.2vh;
+  height: 2.4dvh;
   max-width: 90%;
   right: 10px;
   bottom: 0px;
   position: absolute;
   box-sizing: cover;
-  color: transparent;
+  filter: invert(.5);
 }
 .TeachName {
   width: 100%;
@@ -93,12 +93,12 @@ header {
   outline: none;
 }
 a {
-  color: #000000;
+  color: #747474;
   text-decoration: none;
   transition-duration: .5s;
 }
 a:hover {
-  color: #ffffff;
+  color: hsl(0, 0%, 91%);
 }
 h1 {
 font-size: 25px;
@@ -109,7 +109,7 @@ footer {
   padding: 10px;
   height: auto;
   position: relative;
-  background-color: #c2bfa7;
+  background-color: #FBF7DA;
   font-family: Arial, sans-serif;
   font-size: 13px;
   line-height: 22px;

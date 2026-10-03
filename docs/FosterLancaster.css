@@ -70,12 +70,10 @@ header {
   z-index: -1;
   width: 100vw;
   height: 100dvh;
-  background-image: url("images/BlindLove.jpg"); 
+  background-image: url("images/InclineCulture.jpg"); 
   background-position: center 0px;
   background-size: cover;
   background-repeat: no-repeat;
-  filter: grayscale(1);
-  animation: Focus 3s ease 3s forwards;
 }
 .Name {
   top: 50%;
@@ -133,15 +131,6 @@ select {
   overflow: hidden;
   z-index: -1;
   opacity: 1;
-}
-
-@keyframes Focus {
-  0% {
-  filter: grayscale(1);
-  }
-  100% {
-  filter: grayscale(0);
-  }
 }
 
 @keyframes Faster {

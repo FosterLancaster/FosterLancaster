@@ -24,7 +24,7 @@ body {
   z-index: 0;
   overflow-y: scroll;
   overflow-x: hidden;
-  background-color: #ffffed;
+  background-color: #cbcbcb;
   color: #000000;
 }
 @font-face {
@@ -38,7 +38,7 @@ header {
   width: calc(100% - 20px);
   padding: 0px 10px 0px 10px;
   height: 7dvh;
-  background-color: #ffffed;
+  background-color: #cbcbcb;
   z-index: 3;
   display: inline-flex;
   justify-content: right;
@@ -95,7 +95,7 @@ a {
   transition-duration: .5s;
 }
 a:hover {
-  color: #919191;
+  color: #ffffff;
 }
 h1 {
 font-size: 25px;
@@ -106,7 +106,7 @@ footer {
   padding: 10px;
   height: auto;
   position: relative;
-  background-color: #ffffed;
+  background-color: #cbcbcb;
   font-family: Arial, sans-serif;
   font-size: 13px;
   line-height: 22px;

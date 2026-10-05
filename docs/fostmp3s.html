@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>fostmp3s</title>
+<title>What is fostmp3s?</title>
 <link rel="shortcut icon" href="images/FLFavicon.ico" type="image/x-icon">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="keywords" content="fostmp3s, Foster Record Company, foster lancaster">
+<meta name="keywords" content="fost, mp3s, fostmp3s, fastmp3s, fast, mp3s, Foster Record Company, foster lancaster">
 <meta name="author" content="Fost Records">
 <meta name="description" content="fostmp3s widget/media platform" />
 
@@ -28,36 +28,51 @@
 <link rel="stylesheet" href="sup2.css">
 <style>
 body {
-  height: 100dvh;
-  width: 100%;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  background-color: #d0c095;
-  background-size: 30px 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-image: radial-gradient(transparent, #813807);
-  background-size: 100% 100%;
-  background-attachment: fixed;
-  color: #ffffff;
-  font-family: 'futura';
-  font-size: 1em;
+  height: 100%;
+  width: 100vw;
+  background-color: #989898;
   }
-.fostmp3slogo {
-  margin: 5%;
-  width: 300px;
-  max-width: 90%;
+header {
+  height: 50px;
+  width: calc(100vw - 12px);
+  background-color: #989898;
+  position: relative;
+  justify-content: left;
+}
+.headerimage {
+  height: 40px;
+  margin: 5px;
+  width: auto;
 }
 section {
-  width: calc(100% - 20px);
-  max-width: 700px;
-  margin: 10px;
+  line-height: 25px;
+  font-size: 15px;
+  height: auto;
+  width: 100% - 20px;
+  border: solid 1px #000000;
+  background-color: transparent;
+  margin: 9px;
+  position: relative;
+  border-top-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  overflow: hidden;
+}
+td {
+  background-color: transparent;
+}
+.fostmp3s {
+  width: 50%;
+  height: 500px;
+}
+.art {
+  width: 100%;
+  height: auto;
 }
   a {
-    color: #000000;
+    color: #ffffff;
   }
   a:hover {
-    color: #d8d8d8;
+    color: #000000;
   }
   a:hover {
     text-decoration: underline;
@@ -65,22 +80,34 @@ section {
   footer {
     background-color: transparent;
   }
-
 </style>
 </head>
 <body>
+
+<header><img class="headerimage" src="images/FostMp3sLogo.png"></header>
+
+<section>
+<table>
+<td style="max-width: calc(50vw - 20px); padding: 10px;">Fostmp3s is a widget/media platform that is proprietary to Fost Records. There is a "Support Password" that increases the 18 daily listens to an infinite amount for a one time fee <a href="https://fostmp3s.com/pw" target="_blank">here</a>. It also has a feature called "Sup" that catalogs all of the artist's status updates.</td>
+<td><iframe src="https://fosterlancaster.github.io/fostmp3s" style="width: 50vw; height: 50vw; border-top-left-radius: 20px; border-bottom-right-radius: 20px; min-width: 210px; min-height: 50vw; max-width: 100%; max-height: 100%; border: none; display: block;" class="fostmp3s"></iframe></td>
+</table>
+<img class="art" src="images/FostMp3sLogo.png" />
+<img class="art" src="images/fostmp3sIcon.png" />
+</section>
+
+<!----  
 <div align="center">
 <img class="fostmp3slogo" src="images/fostmp3sIcon.png">
 
 <h1>What is fostmp3s?</h1>
 <section>
-Fostmp3s is a widget/media platform that is proprietary to Fost Records. There is a "Support Password" that increases the 18 daily listens to an infinite amount for a one time fee <a href="https://fostmp3s.com/pw" target="_blank">here</a>. It also has a feature called "Sup" that catalogs all of the artist's status updates.
+
 </section>
 <br>
 <br>
 <iframe src="https://fosterlancaster.github.io/fostmp3s" style="width: 90%; height: 500px; border-top-left-radius: 20px; border-bottom-right-radius: 20px; min-width: 210px; min-height: 280px; max-width: 100%; max-height: 100%; border: none; display: block;" class="fostmp3s"></iframe>
 
-</div>
+</div>--->
 
 <footer>
 <a href="http://fostmp3s.com" target="_blank">

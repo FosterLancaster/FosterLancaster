@@ -1,0 +1,182 @@
+html {
+  -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
+}
+/* Hide scrollbar for WebKit-based browsers (Chrome, Safari, Edge) */
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none; /* Completely hides the scrollbar */
+}
+/* Hide scrollbar for Firefox */
+html, body {
+  scrollbar-width: none; /* Firefox-specific property to hide scrollbar */
+}
+/* ----Main---- */
+html {
+  height: 100%;
+}
+body {
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  min-height: 100dvh;
+  z-index: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: #cbcbcb;
+  color: #000000;
+}
+@font-face {
+  font-family: 'FR';
+  src: url('raidercrusader.ttf') format('truetype');
+}
+header {
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  width: calc(100% - 20px);
+  padding: 0px 10px 0px 10px;
+  height: 7dvh;
+  background-color: #cbcbcb;
+  z-index: 3;
+  display: inline-flex;
+  justify-content: right;
+  align-items: center;
+}
+.headername {
+  width: auto;
+  height: 2.4dvh;
+  max-width: 90%;
+  right: 10px;
+  bottom: 0px;
+  position: absolute;
+  box-sizing: cover;
+}
+.TeachName {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 5;
+  animation: Teach 1s linear .5s forwards;
+}
+.MyBackground {
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  z-index: -1;
+  width: 100vw;
+  height: 100dvh;
+  background-image: url("images/InclineCulture.jpg"); 
+  background-position: center 0px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.Name {
+  top: 50%;
+  left: calc(0% + 25vw);
+  width: 50vw;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  font-family: 'FL';
+  text-align: center;
+  font-weight: bold;
+  animation: Faster .3s ease-out .8s forwards;
+}
+:focus {
+  outline: none;
+}
+a {
+  color: #000000;
+  text-decoration: none;
+  transition-duration: .5s;
+}
+a:hover {
+  color: #ffffff;
+}
+h1 {
+font-size: 25px;
+line-height: auto;
+}
+footer {
+  width: calc(100% - 20px);
+  padding: 10px;
+  height: auto;
+  position: relative;
+  background-color: transparent;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  line-height: 22px;
+  text-align: right;
+}
+.FooterLink {
+  font-size: 2em;
+  display: inline-block;
+  padding: .5em 0em .5em 1em;
+  font-style: italic;
+}
+select { 
+  outline: none; 
+  }
+.FirstScreen {
+  position: fixed; 
+  bottom: 0px;     
+  left: 0;
+  width: 100%;
+  height: 100%; 
+  display: block;
+  overflow: hidden;
+  z-index: -1;
+  opacity: 1;
+}
+
+@keyframes Faster {
+  0% {
+    left: 0%;
+    display: block;
+  }
+  90.997% {
+    left: 150%;
+    display: block;
+  }
+  90.998% {
+    display: none;
+  }
+  90.999% {
+    left: -10%;
+  }
+  91% {
+    left: - 10%;
+    display: block;
+  }
+  100% {
+    left: 50%;
+  }
+}
+
+@keyframes Teach {
+  0% {
+    opacity: 1;
+    display: block;
+  }
+  90% {
+    opacity: 1;
+    display: block;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes Lift {
+  0% {
+    overflow-y: hidden;
+  }
+  100% {
+    overflow-y: scroll;
+  }
+}

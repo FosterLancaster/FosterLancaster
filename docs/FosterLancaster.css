@@ -64,16 +64,17 @@ header {
   animation: Teach 1s linear .5s forwards;
 }
 .MyBackground {
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   position: fixed;
   z-index: -1;
   width: 100vw;
   height: 100dvh;
-  background-image: url("images/InclineCulture.jpg"); 
-  background-position: center 0px;
+  background-image: url("images/slideshow/InclineCulture.jpg");
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  animation: Visuals 40s ease-in-out infinite;
 }
 .Name {
   top: 50%;
@@ -178,5 +179,20 @@ select {
   }
   100% {
     overflow-y: scroll;
+  }
+}
+
+@keyframes Visuals {
+  0%, 24.99% {
+    background-image: url("images/slideshow/InclineCulture.jpg");
+  }
+  25%, 49.99% {
+    background-image: url("images/slideshow/BlindLove.jpg");
+  }
+  50%, 74.99% {
+    background-image: url("images/slideshow/Lips.jpg");
+  }
+  75%, 100% {
+    background-image: url("images/slideshow/ShadowFace.jpg");
   }
 }

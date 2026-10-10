@@ -77,7 +77,6 @@ header {
   height: 100vh;
   background-image: url("images/slideshow/Slide1.jpg");
   background-position: center center;
-  background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
   animation: Visuals 30s ease-in-out infinite forwards;

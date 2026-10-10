@@ -74,7 +74,7 @@ header {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  animation: Visuals 40s ease-in-out infinite;
+  animation: Visuals 35s linear infinite forwards;
 }
 .Name {
   top: 50%;
@@ -183,16 +183,31 @@ select {
 }
 
 @keyframes Visuals {
-  0%, 24.99% {
+  0% {
     background-image: url("images/slideshow/Slide1.jpg");
   }
-  25%, 49.99% {
+  20% {
+    background-image: url("images/slideshow/Slide1.jpg");
+  }
+  25% {
     background-image: url("images/slideshow/Slide2.jpg");
   }
-  50%, 74.99% {
+  45% {
+    background-image: url("images/slideshow/Slide2.jpg");
+  }
+  50% {
     background-image: url("images/slideshow/Slide3.jpg");
   }
-  75%, 100% {
+  70% {
+    background-image: url("images/slideshow/Slide3.jpg");
+  }
+  75% {
     background-image: url("images/slideshow/Slide4.jpg");
+  }
+  95% {
+    background-image: url("images/slideshow/Slide4.jpg");
+  }
+  100% {
+    background-image: url("images/slideshow/Slide1.jpg");
   }
 }

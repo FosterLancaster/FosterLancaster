@@ -72,9 +72,10 @@ header {
   height: 100dvh;
   background-image: url("images/slideshow/Slide1.jpg");
   background-position: center center;
+  background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  animation: Visuals 25s ease-in-out infinite;
+  animation: Visuals 22s ease-in-out infinite forwards;
 }
 .Name {
   top: 50%;

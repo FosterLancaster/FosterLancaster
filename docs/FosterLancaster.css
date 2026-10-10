@@ -70,7 +70,7 @@ header {
   z-index: -1;
   width: 100vw;
   height: 100dvh;
-  background-image: url("images/slideshow/InclineCulture.jpg");
+  background-image: url("images/slideshow/Slide1.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -184,15 +184,15 @@ select {
 
 @keyframes Visuals {
   0%, 24.99% {
-    background-image: url("images/slideshow/InclineCulture.jpg");
+    background-image: url("images/slideshow/Slide1.jpg");
   }
   25%, 49.99% {
-    background-image: url("images/slideshow/BlindLove.jpg");
+    background-image: url("images/slideshow/Slide2.jpg");
   }
   50%, 74.99% {
-    background-image: url("images/slideshow/Lips.jpg");
+    background-image: url("images/slideshow/Slide3.jpg");
   }
   75%, 100% {
-    background-image: url("images/slideshow/ShadowFace.jpg");
+    background-image: url("images/slideshow/Slide4.jpg");
   }
 }

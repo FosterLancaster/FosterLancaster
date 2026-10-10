@@ -69,12 +69,12 @@ header {
   animation: Teach 1s linear .5s forwards;
 }
 .MyBackground {
-  top: 0;
+  top: 7vh;
   left: 0;
-  position: fixed;
+  position: absolute;
   z-index: -1;
   width: 100vw;
-  height: 100vh;
+  height: 93vh;
   background-image: url("images/slideshow/Slide1.jpg");
   background-position: center center;
   background-size: cover;

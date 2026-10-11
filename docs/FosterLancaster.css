@@ -68,13 +68,13 @@ header {
   left: 0;
   position: absolute;
   z-index: -1;
-  width: 100dvw;
+  width: 100vw;
   height: 100dvh;
   background-image: url("images/slideshow/Slide1.jpg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  animation: Visuals 30s ease-in-out infinite forwards;
+  animation: Visuals 30s linear infinite;
 }
 .Name {
   top: 50%;

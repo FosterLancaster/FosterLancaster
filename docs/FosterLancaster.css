@@ -26,10 +26,6 @@ body {
   overflow-x: hidden;
   background-color: #d7d7d7;
   color: #000000;
-  background-image: url("images/slideshow/Slide1.jpg");
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 @font-face {
   font-family: 'FR';

@@ -39,15 +39,15 @@ header {
   height: 7dvh;
   background-color: #e6e4d8;
   z-index: 3;
-  display: inline-flex;
-  justify-content: center;
+  display: block;
   align-items: center;
+  text-align: center;
 }
 .headername {
   width: 70dvh;
-  max-width: 90%;
+  max-width: 85%;
   height: auto;
-  box-sizing: cover;
+  margin: auto;
 }
 .TeachName {
   width: 100%;

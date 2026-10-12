@@ -24,7 +24,7 @@ body {
   z-index: 0;
   overflow-y: scroll;
   overflow-x: hidden;
-  background-color: #d7d7d7;
+  background-color: #e6e4d8;
   color: #000000;
 }
 @font-face {
@@ -38,19 +38,16 @@ header {
   width: calc(100% - 20px);
   padding: 0px 10px 0px 10px;
   height: 7dvh;
-  background-color: #d7d7d7;
+  background-color: #e6e4d8;
   z-index: 3;
   display: inline-flex;
-  justify-content: right;
+  justify-content: center;
   align-items: center;
 }
 .headername {
-  width: auto;
-  height: 2.4dvh;
+  width: 70dvh;
   max-width: 90%;
-  right: 10px;
-  bottom: 0px;
-  position: absolute;
+  height: auto;
   box-sizing: cover;
 }
 .TeachName {
@@ -85,7 +82,7 @@ header {
   font-family: 'FL';
   text-align: center;
   font-weight: bold;
-  animation: Faster .3s ease-out .8s forwards;
+  animation: Faster .2s ease-out .2s forwards;
 }
 :focus {
   outline: none;
@@ -107,7 +104,7 @@ footer {
   padding: 10px;
   height: auto;
   position: relative;
-  background-color: #d7d7d7;
+  background-color: #e6e4d8;
   font-family: Arial, sans-serif;
   font-size: 13px;
   line-height: 22px;
@@ -186,25 +183,25 @@ select {
   0% {
     background-image: url("images/slideshow/Slide1.jpg");
   }
-  20% {
+  23% {
     background-image: url("images/slideshow/Slide1.jpg");
   }
   25% {
     background-image: url("images/slideshow/Slide2.jpg");
   }
-  45% {
+  48% {
     background-image: url("images/slideshow/Slide2.jpg");
   }
   50% {
     background-image: url("images/slideshow/Slide3.jpg");
   }
-  70% {
+  73% {
     background-image: url("images/slideshow/Slide3.jpg");
   }
   75% {
     background-image: url("images/slideshow/Slide4.jpg");
   }
-  95% {
+  98% {
     background-image: url("images/slideshow/Slide4.jpg");
   }
   100% {

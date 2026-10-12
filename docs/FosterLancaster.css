@@ -40,8 +40,6 @@ header {
   line-height: 7dvh;
   background-color: #e6e4d8;
   z-index: 3;
-  display: block;
-  align-items: center;
   text-align: center;
 }
 .headername {

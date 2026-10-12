@@ -62,7 +62,7 @@ header {
 .MyBackground {
   top: 0;
   left: 0;
-  position: absolute;
+  position: fixed;
   z-index: -1;
   width: 100vw;
   height: 100dvh;
@@ -70,7 +70,7 @@ header {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  animation: Visuals 30s linear infinite;
+  animation: Visuals 40s linear infinite forwards;
 }
 .Name {
   top: 50%;
@@ -182,25 +182,25 @@ select {
   0% {
     background-image: url("images/slideshow/Slide1.jpg");
   }
-  23% {
+  24% {
     background-image: url("images/slideshow/Slide1.jpg");
   }
   25% {
     background-image: url("images/slideshow/Slide2.jpg");
   }
-  48% {
+  49% {
     background-image: url("images/slideshow/Slide2.jpg");
   }
   50% {
     background-image: url("images/slideshow/Slide3.jpg");
   }
-  73% {
+  74% {
     background-image: url("images/slideshow/Slide3.jpg");
   }
   75% {
     background-image: url("images/slideshow/Slide4.jpg");
   }
-  98% {
+  99% {
     background-image: url("images/slideshow/Slide4.jpg");
   }
   100% {

@@ -26,11 +26,6 @@ body {
   overflow-x: hidden;
   background-color: #8c4915;
   color: #ffffff;
-  background-image: url("images/slideshow/Slide1.jpg");
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  animation: Visuals 40s linear infinite forwards;
 }
 @font-face {
   font-family: 'FR';

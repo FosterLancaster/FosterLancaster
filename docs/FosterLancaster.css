@@ -43,28 +43,20 @@ header {
   justify-content: right;
 }
 .headername {
-  height: 3.5dvh;
-  max-height: 10vw;
+  font-size: calc(7dvh - 10px);
+  font-family: 'futura';
   width: auto;
   display: block;
-  margin-right: 10px;
-}
-.Name {
-  top: 50%;
-  left: calc(0% + 25vw);
-  width: 50vw;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  font-family: 'FL';
-  text-align: center;
-  font-weight: bold;
-  animation: Faster .2s ease-out .2s forwards;
+  padding: 10px;
+  color: #8c4915;
+  filter: drop-shadow(0 0 5px #000000);
+  animation: Foster 4s linear infinite;
 }
 :focus {
   outline: none;
 }
 a {
-  color: #ffe5e5;
+  color: #000000;
   text-decoration: none;
   transition-duration: .5s;
 }
@@ -107,27 +99,21 @@ select {
   opacity: 1;
 }
 
-@keyframes Faster {
+@keyframes Foster {
   0% {
-    left: 0%;
-    display: block;
+    color: #8c4915;
   }
-  90.997% {
-    left: 150%;
-    display: block;
+  25% {
+    color: #8c4915;
   }
-  90.998% {
-    display: none;
+  50% {
+    color: transparent;
   }
-  90.999% {
-    left: -10%;
-  }
-  91% {
-    left: - 10%;
-    display: block;
+  75% {
+    color: #8c4915;
   }
   100% {
-    left: 50%;
+    color: #8c4915;
   }
 }
 

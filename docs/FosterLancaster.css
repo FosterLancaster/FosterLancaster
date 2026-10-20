@@ -23,7 +23,7 @@ body {
   z-index: 0;
   overflow-y: scroll;
   overflow-x: hidden;
-  color: #ffffff;
+  color: #000000;
   background-color: #8c4915;
 }
 @font-face {
@@ -38,21 +38,13 @@ header {
   height: 7dvh;
   background-color: #8c4915;
   z-index: 3;
-  display: flex;
-  align-items: center;
-  justify-content: right;
 }
 .headername {
-  font-size: 5vh;
-  max-width: calc(100vw - 20px);
-  padding: 10px;
+  font-size: 4vh;
+  position: absolute;
+  bottom: -1.2vh;
+  right: 10px;
   font-family: 'futura';
-  text-decoration: line-through;
-  width: auto;
-  display: block;
-  color: #8c4915;
-  filter: drop-shadow(0 0 5px #000000);
-  animation: Foster 4s linear infinite;
 }
 :focus {
   outline: none;
@@ -99,24 +91,6 @@ select {
   overflow: hidden;
   z-index: -1;
   opacity: 1;
-}
-
-@keyframes Foster {
-  0% {
-    color: #8c4915;
-  }
-  25% {
-    color: #8c4915;
-  }
-  50% {
-    color: transparent;
-  }
-  75% {
-    color: #8c4915;
-  }
-  100% {
-    color: #8c4915;
-  }
 }
 
 @keyframes Visuals {

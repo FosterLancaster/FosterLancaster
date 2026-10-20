@@ -40,9 +40,9 @@ header {
   z-index: 3;
 }
 .headername {
-  font-size: 4vh;
+  font-size: 4dvh;
   position: absolute;
-  bottom: -1.2vh;
+  bottom: -1.2dvh;
   right: 10px;
   font-family: 'futura';
 }

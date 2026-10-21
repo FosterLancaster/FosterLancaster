@@ -38,11 +38,12 @@ header {
   height: 7dvh;
   background-color: #8c4915;
   z-index: 3;
+  overflow: hidden;
 }
 .headername {
-  font-size: 4dvh;
+  font-size: 4vh;
   position: absolute;
-  bottom: -1.15dvh;
+  bottom: -1.15vh;
   right: 10px;
   font-family: 'futura';
 }

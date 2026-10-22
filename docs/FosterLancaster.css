@@ -78,9 +78,9 @@ footer {
  height: auto;
  width: 15vw;
  max-width: 75px;
- margin: 2vw;
+ margin: 1vw;
  font-style: italic;
- transition-duration: .5s;
+ transition-duration: .2s;
 }
 .FooterLink:hover {
   filter: invert(1);

@@ -26,14 +26,8 @@
 <meta name="twitter:image:alt" content="The Fost Records company. Luck Begins Here!">
 <link rel="stylesheet" href="FosterLancaster.css">
 <style>
-  body {
-  height: 100%;
-  width: 100%;
-  overflow: scroll;
+body {
   background-color: #000000;
-  background-size: 30px 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   color: #617f73;
   font-family: 'FR';
   font-size: 1em;
@@ -46,6 +40,12 @@
   background-position: center center;
   justify-content: center;
   align-items: center;
+}
+.InnerBanner {
+  position: absolute; 
+  left: 50%; 
+  top: 50%; 
+  translate: -50% -50%;
 }
   section {
     display: block;
@@ -98,11 +98,15 @@
 </head>
 <body>
 <section>
-<div class="Banner"><img style="position: absolute; left: 50%; top: 50%; translate: -50% -50%; max-width: 90%; width: 350px;" src="images/FostRecords.png"></div>
+<div class="Banner">
+<div align='center' class="InnerBanner">
+<img style="max-width: 90%; width: 350px;" src="images/FostRecords.png"><br>
+<h4 style="color: #ffffff">"Luck Begins Here"</h4>
+</div>
+</div>
 
 <div align="left" style="margin: 20px; max-width: 100% - 40px;">
 
-<h2>"Luck Begins Here"</h2>
 <blockquote style="text-align: left; width: 50%;">
 "Fost Records" is an American independent record label founded by Foster Lancaster in 2026. While the growingly prestigious "Foster Lancaster" brand is known for DIY maximalism, and alternative pop production, Foster is always looking for acts that expand perspectives in any genre.
 </blockquote>

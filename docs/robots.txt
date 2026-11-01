@@ -1,8 +1,0 @@
-User-agent: Twitterbot
-Allow: /
-
-User-agent: *
-Allow: /
-
-# Optional: point bots to your sitemap (if you have one)
-# Sitemap: https://yourdomain.com/sitemap.xml

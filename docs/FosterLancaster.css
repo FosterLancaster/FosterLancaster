@@ -40,12 +40,16 @@ header {
   z-index: 3;
   overflow: hidden;
 }
+.headername:hover {
+  bottom: -.7vh;
+}
 .headername {
   font-size: 4vh;
   position: absolute;
   bottom: -1.4vh;
   right: 10px;
   font-family: 'futura';
+  transition-duration: .3s;
 }
 :focus {
   outline: none;

@@ -38,18 +38,26 @@ header {
   height: 7dvh;
   background-color: #8c4915;
   z-index: 3;
-  overflow: hidden;
+  overflow: visible;
 }
 .headername:hover {
-  bottom: -.7vh;
+  height: 5.4vh;
+  bottom: -1.4vh;
+  background-image: url('images/America.gif');
+  background-size: cover;
+  background-clip: text;
+  color: transparent;
+  transition-duration: .3s;
 }
 .headername {
+  height: 4vh;
+  bottom: 0vh;
   font-size: 4vh;
-  position: absolute;
-  bottom: -1.4vh;
+  position: absolute;  
   right: 10px;
   font-family: 'futura';
-  transition-duration: .3s;
+  overflow: hidden;
+  color: #000000;
 }
 :focus {
   outline: none;

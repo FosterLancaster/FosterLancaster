@@ -41,13 +41,11 @@ header {
   overflow: visible;
 }
 .headername:hover {
-  height: 5.4vh;
-  bottom: -1.4vh;
   background-image: url('images/America.gif');
   background-size: cover;
   background-clip: text;
   color: transparent;
-  transition-duration: .3s;
+  height: auto;
 }
 .headername {
   height: 4vh;
@@ -88,7 +86,7 @@ footer {
 }
 .FooterLink {
  height: auto;
- width: 15vw;
+ width: 10vw;
  max-width: 75px;
  margin: 1vw;
  font-style: italic;

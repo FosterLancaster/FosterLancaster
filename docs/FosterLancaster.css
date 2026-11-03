@@ -87,6 +87,7 @@ footer {
 .FooterLink {
  height: auto;
  width: 10vw;
+ min-width: 100px;
  max-width: 75px;
  margin: 1vw;
  font-style: italic;

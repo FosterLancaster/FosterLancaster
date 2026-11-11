@@ -41,18 +41,19 @@ header {
   overflow: visible;
 }
 .headername {
-  height: 4vh;
-  bottom: 0vh;
-  font-size: 4vh;
+  height: auto;
+  bottom: -2vh;
+  font-size: 8vh;
   position: absolute;  
   right: 10px;
   font-family: 'futura';
   overflow: hidden;
-  background-image: url('images/America.gif');
-  background-size: cover;
+  background-image: url('images/Name.jpg');
+  background-size: 16vh auto;
   background-clip: text;
   color: transparent;
   -webkit-text-stroke: .05vh #ffffff;
+  animation: Name 3s linear infinite;
 }
 :focus {
   outline: none;
@@ -89,6 +90,8 @@ footer {
  margin: 1vw;
  font-style: italic;
  transition-duration: .2s;
+ border-radius: 50%;
+ border: solid 1px #000000;
 }
 .FooterLink:hover {
   filter: invert(1);
@@ -106,6 +109,15 @@ select {
   overflow: hidden;
   z-index: -1;
   opacity: 1;
+}
+
+@keyframes Name {
+  0% {
+    background-position: 0vh bottom;
+    }
+  100% {
+    background-position: 16vh bottom;
+  }
 }
 
 @keyframes Visuals {

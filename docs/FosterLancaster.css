@@ -125,10 +125,10 @@ select {
 
 @keyframes Name {
   0% {
-    background-position: 0em bottom;
+    background-position: 0em center;
     }
   100% {
-    background-position: 2em bottom;
+    background-position: 2em center;
   }
 }
 

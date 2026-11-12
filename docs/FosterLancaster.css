@@ -49,7 +49,7 @@ header {
   font-family: 'futura';
   overflow: hidden;
   background-image: url('images/Name.jpg');
-  background-size: 16vh auto;
+  background-size: 2em auto;
   background-clip: text;
   color: transparent;
   -webkit-text-stroke: .05vh #ffffff;
@@ -111,12 +111,25 @@ select {
   opacity: 1;
 }
 
+@media screen and (orientation: portrait)
+{
+.headername {
+  font-size: 8vw;
+}
+}
+@media screen and (orientation: landscape)
+{
+.headername {
+  font-size: 8vh;
+}
+}
+
 @keyframes Name {
   0% {
-    background-position: 0vh bottom;
+    background-position: 0em bottom;
     }
   100% {
-    background-position: 16vh bottom;
+    background-position: 2em bottom;
   }
 }
 

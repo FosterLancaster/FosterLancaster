@@ -35,7 +35,9 @@ header {
   left: 0;
   position: fixed;
   width: 100%;
-  background-color: transparent;
+  height: 7dvh;
+  line-height: 7dvh;
+  background-color: rgba(0, 0, 0, .5);
   z-index: 3;
   overflow: visible;
 }
@@ -117,7 +119,7 @@ select {
 @media screen and (orientation: landscape)
 {
 .headername {
-  font-size: 8vh;
+  font-size: 7vh;
 }
 }
 

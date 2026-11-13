@@ -51,7 +51,6 @@ header {
   background-size: 2em auto;
   background-clip: text;
   color: transparent;
-  -webkit-text-stroke: .05vh #ffffff;
   animation: Name 3s linear infinite;
 }
 :focus {

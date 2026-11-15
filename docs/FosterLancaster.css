@@ -46,10 +46,8 @@ header {
   right: 10px;
   font-family: 'futura';
   overflow: hidden;
-  background-image: url('images/Name.jpg');
-  background-size: 2em auto;
-  background-clip: text;
-  color: transparent;
+  color: #ffffff;
+  -webkit-text-stroke: .03em #7f3906;
   animation: Name 3s linear infinite;
 }
 :focus {
@@ -72,12 +70,13 @@ footer {
   padding: 10px;
   height: auto;
   position: relative;
-  background-color: #000000;
+  background-color: transparent;
   font-family: Arial, sans-serif;
   font-size: 13px;
   line-height: 22px;
   text-align: right;
   text-align: center;
+  backdrop-filter: blur(20px);
 }
 .FooterLink {
  height: auto;

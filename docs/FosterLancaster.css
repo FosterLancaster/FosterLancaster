@@ -46,8 +46,8 @@ header {
   right: 10px;
   font-family: 'futura';
   overflow: hidden;
-  color: #ffffff;
-  -webkit-text-stroke: .03em #7f3906;
+  color: #000000;
+  -webkit-text-stroke: .02em #c9936d;
   animation: Name 3s linear infinite;
 }
 :focus {

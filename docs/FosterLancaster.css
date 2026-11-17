@@ -48,7 +48,8 @@ header {
   font-family: 'futura';
   overflow: hidden;
   color: #000000;
-  animation: Name 3s ease-in-out infinite;
+  -webkit-text-stroke: .025em #ffffff;
+  animation: Name 3s ease infinite;
 }
 :focus {
   outline: none;

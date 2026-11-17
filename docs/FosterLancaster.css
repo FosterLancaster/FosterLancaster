@@ -123,11 +123,14 @@ select {
 
 @keyframes Name {
   0% {
-    background-position: 0em center;
+    filter: invert(1);
     }
-  100% {
-    background-position: 2em center;
+  50% {
+    filter: invert(0);
   }
+  100% {
+    filter: invert(1);
+    }
 }
 
 @keyframes Visuals {

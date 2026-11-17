@@ -36,18 +36,19 @@ header {
   position: fixed;
   width: 100%;
   height: 7dvh;
-  line-height: 7dvh;
   z-index: 3;
   overflow: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .headername {
+  width: auto;
   height: auto;
-  position: absolute;  
-  right: 10px;
   font-family: 'futura';
   overflow: hidden;
   color: #000000;
-  -webkit-text-stroke: .02em #c3c3c3;
+  -webkit-text-stroke: .03em #e7e7e7;
   animation: Name 3s linear infinite;
 }
 :focus {
@@ -110,13 +111,13 @@ select {
 @media screen and (orientation: portrait)
 {
 .headername {
-  font-size: 10vw;
+  font-size: 5vw;
 }
 }
 @media screen and (orientation: landscape)
 {
 .headername {
-  font-size: 7vh;
+  font-size: 3.5vh;
 }
 }
 

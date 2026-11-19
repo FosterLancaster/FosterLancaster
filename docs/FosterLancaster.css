@@ -47,9 +47,14 @@ header {
   height: auto;
   font-family: 'futura';
   overflow: hidden;
-  color: #ff7b00;
-  -webkit-text-stroke: .025em #00ddff;
-  animation: Name 3s ease infinite;
+  color: transparent;
+  -webkit-text-stroke: .02em #ffffff;
+  background-image: linear-gradient(to right, #f87800, #008cff, #f87800);
+  background-position: 0px center;
+  background-attachment: fixed;
+  background-size: 200px 100%;
+  background-clip: text;
+  animation: Name 1s linear infinite;
 }
 :focus {
   outline: none;
@@ -122,16 +127,10 @@ select {
 
 @keyframes Name {
   0% {
-      color: #ff7b00;
-  -webkit-text-stroke: .04em #00ddff;
+      background-position: 0px center;
     }
-  50% {
-     color: #00ddff;
-  -webkit-text-stroke: .04em #ff7b00;
-  }
   100% {
-      color: #ff7b00;
-  -webkit-text-stroke: .04em #00ddff;
+      background-position: 200px center;
     }
 }
 

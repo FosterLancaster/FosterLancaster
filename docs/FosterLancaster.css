@@ -49,7 +49,7 @@ header {
   overflow: hidden;
   color: transparent;
   -webkit-text-stroke: .02em #ffffff;
-  background-image: linear-gradient(to right, #f87800, #008cff, #f87800);
+  background-image: linear-gradient(to right, #37ab02, #ff8000, #37ab02);
   background-position: 0px center;
   background-attachment: fixed;
   background-size: 200px 100%;
@@ -82,7 +82,7 @@ footer {
   line-height: 22px;
   text-align: right;
   text-align: center;
-  backdrop-filter: blur(20px);
+  backdrop-filter: grayscale(100%);
 }
 .FooterLink {
  height: auto;

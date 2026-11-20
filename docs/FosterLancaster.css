@@ -49,7 +49,7 @@ header {
   overflow: hidden;
   color: transparent;
   -webkit-text-stroke: .02em #ffffff;
-  background-image: linear-gradient(to right, #37ab02, #ff8000, #37ab02);
+  background-image: linear-gradient(to right, #028300, #e17100, #028300);
   background-position: 0px center;
   background-attachment: fixed;
   background-size: 200px 100%;

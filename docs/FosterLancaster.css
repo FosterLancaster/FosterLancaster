@@ -19,7 +19,7 @@ body {
   margin: 0px;
   padding: 0px;
   width: 100%;
-  height: 100vh;  /*----iphone---*/
+  height: 100dvh;  /*----iphone---*/
   z-index: 0;
   overflow-y: scroll;
   overflow-x: hidden;

@@ -24,7 +24,7 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
   color: #ffffff;
-  background-color: #000000;
+  background-color: #c9c9c9;
 }
 @font-face {
   font-family: 'FR';
@@ -47,17 +47,6 @@ header {
   width: auto;
   height: auto;
   font-size: 22.5px;
-  font-family: 'futura';
-  overflow: hidden;
-  color: transparent;
-  -webkit-text-stroke: .02em #ffffff;
-  background-image: linear-gradient(to right, #028300, #e17100, #028300);
-  background-position: 0px center;
-  background-attachment: fixed;
-  background-size: 200px 100%;
-  background-clip: text;
-  animation: Name 1s linear infinite;
-}
   font-family: 'futura';
   overflow: hidden;
   color: transparent;

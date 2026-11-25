@@ -46,17 +46,24 @@ header {
 .headername {
   width: auto;
   height: auto;
-  font-size: 22.5px;
+  font-size: 2em;
   font-family: 'futura';
-  overflow: hidden;
+  overflow: visible;
   color: transparent;
   -webkit-text-stroke: .02em #ffffff;
-  background-image: linear-gradient(to right, #028300, #e17100, #028300);
-  background-position: 0px center;
-  background-attachment: fixed;
-  background-size: 200px 100%;
-  background-clip: text;
-  animation: Name 1s linear infinite;
+  filter:drop-shadow(0 0 5px #000000)
+}
+.Capital {
+  opacity: 0;
+  display: inline-block;
+  transform-origin: center;
+  animation: Showup 2s ease-in-out forwards;
+}
+.Lowercase {
+  opacity: 0;
+  display: inline-block;
+  transform-origin: center;
+  animation: Showup 2s ease-in-out 2s forwards;
 }
 :focus {
   outline: none;
@@ -121,6 +128,25 @@ select {
   100% {
       background-position: 200px center;
     }
+}
+
+@keyframes Showup {
+  0% {
+    opacity: 0;
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0px) rotate(0deg);
+  }
+  75% {
+    opacity: 1;
+    transform: translateY(-.5em) rotate(-360deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) rotate(-360deg);
+  }
 }
 
 @keyframes Visuals {

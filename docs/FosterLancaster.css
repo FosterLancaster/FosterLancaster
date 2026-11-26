@@ -121,15 +121,6 @@ select {
   opacity: 1;
 }
 
-@keyframes Name {
-  0% {
-      background-position: 0px center;
-    }
-  100% {
-      background-position: 200px center;
-    }
-}
-
 @keyframes Showup {
   0% {
     opacity: 0;

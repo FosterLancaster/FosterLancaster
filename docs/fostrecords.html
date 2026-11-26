@@ -34,20 +34,21 @@ body {
   width: 100%;
   }
 .Banner {
-  height: 100dvh;
-  width: 100vw;
+  height: auto;
+  min-height: 400px;
+  width: 100%;
   background-image: url('images/FostRecordsBanner.png');
   background-size: cover;
   background-position: center center;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 .InnerBanner {
+  height: auto;
   width: 100%;
-  position: absolute; 
-  left: 50%; 
-  top: 50%; 
-  translate: -50% -50%;
+  position: relative;
+  text-align: center;
 }
   section {
     display: block;
@@ -100,20 +101,22 @@ body {
 
 <div align="center">
 <div class="Banner">
+
 <div align='center' class="InnerBanner">
 <div style="max-width: 95%; font-size: 10vh;">Fost Records</div>
 <a href="https://fostmp3s.com" target="_blank">
-<div style="max-width: 95%; font-size: 3vh;">Foster Lancaster - Zero Sugar</div>
-<img style="height: 50dvh; max-height: 500px;" src="images/ZeroSugar.jpg">
+<div style="max-width: 95%; font-size: 1.5em;">Foster Lancaster - Zero Sugar</div>
+<img style="height: 50vh; max-height: 500px;" src="images/ZeroSugar.jpg">
 <br>
 Out Now Exclusively on "fostMp3s"!</a>
 <br>
 <a href="https://fostmp3s.com/pw" target="_blank">
-<table style="width: 70%; text-align: center">
-<td><img style="width: auto; height: 20vh;" src="images/Gifts.jpg"></td><td style="font-size: 5vh; color: #ff0000;">"Give the gift of music this year by buying the fan password!"</td>
+<table style="width: 70%; text-align: center; margin: 0px 15%;">
+<td><img style="width: auto; height: 30vh;" src="images/Gifts.jpg"></td><td style="font-size: 1.5em; color: #ff0000; -webkit-text-stroke: .05em rgb(0, 243, 0);">"Give the gift of music this year by buying the support password, here!"</td>
 </table>
 </a>
 </div>
+
 </div>
 
 <div style="margin: 20px; max-width: 100% - 40px;">

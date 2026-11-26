@@ -5,14 +5,11 @@
 \margl1440\margr1440\vieww11520\viewh8400\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f0\fs24 \cf0 \{\
+\f0\fs24 \cf0 \
+\{\
   "rules": \{\
     ".read": false,\
     ".write": false,\
-\
-    "totalPlays": \{\
-      ".read": true\
-    \},\
 \
     "songs": \{\
       ".read": true,\
@@ -24,18 +21,24 @@
           ".validate": "newData.isNumber() && (!data.exists() || newData.val() >= data.val()) && newData.val() <= 100000000"\
         \},\
 \
+        "savedRate": \{\
+  ".validate": "newData.isNumber() && newData.val() >= 0"\
+\},\
+\
         "lastUpdated": \{\
-          ".validate": "newData.isNumber() && newData.val() <= now"\
+          ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= now + 60000"\
         \},\
 \
         "dailyBoost": \{\
-          ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 5555"\
+          ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 7400"\
         \},\
 \
         "boostDate": \{\
-          ".validate": "newData.isString()"\
+          ".validate": "newData.isString() && newData.val().matches(/^\\\\d\{4\}-\\\\d\{2\}-\\\\d\{2\}$/)"\
+          \
         \}\
       \}\
     \}\
   \}\
-\}}
+\}\
+}
